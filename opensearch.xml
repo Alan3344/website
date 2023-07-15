@@ -4,8 +4,8 @@
   <ShortName>Flet</ShortName>
   <Description>Search Flet</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://flet.dev/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://flet.dev/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://flet.dev/opensearch.xml" />
-  <moz:SearchForm>https://flet.dev/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://alan3344.github.io/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://alan3344.github.io/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://alan3344.github.io/opensearch.xml" />
+  <moz:SearchForm>https://alan3344.github.io/</moz:SearchForm>
 </OpenSearchDescription>
