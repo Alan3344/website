@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkflet_dev=self.webpackChunkflet_dev||[]).push([[5991],{1632:function(e){e.exports=JSON.parse('{"permalink":"/blog/tags/news","page":1,"postsPerPage":10,"totalPages":1,"totalCount":3,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

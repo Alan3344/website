@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkflet_dev=self.webpackChunkflet_dev||[]).push([[2858],{7570:function(t){t.exports=JSON.parse('{"title":"Charts","slug":"controls/charts","permalink":"/docs/controls/charts","navigation":{"previous":{"title":"SnackBar","permalink":"/docs/controls/snackbar"},"next":{"title":"LineChart","permalink":"/docs/controls/linechart"}}}')}}]);

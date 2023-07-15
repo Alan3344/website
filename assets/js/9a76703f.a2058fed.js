@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflet_dev=self.webpackChunkflet_dev||[]).push([[4324],{5:function(e){e.exports=JSON.parse('{"label":"news","permalink":"/website/blog/tags/news","allTagsPath":"/website/blog/tags","count":3}')}}]);

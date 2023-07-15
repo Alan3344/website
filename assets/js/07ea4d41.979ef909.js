@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkflet_dev=self.webpackChunkflet_dev||[]).push([[9479],{5808:function(e){e.exports=JSON.parse('{"title":"Layout","slug":"controls/layout","permalink":"/docs/controls/layout","navigation":{"previous":{"title":"Controls reference","permalink":"/docs/controls"},"next":{"title":"Page","permalink":"/docs/controls/page"}}}')}}]);

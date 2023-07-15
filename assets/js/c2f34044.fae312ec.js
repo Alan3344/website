@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkflet_dev=self.webpackChunkflet_dev||[]).push([[5457],{2379:function(e){e.exports=JSON.parse('{"label":"releases","permalink":"/blog/tags/releases","allTagsPath":"/blog/tags","count":6}')}}]);
