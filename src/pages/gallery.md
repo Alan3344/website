@@ -3,20 +3,20 @@ title: Gallery
 slug: gallery
 ---
 
-来自'@site/src/components/card'的导入卡片;
+import Card from '@site/src/components/card';
 
 export const GalleryCard = ({title, liveUrl, sourcesUrl, description, imageUrl}) => (
-    <Card>
-      <a className="gallery-live-link" href={liveUrl}>
-        <img src={"/img/gallery/" + imageUrl} className="screenshot-100"/>
-        <h2>{title}</h2>
-        <div className="gallery-description">{description}</div>
-      </a>
-      <div className="gallery-footer">
-        <a className="gallery-github-link" href={sourcesUrl} title="View source code"></a>
-      </div>
-    </Card>
-); 
+<Card>
+<a className="gallery-live-link" href={liveUrl}>
+<img src={"/img/gallery/" + imageUrl} className="screenshot-100"/>
+<h2>{title}</h2>
+<div className="gallery-description">{description}</div>
+</a>
+<div className="gallery-footer">
+<a className="gallery-github-link" href={sourcesUrl} title="View source code"></a>
+</div>
+</Card>
+);
 
 # 画廊
 
