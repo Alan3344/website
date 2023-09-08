@@ -30,7 +30,7 @@ sidebar_label: Animations
 
 将控件的`animate_opacity`设置为`True`，数字或`animation.Animation` class（请参见上文）的实例启用[`Control.opacity`](/docs/controls#opacity)属性的隐式动画。
 
-<img src="/website/img/docs/getting-started/animations/animate-opacity.gif" className="screenshot-20" />
+<img src="/img/docs/getting-started/animations/animate-opacity.gif" className="screenshot-20" />
 
 ```python
 import flet as ft
@@ -64,7 +64,7 @@ ft.app(target=main)
 
 将控件的`animate_rotation`设置为`True`，数字或`animation.Animation` class（请参见上文）的实例启用[`Control.rotate`](/docs/controls#rotate)属性的隐式动画。
 
-<img src="/website/img/docs/getting-started/animations/animate-rotation.gif" className="screenshot-20" />
+<img src="/img/docs/getting-started/animations/animate-rotation.gif" className="screenshot-20" />
 
 ```python
 from math import pi
@@ -100,7 +100,7 @@ ft.app(target=main)
 
 将控件的`animate_scale`设置为`True`，number 或`animation.Animation` class（请参见上文）的实例启用[`Control.scale`](/docs/controls#scale)属性的隐式动画。
 
-<img src="/website/img/docs/getting-started/animations/animate-scale.gif" className="screenshot-20" />
+<img src="/img/docs/getting-started/animations/animate-scale.gif" className="screenshot-20" />
 
 ```python
 import flet as ft
@@ -139,7 +139,7 @@ ft.app(target=main)
 
 偏移动画用于各种滑动效果:
 
-<img src="/website/img/docs/getting-started/animations/animate-offset.gif" className="screenshot-20" />
+<img src="/img/docs/getting-started/animations/animate-offset.gif" className="screenshot-20" />
 
 ```python
 import flet as ft
@@ -173,7 +173,7 @@ ft.app(target=main)
 
 请注意，控制位置仅在`Stack`控制内部。
 
-<img src="/website/img/docs/getting-started/animations/animate-position.gif" className="screenshot-30" />
+<img src="/img/docs/getting-started/animations/animate-position.gif" className="screenshot-30" />
 
 ```python
 import flet as ft
@@ -211,7 +211,7 @@ ft.app(target=main)
 
 设置[`Container.animate`](/docs/controls/container#animate)到`True`，数字或`animation.Animation` class（请参见上文）的实例（请参见上文）启用容器属性的隐式动画，例如大小，背景颜色，边框样式，渐变，渐变。
 
-<img src="/website/img/docs/getting-started/animations/animate-container.gif" className="screenshot-20" />
+<img src="/img/docs/getting-started/animations/animate-container.gif" className="screenshot-20" />
 
 ```python
 import flet as ft
@@ -240,7 +240,7 @@ ft.app(target=main)
 
 [{`AnimatedSwitcher`](/docs/controls/animatedswitcher)允许在新的控件与先前在动画旋转器上设置的控件之间的动画过渡为`content`。
 
-<img src="/website/img/docs/getting-started/animations/animated-switcher-images.gif" className="screenshot-20" />
+<img src="/img/docs/getting-started/animations/animated-switcher-images.gif" className="screenshot-20" />
 
 ```python
 import time

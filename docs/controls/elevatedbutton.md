@@ -4,7 +4,7 @@ sidebar_label: ElevatedButton
 slug: elevatedbutton
 ---
 
-从'@themy/tabs'导入选项卡片;
+import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 高架按钮本质上是带有阴影的音调按钮。 为了防止阴影蠕变，只有在绝对必要的情况下使用它们，例如当按钮需要与图案背景的视觉分离时。 有关更多信息，请参见[材料 3 按钮](https://m3.material.io/components/buttons/overview)。
@@ -35,7 +35,7 @@ ft.app(target=main)
 
 </Tabs>
 
-<img src="/website/img/docs/controls/elevated-button/basic-elevated-buttons.png" className="screenshot-20" />
+<img src="/img/docs/controls/elevated-button/basic-elevated-buttons.png" className="screenshot-20" />
 
 ### Elevated buttons with icons
 
@@ -64,7 +64,7 @@ ft.app(target=main)
 
 </Tabs>
 
-<img src="/website/img/docs/controls/elevated-button/elevated-buttons-with-icons.png" className="screenshot-30" />
+<img src="/img/docs/controls/elevated-button/elevated-buttons-with-icons.png" className="screenshot-30" />
 
 ### Elevated button with `click` event
 
@@ -94,7 +94,7 @@ ft.app(target=main)
 
 </Tabs>
 
-<img src="/website/img/docs/controls/elevated-button/elevated-button-with-click-event.gif" className="screenshot-50" />
+<img src="/img/docs/controls/elevated-button/elevated-button-with-click-event.gif" className="screenshot-50" />
 
 ### 带有自定义内容的高架按钮
 
@@ -140,7 +140,7 @@ ft.app(target=main)
   
 </tabs>
 
-<img src="/website/img/docs/controls/elevated-button/elevated-buttons-with-custom-content.png" className="screenshot-30" />
+<img src="/img/docs/controls/elevated-button/elevated-buttons-with-custom-content.png" className="screenshot-30" />
 
 ## properties
 
@@ -212,7 +212,7 @@ ButtonStyle(
 
 检查以下示例:
 
-<img src="/website/img/blog/gradients/styled-button.gif" className="screenshot-30" />
+<img src="/img/blog/gradients/styled-button.gif" className="screenshot-30" />
 
 ```python
 import flet as ft
@@ -275,7 +275,7 @@ ft.app(target=main)
 
 这是展示各种按钮形状的示例:
 
-<img src="/website/img/blog/gradients/button-shapes.png" className="screenshot-20" />
+<img src="/img/blog/gradients/button-shapes.png" className="screenshot-20" />
 
 ```python
 import flet as ft

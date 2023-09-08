@@ -6,7 +6,7 @@ slug: python-calculator
 
 在本教程中，我们将逐步向您展示如何使用 Flet 框架在 Python 中创建计算器应用程序，并将其部署为 Web 应用程序。 该应用程序是[简单的控制台程序](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc.py)，但它是一个多平台应用程序，其类似于 iPhone Calculator App UI:
 
-<img src="/website/img/docs/calc-tutorial/calc-app.gif" className="screenshot-40" />
+<img src="/img/docs/calc-tutorial/calc-app.gif" className="screenshot-40" />
 
 您可以找到实时演示[此处](https://gallery.flet.dev/calculator/)。
 
@@ -43,7 +43,7 @@ ft.app(target=main)
 
 运行此应用程序，您将看到一个带有问候的新窗口:
 
-<img src="/website/img/docs/tutorial/todo-app-hello-world.png" className="screenshot-40" />
+<img src="/img/docs/tutorial/todo-app-hello-world.png" className="screenshot-40" />
 
 ## 添加页面控件
 
@@ -90,7 +90,7 @@ ft.app(target=main)
 
 运行该应用程序，您应该看到这样的页面:
 
-<img src="/website/img/docs/calc-tutorial/calc-app-1.png" className="screenshot-10" />
+<img src="/img/docs/calc-tutorial/calc-app-1.png" className="screenshot-10" />
 
 ## 建筑页面布局
 
@@ -155,17 +155,17 @@ ft.app(target=main)
 
 运行该应用程序，您应该看到这样的页面:
 
-<img src="/website/img/docs/calc-tutorial/calc-app-2.png" className="screenshot-40" />
+<img src="/img/docs/calc-tutorial/calc-app-2.png" className="screenshot-40" />
 
 ### 使用容器进行装饰
 
 要在计算器周围添加带有圆形边框的黑色背景，我们将使用[容器](/docs/controls/container)控制。 容器只能装饰一个控件，因此我们需要将所有 6 行包裹在一个垂直[列](/docs/controls/container)中，该(/docs/controls/container)将用作容器的`content`:
-<img src="/website/img/docs/calc-tutorial/container-layout.svg" className="screenshot" />
+<img src="/img/docs/calc-tutorial/container-layout.svg" className="screenshot" />
 
 要完成程序的 UI 部分，请更新文本的`color`和`size`属性，以及`color`和`bgcolor`属性的`bgcolor`属性。 为了使行内的按钮对齐，我们将使用`expand`属性，如上图所示。
 
 由于该程序现在太长了，无法将其完全包含在本教程中，请从[此处](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc3.py)复制此步骤的整个代码。 运行该应用程序，您应该看到这样的页面:
-<img src="/website/img/docs/calc-tutorial/calc-app.png" className="screenshot-40" />
+<img src="/img/docs/calc-tutorial/calc-app.png" className="screenshot-40" />
 
 正是我们想要的！
 
@@ -221,7 +221,7 @@ def button_clicked(self, e):
 使用类似的方法，指定`on_click`事件和每个按钮的`data`属性，并根据`e.data`值添加预期操作。 从[此处](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc.py)复制此步骤的整个代码。
 
 运行该应用程序并在操作中查看它:
-<img src="/website/img/docs/calc-tutorial/calc-app.gif" className="screenshot-40" />
+<img src="/img/docs/calc-tutorial/calc-app.gif" className="screenshot-40" />
 
 ## 包装作为桌面应用
 

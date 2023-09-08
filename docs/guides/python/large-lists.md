@@ -21,7 +21,7 @@ ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 
 运行该程序并注意，最初加载并渲染页面上的所有文本行不仅需要几秒钟，而且滚动也很慢，也很懒惰:
 
-<img src="/website/img/docs/getting-started/scroll-column.gif" className="screenshot-50" />
+<img src="/img/docs/getting-started/scroll-column.gif" className="screenshot-50" />
 
 用于显示很多项目的显示列表，请使用[`ListView`](/docs/controls/listview)和[`GridView`](/docs/controls/gridview)控件按需渲染项目，仅在当前滚动位置可见。
 
@@ -47,7 +47,7 @@ ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 
 现在，滚动的光滑且速度足够快，可以遵循鼠标的运动:
 
-<img src="/website/img/docs/getting-started/scroll-listview.gif" className="screenshot-50" />
+<img src="/img/docs/getting-started/scroll-listview.gif" className="screenshot-50" />
 
 :::注意
 我们在 ListView 构造函数中使用了`expand=True`。 为了正常运行，如果指定了`horizontal`），ListView 必须具有高度（或宽度）。 您可以设置绝对大小，例如 `listView（高度= 300，间距= 10）`但是在上面的示例中，我们使 listView 在页面上占用所有可用空间，即展开。 阅读有关[`Control.expand`](/docs/controls#expand)属性的更多信息。
@@ -86,7 +86,7 @@ def main(page: ft.Page):
 ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
 
-<img src="/website/img/docs/getting-started/row-wrap-as-grid.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/row-wrap-as-grid.png" className="screenshot-50" />
 
 尝试滚动和调整浏览器窗口的大小 - 一切正常，但是很懒惰。
 
@@ -123,7 +123,7 @@ def main(page: ft.Page):
 ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
 
-<img src="/website/img/docs/getting-started/grid-view.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/grid-view.png" className="screenshot-50" />
 
 随着 GridView 滚动和窗口调整的调整，响应良好！
 
@@ -155,4 +155,4 @@ def main(page: ft.Page):
 ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
 
-<img src="/website/img/docs/getting-started/sending-page-updates-in-batches.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/sending-page-updates-in-batches.png" className="screenshot-50" />

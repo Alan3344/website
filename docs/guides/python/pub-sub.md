@@ -46,4 +46,4 @@ def main(page: ft.Page):
 ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
 
-<img src="/website/img/docs/getting-started/chat-app-example.gif" className="screenshot-70" />
+<img src="/img/docs/getting-started/chat-app-example.gif" className="screenshot-70" />

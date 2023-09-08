@@ -48,7 +48,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/snackbar/snackbar-with-custom-content.gif" className="screenshot-40"/>
+<img src="/img/docs/controls/snackbar/snackbar-with-custom-content.gif" className="screenshot-40"/>
 
 ## properties
 

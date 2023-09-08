@@ -8,11 +8,11 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [releases]
 ---
 
-从'@site/src/components/card'导入卡片';
+import Card from '@site/src/components/card';
 
 我们刚刚发布了具有超级令人兴奋的新功能的[Flet 0.4.0](https://pypi.org/project/flet/) - [包装 Flet 应用程序中的独立静态网站](/docs/guides/python/publishing-static-website)，可以完全在浏览器中运行！ 该应用程序可以发布给静态网站的任何免费托管，例如 GitHub 页面或 CloudFlare 页面。 感谢[Pyodide](https://pyodide.org/en/stable/) - WebAssembly 的 Python 端口！
 
-<img src="/website/img/blog/pyodide/pyodide-logo.png" className="screenshot-50" />
+<img src="/img/blog/pyodide/pyodide-logo.png" className="screenshot-50" />
 
 You can quickly build awesome single-page applications (SPA) entirely in Python and host them everywhere! No HTML, CSS or JavaScript required!
 
@@ -72,7 +72,7 @@ python -m http.server --directory dist
 
 Open `http://localhost:8000` in your browser to check the published app.
 
-<img src="/website/img/docs/getting-started/flet-counter-safari.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/flet-counter-safari.png" className="screenshot-50" />
 
 Here are a few live Flet apps hosted at Cloudflare Pages:
 

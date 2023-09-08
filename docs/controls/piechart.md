@@ -12,7 +12,7 @@ slug: piechart
 
 ### PieChart 1
 
-<img src="/website/img/docs/controls/charts/piechart-sample-1.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/charts/piechart-sample-1.gif" className="screenshot-30"/>
 
 ```python
 import flet as ft
@@ -68,7 +68,7 @@ ft.app(main)
 
 ### PieChart 2
 
-<img src="/website/img/docs/controls/charts/piechart-sample-2.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/charts/piechart-sample-2.gif" className="screenshot-30"/>
 
 ```python
 import flet as ft
@@ -140,7 +140,7 @@ ft.app(main)
 
 ### PieChart 3
 
-<img src="/website/img/docs/controls/charts/piechart-sample-3.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/charts/piechart-sample-3.gif" className="screenshot-30"/>
 
 ```python
 import flet as ft
@@ -232,7 +232,7 @@ ft.app(main)
 
 ## `PieChart`属性
 
-<img src="/website/img/docs/controls/charts/piechart-diagram.svg" className="screenshot-40"/>
+<img src="/img/docs/controls/charts/piechart-diagram.svg" className="screenshot-40"/>
 
 ### `animate`
 

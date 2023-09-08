@@ -86,7 +86,7 @@ flet pack your_program.py --add-data "assets;assets"
 - ` -  opyright`-关于“关于”对话中所示的版权通知。
 - `-bundle-id`唯一捆绑包 ID。
 
-<img src="/website/img/docs/getting-started/package-desktop/flet-app-bundle-about.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/package-desktop/flet-app-bundle-about.png" className="screenshot-50" />
 
 ## 自定义 Windows 可执行元数据
 
@@ -122,7 +122,7 @@ AppVeyor 是 Flet 的背后的公司。
 
 当您将任何更改推向 GitHub 存储库时，Appveyor 将自动启动新的构建:
 
-<img src="/website/img/docs/getting-started/appveyor-ci-flet-python-project.png" className="screenshot-70" />
+<img src="/img/docs/getting-started/appveyor-ci-flet-python-project.png" className="screenshot-70" />
 
 [CI Workflow](https://ci.appveyor.com/project/flet-dev/python-ci-example)在每个推送库中都有什么作用:
 
@@ -136,6 +136,6 @@ AppVeyor 是 Flet 的背后的公司。
 `GITHUB_TOKEN`在`appveyor.yml`中是 Appveyor 使用的 GitHub 个人访问令牌（PAT），以将创建的软件包发布给存储库“发行”。 您需要生成自己的令牌并将其替换为`appveyor.yml`。 登录到您的 github 帐户，然后导航到[个人访问令牌](https://github.com/settings/tokens)页面。 单击“生成新令牌”，然后为公共或私人存储库选择“ public_repo”或“ repo”范围。 副本生成的令牌给 CLI
 为您的 Python 项目配置 Appveyor，将新标签推向存储库，然后“自动”获取 GitHub 版本中所有三个平台的桌面捆绑包！ 🎉
 
-<img src="/website/img/docs/getting-started/appveyor-ci-flet-github-releases.png" className="screenshot-70" />
+<img src="/img/docs/getting-started/appveyor-ci-flet-github-releases.png" className="screenshot-70" />
 
 除了[github 释放](https://www.appveyor.com/docs/deployment/github/)外，您还可以将伪像释放到[Amazon S3 桶](https://www.appveyor.com/docs/deployment/amazon-s3/)或[Azure Blob Storage](https://www.appveyor.com/docs/deployment/azure-blob/)。

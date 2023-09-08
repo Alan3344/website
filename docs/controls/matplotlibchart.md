@@ -12,7 +12,7 @@ slug: matplotlibchart
 
 以下示例基于[Matplotlib Docs 的原始示例](https://matplotlib.org/stable/gallery/lines_bars_and_markers/bar_colors.html#sphx-glr-gallery-lines-bars-and-markers-bar-colors-py)。
 
-<img src="/website/img/docs/controls/charts/matplotlib-barchart.png" className="screenshot-60"/>
+<img src="/img/docs/controls/charts/matplotlib-barchart.png" className="screenshot-60"/>
 
 ```python
 import matplotlib
@@ -49,7 +49,7 @@ ft.app(target=main)
 
 以下示例基于[Matplotlib Docs 的原始示例](https://matplotlib.org/stable/gallery/lines_bars_and_markers/cohere.html#sphx-glr-gallery-lines-bars-and-markers-cohere-py)。
 
-<img src="/website/img/docs/controls/charts/matplotlib-linechart.png" className="screenshot-60"/>
+<img src="/img/docs/controls/charts/matplotlib-linechart.png" className="screenshot-60"/>
 
 ```python
 import matplotlib

@@ -20,7 +20,7 @@ Flutter 提供[多种方法](https://docs.flutter.dev/development/ui/animations)
 <a href="https://flet-animation.herokuapp.com/">Check out this live demo!</a>
 </div>
 
-<a href="https://flet-animation.herokuapp.com/"><img src="/website/img/blog/animations/flet-animation-demo.gif" className="screenshot-100" /></a>
+<a href="https://flet-animation.herokuapp.com/"><img src="/img/blog/animations/flet-animation-demo.gif" className="screenshot-100" /></a>
 
 [探索演示源](https://github.com/flet-dev/flet-heroku-app)。 顺便说一句，该演示托管在 Heroku 上，因此您可以将其用作自己部署的起点。
 
@@ -36,7 +36,7 @@ Flutter 提供[多种方法](https://docs.flutter.dev/development/ui/animations)
 
 此外，所有`Container`控制属性[现在可以动画](/docs/guides/python/animations#animated-container)，并且有一个新的[`AnimatedSwitcher`](/docs/controls/animatedswitcher)控制旧内容之间的动画过渡。
 
-<img src="/website/img/docs/controls/animated-switcher/animated-switcher.gif" className="screenshot-20" />
+<img src="/img/docs/controls/animated-switcher/animated-switcher.gif" className="screenshot-20" />
 
 ## 其他新功能
 

@@ -11,7 +11,7 @@ slug: python-solitaire
 在这里，您可以看到您将使用 Flet 和本教程实现的最终结果:
 https://gallery.flet.dev/solitaire/
 
-<img src="/website/img/docs/solitaire-tutorial/part1_final.gif" className="screenshot-50" />
+<img src="/img/docs/solitaire-tutorial/part1_final.gif" className="screenshot-50" />
 
 我们将游戏实现分解为以下步骤:
 
@@ -50,7 +50,7 @@ ft.app(target=main)
 
 运行此应用程序，您将看到一个带有问候的新窗口:
 
-<img src="/website/img/docs/tutorial/todo-app-hello-world.png" className="screenshot-40" />
+<img src="/img/docs/tutorial/todo-app-hello-world.png" className="screenshot-40" />
 
 ## 可拖动卡片的概念应用程序证明
 
@@ -83,7 +83,7 @@ ft.app(target=main)
 ```
 
 运行应用程序以查看添加到堆栈的卡片:
-<img src="/website/img/docs/solitaire-tutorial/drag_and_drop1.png" className="screenshot-50" />
+<img src="/img/docs/solitaire-tutorial/drag_and_drop1.png" className="screenshot-50" />
 
 为了能够移动卡片，我们将创建一个`drag`方法，该方法将在`on_pan_update`的`on_pan_update`事件中调用，该事件发生在每个`drag_interval`时，当用户用鼠标拖动卡片时。
 
@@ -119,7 +119,7 @@ ft.app(target=main)
 ```
 
 现在您可以看到卡片移动:
-<img src="/website/img/docs/solitaire-tutorial/drag_and_drop2.gif" className="screenshot-50" />
+<img src="/img/docs/solitaire-tutorial/drag_and_drop2.gif" className="screenshot-50" />
 
 :::注意
 更新控件的任何属性后，应要求对控件的`update()`方法（或其母体控件）进行更新生效。
@@ -130,7 +130,7 @@ ft.app(target=main)
 ### 步骤 2: 将卡片片放在插槽或弹跳中 回来了
 
 此步骤的目标是，如果它足够近，则能够将卡片片放入插槽中，如果不是，则可以将其弹回。
-<img src="/website/img/docs/solitaire-tutorial/drag_and_drop3.gif" className="screenshot-50" />
+<img src="/img/docs/solitaire-tutorial/drag_and_drop3.gif" className="screenshot-50" />
 
 让我们创建一个`Container`控件，该控件将代表一个插槽，我们将删除卡片:
 
@@ -237,7 +237,7 @@ def drop(e: ft.DragEndEvent):
 ```
 
 现在，如果您使用两张卡片运行该应用程序，您会注意到，当您四处移动卡片时，黄牌（card2）正在按预期移动，但是绿色卡片（card1）在黄牌下移动。
-<img src="/website/img/docs/solitaire-tutorial/drag_and_drop4.gif" className="screenshot-50" />
+<img src="/img/docs/solitaire-tutorial/drag_and_drop4.gif" className="screenshot-50" />
 
 之所以发生，是因为 Card2 在 Card1 之后添加到堆栈`controls`的列表中。 要解决此问题，我们需要将可拖动卡片移至`on_pan_start`事件上的控件列表的顶部:
 
@@ -255,7 +255,7 @@ def start_drag(e: ft.DragStartEvent):
 ```
 
 现在，可以将两张卡片拖动而没有问题:
-<img src="/website/img/docs/solitaire-tutorial/drag_and_drop5.gif" className="screenshot-50" />
+<img src="/img/docs/solitaire-tutorial/drag_and_drop5.gif" className="screenshot-50" />
 
 可以找到此步骤的完整代码[此处](https://github.com/flet-dev/examples/blob/main/python/tutorials/solitaire/solitaire-drag-and-drop/step3.py)。
 
@@ -305,7 +305,7 @@ def drop(e: ft.DragEndEvent):
 ```
 
 结果，可以在三个插槽之间拖动两张卡片:
-<img src="/website/img/docs/solitaire-tutorial/drag_and_drop6.gif" className="screenshot-50" />
+<img src="/img/docs/solitaire-tutorial/drag_and_drop6.gif" className="screenshot-50" />
 
 可以找到此步骤的完整代码[此处](https://github.com/flet-dev/examples/blob/main/python/tutorials/solitaire/solitaire-drag-and-drop/step4.py)。
 
@@ -318,7 +318,7 @@ def drop(e: ft.DragEndEvent):
 在实际的单人游戏中，如果已经有一张卡片片插槽中的卡片片，则要将可拖动卡片放低一点，以便您也可以看到上一张卡片，如果有两张卡片，甚至较低。 这些被称为“扇形桩”。
 
 然后，我们希望能够从扇形堆中挑选一张不是堆的顶部卡片片，并将卡片与下面的所有卡片一起拖动:
-<img src="/website/img/docs/solitaire-tutorial/fanned_piles3.gif" className="screenshot-50" />
+<img src="/img/docs/solitaire-tutorial/fanned_piles3.gif" className="screenshot-50" />
 
 为此，拥有有关拖动卡片的插槽中以及掉落的插槽中的插槽中的一堆卡片的信息将很有用。 让我们重组我们的程序，并为实施扇形桩做好准备。
 
@@ -505,12 +505,12 @@ def place(self, slot):
 ```
 
 现在，将卡片片放置在偏移量中，这使我们散发着扇形的堆外观:
-<img src="/website/img/docs/solitaire-tutorial/fanned_piles1.png" className="screenshot-50" />
+<img src="/img/docs/solitaire-tutorial/fanned_piles1.png" className="screenshot-50" />
 
 ### 拖拉卡片片
 
 如果您现在尝试从堆的底部拖动卡片片，则看起来像这样:
-<img src="/website/img/docs/solitaire-tutorial/fanned_piles2.gif" className="screenshot-50" />
+<img src="/img/docs/solitaire-tutorial/fanned_piles2.gif" className="screenshot-50" />
 
 为了解决此问题，我们需要更新与可拖动卡片一起使用的所有方法，以便与可拖动堆一起使用。
 
@@ -595,7 +595,7 @@ def bounce_back(self):
 
 > 四个基础（图右上方的轻矩形）是由从 Ace（低点中的低）到 King 建立的，可以通过其他颜色来建造 Tableau Pile。
 
-<img src="/website/img/docs/solitaire-tutorial/game_setup_wiki.png" className="screenshot-40" />
+<img src="/img/docs/solitaire-tutorial/game_setup_wiki.png" className="screenshot-40" />
 
 现在，我们将逐步进行此设置。
 
@@ -695,7 +695,7 @@ def create_card_deck(self):
 
 klondike solitaire 游戏布局应该看起来像这样:
 
-<img src="/website/img/docs/solitaire-tutorial/solitaire-layout.svg" className="screenshot-80" />
+<img src="/img/docs/solitaire-tutorial/solitaire-layout.svg" className="screenshot-80" />
 
 让我们在`solitaire.create_slots()`中创建所有这些插槽:
 
@@ -765,7 +765,7 @@ def deal_cards(self):
 ```
 
 让我们来运行程序，看看我们现在的位置:
-<img src="/website/img/docs/solitaire-tutorial/game_setup1.png" className="screenshot-40" />
+<img src="/img/docs/solitaire-tutorial/game_setup1.png" className="screenshot-40" />
 
 将库存的卡片片放在扇形的堆中，其方式与 Tableau 相同，但应该放置在常规堆中。 要解决此问题，让我们将此条件添加到`card.place()`方法:
 
@@ -780,7 +780,7 @@ def place(self, slot):
 ```
 
 现在，卡片片仅放在扇形堆中到 Tableau:
-<img src="/website/img/docs/solitaire-tutorial/game_setup2.png" className="screenshot-40" />
+<img src="/img/docs/solitaire-tutorial/game_setup2.png" className="screenshot-40" />
 
 如果您现在尝试移动卡片片，则该程序将无法正常工作。 这样做的原因是，在`card.drop()`中，方法通过我们现在没有的插槽列表迭代。
 
@@ -840,7 +840,7 @@ for slot in self.tableau:
 ```
 
 让我们看看现在的外观:
-<img src="/website/img/docs/solitaire-tutorial/game_setup3.png" className="screenshot-50" />
+<img src="/img/docs/solitaire-tutorial/game_setup3.png" className="screenshot-50" />
 
 可以找到此步骤的完整源代码[此处](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-game-setup)。
 
@@ -849,7 +849,7 @@ for slot in self.tableau:
 ## solitaire 规则
 
 如果您运行当前版本的 Solitaire，您会注意到您可以用卡片片做一些疯狂的事情:
-<img src="/website/img/docs/solitaire-tutorial/game_rules1.gif" className="screenshot-50" />
+<img src="/img/docs/solitaire-tutorial/game_rules1.gif" className="screenshot-50" />
 
 现在是时候实施一些规则了。
 
@@ -906,7 +906,7 @@ def click(self, e):
 ```
 
 让我们检查一下它的工作方式:
-<img src="/website/img/docs/solitaire-tutorial/game_rules2.gif" className="screenshot-50" />
+<img src="/img/docs/solitaire-tutorial/game_rules2.gif" className="screenshot-50" />
 
 ### 基础规则
 
@@ -1170,7 +1170,7 @@ def winning_sequence(self):
 ```
 
 您可以想象，我花了一段时间才赢得游戏并拍摄此视频，但是这里是:
-<img src="/website/img/docs/solitaire-tutorial/winning_the_game.gif" className="screenshot-50" />
+<img src="/img/docs/solitaire-tutorial/winning_the_game.gif" className="screenshot-50" />
 
 哇！ 我们做到了。 您可以找到 Solitaire Game [此处](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-final-part1)的第 1 部分的完整源代码。
 

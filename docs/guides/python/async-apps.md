@@ -122,4 +122,4 @@ async def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<img src="/website/img/docs/getting-started/user-control-countdown.gif" className="screenshot-40" />
+<img src="/img/docs/getting-started/user-control-countdown.gif" className="screenshot-40" />

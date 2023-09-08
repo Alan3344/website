@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 ### 具有不同背景颜色的容器
 
-<img src="/website/img/docs/controls/container/containers-background-color.png" className="screenshot-50" />
+<img src="/img/docs/controls/container/containers-background-color.png" className="screenshot-50" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -57,7 +57,7 @@ ft.app(target=main)
 
 ### 可单击的容器
 
-<img src="/website/img/docs/controls/container/clickable-container.gif" className="screenshot-50" />
+<img src="/img/docs/controls/container/clickable-container.gif" className="screenshot-50" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -130,7 +130,7 @@ ft.app(target=main)
 
 ## 属性
 
-<img src="/website/img/docs/controls/container/container-diagram.png" className="screenshot-50" />
+<img src="/img/docs/controls/container/container-diagram.png" className="screenshot-50" />
 
 ### `alignment`
 
@@ -138,7 +138,7 @@ ft.app(target=main)
 
 对齐是`alignment.Alignment`类对象的实例，`x`和`y`属性代表距矩形中心的距离。 `x=0`，`y=0`表示矩形的中心。 `x = -1`，`y = -1`代表矩形的左上角，`x=1.0`，`y=1.0`表示矩形的右下角。 `flet.alignment`模块中有预定的对齐常数: `top_left`，`top_center`，`top_right`，`center_left`，`center`，`center`，`center_right`，`center_right`，`bottom_left`，`bottom_left`，`bottom_center`，`bottom_center`，`bottom_center`，{279917}。
 
-<img src="/website/img/docs/controls/container/container-alignments-diagram.png" className="screenshot-40" />
+<img src="/img/docs/controls/container/container-alignments-diagram.png" className="screenshot-40" />
 
 例如:
 
@@ -149,7 +149,7 @@ container_2.alignment = alignment.top_left
 container_3.alignment = alignment.Alignment(-0.5, -0.5)
 ```
 
-<img src="/website/img/docs/controls/container/containers-alignments.png" className="screenshot-50" />
+<img src="/img/docs/controls/container/containers-alignments.png" className="screenshot-50" />
 
 ### `animate`
 
@@ -163,7 +163,7 @@ container_3.alignment = alignment.Alignment(-0.5, -0.5)
 
 例如:
 
-<img src="/website/img/docs/controls/container/animate-container.gif" className="screenshot-20" />
+<img src="/img/docs/controls/container/animate-container.gif" className="screenshot-20" />
 
 ```python
 import flet as ft
@@ -304,7 +304,7 @@ child 控件由容器包含。
 
 #### `LinearGradient`
 
-<img src="/website/img/docs/controls/container/linear-gradient.png" className="screenshot-20" />
+<img src="/img/docs/controls/container/linear-gradient.png" className="screenshot-20" />
 
 ```python
 Container(
@@ -335,7 +335,7 @@ Container(
 
 #### `RadialGradient`
 
-<img src="/website/img/docs/controls/container/radial-gradient.png" className="screenshot-20" />
+<img src="/img/docs/controls/container/radial-gradient.png" className="screenshot-20" />
 
 ```python
 Container(
@@ -362,7 +362,7 @@ Container(
 
 #### `SweepGradient`
 
-<img src="/website/img/docs/controls/container/sweep-gradient.png" className="screenshot-20" />
+<img src="/img/docs/controls/container/sweep-gradient.png" className="screenshot-20" />
 
 ```python
 Container(
@@ -433,7 +433,7 @@ container_3.margin = margin.symmetric(vertical=10)
 container_3.margin = margin.only(left=10)
 ```
 
-<img src="/website/img/docs/controls/container/container-margin-diagram.png" className="screenshot-50" />
+<img src="/img/docs/controls/container/container-margin-diagram.png" className="screenshot-50" />
 
 ### `padding`
 
@@ -455,7 +455,7 @@ container_3.padding = ft.padding.symmetric(horizontal=10)
 container_4.padding=padding.only(left=10)
 ```
 
-<img src="/website/img/docs/controls/container/container-padding-diagram.png" className="screenshot-50" />
+<img src="/img/docs/controls/container/container-padding-diagram.png" className="screenshot-50" />
 
 ### `shadow`
 
@@ -542,7 +542,7 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-<img src="/website/img/blog/theme-scrolling/nested-themes.png"  className="screenshot-60" />
+<img src="/img/blog/theme-scrolling/nested-themes.png"  className="screenshot-60" />
 
 ### `url`
 

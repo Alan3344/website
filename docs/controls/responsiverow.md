@@ -4,7 +4,7 @@ sidebar_label: ResponsiveRow
 slug: responsiverow
 ---
 
-从'@themy/tabs'导入选项卡片;
+import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 `ResponsiveRow`从[Bootstrap](https://getbootstrap.com/docs/5.2/layout/grid/) Web Framework 借用网格布局的想法。
@@ -52,7 +52,7 @@ ft.ResponsiveRow([
 
 ### pownlowsiverow
 
-<img src="/website/img/docs/controls/responsive-row/responsive-layout.gif" className="screenshot-100"/>
+<img src="/img/docs/controls/responsive-row/responsive-layout.gif" className="screenshot-100"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>

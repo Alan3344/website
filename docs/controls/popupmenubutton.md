@@ -53,7 +53,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/popup-menu-button/popup-menu-button-with-custom-content.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/popup-menu-button/popup-menu-button-with-custom-content.gif" className="screenshot-30"/>
 
 ## `PopupMenuButton` properties
 

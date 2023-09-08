@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 ### 在图像边缘添加粉红色的光芒
 
-<img src="/website/img/docs/controls/shader-mask/shader-mask-pink-glow.png" className="screenshot-20" />
+<img src="/img/docs/controls/shader-mask/shader-mask-pink-glow.png" className="screenshot-20" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -56,7 +56,7 @@ ft.app(target=main)
 
 ### 逐渐淡出图像到底部边缘
 
-<img src="/website/img/docs/controls/shader-mask/shader-mask-gradient.png" className="screenshot-20" />
+<img src="/img/docs/controls/shader-mask/shader-mask-gradient.png" className="screenshot-20" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>

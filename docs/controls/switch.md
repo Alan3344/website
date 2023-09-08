@@ -46,7 +46,7 @@ ft.app(target=main, view=ft.AppView.WEB_BROWSER)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/switch/basic-switch.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/switch/basic-switch.gif" className="screenshot-30"/>
 
 ### Switch with `on_change` event
 
@@ -78,7 +78,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/switch/switch-with-change-event.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/switch/switch-with-change-event.gif" className="screenshot-30"/>
 
 ## properties
 

@@ -3,7 +3,7 @@ title: Testing Flet app on Android
 sidebar_label: Testing on Android
 ---
 
-从'@themy/tabs'导入选项卡片;
+import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 仅使用您的计算机和手机就开始在 Python 中构建出色的移动应用程序！
@@ -74,7 +74,7 @@ flet run --android
 
 带有编码项目 URL 的 QR 码将显示在终端中:
 
-<img src="/website/img/docs/getting-started/testing-on-android/app-qr-code.png" className="screenshot-30 screenshot-rounded" />
+<img src="/img/docs/getting-started/testing-on-android/app-qr-code.png" className="screenshot-30 screenshot-rounded" />
 
 在您的 Android 设备上打开**相机**应用程序，指向 QR 码，然后单击 URL 以在 Flet 应用中打开它。
 

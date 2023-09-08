@@ -54,7 +54,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/image/custom-images.gif" className="screenshot-50"/>
+<img src="/img/docs/controls/image/custom-images.gif" className="screenshot-50"/>
 
 ## properties
 

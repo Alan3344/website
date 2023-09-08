@@ -67,7 +67,7 @@ def main(page: ft.Page):
 ft.app(target=main, assets_dir="assets")
 ```
 
-<img src="/website/img/blog/using-custom-fonts-in-flet-app/custom-fonts-example.png" className="screenshot-50" />
+<img src="/img/blog/using-custom-fonts-in-flet-app/custom-fonts-example.png" className="screenshot-50" />
 
 ## 静态 VS 变量字体
 

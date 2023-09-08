@@ -56,13 +56,13 @@ ft.app(target=main)
 
 ### 所有对话模式
 
-<img src="/website/img/docs/controls/file-picker/file-picker-all-modes-demo.png" className="screenshot-70" />
+<img src="/img/docs/controls/file-picker/file-picker-all-modes-demo.png" className="screenshot-70" />
 
 [源代码](https://github.com/flet-dev/examples/blob/main/python/controls/file-picker/file-picker-all-modes.py)
 
 ### 上传多个文件
 
-<img src="/website/img/docs/controls/file-picker/file-picker-multiple-uploads.png" className="screenshot-40" />
+<img src="/img/docs/controls/file-picker/file-picker-multiple-uploads.png" className="screenshot-40" />
 
 [源代码](https://github.com/flet-dev/examples/blob/main/python/controls/file-picker/file-picker-upload-progress.py)
 

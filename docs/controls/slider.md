@@ -57,7 +57,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/slider/slider-with-custom-content.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/slider/slider-with-custom-content.gif" className="screenshot-30"/>
 
 ### Slider with `on_change` event
 
@@ -84,7 +84,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/slider/slider-with-change-event.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/slider/slider-with-change-event.gif" className="screenshot-30"/>
 
 ## properties
 

@@ -4,7 +4,7 @@ sidebar_label: IconButton
 slug: iconbutton
 ---
 
-从'@themy/tabs'导入选项卡片;
+import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 图标按钮是一个圆形按钮，中间带有图标，通过填充颜色（墨水）对触摸做出反应。
@@ -52,7 +52,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/icon-button/icon-buttons.gif" className="screenshot-50" />
+<img src="/img/docs/controls/icon-button/icon-buttons.gif" className="screenshot-50" />
 
 ### Icon button with `click` event
 
@@ -84,7 +84,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/icon-button/icon-button-with-click-event.gif" className="screenshot-50" />
+<img src="/img/docs/controls/icon-button/icon-button-with-click-event.gif" className="screenshot-50" />
 
 ## properties
 
@@ -122,7 +122,7 @@ ft.app(target=main)
 
 EN 图标切换按钮的示例:
 
-<img src="/website/img/blog/gradients/toggle-icon-button.gif" className="screenshot-10" />
+<img src="/img/blog/gradients/toggle-icon-button.gif" className="screenshot-10" />
 
 ```python
 import flet as ft

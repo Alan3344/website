@@ -6,7 +6,7 @@ slug: python-todo
 
 在本教程中，我们将逐步向您展示如何使用 Flet 框架在 Python 中创建一个 TODO Web 应用程序，然后在 Internet 上共享。 该应用程序是一个单文件控制台程序，仅[Python Code 的 180 行（格式化！）](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py)，但它是一个具有丰富，响应式 UI 的多条文，现代的单页应用程序:
 
-<img src="/website/img/docs/tutorial/todo-complete-demo-web.gif" className="screenshot-70" />
+<img src="/img/docs/tutorial/todo-complete-demo-web.gif" className="screenshot-70" />
 
 您可以看到实时演示[此处](https://gallery.flet.dev/todo/)。
 
@@ -46,7 +46,7 @@ ft.app(target=main)
 
 运行此应用程序，您将看到一个带有问候的新窗口:
 
-<img src="/website/img/docs/tutorial/todo-app-hello-world.png" className="screenshot-40" />
+<img src="/img/docs/tutorial/todo-app-hello-world.png" className="screenshot-40" />
 
 ## 添加页面控件和处理事件
 
@@ -74,13 +74,13 @@ ft.app(target=main)
 
 运行该应用程序，您应该看到这样的页面:
 
-<img src="/website/img/docs/tutorial/todo-app-1.png" className="screenshot-40" />
+<img src="/img/docs/tutorial/todo-app-1.png" className="screenshot-40" />
 
 ### 页面布局
 
 现在，让我们的应用看起来不错！ 我们希望整个应用程序位于页面的顶部中心，占用 600 个 PX 宽度。 TextField 和“+”按钮应水平对齐，并占用完整的应用程序宽度:
 
-<img src="/website/img/docs/tutorial/todo-diagram-1.svg" className="screenshot" />
+<img src="/img/docs/tutorial/todo-diagram-1.svg" className="screenshot" />
 
 [`Row`](/docs/controls/row)是用于将其 children 放置在页面上的控件。 [`Column`](/docs/controls/column)是用于将其 children 放置在页面上的控件。
 
@@ -119,7 +119,7 @@ ft.app(target=main)
 
 运行该应用程序，您应该看到这样的页面:
 
-<img src="/website/img/docs/tutorial/todo-app-2.png" className="screenshot-50" />
+<img src="/img/docs/tutorial/todo-app-2.png" className="screenshot-50" />
 
 ### 可重复使用的 UI 组件
 
@@ -187,7 +187,7 @@ page.add(app1, app2)
 
 在[上一个步骤](#adding-page-controls-and-handling-events)中，我们创建了一个基本的 TODO 应用，其中显示为复选框。 让我们通过在任务名称旁边添加“编辑”和“删除”按钮来改进应用程序。 “编辑”按钮将将任务项切换为编辑模式。
 
-<img src="/website/img/docs/tutorial/todo-diagram-2.svg" className="screenshot" />
+<img src="/img/docs/tutorial/todo-diagram-2.svg" className="screenshot" />
 
 每个任务项由两个行表示: `display_view`与复选框，“编辑”和“删除”按钮和`edit_view`行带有 TextField 和“ Save”按钮。 `view`列用作`display_view`和`edit_view`行的容器。
 
@@ -302,7 +302,7 @@ class Task(ft.UserControl):
 
 运行应用程序并尝试编辑和删除任务:
 
-<img src="/website/img/docs/tutorial/view-edit-delete.gif" className="screenshot-50" />
+<img src="/img/docs/tutorial/view-edit-delete.gif" className="screenshot-50" />
 
 ## 过滤列表项目
 
@@ -398,7 +398,7 @@ class Task(ft.UserControl):
 
 运行应用程序并通过单击选项卡片: 尝试过滤任务:
 
-<img src="/website/img/docs/tutorial/todo-app-filtering.gif" className="screenshot-50" />
+<img src="/img/docs/tutorial/todo-app-filtering.gif" className="screenshot-50" />
 
 ## 最终触摸
 
@@ -467,7 +467,7 @@ class TodoApp():
 
 运行应用程序:
 
-<img src="/website/img/docs/tutorial/todo-app-4.png" className="screenshot-50" />
+<img src="/img/docs/tutorial/todo-app-4.png" className="screenshot-50" />
 
 ## 部署应用程序
 

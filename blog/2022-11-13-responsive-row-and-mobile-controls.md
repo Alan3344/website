@@ -53,7 +53,7 @@ ft.ResponsiveRow([
 
 这是响应式布局的更详细的示例:
 
-<img src="/website/img/docs/controls/responsive-row/responsive-layout.gif" className="screenshot-100"/>
+<img src="/img/docs/controls/responsive-row/responsive-layout.gif" className="screenshot-100"/>
 
 ```python
 import flet as ft
@@ -118,7 +118,7 @@ ft.app(target=main)
 
 显示模态材料设计底部:
 
-<img src="/website/img/docs/controls/bottom-sheet/bottom-sheet-sample.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/bottom-sheet/bottom-sheet-sample.gif" className="screenshot-30"/>
 
 `BottomSheet` [docs](/docs/controls/bottomsheet)，[example](https://github.com/flet-dev/examples/blob/main/python/controls/bottom-sheet/modal-bottom-sheet.py)。
 
@@ -126,7 +126,7 @@ ft.app(target=main)
 
 底部导航栏，提供了一种持久和方便的方式，可以在应用程序中的主要目的地之间切换:
 
-<img src="/website/img/docs/controls/navigation-bar/navigation-bar-sample.gif" className="screenshot-40"/>
+<img src="/img/docs/controls/navigation-bar/navigation-bar-sample.gif" className="screenshot-40"/>
 
 `NavigationBar` [docs](/docs/controls/navigationbar)，[example](https://github.com/flet-dev/examples/blob/main/python/controls/navigation-bar/navigation-bar-sample.py)。
 
@@ -134,7 +134,7 @@ ft.app(target=main)
 
 工具提示控件:
 
-<img src="/website/img/docs/controls/tooltip/custom-tooltip.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/tooltip/custom-tooltip.gif" className="screenshot-30"/>
 
 `Tooltip` [docs](/docs/controls/tooltip)，[example](https://github.com/flet-dev/examples/blob/main/python/controls/tooltip/custom-tooltip.py)。
 
@@ -156,7 +156,7 @@ ft.app(target=main)
 
 [示例代码](https://github.com/flet-dev/examples/blob/main/python/controls/markdown/markdown-code-highlight.py)。
 
-<img src="/website/img/docs/controls/markdown/markdown-highlight.png" className="screenshot-60"/>
+<img src="/img/docs/controls/markdown/markdown-highlight.png" className="screenshot-60"/>
 
 ### 变量字体支持
 
@@ -164,7 +164,7 @@ Flutter 最终支持[可变字体](https://fonts.google.com/knowledge/introducin
 
 [示例代码](https://github.com/flet-dev/examples/blob/main/python/controls/text/variable-weight-font.py)。
 
-<img src="/website/img/docs/controls/text/variable-weight-font.gif" className="screenshot-50" />
+<img src="/img/docs/controls/text/variable-weight-font.gif" className="screenshot-50" />
 
 升级 Flet 模块到最新版本（`pip install install flet -upgrade`）和[让我们知道](https://discord.gg/dzWXP8SHG8)您的想法！
 

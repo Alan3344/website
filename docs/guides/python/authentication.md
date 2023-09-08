@@ -57,12 +57,12 @@ Flet 具有以下内置的 OAuth 提供商:
 {application-url}/api/oauth/redirect
 ```
 
-<img src="/website/img/docs/getting-started/authentication/github-new-oauth-app.png" className="screenshot-40" />
+<img src="/img/docs/getting-started/authentication/github-new-oauth-app.png" className="screenshot-40" />
 
 On OAuth app details page click "Generate a new client secret" button.
 Copy "Client ID" and "Client secret" values to a safe place - you'll need them in a Flet app.
 
-<img src="/website/img/docs/getting-started/authentication/github-oauth-app-details.png" className="screenshot-40" />
+<img src="/img/docs/getting-started/authentication/github-oauth-app-details.png" className="screenshot-40" />
 
 ## Sign in with OAuth provider
 
@@ -116,7 +116,7 @@ Run the program and click "Login with GitHub" button. GitHub authorize app page 
 - **Web** app - a new popup window (make sure popup blocker is off).
 - **Mobile** app - an in-app web browser.
 
-<img src="/website/img/docs/getting-started/authentication/github-oauth-authorize.png" className="screenshot-40" />
+<img src="/img/docs/getting-started/authentication/github-oauth-authorize.png" className="screenshot-40" />
 
 ### Redirect URL
 

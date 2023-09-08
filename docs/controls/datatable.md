@@ -12,7 +12,7 @@ slug: datatable
 
 ### 一个简单的数据表
 
-<img src="/website/img/docs/controls/datatable/datatable-minimal.png" className="screenshot-50"/>
+<img src="/img/docs/controls/datatable/datatable-minimal.png" className="screenshot-50"/>
 
 ```python
 import flet as ft
@@ -56,7 +56,7 @@ ft.app(target=main)
 
 ### 样式的数据表
 
-<img src="/website/img/docs/controls/datatable/datatable-styled.png" className="screenshot-70"/>
+<img src="/img/docs/controls/datatable/datatable-styled.png" className="screenshot-70"/>
 
 ```python
 import flet as ft

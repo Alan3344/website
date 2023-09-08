@@ -4,7 +4,7 @@ title: Introduction
 slug: /
 ---
 
-从'@them/tabs'导入选项卡片;
+import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## 什么是 Flet
@@ -67,11 +67,11 @@ python counter.py
 <div className="row">
    <div className ="col-col-6" style = {{textAlign: 'center'}}>
      <h3> macOS </h3>
-     <img src="/website/img/docs/getting-started/flet-counter-macos.png" className="screenshot-70" />
+     <img src="/img/docs/getting-started/flet-counter-macos.png" className="screenshot-70" />
    </div>
    <div className ="col-col-6" style = {{textAlign: 'center'}}>
      <h3> Windows </h3>
-     <img src="/website/img/docs/getting-started/flet-counter-windows.png" className="screenshot-60" />
+     <img src="/img/docs/getting-started/flet-counter-windows.png" className="screenshot-60" />
    </div>
 </div>
 
@@ -83,7 +83,7 @@ ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 
 再次运行，现在您立即获得 Web 应用程序:
 
-<img src="/website/img/docs/getting-started/flet-counter-safari.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/flet-counter-safari.png" className="screenshot-50" />
 
 ## 教程
 

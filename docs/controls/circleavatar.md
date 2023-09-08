@@ -67,7 +67,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/circle-avatar/circle-avatar.png" className="screenshot-10" />
+<img src="/img/docs/controls/circle-avatar/circle-avatar.png" className="screenshot-10" />
 
 ## properties
 

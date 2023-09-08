@@ -3,14 +3,14 @@ title: Testing Flet app on iOS
 sidebar_label: Testing on iOS
 ---
 
-从'@themy/tabs'导入选项卡片;
+import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 仅使用您的计算机和手机就开始在 Python 中构建出色的移动应用程序！
 
 在 iOS 设备上安装[Flet](https://apps.apple.com/app/flet/id1624979699)应用程序。 您将使用此应用程序查看 Flet 项目如何在 iPhone 或 iPad 上工作。
 
-<a href="https://apps.apple.com/app/flet/id1624979699" target="_blank"><img src="/website/img/docs/getting-started/testing-on-ios/qr-code.jpg" className="screenshot-30" /></a>
+<a href="https://apps.apple.com/app/flet/id1624979699" target="_blank"><img src="/img/docs/getting-started/testing-on-ios/qr-code.jpg" className="screenshot-30" /></a>
 
 要开始使用计算机，您需要安装 Python 3.7 或更高的安装。
 
@@ -74,13 +74,13 @@ flet run --ios
 
 带有编码项目 URL 的 QR 码将显示在终端中:
 
-<img src="/website/img/docs/getting-started/testing-on-ios/app-qr-code.png" className="screenshot-30 screenshot-rounded" />
+<img src="/img/docs/getting-started/testing-on-ios/app-qr-code.png" className="screenshot-30 screenshot-rounded" />
 
 在 iOS 设备上打开**相机**应用程序，指向 QR 码，然后单击**在 Flet **链接中打开。
 
 一个对话框要求访问本地网络的权限将弹出:
 
-<img src="/website/img/docs/getting-started/testing-on-ios/flet-local-network.png" className="screenshot-30 screenshot-rounded" />
+<img src="/img/docs/getting-started/testing-on-ios/flet-local-network.png" className="screenshot-30 screenshot-rounded" />
 
 单击**允许**，您应该看到 Flet 应用程序运行。
 

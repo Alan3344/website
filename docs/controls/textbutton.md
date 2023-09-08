@@ -4,7 +4,7 @@ sidebar_label: TextButton
 slug: textbutton
 ---
 
-从'@themy/tabs'导入选项卡片;
+import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 文本按钮用于最低优先级操作，尤其是在提供多个选项时。 文本按钮可以放置在各种背景上。 在与按钮相互作用之前，它的容器尚不可见。 有关更多信息，请参见[材料 3 按钮](https://m3.material.io/components/buttons/overview)。
@@ -36,7 +36,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/text-button/basic-text-buttons.png" className="screenshot-40" />
+<img src="/img/docs/controls/text-button/basic-text-buttons.png" className="screenshot-40" />
 
 ### Text buttons with icons
 
@@ -64,7 +64,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/text-button/text-buttons-with-icons.png" className="screenshot-40" />
+<img src="/img/docs/controls/text-button/text-buttons-with-icons.png" className="screenshot-40" />
 
 ### Text button with `click` event
 
@@ -95,7 +95,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/text-button/text-button-with-click-event.gif" className="screenshot-50" />
+<img src="/img/docs/controls/text-button/text-button-with-click-event.gif" className="screenshot-50" />
 
 ### 带有自定义内容的文本按钮
 
@@ -144,7 +144,7 @@ ft.app(target=main)
   
 </tabs>
 
-<img src="/website/img/docs/controls/text-button/text-buttons-with-custom-content.png" className="screenshot-40" />
+<img src="/img/docs/controls/text-button/text-buttons-with-custom-content.png" className="screenshot-40" />
 
 ## properties
 

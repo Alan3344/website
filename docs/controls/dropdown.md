@@ -46,7 +46,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/dropdown/basic-dropdown.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/dropdown/basic-dropdown.gif" className="screenshot-30"/>
 
 ### Dropdown with label and hint
 
@@ -76,7 +76,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/dropdown/dropdown-with-custom-content.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/dropdown/dropdown-with-custom-content.gif" className="screenshot-30"/>
 
 ### Dropdown with `on_change` event
 
@@ -109,7 +109,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/dropdown/dropdown-with-change-event.gif" className="screenshot-30" />
+<img src="/img/docs/controls/dropdown/dropdown-with-change-event.gif" className="screenshot-30" />
 
 ### Change items in dropdown options
 
@@ -151,7 +151,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/dropdown/dropdown-with-add-and-delete.gif" className="screenshot-40"/>
+<img src="/img/docs/controls/dropdown/dropdown-with-add-and-delete.gif" className="screenshot-40"/>
 
 ## `Dropdown` properties
 

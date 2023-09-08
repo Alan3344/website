@@ -14,7 +14,7 @@ slug: tooltip
 
 ### 用自定义装饰的工具提示
 
-<img src="/website/img/docs/controls/tooltip/custom-tooltip.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/tooltip/custom-tooltip.gif" className="screenshot-30"/>
 
 ```python
 import math

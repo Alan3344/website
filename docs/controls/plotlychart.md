@@ -12,7 +12,7 @@ slug: plotlychart
 
 以下示例基于[plotly docs 的原始示例](https://plotly.com/python/line-charts/)。
 
-<img src="/website/img/docs/controls/charts/plotly-linechart.png" className="screenshot-60"/>
+<img src="/img/docs/controls/charts/plotly-linechart.png" className="screenshot-60"/>
 
 ```python
 import plotly.express as px
@@ -34,7 +34,7 @@ ft.app(target=main)
 
 以下示例基于[Plotly Docs 的原始示例](https://plotly.com/python/bar-charts/)。
 
-<img src="/website/img/docs/controls/charts/plotly-barchart.png" className="screenshot-60"/>
+<img src="/img/docs/controls/charts/plotly-barchart.png" className="screenshot-60"/>
 
 ```python
 import plotly.express as px
@@ -64,7 +64,7 @@ ft.app(target=main)
 
 以下示例基于[plotly docs 的原始示例](https://plotly.com/python/pie-charts/)。
 
-<img src="/website/img/docs/controls/charts/plotly-piechart.png" className="screenshot-60"/>
+<img src="/img/docs/controls/charts/plotly-piechart.png" className="screenshot-60"/>
 
 ```python
 import plotly.graph_objects as go
@@ -88,7 +88,7 @@ ft.app(target=main)
 
 以下示例基于[plotly docs 的原始示例](https://plotly.com/python/box-plots/)。
 
-<img src="/website/img/docs/controls/charts/plotly-boxchart.png" className="screenshot-70"/>
+<img src="/img/docs/controls/charts/plotly-boxchart.png" className="screenshot-70"/>
 
 ```python
 import plotly.graph_objects as go

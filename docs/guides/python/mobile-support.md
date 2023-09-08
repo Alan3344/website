@@ -17,7 +17,7 @@ Flet 是服务器驱动的 UI（SDUI）框架。 SDUI 是一种新兴技术，�
 
 Flet 将要在服务器上以 Python 或其他语言编写的程序来实现服务器驱动的 UI 方法，并且仅在 App Store 中运行薄的客户端（`.apk`或`.ipa` package），或者 Flutter 小部件作为另一个应用程序的一部分 - 已交付到手机:
 
-<img src="/website/img/docs/getting-started/flet-highlevel-diagram.svg" className="screenshot-100" />
+<img src="/img/docs/getting-started/flet-highlevel-diagram.svg" className="screenshot-100" />
 
 一旦准备就绪 SDUI 经验，我们将开始处理[独立移动包](#standalone-mobile-package-for-flet-app)。
 

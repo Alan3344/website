@@ -12,7 +12,7 @@ slug: linechart
 
 ### linechart 1
 
-<img src="/website/img/docs/controls/charts/linechart-sample-1.gif" className="screenshot-50"/>
+<img src="/img/docs/controls/charts/linechart-sample-1.gif" className="screenshot-50"/>
 
 ```python
 import flet as ft
@@ -217,7 +217,7 @@ ft.app(main)
 
 ### linechart 2
 
-<img src="/website/img/docs/controls/charts/linechart-sample-2.gif" className="screenshot-50"/>
+<img src="/img/docs/controls/charts/linechart-sample-2.gif" className="screenshot-50"/>
 
 ```python
 import flet as ft
@@ -357,7 +357,7 @@ ft.app(main)
 
 ## `LineChart`属性
 
-<img src="/website/img/docs/controls/charts/linechart-diagram.svg" className="screenshot-100"/>
+<img src="/img/docs/controls/charts/linechart-diagram.svg" className="screenshot-100"/>
 
 ### `data_series`
 

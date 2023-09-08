@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 
 ### App 窗口，而无需移动的标题
 
-<img src="/website/img/docs/controls/window-drag-area/no-title-draggable-window.png" className="screenshot-50" />
+<img src="/img/docs/controls/window-drag-area/no-title-draggable-window.png" className="screenshot-50" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>

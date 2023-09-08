@@ -51,8 +51,8 @@ sidebar_label: Progressive web apps (PWA)
 
 要将 PWA 安装到 iOS 和 iPados 上的主屏幕上:
 
-- 在屏幕底部点击<img src="/website/img/docs/getting-started/ios-share-icon.svg" className="icon-button" />。
-- 点击**添加到主屏幕<img src="/website/img/docs/getting-started/add-box-icon.svg" className="icon-button" /> **打开安装应用程序对话框。
+- 在屏幕底部点击<img src="/img/docs/getting-started/ios-share-icon.svg" className="icon-button" />。
+- 点击**添加到主屏幕<img src="/img/docs/getting-started/add-box-icon.svg" className="icon-button" /> **打开安装应用程序对话框。
 
 ### chrome
 
@@ -62,22 +62,22 @@ Chrome 在可用的所有平台上支持 PWA。
 
 Chrome for Desktop 在地址栏中显示一个按钮以打开“安装应用程序”对话框:
 
-<img src="/website/img/docs/getting-started/chrome-pwa-install.png" className="screenshot-60" />
+<img src="/img/docs/getting-started/chrome-pwa-install.png" className="screenshot-60" />
 
 #### 移动
 
 要在 Chrome 的移动版本上安装应用程序:
 
-- 点击<img src="/website/img/docs/getting-started/more-vert-icon.svg" className="icon-button" />菜单按钮以打开 Chrome 主菜单。
+- 点击<img src="/img/docs/getting-started/more-vert-icon.svg" className="icon-button" />菜单按钮以打开 Chrome 主菜单。
 - 点击**安装应用程序**打开应用程序安装对话框。
 
 ### edge
 
 Edge 在可用的所有平台上支持 PWA。 与 Chrome 类似，地址栏中有一个按钮可以打开“安装应用程序”对话框:
 
-<img src="/website/img/docs/getting-started/edge-pwa-install.png" className="screenshot-60" />
+<img src="/img/docs/getting-started/edge-pwa-install.png" className="screenshot-60" />
 
 ### Android 上的 Firefox
 
-- 点击<img src="/website/img/docs/getting-started/more-vert-icon.svg" className="icon-button" />菜单按钮以打开 Firefox 主菜单。
+- 点击<img src="/img/docs/getting-started/more-vert-icon.svg" className="icon-button" />菜单按钮以打开 Firefox 主菜单。
 - 点击**安装**打开应用程序安装对话框。

@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 
 ### 图像上透明标题
 
-<img src="/website/img/docs/controls/stack/image-title.png" className="screenshot-50" />
+<img src="/img/docs/controls/stack/image-title.png" className="screenshot-50" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -63,7 +63,7 @@ ft.app(target=main)
 
 ### 具有在线状态的头像
 
-<img src="/website/img/docs/controls/stack/avatar-with-status.png" className="screenshot-10"/>
+<img src="/img/docs/controls/stack/avatar-with-status.png" className="screenshot-10"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -96,7 +96,7 @@ ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 
 ### 绝对定位堆栈
 
-<img src="/website/img/docs/controls/stack/absolute-positioned.png" className="screenshot-50"/>
+<img src="/img/docs/controls/stack/absolute-positioned.png" className="screenshot-50"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>

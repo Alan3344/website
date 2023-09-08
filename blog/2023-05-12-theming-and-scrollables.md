@@ -26,7 +26,7 @@ Flet 0.7.1 启用开发人员[更改滚动位置](#controlling-scroll-position)�
 
 搬到`key`特别令人兴奋，因为它允许模拟页面书签之间的导航，其中一种 html hrefs``＃'': :
 
-<img src="/website/img/docs/controls/column/column-scroll-to-key.gif"  className="screenshot-70 screenshot-rounded" />
+<img src="/img/docs/controls/column/column-scroll-to-key.gif"  className="screenshot-70 screenshot-rounded" />
 
 检查上述示例的[源代码](https://github.com/flet-dev/examples/blob/main/python/controls/column/column-scroll-to-key.py)。
 
@@ -72,7 +72,7 @@ ft.app(main)
 
 此版本使您可以根据[材料规格](https://m3.material.io/styles/color/the-color-system/color-roles)微调所有 30 种颜色，并由各种 Flet 控件使用。
 
-<img src="/website/img/blog/theme-scrolling/material-theme-builder.png"  className="screenshot-70 screenshot-rounded" />
+<img src="/img/blog/theme-scrolling/material-theme-builder.png"  className="screenshot-70 screenshot-rounded" />
 
 您甚至可以使用[材料主题构建器](https://m3.material.io/theme-builder#/dynamic)并将导出的调色板应用于您的应用:
 
@@ -137,7 +137,7 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-<img src="/website/img/blog/theme-scrolling/nested-themes.png"  className="screenshot-60" />
+<img src="/img/blog/theme-scrolling/nested-themes.png"  className="screenshot-60" />
 
 ## scrollbar 主题
 
@@ -167,7 +167,7 @@ page.theme = ft.Theme(
 )
 ```
 
-<img src="/website/img/docs/controls/column/column-scroll-to.png"  className="screenshot-60" />
+<img src="/img/docs/controls/column/column-scroll-to.png"  className="screenshot-60" />
 
 ## 文本主题
 
@@ -186,7 +186,7 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-<img src="/website/img/blog/theme-scrolling/text-theme.png"  className="screenshot-50" />
+<img src="/img/blog/theme-scrolling/text-theme.png"  className="screenshot-50" />
 
 显然，`Text`控制用作默认样式的“身体介质”。
 
@@ -210,7 +210,7 @@ page.theme = ft.Theme(
 )
 ```
 
-<img src="/website/img/blog/theme-scrolling/tabs-theme.png"  className="screenshot-60" />
+<img src="/img/blog/theme-scrolling/tabs-theme.png"  className="screenshot-60" />
 
 有关更多详细信息，请参见[`TabsTheme` class](/docs/controls/page#tabstheme-class)。
 

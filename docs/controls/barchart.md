@@ -12,7 +12,7 @@ slug: barchart
 
 ### Barchart 1
 
-<img src="/website/img/docs/controls/charts/barchart-sample-1.png" className="screenshot-50"/>
+<img src="/img/docs/controls/charts/barchart-sample-1.png" className="screenshot-50"/>
 
 ```python
 import flet as ft
@@ -110,7 +110,7 @@ ft.app(main)
 
 ### Barchart 2
 
-<img src="/website/img/docs/controls/charts/barchart-sample-2.gif" className="screenshot-50"/>
+<img src="/img/docs/controls/charts/barchart-sample-2.gif" className="screenshot-50"/>
 
 ```python
 import flet as ft
@@ -203,7 +203,7 @@ ft.app(main)
 
 ## `BarChart`属性
 
-<img src="/website/img/docs/controls/charts/barchart-diagram.svg" className="screenshot-100"/>
+<img src="/img/docs/controls/charts/barchart-diagram.svg" className="screenshot-100"/>
 
 ### `bar_groups`
 

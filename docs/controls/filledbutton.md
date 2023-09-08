@@ -4,12 +4,12 @@ sidebar_label: FilledButton
 slug: filledbutton
 ---
 
-从'@themy/tabs'导入选项卡片；
+import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 填充按钮在[floatingActionButton](/docs/controls/floatingactionbutton)之后具有最大的视觉影响，应用于完成流程的重要，最终动作，例如**保存**，**，**立即加入**或**确认\*\* \*\* 。 有关更多信息，请参见[材料 3 按钮](https://m3.material.io/components/buttons/overview)。
 
-<img src="/website/img/docs/controls/filled-button/basic-filled-buttons.png" className="screenshot-20" />
+<img src="/img/docs/controls/filled-button/basic-filled-buttons.png" className="screenshot-20" />
 
 ## Examples
 

@@ -16,19 +16,19 @@ tags: [releases]
 
 ## linechart
 
-<img src="/website/img/docs/controls/charts/linechart-sample-1.gif" className="screenshot-50"/>
+<img src="/img/docs/controls/charts/linechart-sample-1.gif" className="screenshot-50"/>
 
 [docs](/docs/controls/linechart)·[示例](https://github.com/flet-dev/examples/tree/main/python/controls/charts)
 
 ## barchart
 
-<img src="/website/img/docs/controls/charts/barchart-sample-2.gif" className="screenshot-50"/>
+<img src="/img/docs/controls/charts/barchart-sample-2.gif" className="screenshot-50"/>
 
 [docs](/docs/controls/barchart)·[示例](https://github.com/flet-dev/examples/tree/main/python/controls/charts)
 
 ## piechart
 
-<img src="/website/img/docs/controls/charts/piechart-sample-2.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/charts/piechart-sample-2.gif" className="screenshot-30"/>
 
 [docs](/docs/controls/piechart)·[示例](https://github.com/flet-dev/examples/tree/main/python/controls/charts)
 

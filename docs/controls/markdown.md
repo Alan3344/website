@@ -112,13 +112,13 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/markdown/custom-markdown.gif" className="screenshot-40"/>
+<img src="/img/docs/controls/markdown/custom-markdown.gif" className="screenshot-40"/>
 
 ### 用代码语法突出显示标记
 
 [源代码](https://github.com/flet-dev/examples/blob/main/python/controls/markdown/markdown-code-highlight.py)
 
-<img src="/website/img/docs/controls/markdown/markdown-highlight.png" className="screenshot-60"/>
+<img src="/img/docs/controls/markdown/markdown-highlight.png" className="screenshot-60"/>
 
 ## properties
 
@@ -180,14 +180,17 @@ ft.app(target=main)
 - ```Antelier-telest-light''
 
   ```
+
 - `Antelier-Heath-dark`
 - `natelier-heath-light“
 - ```Antelier-lakesdar dark'
 
   ```
+
 - ```Antelier-lakes-light''
 
   ```
+
 - `gatelier-plateau-dark`
 - `natelier-plateau-light“
 - `Antelier-savanna-dark`

@@ -4,7 +4,7 @@ sidebar_label: OutlinedButton
 slug: outlinedbutton
 ---
 
-从'@themy/tabs'导入选项卡片;
+import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 概述的按钮是中等强调按钮。 它们包含重要的操作，但不是应用程序中的主要动作。
@@ -37,7 +37,7 @@ ft.app(target=main)
 
 </Tabs>
 
-<img src="/website/img/docs/controls/outlined-button/basic-outlined-buttons.png" className="screenshot-40" />
+<img src="/img/docs/controls/outlined-button/basic-outlined-buttons.png" className="screenshot-40" />
 
 ### Outlined buttons with icons
 
@@ -66,7 +66,7 @@ ft.app(target=main)
 
 </Tabs>
 
-<img src="/website/img/docs/controls/outlined-button/outlined-buttons-with-icons.png" className="screenshot-50" />
+<img src="/img/docs/controls/outlined-button/outlined-buttons-with-icons.png" className="screenshot-50" />
 
 ### Outlined button with `click` event
 
@@ -97,7 +97,7 @@ ft.app(target=main)
 
 </Tabs>
 
-<img src="/website/img/docs/controls/outlined-button/outlined-button-with-click-event.gif" className="screenshot-50" />
+<img src="/img/docs/controls/outlined-button/outlined-button-with-click-event.gif" className="screenshot-50" />
 
 ### 用自定义内容概述按钮
 
@@ -144,7 +144,7 @@ ft.app(target=main)
   
 </tabs>
 
-<img src="/website/img/docs/controls/outlined-button/outlined-buttons-with-custom-content.png" className="screenshot-50" />
+<img src="/img/docs/controls/outlined-button/outlined-buttons-with-custom-content.png" className="screenshot-50" />
 
 ## properties
 

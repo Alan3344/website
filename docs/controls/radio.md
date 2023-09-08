@@ -41,7 +41,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/radio/basic-radio.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/radio/basic-radio.gif" className="screenshot-30"/>
 
 ### RadioGroup with `on_change` event
 
@@ -70,7 +70,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/radio/radio-with-change-event.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/radio/radio-with-change-event.gif" className="screenshot-30"/>
 
 ## `RadioGroup` properties
 

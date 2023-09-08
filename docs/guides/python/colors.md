@@ -3,7 +3,7 @@
 sidebar_label: 颜色
 ---
 
-<img src="/website/img/docs/colors/color_palettes.png"className="screenshot-100" />
+<img src="/img/docs/colors/color_palettes.png"className="screenshot-100" />
 
 ## 颜色值
 
@@ -30,7 +30,7 @@ c2 = ft.Container(bgcolor='yellow')
 
 #### 主题颜色
 
-<img src="/website/img/docs/colors/theme_colors.png"className="screenshot-100" />
+<img src="/img/docs/colors/theme_colors.png"className="screenshot-100" />
 
 [LIVE 示例](https://flet-controls-gallery.fly.dev/colors/themecolors)
 
@@ -54,13 +54,13 @@ page.theme = ft.Theme(
 )
 ```
 
-<img src="/website/img/docs/colors/theme_colors_green.png"className="screenshot-100" />
+<img src="/img/docs/colors/theme_colors_green.png"className="screenshot-100" />
 
 主题颜色为 Flet 控件的大多数定义后备颜色。
 
 #### 调色板
 
-<img src="/website/img/docs/colors/color_palettes_2.png"className="screenshot-100" />
+<img src="/img/docs/colors/color_palettes_2.png"className="screenshot-100" />
 
 [LIVE 示例](https://flet-controls-gallery.fly.dev/colors/colorspalettes)
 
@@ -99,7 +99,7 @@ color = "#7fff6666"
 
 [LIVE 示例](https://flet-controls-gallery.fly.dev/colors/controlcolors)
 
-<img src="/website/img/docs/colors/colors_fallback.svg"className="screenshot-80" />
+<img src="/img/docs/colors/colors_fallback.svg"className="screenshot-80" />
 
 ### 控制级别
 

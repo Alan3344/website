@@ -12,7 +12,7 @@ slug: canvas
 
 ### 基本用法
 
-<img src="/website/img/docs/controls/canvas/canvas-face.png" className="screenshot-20"/>
+<img src="/img/docs/controls/canvas/canvas-face.png" className="screenshot-20"/>
 
 ```python
 import math
@@ -43,7 +43,7 @@ ft.app(main)
 
 ### `Path`形状示例
 
-<img src="/website/img/docs/controls/canvas/canvas-triangles.png" className="screenshot-20"/>
+<img src="/img/docs/controls/canvas/canvas-triangles.png" className="screenshot-20"/>
 
 ```python
 import math
@@ -88,7 +88,7 @@ ft.app(main)
 
 ### bezier 曲线
 
-<img src="/website/img/docs/controls/canvas/canvas-bezier.png" className="screenshot-30"/>
+<img src="/img/docs/controls/canvas/canvas-bezier.png" className="screenshot-30"/>
 
 ```python
 import math
@@ -149,7 +149,7 @@ ft.app(main)
 
 ### 绘制文本
 
-<img src="/website/img/docs/controls/canvas/canvas-text.png" className="screenshot-60"/>
+<img src="/img/docs/controls/canvas/canvas-text.png" className="screenshot-60"/>
 
 ```python
 import math
@@ -247,7 +247,7 @@ ft.app(main)
 
 ### Free-hand 绘图工具 - 带有手势检测器的画布
 
-<img src="/website/img/docs/controls/canvas/canvas-flet-brush.gif" className="screenshot-40"/>
+<img src="/img/docs/controls/canvas/canvas-flet-brush.gif" className="screenshot-40"/>
 
 ```python
 import flet as ft
@@ -682,7 +682,7 @@ Circle 的半径。
 
 #### `PaintLinearGradient`
 
-<img src="/website/img/docs/controls/canvas/paint-linear-gradient.png" className="screenshot-20" />
+<img src="/img/docs/controls/canvas/paint-linear-gradient.png" className="screenshot-20" />
 
 ```python
 cv.Rect(
@@ -716,7 +716,7 @@ cv.Rect(
 
 #### `PaintRadialGradient`
 
-<img src="/website/img/docs/controls/canvas/paint-radial-gradient.png" className="screenshot-20" />
+<img src="/img/docs/controls/canvas/paint-radial-gradient.png" className="screenshot-20" />
 
 ```python
 cv.Circle(
@@ -746,7 +746,7 @@ cv.Circle(
 
 #### `PaintSweepGradient`
 
-<img src="/website/img/docs/controls/canvas/paint-sweep-gradient.png" className="screenshot-20" />
+<img src="/img/docs/controls/canvas/paint-sweep-gradient.png" className="screenshot-20" />
 
 ```python
 cv.Path(

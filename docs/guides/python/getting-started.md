@@ -66,7 +66,7 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<img src="/website/img/docs/getting-started/basic-app-structure.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/basic-app-structure.png" className="screenshot-50" />
 
 :::注意
 本节故意称为“基本”，因为本指南的稍后，我们将查看具有可重复使用控件的应用程序结构的更多实际方法。
@@ -115,7 +115,7 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<img src="/website/img/docs/getting-started/controls-text.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/controls-text.png" className="screenshot-50" />
 
 :::注意
 在以下示例中，我们将仅显示`main`函数的内容。
@@ -194,7 +194,7 @@ def main(page):
 ft.app(target=main)
 ```
 
-<img src="/website/img/docs/getting-started/simple-ToDo.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/simple-ToDo.png" className="screenshot-50" />
 
 :::信息
 Flet 实现 _命令 _ UI 模型，其中您“手动”构建具有状态控件的应用程序 UI，然后通过更新控制属性将其突变。 Flutter 实现 *声明 *模型，其中 UI 自动在应用程序数据更改上重新构建。
@@ -266,7 +266,7 @@ def main(page):
 ft.app(target=main)
 ```
 
-<img src="/website/img/docs/getting-started/control-refs.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/control-refs.png" className="screenshot-50" />
 
 在`main()`方法的开头，我们创建了三个控件，我们将在按钮的`on_click`处理程序中使用: 两个`TextField`的名称和姓氏两个`TextField`，以及一个`Column` - 容器来迎接消息。 我们使用其所有属性集创建控件，并在`main()`方法的末尾，在`page.add()`调用中，我们使用其引用（变量）。
 
@@ -341,7 +341,7 @@ def main(page):
 ft.app(target=main)
 ```
 
-<img src="/website/img/docs/getting-started/control-refs-rewritten.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/control-refs-rewritten.png" className="screenshot-50" />
 
 现在，我们可以清楚地看到`page.add()`页面的结构及其构建的所有控件。
 

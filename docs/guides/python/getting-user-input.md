@@ -14,7 +14,7 @@ btn = ft.ElevatedButton("Click me!")
 page.add(btn)
 ```
 
-<img src="/website/img/docs/getting-started/getting-user-input-elevated-button.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/getting-user-input-elevated-button.png" className="screenshot-50" />
 
 网页上控件生成的所有事件都连续发送回您的脚本，那么您如何响应按钮单击？
 
@@ -53,7 +53,7 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<img src="/website/img/docs/getting-started/getting-user-input-event-handlers.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/getting-user-input-event-handlers.png" className="screenshot-50" />
 
 ## 文本框
 
@@ -81,7 +81,7 @@ def main(page):
 ft.app(target=main)
 ```
 
-<img src="/website/img/docs/getting-started/getting-user-input-textbox.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/getting-user-input-textbox.png" className="screenshot-50" />
 
 ## 复选框
 
@@ -107,7 +107,7 @@ def main(page):
 ft.app(target=main)
 ```
 
-<img src="/website/img/docs/getting-started/getting-user-input-checkbox.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/getting-user-input-checkbox.png" className="screenshot-50" />
 
 ## 下拉
 
@@ -135,4 +135,4 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<img src="/website/img/docs/getting-started/getting-user-input-dropdown.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/getting-user-input-dropdown.png" className="screenshot-50" />

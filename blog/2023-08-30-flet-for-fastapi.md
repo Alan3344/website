@@ -10,7 +10,7 @@ tags: [releases]
 
 我们刚刚发布了 Flet 0.10.0，并获得了 FastApi 支持！
 
-<img src="/website/img/blog/fastapi/fastapi-logo-teal.png" className="screenshot-60" />
+<img src="/img/blog/fastapi/fastapi-logo-teal.png" className="screenshot-60" />
 
 [FastApi](https://fastapi.tiangolo.com/)与 Uvicorn，HyperCorn，Gunicorn 或其他 Web 服务器相结合，替换了内置的 Flet Web Server（Flet D），以可靠地运行生产 Flet 工作负载。
 

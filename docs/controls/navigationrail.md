@@ -64,7 +64,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/navigation-rail/custom-navrail.png" className="screenshot-50" />
+<img src="/img/docs/controls/navigation-rail/custom-navrail.png" className="screenshot-50" />
 
 ## `NavigationRail` properties
 

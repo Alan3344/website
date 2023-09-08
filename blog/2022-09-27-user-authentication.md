@@ -8,13 +8,13 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [release]
 ---
 
-从'@them/tocinline'导入 tocinline;
+import TOCInline from '@theme/TOCInline';
 
 Flet 中的用户身份验证在这里！ 🎉
 
 现在，您可以在 Flet 应用中使用第三方身份提供者（例如 Github，Google，Azure，Auth0，auth0，LinkedIn 等）在 Flet 应用中实现用户身份验证（“使用 X”按钮）:
 
-<img src="/website/img/docs/getting-started/authentication/github-oauth-authorize.png" className="screenshot-40" />
+<img src="/img/docs/getting-started/authentication/github-oauth-authorize.png" className="screenshot-40" />
 
 传统上，此版本不仅与身份验证有关，而且还增加了大量随附功能和小改进:
 

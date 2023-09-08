@@ -12,7 +12,7 @@ slug: text
 
 ### 自定义文本样式
 
-<img src="/website/img/docs/controls/text/custom-text-styles.gif" className="screenshot-40"/>
+<img src="/img/docs/controls/text/custom-text-styles.gif" className="screenshot-40"/>
 
 ```python
 import flet as ft
@@ -71,7 +71,7 @@ ft.app(target=main)
 
 ### 预定义的主题文本样式
 
-<img src="/website/img/docs/controls/text/predefined-text-styles.png" className="screenshot-40" />
+<img src="/img/docs/controls/text/predefined-text-styles.png" className="screenshot-40" />
 
 ```python
 import flet as ft
@@ -103,7 +103,7 @@ ft.app(target=main)
 
 ### 字体，重量可变
 
-<img src="/website/img/docs/controls/text/variable-weight-font.gif" className="screenshot-50" />
+<img src="/img/docs/controls/text/variable-weight-font.gif" className="screenshot-50" />
 
 ```python
 import flet as ft
@@ -141,7 +141,7 @@ ft.app(target=main)
 
 ### 丰富的文本基础知识
 
-<img src="/website/img/docs/controls/text/richtext.png" className="screenshot-70" />
+<img src="/img/docs/controls/text/richtext.png" className="screenshot-70" />
 
 ```python
 import flet as ft
@@ -256,7 +256,7 @@ ft.app(main)
 
 ### 带有边界和中风的丰富文字
 
-<img src="/website/img/docs/controls/text/richtext-borders-stroke.png" className="screenshot-50" />
+<img src="/img/docs/controls/text/richtext-borders-stroke.png" className="screenshot-50" />
 
 ```python
 import flet as ft
@@ -303,7 +303,7 @@ ft.app(main)
 
 ### 带有渐变的丰富文本
 
-<img src="/website/img/docs/controls/text/richtext-gradient.png" className="screenshot-50" />
+<img src="/img/docs/controls/text/richtext-gradient.png" className="screenshot-50" />
 
 ```python
 import flet as ft

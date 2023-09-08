@@ -6,7 +6,7 @@ slug: trello-clone
 
 让我们用 Flet 框架在 python 中制作一个克隆，然后将其部署到[fly.io](https://fly.io/)！
 
-<img src="/website/img/docs/trolli-tutorial/trolli-app.gif" className="screenshot-80" />
+<img src="/img/docs/trolli-tutorial/trolli-app.gif" className="screenshot-80" />
 
 可以通过自我解释提交（在此[9731}）找到本教程的代码。 克隆后，请确保运行`pip install -ruesignt.txt`。 [这里](https://gallery.flet.dev/trolli/)是一个实时演示。
 
@@ -47,7 +47,7 @@ if __name__ == "__main__":
 
 在布局方面，我们可以考虑该应用程序由标头（`appbar`）组成，在此下面，可折叠的导航面板（临近）是由板，设置，成员或其他我们可以选择的活动视图组成的。 这样的东西...
 
-<img src="/website/img/docs/trolli-tutorial/mock-up.png" className="screenshot-80" />
+<img src="/img/docs/trolli-tutorial/mock-up.png" className="screenshot-80" />
 
 因此，应用程序本身的课程看起来像这样...
 
@@ -250,7 +250,7 @@ content=Column([
 
 如果保存文件，则应该能够在应用程序窗口中看到更改。
 
-<img src="/website/img/docs/trolli-tutorial/basic-nav-rail-toggle.gif" className="screenshot-60" />
+<img src="/img/docs/trolli-tutorial/basic-nav-rail-toggle.gif" className="screenshot-60" />
 
 在我们继续前进之前，让我们定义我们的基本实体。 我们将需要一个`Board`类，该类将保留列表的列表，每个列表将是`BoardList`对象（对不幸的词汇碰撞表示歉意 - 对“列表”的使用源自“列表”的性质。 应用程序，而“列表”的技术用途源自 Python 的特定术语，用于类似数组的数据结构），而每个术语都将包含`Item`对象的列表。 如果这令人困惑，请花一些时间查看源代码以清除内容。
 
@@ -423,7 +423,7 @@ def sync_board_destinations(self):
 现在，我们可以添加新板，它们出现在我们的导航轨中。
 不幸的是，单击导航导轨实际上并没有导航到任何东西。
 
-<img src="/website/img/docs/trolli-tutorial/add-board-capability.gif" className="screenshot-60" />
+<img src="/img/docs/trolli-tutorial/add-board-capability.gif" className="screenshot-60" />
 
 我们可以通过几种方法来实现这一目标，例如在`app_layout.py`模块中存在所有视图，然后根据导航导轨索引，根据导航导轨索引，对相关视图的可视性开/关。 但这在浏览器上下文中也无济于事，也不会在带有后背按钮的移动上下文中。 我们需要考虑路由。 Flet 提供了一个用于 URL 匹配的`TemplateRoute`实用程序类。
 
@@ -491,7 +491,7 @@ flet main.py -d -w
 
 命令（_-d_ flag 用于热加载，_-w_ for web）我们可以添加一些板并通过单击或输入` URL。
 
-<img src="/website/img/docs/trolli-tutorial/navigation.gif" className="screenshot-60" />
+<img src="/img/docs/trolli-tutorial/navigation.gif" className="screenshot-60" />
 
 ### 更改木板名称
 
@@ -621,7 +621,7 @@ def list_drag_leave(self, e):
 
 请注意，操纵不透明度字段是视觉指示，表明将在目标上接受拖动的项目。
 
-<img src="/website/img/docs/trolli-tutorial/drag-drop-list.gif" className="screenshot-60" />
+<img src="/img/docs/trolli-tutorial/drag-drop-list.gif" className="screenshot-60" />
 
 现在，对于将项目拖到列表中的情况稍微复杂得多（包括可能属于同一板上的另一个列表）。 现在，我们希望`board_list`不仅是其他列表的拖动目标，而且还可以从其他列表中拖动到它的项目，我们需要将另一个`DragTarget`包装添加到列表中，而且这一次 我们将分配组名称“项目”，以便它仅响应项目的拖累。
 
@@ -732,7 +732,7 @@ def add_item(self, item: str = None, chosen_control: Draggable = None swap_contr
 
 通过这些更改，我们应该能够在板上拖动列表，并在不同列表之间拖动项目。
 
-<img src="/website/img/docs/trolli-tutorial/drag-lists-and-items.gif" className="screenshot-60" />
+<img src="/img/docs/trolli-tutorial/drag-lists-and-items.gif" className="screenshot-60" />
 
 ## 处理页面调整大小
 

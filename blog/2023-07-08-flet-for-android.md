@@ -10,7 +10,7 @@ tags: [releases]
 
 🤖Android 支持在这里！
 
-<a href="https://play.google.com/store/apps/details?id=com.appveyor.flet" target="_blank"><img src="/website/img/docs/getting-started/testing-on-android/google-play-badge.png" className="screenshot-40" /></a>
+<a href="https://play.google.com/store/apps/details?id=com.appveyor.flet" target="_blank"><img src="/img/docs/getting-started/testing-on-android/google-play-badge.png" className="screenshot-40" /></a>
 
 使用 Flet Android 应用程序，您可以看到 Flet Python App 在应用程序本身在计算机上运行时在 Android 设备上的外观和行为。
 

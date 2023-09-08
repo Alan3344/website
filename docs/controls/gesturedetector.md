@@ -25,7 +25,7 @@ import TabItem from '@theme/TabItem';
 
 该样本还表明，姿势可以具有 child 控件（蓝色容器），并且可以嵌套在另一个控件（黄色容器）中，得出相同的结果。
 
-<img src="/website/img/docs/controls/gesture-detector/gesture-detector-two-containers.gif" className="screenshot-50" />
+<img src="/img/docs/controls/gesture-detector/gesture-detector-two-containers.gif" className="screenshot-50" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>

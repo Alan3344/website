@@ -14,7 +14,7 @@ slug: navigationbar
 
 ### 一个简单的导航栏
 
-<img src="/website/img/docs/controls/navigation-bar/navigation-bar-sample.gif" className="screenshot-40"/>
+<img src="/img/docs/controls/navigation-bar/navigation-bar-sample.gif" className="screenshot-40"/>
 
 ```python
 import flet as ft

@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 ### 动画切换两个具有比例效果的容器
 
-<img src="/website/img/docs/controls/animated-switcher/animated-switcher.gif" className="screenshot-20" />
+<img src="/img/docs/controls/animated-switcher/animated-switcher.gif" className="screenshot-20" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>

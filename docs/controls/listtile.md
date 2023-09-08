@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 [LIVE 示例](https://flet-controls-gallery.fly.dev/layout/listtile)
 
-<img src="/website/img/docs/controls/listtile/listtiles.png" className="screenshot-50"/>
+<img src="/img/docs/controls/listtile/listtiles.png" className="screenshot-50"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>

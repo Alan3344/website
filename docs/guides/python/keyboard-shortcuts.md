@@ -36,6 +36,6 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<img src="/website/img/docs/getting-started/keyboard-shortcuts.png" className="screenshot-100" />
+<img src="/img/docs/getting-started/keyboard-shortcuts.png" className="screenshot-100" />
 
 这是[更高级的示例](https://github.com/flet-dev/examples/blob/main/python/controls/page/keyboard-events.py)。

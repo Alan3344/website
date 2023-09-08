@@ -14,7 +14,7 @@ tags: [release]
 
 在 Flet 中制作拖放是一种真正的喜悦 - 借助扑来中的智能拖放实现！ 您只有“可拖动”控件可以将其拖动到“拖动目标”，该控件在删除拖放时调用`on_accept`事件处理程序。
 
-<img src="/website/img/docs/controls/drag-and-drop/drag-and-drop-colors.gif" className="screenshot-50" />
+<img src="/img/docs/controls/drag-and-drop/drag-and-drop-colors.gif" className="screenshot-50" />
 
 看看[拖放示例](https://github.com/flet-dev/examples/blob/main/python/controls/drag-and-drop/drag-drop-colors.py)。
 
@@ -54,13 +54,13 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<img src="/website/img/blog/drag-and-drop/absolute-positioned-numbers.png" className="screenshot-30" />
+<img src="/img/blog/drag-and-drop/absolute-positioned-numbers.png" className="screenshot-30" />
 
 ## 可单击的容器
 
 [`Container`](/docs/controls/container)控件已有`on_click`事件，该事件使您可以从任何控件中制作一个按钮，并在设置为`ink`设置为`True`时具有美丽的 material 波纹效果！
 
-<img src="/website/img/docs/controls/container/clickable-container.gif" className="screenshot-70" />
+<img src="/img/docs/controls/container/clickable-container.gif" className="screenshot-70" />
 
 有关上述示例，请参见[源代码](https://github.com/flet-dev/examples/blob/main/python/controls/container/clickable-container.py)。
 

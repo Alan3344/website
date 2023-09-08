@@ -18,11 +18,11 @@ tags: [releases]
 
 命令的`-icon`参数现在都在更改可执行文件的图标，而且更改 Flet 的 App Window 图标以及 MacOS Dock，Windows Taskesbar，MacOS 中显示的图标，关于“对话框，任务管理器和活动监视器:
 
-<img src="/website/img/docs/getting-started/package-desktop/macos-dock.png" className="screenshot-20 screenshot-rounded" />
+<img src="/img/docs/getting-started/package-desktop/macos-dock.png" className="screenshot-20 screenshot-rounded" />
 
 捆绑名称，版本和版权也可以更改:
 
-<img src="/website/img/docs/getting-started/package-desktop/flet-app-bundle-about-clean.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/package-desktop/flet-app-bundle-about-clean.png" className="screenshot-50" />
 
 在[更新指南](/docs/guides/python/packaging-desktop-app)中找到包装桌面应用程序的所有可用选项。
 

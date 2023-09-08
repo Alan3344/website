@@ -18,7 +18,7 @@ tags: [news]
 
 Flet 桌面应用的当前架构显示在下图:
 
-<img src="/website/img/blog/mobile-update/flet-desktop-architecture.svg" className="screenshot-100" />
+<img src="/img/blog/mobile-update/flet-desktop-architecture.svg" className="screenshot-100" />
 
 在桌面上运行 Flet 程序涉及三个应用程序（进程）一起工作:
 
@@ -33,7 +33,7 @@ Flet 桌面应用的当前架构显示在下图:
 
 Flet 桌面应用程序架构可以通过用 Python 编写的“存根”替换 Flet d 来简化，并通过 sockets（Windows）和名为 Pipes（MacOS and Linux）与 Flet 桌面客户端进行通信。
 
-<img src="/website/img/blog/mobile-update/flet-desktop-architecture-v2.svg" className="screenshot-70" />
+<img src="/img/blog/mobile-update/flet-desktop-architecture-v2.svg" className="screenshot-70" />
 
 ## Flet 移动体系结构
 
@@ -45,7 +45,7 @@ Flet 桌面应用程序架构可以通过用 Python 编写的“存根”替换 
 
 Flet 移动体系结构看起来像这样:
 
-<img src="/website/img/blog/mobile-update/flet-mobile-architecture-v2.svg" className="screenshot-40" />
+<img src="/img/blog/mobile-update/flet-mobile-architecture-v2.svg" className="screenshot-40" />
 
 Python 运行时将与 Flutter Client 应用程序静态或动态链接，并通过 FFI 和/或命名的管道致电。
 

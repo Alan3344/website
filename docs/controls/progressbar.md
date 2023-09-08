@@ -49,7 +49,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/progress-bar/custom-progress-bars.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/progress-bar/custom-progress-bars.gif" className="screenshot-30"/>
 
 ## properties
 

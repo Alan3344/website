@@ -18,7 +18,7 @@ tags: [release]
 
 ### 线性梯度
 
-<img src="/website/img/blog/gradients/linear-gradient.png" className="screenshot-30" />
+<img src="/img/blog/gradients/linear-gradient.png" className="screenshot-30" />
 
 ```python
 import math
@@ -58,7 +58,7 @@ ft.app(target=main)
 
 ### radial 渐变
 
-<img src="/website/img/blog/gradients/radial-gradient.png" className="screenshot-30" />
+<img src="/img/blog/gradients/radial-gradient.png" className="screenshot-30" />
 
 ```python
 import flet as ft
@@ -90,7 +90,7 @@ ft.app(target=main)
 
 ### 扫描渐变
 
-<img src="/website/img/blog/gradients/sweep-gradient.png" className="screenshot-30" />
+<img src="/img/blog/gradients/sweep-gradient.png" className="screenshot-30" />
 
 ```python
 import math
@@ -134,7 +134,7 @@ ft.app(target=main)
 
 检查此“极端”样式示例:
 
-<img src="/website/img/blog/gradients/styled-button.gif" className="screenshot-30" />
+<img src="/img/blog/gradients/styled-button.gif" className="screenshot-30" />
 
 ```python
 import flet as ft
@@ -176,7 +176,7 @@ ft.app(target=main)
 
 `ButtonStyle.shape`属性也可以更改按钮形状:
 
-<img src="/website/img/blog/gradients/button-shapes.png" className="screenshot-30" />
+<img src="/img/blog/gradients/button-shapes.png" className="screenshot-30" />
 
 ```python
 import flet as ft
@@ -237,7 +237,7 @@ ft.app(target=main)
 
 带有`max_length`和`capitalization`的样式`TextField`样式的示例:
 
-<img src="/website/img/blog/gradients/styled-textfield.gif" className="screenshot-50" />
+<img src="/img/blog/gradients/styled-textfield.gif" className="screenshot-50" />
 
 ```python
 import flet as ft
@@ -267,7 +267,7 @@ ft.app(target=main)
 
 样式`Dropdown`控制的示例:
 
-<img src="/website/img/blog/gradients/styled-dropdown.gif" className="screenshot-50" />
+<img src="/img/blog/gradients/styled-dropdown.gif" className="screenshot-50" />
 
 ```python
 import flet as ft
@@ -298,7 +298,7 @@ ft.app(target=main)
 
 这是一个切换图标按钮的示例:
 
-<img src="/website/img/blog/gradients/toggle-icon-button.gif" className="screenshot-20" />
+<img src="/img/blog/gradients/toggle-icon-button.gif" className="screenshot-20" />
 
 ```python
 import flet as ft

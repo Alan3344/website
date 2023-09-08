@@ -53,7 +53,7 @@ def main(page):
 ft.app(target=main)
 ```
 
-<img src="/website/img/docs/getting-started/user-control-counter.gif" className="screenshot-40" />
+<img src="/img/docs/getting-started/user-control-counter.gif" className="screenshot-40" />
 
 您可以将事件处理程序（例如`def add_click（self，e）`）和控制引用（例如`self.text`）称为类成员，也可以使用本地变量和内部功能实现所有 USERCONTROL 的逻辑。 例如，以上代码可以重写为:
 
@@ -150,4 +150,4 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<img src="/website/img/docs/getting-started/user-control-countdown.gif" className="screenshot-40" />
+<img src="/img/docs/getting-started/user-control-countdown.gif" className="screenshot-40" />

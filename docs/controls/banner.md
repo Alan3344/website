@@ -53,7 +53,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/banner/banner-with-custom-content.gif" className="screenshot-40"/>
+<img src="/img/docs/controls/banner/banner-with-custom-content.gif" className="screenshot-40"/>
 
 ## properties
 

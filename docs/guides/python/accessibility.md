@@ -49,7 +49,7 @@ Flet 是基于颤音，除了基础操作系统提供的范围外，还包括一
 
 您可以实现特定的[键盘快捷键](/docs/guides/python/keyboard-shortcuts)，以方便地切换应用程序开发过程:
 
-<img src="/website/img/docs/getting-started/debug-accessibility-toggle.gif" className="screenshot-50" />
+<img src="/img/docs/getting-started/debug-accessibility-toggle.gif" className="screenshot-50" />
 
 ```python
 import flet as ft

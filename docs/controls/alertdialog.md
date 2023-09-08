@@ -9,7 +9,6 @@ a material design 警报对话框。
 警报对话框通知用户需要确认的情况。 警报对话框具有可选标题和可选的操作列表。 标题显示在内容上方，操作显示在内容下方。
 
 import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 ## 示例
 
@@ -67,7 +66,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/alertdialog/alertdialog-with-custom-content.gif" className="screenshot-50" />
+<img src="/img/docs/controls/alertdialog/alertdialog-with-custom-content.gif" className="screenshot-50" />
 
 ## properties
 

@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 ### 列间距
 
-<img src="/website/img/docs/controls/column/column-spacing.gif" className="screenshot-50"/>
+<img src="/img/docs/controls/column/column-spacing.gif" className="screenshot-50"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -67,7 +67,7 @@ ft.app(target=main)
 
 ### 列包装
 
-<img src="/website/img/docs/controls/column/column-wrapping.gif" className="screenshot-70"/>
+<img src="/img/docs/controls/column/column-wrapping.gif" className="screenshot-70"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -135,7 +135,7 @@ ft.app(target=main)
 
 ### 列垂直对齐
 
-<img src="/website/img/docs/controls/column/column-alignment.png"  className="screenshot-70"/>
+<img src="/img/docs/controls/column/column-alignment.png"  className="screenshot-70"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -193,7 +193,7 @@ ft.app(target=main)
 
 ### 列水平对齐
 
-<img src="/website/img/docs/controls/column/column-horiz-alignment.png"  className="screenshot-50" />
+<img src="/img/docs/controls/column/column-horiz-alignment.png"  className="screenshot-50" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -295,7 +295,7 @@ ft.app(main)
 
 ### 滚动列以编程方式滚动列
 
-<img src="/website/img/docs/controls/column/column-scroll-to.png"  className="screenshot-50" />
+<img src="/img/docs/controls/column/column-scroll-to.png"  className="screenshot-50" />
 
 以下示例演示了各种`scroll_to()`选项，并定义了自定义滚动栏主题:
 

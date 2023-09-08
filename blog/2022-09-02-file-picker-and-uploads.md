@@ -14,7 +14,7 @@ tags: [release]
 
 它在所有平台上都可以使用: Web，MacOS，Window，Linux，iOS 和 Android。
 
-<img src="/website/img/docs/controls/file-picker/file-picker-all-modes-demo.png" className="screenshot-80" />
+<img src="/img/docs/controls/file-picker/file-picker-all-modes-demo.png" className="screenshot-80" />
 
 查看[上面演示的源代码](https://github.com/flet-dev/examples/blob/main/python/controls/file-picker/file-picker-all-modes.py)。
 
@@ -151,7 +151,7 @@ page.add(ft.Image(src="/uploads/<some-uploaded-picture.png>"))
 
 检查[示例](https://github.com/flet-dev/examples/blob/main/python/controls/file-picker/file-picker-upload-progress.py)演示多个文件上传:
 
-<img src="/website/img/docs/controls/file-picker/file-picker-multiple-uploads.png" className="screenshot-40" />
+<img src="/img/docs/controls/file-picker/file-picker-multiple-uploads.png" className="screenshot-40" />
 
 有关其所有属性和示例，请参见[File Picker](/docs/controls/filepicker)控制文档。
 

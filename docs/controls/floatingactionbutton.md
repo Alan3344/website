@@ -4,7 +4,7 @@ sidebar_label: FloatingActionButton
 slug: floatingactionbutton
 ---
 
-从'@themy/tabs'导入选项卡片;
+import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 material design 浮动动作按钮。 浮动操作按钮是一个圆形图标按钮，它悬停在内容上以促进应用程序中的主要动作。
@@ -61,7 +61,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/floatingactionbutton/custom-fab.gif"/>
+<img src="/img/docs/controls/floatingactionbutton/custom-fab.gif"/>
 
 ## properties
 
@@ -124,7 +124,7 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<img src="/website/img/docs/controls/floatingactionbutton/fab-with-custom-shape.png" className="screenshot-20" />
+<img src="/img/docs/controls/floatingactionbutton/fab-with-custom-shape.png" className="screenshot-20" />
 
 ### `text`
 

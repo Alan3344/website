@@ -19,7 +19,7 @@ t = ft.Text(
 page.add(t)
 ```
 
-<img src="/website/img/docs/getting-started/displaying-data-text.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/displaying-data-text.png" className="screenshot-50" />
 
 ### 文本样式
 

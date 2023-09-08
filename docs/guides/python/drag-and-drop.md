@@ -56,7 +56,7 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<img src="/website/img/docs/getting-started/drag-and-drop-number.gif"className="screenshot-50" />
+<img src="/img/docs/getting-started/drag-and-drop-number.gif"className="screenshot-50" />
 
 因此，当发生`on_accept`事件发生时，确定“源”（draggable）和“目标”（拖动目标）控制的情况是开发人员的责任。
 
@@ -91,7 +91,7 @@ ft.app(target=main)
 ...
 ```
 
-<img src="/website/img/docs/getting-started/drag-and-drop-number-2.gif"className="screenshot-50" />
+<img src="/img/docs/getting-started/drag-and-drop-number-2.gif"className="screenshot-50" />
 
 拖动目标控件还具有`on_will_accept`和`on_leave`事件处理程序，它们在“删除”目标时有助于可视化。 在我们的示例中，让我们修改 dragtarget，以便在目标控制范围内绘制一个边框，当它准备好接受传入的阻力:
 
@@ -168,4 +168,4 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<img src="/website/img/docs/getting-started/drag-and-drop-number-3.gif"className="screenshot-50" />
+<img src="/img/docs/getting-started/drag-and-drop-number-3.gif"className="screenshot-50" />

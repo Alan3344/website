@@ -10,7 +10,7 @@ tags: [releases]
 
 🎉whoo-hoo，Flet app 现在在 App Store 上！ 🎉
 
-<a href="https://apps.apple.com/app/flet/id1624979699" target="_blank"><img src="/website/img/blog/ios/flet-1080x1080.png" className="screenshot-50 screenshot-rounded"/></a>
+<a href="https://apps.apple.com/app/flet/id1624979699" target="_blank"><img src="/img/blog/ios/flet-1080x1080.png" className="screenshot-50 screenshot-rounded"/></a>
 
 使用 Flet iOS 应用程序，您可以看到 Flet Python 应用在 iPhone 或 iPad 上的外观和行为时，该应用程序本身在计算机上运行。
 

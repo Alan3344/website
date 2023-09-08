@@ -51,7 +51,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/progress-ring/custom-progress-rings.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/progress-ring/custom-progress-rings.gif" className="screenshot-30"/>
 
 ## properties
 

@@ -4,18 +4,18 @@ sidebar_label: Buttons
 slug: buttons
 ---
 
-从'@site/src/components/card'导入卡片';
+import Card from '@site/src/components/card';
 
 export const ImageCard = ({title, href, imageUrl}) => (
-    <div className="col col--4 margin-bottom--lg">
-      <Card href={href}>
-        <img src={"/img/docs/controls/button/" + imageUrl}/>
-        <h2>{title}</h2>
-      </Card>
-    </div>
+<div className="col col--4 margin-bottom--lg">
+<Card href={href}>
+<img src={"/img/docs/controls/button/" + imageUrl}/>
+<h2>{title}</h2>
+</Card>
+</div>
 );
 
-[LIVE示例](https://flet-controls-gallery.fly.dev/buttons)
+[LIVE 示例](https://flet-controls-gallery.fly.dev/buttons)
 
 <div className="margin-top--lg">
   <section className="row">

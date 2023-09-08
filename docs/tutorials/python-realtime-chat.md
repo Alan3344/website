@@ -17,7 +17,7 @@ sidebar_label: Python - Realtime Chat app
 
 完整的应用程序看起来像这样:
 
-<img src="/website/img/docs/chat-tutorial/chat.gif" className="screenshot-50" />
+<img src="/img/docs/chat-tutorial/chat.gif" className="screenshot-50" />
 
 您可以使用实时演示[此处](https://flet-chat.fly.dev)。
 
@@ -55,13 +55,13 @@ ft.app(target=main)
 
 运行此应用程序，您将看到一个带有问候的新窗口:
 
-<img src="/website/img/docs/tutorial/todo-app-hello-world.png" className="screenshot-40" />
+<img src="/img/docs/tutorial/todo-app-hello-world.png" className="screenshot-40" />
 
 ## 添加页面控件和处理事件
 
 首先，我们希望能够获取用户输入（聊天消息）并在屏幕上显示消息历史记录。 此步骤的布局看起来像这样:
 
-<img src="/website/img/docs/chat-tutorial/chat-layout-1.svg" className="screenshot-70" />
+<img src="/img/docs/chat-tutorial/chat-layout-1.svg" className="screenshot-70" />
 
 要实现此布局，我们将使用这些 Flet 控件:
 
@@ -99,7 +99,7 @@ ft.app(main, view=ft.AppView.WEB_BROWSER)
 :::
 
 聊天应用现在看起来像这样:
-<img src="/website/img/docs/chat-tutorial/chat-1.png" className="screenshot-40" />
+<img src="/img/docs/chat-tutorial/chat-1.png" className="screenshot-40" />
 
 ## 广播聊天消息
 
@@ -169,7 +169,7 @@ def main(page: ft.Page):
 ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
 
-<img src="/website/img/docs/chat-tutorial/chat-2.gif" className="screenshot-100" />
+<img src="/img/docs/chat-tutorial/chat-2.gif" className="screenshot-100" />
 
 ## 用户名对话框
 
@@ -194,10 +194,10 @@ ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 由于我们已经将其`open`属性设置为`True`。
 :::，将在程序开始时打开一个对话框
 
-<img src="/website/img/docs/chat-tutorial/username-dialog.png" className="screenshot-40" />
+<img src="/img/docs/chat-tutorial/username-dialog.png" className="screenshot-40" />
 
 当用户单击“加入聊天”按钮时，它将调用`join_click`方法，该方法应向所有订户发送消息，并通知他们用户已加入聊天。 此消息应该与常规聊天消息不同，例如:
-<img src="/website/img/docs/chat-tutorial/chat-4.png" className="screenshot-40" />
+<img src="/img/docs/chat-tutorial/chat-4.png" className="screenshot-40" />
 
 让我们将`message_type`属性添加到`Message`类中，以区分登录和聊天消息:
 
@@ -254,7 +254,7 @@ def send_click(e):
 
 可以找到此步骤的完整代码[此处](https://github.com/flet-dev/examples/blob/main/python/tutorials/chat/chat_3.py)。
 
-<img src="/website/img/docs/chat-tutorial/chat-3.gif" className="screenshot-100" />
+<img src="/img/docs/chat-tutorial/chat-3.gif" className="screenshot-100" />
 
 ## 增强用户界面
 
@@ -265,7 +265,7 @@ def send_click(e):
 ### 可重复使用的用户控件
 
 您可能需要以不同的格式显示消息，例如:
-<img src="/website/img/docs/chat-tutorial/chat-layout-chatmessage.svg" className="screenshot-70" />
+<img src="/img/docs/chat-tutorial/chat-layout-chatmessage.svg" className="screenshot-70" />
 
 聊天消息现在将是包含[`CircleAvatar`](/docs/controls/circleavatar)的`Row`，带有用户名缩写和`Column`，其中包含两个`Text`控件: 用户名和消息文本。
 
@@ -324,7 +324,7 @@ class ChatMessage(ft.Row):
 
 现在，您可以使用全新的`ChatMessage`为聊天应用程序构建更好的布局:
 
-<img src="/website/img/docs/chat-tutorial/chat-layout-2.svg" className="screenshot-70" />
+<img src="/img/docs/chat-tutorial/chat-layout-2.svg" className="screenshot-70" />
 
 将创建`ChatMessage`的实例，而不是`on_message`中的普通`Text`聊天消息:
 

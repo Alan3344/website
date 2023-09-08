@@ -14,7 +14,7 @@ slug: bottomsheet
 
 ### 简单的底部表格
 
-<img src="/website/img/docs/controls/bottom-sheet/bottom-sheet-sample.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/bottom-sheet/bottom-sheet-sample.gif" className="screenshot-30"/>
 
 ```python
 import flet as ft

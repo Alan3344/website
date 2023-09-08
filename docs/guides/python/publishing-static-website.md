@@ -158,18 +158,18 @@ flet publish <your-flet-app.py> --base-url <sub-directory>
 
 在您的帐户中，从侧菜单中，选择“页面”，如下所示:
 
-<img src="/website/img/docs/cloudflare-pages-deploy/pages-from-sidebar.png"/>
+<img src="/img/docs/cloudflare-pages-deploy/pages-from-sidebar.png"/>
 
 从那里，选择“创建项目”按钮:
 
-<img src="/website/img/docs/cloudflare-pages-deploy/project-creation.png"/>
+<img src="/img/docs/cloudflare-pages-deploy/project-creation.png"/>
 
 CloudFlare 提出了创建项目的三种方法。 只有前两个将在这里暴露:
 
 - 连接到 git 提供商
 - 直接上传
 
-<img src="/website/img/docs/cloudflare-pages-deploy/deployment-methods.png"/>
+<img src="/img/docs/cloudflare-pages-deploy/deployment-methods.png"/>
 
 #### 连接到 git 提供商
 
@@ -177,15 +177,15 @@ CloudFlare 提出了创建项目的三种方法。 只有前两个将在这里�
 
 单击“连接到 Git”蓝色按钮:
 
-<img src="/website/img/docs/cloudflare-pages-deploy/git-account-selection.png"/>
+<img src="/img/docs/cloudflare-pages-deploy/git-account-selection.png"/>
 
 从那里，选择包含您存储库的服务的选项卡片。 然后，连接您的帐户。 选择建议的选项之一，然后单击“安装和授权”。
 
-<img src="/website/img/docs/cloudflare-pages-deploy/git-auth.png"/>
+<img src="/img/docs/cloudflare-pages-deploy/git-auth.png"/>
 
 选择要使用的存储库，然后按“开始设置”按钮。
 
-<img src="/website/img/docs/cloudflare-pages-deploy/repo-selection.png"/>
+<img src="/img/docs/cloudflare-pages-deploy/repo-selection.png"/>
 
 继续前进之前，在您的存储库中添加`runtime.txt`文件。 它应包含要使用的 Python 版本。 在文件中输入 3.7，这是最新的 Python 版本 CloudFlare 在编写时使用。
 
@@ -201,20 +201,20 @@ CloudFlare 提出了创建项目的三种方法。 只有前两个将在这里�
 
 “构建命令”取决于您应用程序的结构。 遵循上面部分中的指南提出您的自定义构建命令。
 
-<img src="/website/img/docs/cloudflare-pages-deploy/flet-publish-help.png"/>
+<img src="/img/docs/cloudflare-pages-deploy/flet-publish-help.png"/>
 
 当构建命令由 Flet 运行时，将创建一个名为“ Dist”的文件夹，该文件夹将包含 CloudFlare 页面所需的所有 Web 文件。 将其设置为您的输出目录。 请注意，此文件不会添加到您的存储库中，因为 CloudFlare 仅具有对代码的读取访问。
 
-<img src="/website/img/docs/cloudflare-pages-deploy/build-settings.png"/>
+<img src="/img/docs/cloudflare-pages-deploy/build-settings.png"/>
 
 您可以选择指定高级参数: 根目录（CloudFlare 运行构建命令的目录）和环境变量（在构建时间期间要使用的变量）。
 现在，单击“保存和部署”按钮，让 CloudFlare 为您完成剩余的工作。
 
-<img src="/website/img/docs/cloudflare-pages-deploy/successful-deployment.png"/>
+<img src="/img/docs/cloudflare-pages-deploy/successful-deployment.png"/>
 
 单击将显示移至部署的网站的 URL。
 
-<img src="/website/img/docs/cloudflare-pages-deploy/app-link-1.png"/>
+<img src="/img/docs/cloudflare-pages-deploy/app-link-1.png"/>
 
 如果打开网站时，您会看到 Cloudflare 错误，则意味着他们尚未完全完成设置。 因此，只需等待一分钟，然后刷新页面即可，您将看到您的应用程序正在运行。
 测试上述部署的站点[此处](https://flet-counter.pages.dev/)。
@@ -229,11 +229,11 @@ CloudFlare 提出了创建项目的三种方法。 只有前两个将在这里�
 
 上传后，按下底部的“部署站点”按钮。
 
-<img src="/website/img/docs/cloudflare-pages-deploy/assets-upload.png"/>
+<img src="/img/docs/cloudflare-pages-deploy/assets-upload.png"/>
 
 然后，您将看到一条成功消息，其中包含指向您已部署的网站的链接。 测试一个已部署的站点[此处](https://todo-2.pages.dev/)的示例。
 
-<img src="/website/img/docs/cloudflare-pages-deploy/app-link-2.png"/>
+<img src="/img/docs/cloudflare-pages-deploy/app-link-2.png"/>
 
 如果打开网站时，您会看到 Cloudflare 错误，则意味着他们尚未完全完成设置。 因此，只需等待一分钟，然后刷新页面即可，您将看到您的应用程序正在运行。
 现在，您可以单击“继续项目”按钮以监视您的部署，或按照上述相同的步骤创建新按钮。

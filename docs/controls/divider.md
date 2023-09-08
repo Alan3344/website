@@ -57,7 +57,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/website/img/docs/controls/divider/divider.png" className="screenshot-40" />
+<img src="/img/docs/controls/divider/divider.png" className="screenshot-40" />
 
 ## properties
 

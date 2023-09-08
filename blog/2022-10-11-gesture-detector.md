@@ -14,7 +14,7 @@ tags: [release]
 
 这是一个应用程序的简单示例，它允许您将容器拖到堆栈中:
 
-<img src="/website/img/blog/gesture-detector/gesture-detector-demo.gif" className="screenshot-50" />
+<img src="/img/blog/gesture-detector/gesture-detector-demo.gif" className="screenshot-50" />
 
 ```python
 import flet as ft

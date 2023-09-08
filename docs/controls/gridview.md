@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 
 ### 照片库
 
-<img src="/website/img/docs/controls/gridview/photo-gallery.png" className="screenshot-50"/>
+<img src="/img/docs/controls/gridview/photo-gallery.png" className="screenshot-50"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>

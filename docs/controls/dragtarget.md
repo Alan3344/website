@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 ### 拖放颜色
 
-<img src="/website/img/docs/controls/drag-and-drop/drag-and-drop-colors.gif" className="screenshot-50" />
+<img src="/img/docs/controls/drag-and-drop/drag-and-drop-colors.gif" className="screenshot-50" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>

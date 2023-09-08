@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 ### 行间距
 
-<img src="/website/img/docs/controls/row/row-spacing.gif" className="screenshot" />
+<img src="/img/docs/controls/row/row-spacing.gif" className="screenshot" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -66,7 +66,7 @@ ft.app(target=main)
 
 ### 行包裹
 
-<img src="/website/img/docs/controls/row/row-wrap.gif" className="screenshot" />
+<img src="/img/docs/controls/row/row-wrap.gif" className="screenshot" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -131,7 +131,7 @@ ft.app(target=main)
 
 ### 行水平对齐
 
-<img src="/website/img/docs/controls/row/row-alignment.png" className="screenshot" />
+<img src="/img/docs/controls/row/row-alignment.png" className="screenshot" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -183,7 +183,7 @@ ft.app(target=main)
 
 ### 行垂直
 
-<img src="/website/img/docs/controls/row/row-vertical-alignment.png" className="screenshot-70" />
+<img src="/img/docs/controls/row/row-vertical-alignment.png" className="screenshot-70" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>

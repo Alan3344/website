@@ -4,12 +4,12 @@ sidebar_label: FilledTonalButton
 slug: filledtonalbutton
 ---
 
-从'@themy/tabs'导入选项卡片;
+import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 填充的音调按钮是[FilledButton](filledbutton)和[OutlinedButton](outlinedbutton)按钮之间的另一种中间立场。 它们在较低优先级按钮所需的重点比轮廓所赋予的略高的上下文中很有用，例如入职流中的“下一个”。 音调按钮使用辅助颜色映射。 有关更多信息，请参见[材料 3 按钮](https://m3.material.io/components/buttons/overview)。
 
-<img src="/website/img/docs/controls/filled-tonal-button/basic-filled-tonal-buttons.png" className="screenshot-20" />
+<img src="/img/docs/controls/filled-tonal-button/basic-filled-tonal-buttons.png" className="screenshot-20" />
 
 ## Examples
 

@@ -8,7 +8,7 @@ Flet UI 不会嵌入您的程序中，而是由处理外 Flet 服务器提供的
 
 在经典的客户端架构中，前端通信到一个或多个后端服务。 Flet 实现了一种相反的方法，其中多个后端服务散布在防火墙后面的内部网络上，并与集中式 Flet Web 服务器（即前端服务）进行通信，即 DMZ 中安装或托管作为服务。
 
-<div style={{textAlign: 'center'}}><img src="/website/img/blog/pglet-introduction/pglet-highlevel-design.png" /></div>
+<div style={{textAlign: 'center'}}><img src="/img/blog/pglet-introduction/pglet-highlevel-design.png" /></div>
 
 该设计给出了许多优点:
 

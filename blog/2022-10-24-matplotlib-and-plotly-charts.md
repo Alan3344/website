@@ -18,15 +18,15 @@ tags: [release]
 
 绘制[简单条形图](https://github.com/flet-dev/examples/blob/main/python/controls/charts/mpl-barchart.py):
 
-<img src="/website/img/docs/controls/charts/matplotlib-barchart.png" className="screenshot-60"/>
+<img src="/img/docs/controls/charts/matplotlib-barchart.png" className="screenshot-60"/>
 
 一个不错的[带有传奇的散布](https://github.com/flet-dev/examples/blob/main/python/controls/charts/mpl-scatter.py):
 
-<img src="/website/img/docs/controls/charts/matplotlib-scatter.png" className="screenshot-60"/>
+<img src="/img/docs/controls/charts/matplotlib-scatter.png" className="screenshot-60"/>
 
 或一些多创图[CONTOUR 图](https://github.com/flet-dev/examples/blob/main/python/controls/charts/mpl-contour.py):
 
-<img src="/website/img/docs/controls/charts/matplotlib-contour.png" className="screenshot-60"/>
+<img src="/img/docs/controls/charts/matplotlib-contour.png" className="screenshot-60"/>
 
 检查文档中的 matplotlib 并绘制图表控件:
 

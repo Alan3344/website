@@ -11,7 +11,7 @@ sidebar_label: Navigation and routing
 
 1.对历史记录堆栈的程序化控制。 2.一种简单的方法，可以在 Appbar 中拦截“回”按钮的呼叫。 3.与浏览器历史记录的强大同步。
 
-<img src="/website/img/docs/navigation-routing/routing-app-example.gif"className="screenshot-60" />
+<img src="/img/docs/navigation-routing/routing-app-example.gif"className="screenshot-60" />
 
 探索以上示例的[源代码](https://github.com/flet-dev/examples/blob/main/python/apps/routing-navigation/building-views-on-route-change.py)。
 
@@ -19,7 +19,7 @@ sidebar_label: Navigation and routing
 
 页面路由是应用程序 URL 的一部分``＃'符号:
 
-<img src="/website/img/docs/navigation-routing/page-address-route.png"className="screenshot-50" />
+<img src="/img/docs/navigation-routing/page-address-route.png"className="screenshot-50" />
 
 默认应用程序路由（如果不是用户在应用程序 URL 中设置的）为`/'。 所有路线以`/'开头，例如``/store'，'/authors/1/books/2`。
 
@@ -55,7 +55,7 @@ ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 
 现在，尝试更新 URL 哈希几次，然后使用后/向前按钮！ 每次路由都会更改时，您应该看到一条新消息:
 
-<img src="/website/img/docs/navigation-routing/page-route-change-event.gif"className="screenshot-60" />
+<img src="/img/docs/navigation-routing/page-route-change-event.gif"className="screenshot-60" />
 
 可以通过更新`page.route`属性来编程更改路由:
 
@@ -84,7 +84,7 @@ ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 
 Flet 的[page](/docs/controls/page)现在不仅是一个页面，而且是[view](/docs/controls/view)的容器，就像三明治一样在彼此的上面层面:
 
-<img src="/website/img/docs/navigation-routing/page-views.svg" className="screenshot-100" />
+<img src="/img/docs/navigation-routing/page-views.svg" className="screenshot-100" />
 
 视图的集合代表导航器历史记录。 页面具有[`page.views`](/docs/controls/page#views)属性，可访问视图集合。
 
