@@ -7,7 +7,13 @@
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
-    "view": "serve -s build"
+    "view": "serve -s build",
+    "dev": "serve -s build",
+    "bdev": "tool/prior dev && yarn build",
+    "bpub": "tool/prior pub && yarn build",
+    "perfix": "node tool/addperfix",
+    "dev-all": "tool/prior dev && yarn build && yarn view",
+    "pub-all": "tool/prior pub && yarn build && yarn perfix && yarn view"
   },
   "dependencies": {
     "@docusaurus/core": "^2.4.0",
