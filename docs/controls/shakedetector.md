@@ -4,13 +4,13 @@ sidebar_label: ShakeDetector
 slug: shakedetector
 ---
 
-Detects phone shakes.
+检测手机摇动。
 
-It is non-visual and should be added to `page.overlay` list.
+它是非视觉的，应添加到`page.overlay`列表中。
 
-## Examples
+## 示例
 
-### Shake detector sample
+### 摇动检测器样本
 
 ```python
 import flet as ft
@@ -27,28 +27,28 @@ def main(page: ft.Page):
     page.add(ft.Text("Program body"))
 
 ft.app(target=main)
-```
+``` 
 
-## Properties
+##  properties 
 
-### `minimum_shake_count`
+###  `minimum_shake_count`
 
-Number of shakes required before shake is triggered. Default is `1`.
+触发摇动之前所需的摇动数量。 默认值为`1`。
 
-### `shake_count_reset_time_ms`
+###  `shake_count_reset_time_ms`
 
-Time, in milliseconds, before shake count resets. Default is `3000` ms.
+时间，以毫秒为单位，然后摇动计数重置。 默认值为`3000` MS。
 
-### `shake_slop_time_ms`
+###  `shake_slop_time_ms`
 
-Minimum time between shakes, in milliseconds. Default is `500` ms.
+摇动之间的最短时间，以毫秒为单位。 默认值为`500` MS。
 
-### `shake_threshold_gravity`
+###  `shake_threshold_gravity`
 
-Shake detection threshold, in Gs. Default is `2.7`G.
+摇动检测阈值，gs。 默认值为`2.7`G。
 
-## Events
+## 事件
 
-### `on_shake`
+###  `on_shake`
 
-Triggers when the shake detected.
+检测到摇动时触发。

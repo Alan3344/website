@@ -4,20 +4,20 @@ sidebar_label: Column
 slug: column
 ---
 
-A control that displays its children in a vertical array.
+一个在垂直数组中显示其 children 的控件。
 
-To cause a child control to expand and fill the available vertical space set its `expand` property.
+引起 child 控件以扩展和填充可用的垂直空间设置其`expand`属性。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/layout/column)
+[LIVE 示例](https://flet-controls-gallery.fly.dev/layout/column)
 
-### Column spacing
+### 列间距
 
-<img src="/img/docs/controls/column/column-spacing.gif" className="screenshot-50"/>
+<img src="/website/img/docs/controls/column/column-spacing.gif" className="screenshot-50"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -61,12 +61,13 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-### Column wrapping
+### 列包装
 
-<img src="/img/docs/controls/column/column-wrapping.gif" className="screenshot-70"/>
+<img src="/website/img/docs/controls/column/column-wrapping.gif" className="screenshot-70"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -128,12 +129,13 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-### Column vertical alignments
+### 列垂直对齐
 
-<img src="/img/docs/controls/column/column-alignment.png"  className="screenshot-70"/>
+<img src="/website/img/docs/controls/column/column-alignment.png"  className="screenshot-70"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -185,12 +187,13 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-### Column horizontal alignments
+### 列水平对齐
 
-<img src="/img/docs/controls/column/column-horiz-alignment.png"  className="screenshot-50" />
+<img src="/website/img/docs/controls/column/column-horiz-alignment.png"  className="screenshot-50" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -243,12 +246,13 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-### Infinite scroll list
+### 无限滚动列表
 
-The following example demonstrates adding of list items on-the-fly, as user scroll to the bottom, creating the illusion of inifinite list:
+下面的示例演示了列表项目的添加，因为用户滚动到底部，造成了无限列表的幻觉:
 
 ```python
 import threading
@@ -289,11 +293,11 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-### Scrolling column programmatically
+### 滚动列以编程方式滚动列
 
-<img src="/img/docs/controls/column/column-scroll-to.png"  className="screenshot-50" />
+<img src="/website/img/docs/controls/column/column-scroll-to.png"  className="screenshot-50" />
 
-The following example demonstrates various `scroll_to()` options as well as defines a custom scrollbar theme:
+以下示例演示了各种`scroll_to()`选项，并定义了自定义滚动栏主题:
 
 ```python
 import flet as ft
@@ -368,100 +372,100 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-## Properties
+## properties
 
 ### `alignment`
 
-How the child Controls should be placed vertically.
+child 控件应垂直放置。
 
-Property value is `MainAxisAlignment` enum with the following values:
+属性值为`MainAxisAlignment`枚举，具有以下值:
 
-* `START` (default)
-* `END`
-* `CENTER`
-* `SPACE_BETWEEN`
-* `SPACE_AROUND`
-* `SPACE_EVENLY`
+- `START`（默认）
+- `END`
+- `CENTER`
+- `SPACE_BETWEEN`
+- `SPACE_AROUND`
+- `SPACE_EVENLY`
 
 ### `auto_scroll`
 
-`True` if scrollbar should automatically move its position to the end when children updated. Must be `False` for `scroll_to()` method to work.
+`True`如果 Scrollbar 应自动将其位置移至 children 更新时。 必须为`False`进行工作的方法`False`。
 
 ### `controls`
 
-A list of Controls to display inside the Column.
+在列内显示的控件列表。
 
 ### `horizontal_alignment`
 
-How the child Controls should be placed horizontally.
+child 控件应如何水平放置。
 
-Property value is `CrossAxisAlignment` enum with the following values:
+属性值为`CrossAxisAlignment`枚举，具有以下值:
 
-* `START` (default)
-* `CENTER`
-* `END`
-* `STRETCH`
-* `BASELINE`
+- `START`（默认）
+- `CENTER`
+- `END`
+- `STRETCH`
+- `BASELINE`
 
 ### `on_scroll_interval`
 
-Throttling in milliseconds for `on_scroll` event. Default is `10`.
+`on_scroll`事件以毫秒为单位。 默认值为`10`。
 
 ### `scroll`
 
-Enables a vertical scrolling for the Column to prevent its content overflow.
+启用对列的垂直滚动，以防止其内容溢出。
 
-Property value is an optional `ScrollMode` enum with `None` as default.
+属性值是默认值`None`的可选`ScrollMode`枚举。
 
-Supported values:
+支持的值:
 
-* `None` (default) - the column is non-scrollable and its content could overflow.
-* `AUTO` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
-* `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
-* `ALWAYS` - scrolling is enabled and scroll bar is always shown.
-* `HIDDEN` - scrolling is enabled, but scroll bar is always hidden.
+- `None`（默认值） - 该列不可滚动，其内容可能会溢出。
+- `AUTO` - 启用滚动，仅在滚动时显示滚动条。
+- `ADAPTIVE` - 启用滚动，并在运行应用程序或桌面时始终显示滚动条。
+- `ALWAYS` - 启用滚动，并始终显示滚动条。
+- `HIDDEN` - 启用滚动，但滚动条总是隐藏的。
 
 ### `spacing`
 
-Spacing between controls in a Column. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
+列中控件之间的间距。 默认值是 10 个虚拟像素。 仅当`alignment`设置为`start`，`end`或`center`。
 
 ### `run_spacing`
 
-Spacing between runs when `wrap=True`. Default value is 10.
+`wrap=True`时运行之间的间距。 默认值为 10。
 
 ### `tight`
 
-Specifies how much space should be occupied vertically. Default is `False` - allocate all space to children.
+指定应垂直占用多少空间。 默认值为`False` - 将所有空间分配给 children。
 
 ### `wrap`
 
-When set to `True` the Column will put child controls into additional columns (runs) if they don't fit a single column.
+设置为`True`时，该列将如果不适合单个列，将 child 控件放入其他列（运行）中。
 
-## Methods
+## 方法
 
-### `scroll_to(offset, delta, key, duration, curve)`
+### `scroll_to（offset，delta，delta，key，键，持续时间，持续时间，曲线） `
 
-Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
+将滚动位置移至绝对`offset`，相对`delta`或使用指定的`key`跳到控件。
 
-`offset` is an abosulte value between minimum and maximum extents of a scrollable control, for example:
+`offset`是可滚动控件的最小值和最大范围之间的座位值，例如:
 
 ```python
 products.scroll_to(offset=100, duration=1000)
 ```
 
-`offset` could be a negative to scroll from the end of a scrollable. For example, to scroll to the very end:
+`offset`从可滚动的末端滚动可能是负面的。 例如，滚动到最后:
 
 ```python
 products.scroll_to(offset=-1, duration=1000)
 ```
 
-`delta` allows moving scroll relatively to the current position. Use positive `delta` to scroll forward and negative `delta` to scroll backward. For example, to move scroll on 50 pixels forward:
+`delta`允许相对移动到当前位置。 使用正面`delta`向前滚动和负`delta`向后滚动。 例如，在 50 像素上向前移动滚动:
 
 ```python
 products.scroll_to(delta=50)
 ```
 
-`key` allows moving scroll position to a control with specified `key`. Most of Flet controls have `key` property which is translated to Flutter as "global key". `key` must be unique for the entire page/view. For example:
+`key`允许使用指定的`key`将滚动位置移至控件。 大多数 Flet 控件具有`key`属性，该属性被翻译成“全局密钥”。 `key`对于整个页面/视图，必须是唯一的。 例如:
 
 ```python
 import flet as ft
@@ -487,40 +491,40 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-:::note
-`scroll_to()` method won't work with `ListView` and `GridView` controls building their items dynamically.
+:::注意
+`scroll_to()`方法与`ListView`和`GridView`无法使用动态构建其物品。
 :::
 
-`duration` is scrolling animation duration in milliseconds. Defaults to 0 - no animation.
+`duration`以毫秒为单位滚动动画持续时间。 默认为 0-无动画。
 
-`curve` configures animation curve. Defaults to `ft.AnimationCurve.EASE`.
+`curve`配置动画曲线。 默认为`ft.AnimationCurve.EASE`。
 
-## Events
+## 事件
 
 ### `on_scroll`
 
-Fires when scroll position is changed by a user.
+用户更改滚动位置时会发射。
 
-Event handler argument is an instance of `ft.OnScrollEvent` class with the following properties:
+事件处理程序参数是`ft.OnScrollEvent`类的实例，具有以下属性:
 
-* `event_type` (str) - type of the scroll event:
-  * `start` - control has started scrolling;
-  * `update` - control has changed its scroll position;
-  * `end` - control has stopped scrolling;
-  * `user` - user has changed the direction in which they are scrolling;
-  * `over` - control has not changed its scroll position because the change would have caused its scroll position to go outside its scroll bounds;
-* `pixels` (float) - The current scroll position, in logical pixels.
-* `min_scroll_extent` (float) - The minimum in-range value for `pixels`.
-* `max_scroll_extent` (float) - The maximum in-range value for `pixels`.
-* `viewport_dimension` (float) - The extent of the viewport.
-* `scroll_delta` (float) - The distance by which the scrollable was scrolled, in logical pixels. Set for `update` events only.
-* `direction` (str) - The direction in which the user is scrolling: `idle`, `forward`, `reverse`. Set for `user` events only.
-* `overscroll` (float) - The number of logical pixels that the scrollable avoided scrolling. Set for `over` events only.
-* `velocity` (float) - The velocity at which the ScrollPosition was changing when this overscroll happened. Set for `over` events only.
+- `event_type`（str） - 类型滚动事件:
+  - `start` - 控制已开始滚动；
+  - `update` - 控制已更改其滚动位置；
+  - `end` - 控制已停止滚动；
+  - `user` - 用户改变了滚动的方向；
+  - `over` - 控制没有更改其滚动位置，因为更改会导致其滚动位置超出其滚动边界；
+- `pixels`（float） - 当前的滚动位置，在逻辑像素中。
+- `min_scroll_extent`（float） - `pixels`的最小范围内值。
+- `max_scroll_extent`（float） - `pixels`的最大范围内值。
+- `viewport_dimension`（float） - 视口范围。
+- `scroll_delta`（float） - 逻辑像素以滚动滚动的距离。 仅设置`update`事件。
+- `direction`（str） - 用户滚动的方向: `idle`，`forward`，`reverse`。 仅设置`user`事件。
+- `overscroll`（float） - 可滚动避免滚动的逻辑像素的数量。 仅设置`over`事件。
+- `velocity`（float） - 当发生这种超滚动时，卷轴变化的速度正在发生变化。 仅设置`over`事件。
 
-## Expanding children
+## 扩展 children
 
-When a child Control is placed into a Column you can "expand" it to fill the available space. Every Control has `expand` property that can have either a boolean value (`True` - expand control to fill all available space) or an integer - an "expand factor" specifying how to divide a free space with other expanded child controls. For example, this code creates a column with a Container taking all available space and a Text control at the bottom serving as a status bar:
+将 child 控件放入列中时，您可以“展开”其以填充可用空间。 每个控件都有`expand`属性，可以具有布尔值（`True` - 扩展控制以填充所有可用空间）或一个整数 - 一个“扩展因子”指定如何将自由空间与其他扩展的 child 控件分配 。 例如，此代码使用一个容器创建一列，以占据所有可用空间和底部的文本控件，用作状态栏:
 
 ```python
 r = ft.Column([
@@ -529,7 +533,7 @@ r = ft.Column([
 ])
 ```
 
-The following example with numeric expand factors creates a Column with 3 containers in it and having heights of `20% (1/5)`, `60% (3/5)` and `20% (1/5)` respectively:
+数字扩展因子的以下示例创建了一个具有 3 个容器的列，其高度为`20％（1/5）`，`60％（3/5）'和`分别为 20％（1/5）`:
 
 ```python
 r = ft.Column([
@@ -539,4 +543,4 @@ r = ft.Column([
 ])
 ```
 
-In general, the resulting height of a child in percents is calculated as `expand / sum(all expands) * 100%`.
+通常，percents 中 child 的结果高度被计算为`expand / sum（所有扩展） * 100％`。

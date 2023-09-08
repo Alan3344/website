@@ -4,18 +4,18 @@ sidebar_label: AnimatedSwitcher
 slug: animatedswitcher
 ---
 
-A control that by default does a cross-fade between a new control and the control previously set on the AnimatedSwitcher as a `content`.
+一个控件，默认情况下，在新的控件和先前在 AnimatedSwitcher 上设置为`content`的控制。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/animations/animated_switcher)
+[live 示例](https://flet-controls-gallery.fly.dev/animations/animated_switcher)
 
-### Animated switching between two containers with scale effect
+### 动画切换两个具有比例效果的容器
 
-<img src="/img/docs/controls/animated-switcher/animated-switcher.gif" className="screenshot-20" />
+<img src="/website/img/docs/controls/animated-switcher/animated-switcher.gif" className="screenshot-20" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -59,27 +59,28 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-## Properties
+## properties
 
 ### `duration`
 
-The duration, in milliseconds, of the transition from the old `content` value to the new one. Default is `1000` milliseconds.
+从旧`content`的过渡到新的，以毫秒为单位。 默认值为`1000`毫秒。
 
 ### `reverse_duration`
 
-The duration, in milliseconds, of the transition from the new `content` value to the old one. Default is `1000` milliseconds.
+从新的`content`过渡到旧值的过渡，以毫秒为单位。 默认值为`1000`毫秒。
 
 ### `switch_in_curve`
 
-The animation curve to use when transitioning in a new `content`. See [Curves](https://api.flutter.dev/flutter/animation/Curves-class.html) in Flutter docs for possible values. Property value is `AnimationCurve` enum with `AnimationCurve.LINEAR` as default.
+在新的`content`中过渡时要使用的动画曲线。 有关可能的值，请参见[曲线](https://api.flutter.dev/flutter/animation/Curves-class.html)。 属性值为`AnimationCurve`枚举，`AnimationCurve.LINEAR`作为默认值。
 
 ### `switch_out_curve`
 
-The animation curve to use when transitioning a previous `content` out. See [Curves](https://api.flutter.dev/flutter/animation/Curves-class.html) in Flutter docs for possible values.  Property value is `AnimationCurve` enum with `AnimationCurve.LINEAR` as default.
+在过渡以前的`content` Out 时要使用的动画曲线。 有关可能的值，请参见[曲线](https://api.flutter.dev/flutter/animation/Curves-class.html)。 属性值为`AnimationCurve`枚举，`AnimationCurve.LINEAR`默认值。
 
 ### `transition`
 
-An animation type to transition between new and old `content`. Property value is `AnimatedSwitcherTransition` enum with `AnimatedSwitcherTransition.FADE` as default.
+新`content`之间过渡的动画类型。 属性值为`AnimatedSwitcherTransition`枚举，`AnimatedSwitcherTransition.FADE`默认值为`AnimatedSwitcherTransition.FADE`。

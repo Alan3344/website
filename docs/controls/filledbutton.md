@@ -4,12 +4,12 @@ sidebar_label: FilledButton
 slug: filledbutton
 ---
 
-import Tabs from '@theme/Tabs';
+从'@themy/tabs'导入选项卡片；
 import TabItem from '@theme/TabItem';
 
-Filled buttons have the most visual impact after the [FloatingActionButton](/docs/controls/floatingactionbutton), and should be used for important, final actions that complete a flow, like **Save**, **Join now**, or **Confirm**. See [Material 3 buttons](https://m3.material.io/components/buttons/overview) for more info.
+填充按钮在[floatingActionButton](/docs/controls/floatingactionbutton)之后具有最大的视觉影响，应用于完成流程的重要，最终动作，例如**保存**，**，**立即加入**或**确认\*\* \*\* 。 有关更多信息，请参见[材料 3 按钮](https://m3.material.io/components/buttons/overview)。
 
-<img src="/img/docs/controls/filled-button/basic-filled-buttons.png" className="screenshot-20" />
+<img src="/website/img/docs/controls/filled-button/basic-filled-buttons.png" className="screenshot-20" />
 
 ## Examples
 
@@ -34,61 +34,62 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 
 </Tabs>
 
-## Properties
+## properties
 
 ### `autofocus`
 
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+如果将控件选择作为初始焦点，则为 thus。 如果一个带有自动对焦集的页面上有多个控件，则添加到页面的第一个将获得焦点。
 
 ### `content`
 
-A Control representing custom button content.
+代表自定义按钮内容的控件。
 
 ### `icon`
 
-Icon shown in the button.
+按钮中显示的图标。
 
 ### `icon_color`
 
-Icon [color](/docs/guides/python/colors).
+图标[颜色](/docs/guides/python/colors)。
 
 ### `style`
 
-See [ElevatedButton.style](/docs/controls/elevatedbutton#style) for more information about this property.
+有关此属性的更多信息，请参见[3441} `text`
 
-### `text`
-
-The text displayed on a button.
+按钮上显示的文本。
 
 ### `tooltip`
 
-The text displayed when hovering the mouse over the button.
+悬停在按钮上时显示的文本。
 
 ### `url`
 
-The URL to open when the button is clicked. If registered, `on_click` event is fired after that.
+单击按钮时要打开的 URL。 如果已注册，则`on_click`事件在此之后发射。
 
 ### `url_target`
 
-Where to open URL in the web mode:
+在 Web 模式下打开 URL 的位置:
 
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+- `_blank`（默认值） - 新 Tab/window。
+- `_self` - 当前的选项卡片/窗口。
 
-## Events
+## 事件
 
 ### `on_click`
 
-Fires when a user clicks the button.
+用户单击按钮时发射。
 
 ### `on_hover`
 
-Fires when a mouse pointer enters or exists the button response area. `data` property of event object contains `true` (string) when cursor enters and `false` when it exits.
+当鼠标指针进入或存在按钮响应区域时发射。 `data`事件对象的属性包含`true`（string）Enter Enter Enter 和`false`当它退出时。
+
+###
 
 ### `on_long_press`
 
-Fires when the button is long-pressed.
+长时间按钮时会发射。

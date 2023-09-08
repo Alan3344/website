@@ -4,18 +4,18 @@ sidebar_label: CircleAvatar
 slug: circleavatar
 ---
 
-A circle that represents a user.
+代表用户的圆圈。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Typically used with a user's profile image, or, in the absence of such an image, the user's initials. A given user's initials should always be paired with the same background color, for consistency.
+通常与用户的个人资料图像一起使用，或者在没有这样的图像的情况下使用用户的缩写。 给定用户的缩写应始终与相同的背景颜色配对，以保持一致性。
 
-If `foreground_image_url` fails then `background_image_url` is used. If `background_image_url` fails too, `bgcolor` is used.
+如果`foreground_image_url`失败，则使用`background_image_url`。 如果`background_image_url`也失败，则使用`bgcolor`。
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/displays/circleavatar)
+[LIVE 示例](https://flet-controls-gallery.fly.dev/displays/circleavatar)
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -63,45 +63,46 @@ def main(page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/circle-avatar/circle-avatar.png" className="screenshot-10" />
+<img src="/website/img/docs/controls/circle-avatar/circle-avatar.png" className="screenshot-10" />
 
-## Properties
+## properties
 
 ### `background_image_url`
 
-The background image of the circle. Changing the background image will cause the avatar to animate to the new image. Typically used as a fallback image for `foreground_image_url`. If the CircleAvatar is to have the user's initials, use `content` instead.
+圆的背景图像。 更改背景图像将导致化身对新图像进行动画。 通常用作`foreground_image_url`的后备图像。 如果 CircleAvatar 要具有用户的姓名缩写，请使用`content`。
 
 ### `bgcolor`
 
-The [color](/docs/guides/python/colors) with which to fill the circle. Changing the background color will cause the avatar to animate to the new color.
+填充圆的[颜色](/docs/guides/python/colors)。 更改背景颜色会导致化身对新颜色进行动画。
 
 ### `color`
 
-The default text [color](/docs/guides/python/colors) for text in the circle. Defaults to the primary text theme color if no `bgcolor` is specified.
+circle 中的文本的默认文本[color](/docs/guides/python/colors)。 如果未指定`bgcolor`，则默认为主要文本主题颜色。
 
 ### `content`
 
-Typically a `Text` control. If the CircleAvatar is to have an image, use `background_image_url` instead.
+通常是`Text`控件。 如果要具有图像，请改用`background_image_url`。
 
 ### `foreground_image_url`
 
-The foreground image of the circle. Typically used as profile image. For fallback use `background_image_url`.
+圆的前景图像。 通常用作配置文件图像。 为后备使用`background_image_url`。
 
 ### `max_radius`
 
-The maximum size of the avatar, expressed as the radius (half the diameter). If maxRadius is specified, then radius must not also be specified. Defaults to "infinity".
+头像的最大尺寸为半径（直径一半）。 如果指定了 Maxradius，则不得指定半径。 默认为“无限”。
 
 ### `min_radius`
 
-The minimum size of the avatar, expressed as the radius (half the diameter). If minRadius is specified, then radius must not also be specified. Defaults to zero.
+头像的最小尺寸表示为半径（直径一半）。 如果指定了 Minradius，则不得指定半径。 默认为零。
 
 ### `radius`
 
-The size of the avatar, expressed as the radius (half the diameter). If radius is specified, then neither minRadius nor maxRadius may be specified.
+头像的大小表示为半径（直径一半）。 如果指定了半径，则不能指定 Minradius 和 Maxradius。
 
 ### `tooltip`
 
-The text displayed when hovering the mouse over the button.
+将鼠标悬停在按钮上时显示的文本。

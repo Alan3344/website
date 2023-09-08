@@ -3,8 +3,8 @@ title: Layout
 sidebar_label: Layout
 ---
 
-* Row
-* Column
-* Stack
-* Container
-* padding, margin, border, etc.
+* row 
+* 列
+*  stack 
+* 容器
+* 填充，保证金，边框，等等。

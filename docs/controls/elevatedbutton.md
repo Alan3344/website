@@ -4,16 +4,16 @@ sidebar_label: ElevatedButton
 slug: elevatedbutton
 ---
 
-import Tabs from '@theme/Tabs';
+从'@themy/tabs'导入选项卡片;
 import TabItem from '@theme/TabItem';
 
-Elevated buttons are essentially filled tonal buttons with a shadow. To prevent shadow creep, only use them when absolutely necessary, such as when the button requires visual separation from a patterned background. See [Material 3 buttons](https://m3.material.io/components/buttons/overview) for more info.
+高架按钮本质上是带有阴影的音调按钮。 为了防止阴影蠕变，只有在绝对必要的情况下使用它们，例如当按钮需要与图案背景的视觉分离时。 有关更多信息，请参见[材料 3 按钮](https://m3.material.io/components/buttons/overview)。
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/buttons/elevatedbutton)
+[live 示例](https://flet-controls-gallery.fly.dev/buttons/elevatedbutton)
 
-### Basic elevated buttons
+### 基本高架按钮
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -30,11 +30,12 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 
 </Tabs>
 
-<img src="/img/docs/controls/elevated-button/basic-elevated-buttons.png" className="screenshot-20" />
+<img src="/website/img/docs/controls/elevated-button/basic-elevated-buttons.png" className="screenshot-20" />
 
 ### Elevated buttons with icons
 
@@ -58,11 +59,12 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 
 </Tabs>
 
-<img src="/img/docs/controls/elevated-button/elevated-buttons-with-icons.png" className="screenshot-30" />
+<img src="/website/img/docs/controls/elevated-button/elevated-buttons-with-icons.png" className="screenshot-30" />
 
 ### Elevated button with `click` event
 
@@ -92,12 +94,12 @@ ft.app(target=main)
 
 </Tabs>
 
-<img src="/img/docs/controls/elevated-button/elevated-button-with-click-event.gif" className="screenshot-50" />
+<img src="/website/img/docs/controls/elevated-button/elevated-button-with-click-event.gif" className="screenshot-50" />
 
-### Elevated button with custom content 
+### 带有自定义内容的高架按钮
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
+<tabs groupId="language">
+   <tabitem value ="python" label="python" default>
 
 ```python
 import flet as ft
@@ -134,61 +136,61 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-  </TabItem>
+   </tabitem>
   
-</Tabs>
+</tabs>
 
-<img src="/img/docs/controls/elevated-button/elevated-buttons-with-custom-content.png" className="screenshot-30" />
+<img src="/website/img/docs/controls/elevated-button/elevated-buttons-with-custom-content.png" className="screenshot-30" />
 
-## Properties
+## properties
 
 ### `autofocus`
 
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+如果将控件选择作为初始焦点，则为 thus。 如果一个带有自动对焦集的页面上有多个控件，则添加到页面的第一个控件将获得焦点。
 
 ### `bgcolor`
 
-Button's background [color](/docs/guides/python/colors).
+按钮的背景[颜色](/docs/guides/python/colors)。
 
 ### `color`
 
-Button's text [color](/docs/guides/python/colors).
+按钮的文本[颜色](/docs/guides/python/colors)。
 
 ### `content`
 
-A Control representing custom button content.
+代表自定义按钮内容的控件。
 
 ### `elevation`
 
-Button's elevation.
+按钮的高程。
 
 ### `icon`
 
-Icon shown in the button.
+按钮中显示的图标。
 
 ### `icon_color`
 
-Icon [color](/docs/guides/python/colors).
+图标[颜色](/docs/guides/python/colors)。
 
 ### `style`
 
-The value is an instance of `ButtonStyle` class. `ButtonStyle` allows controling all visual aspects of a button, such as shape, foreground, background and shadow colors, content padding, border width and radius.
+该值是`ButtonStyle`类的实例。 `ButtonStyle`允许控制按钮的所有视觉方面，例如形状，前景，背景和阴影颜色，内容填充，边框宽度和半径。
 
-Each individual style attribute could be configured for all or particular "Material states" of a button, such as "hovered", "focused", "disabled" and others. For example, you can configure a different shape, background color for a hovered state and configure fallback values for all other states.
+每个单独的样式属性都可以为一个按钮的所有或特定的“材料状态”配置，例如“徘徊”，“聚焦”，“禁用”等。 例如，您可以为盘旋状态配置不同的形状，背景颜色，并为所有其他状态配置后备值。
 
-The following `MaterialState` values are supported:
+支持以下`MaterialState`值:
 
-* `HOVERED`
-* `FOCUSED`
-* `PRESSED`
-* `DRAGGED`
-* `SELECTED`
-* `SCROLLEDUNDER`
-* `DISABLED`
-* `ERROR`
-* `DEFAULT` - fallback state, meaning "all other states".
+- `HOVERED`
+- `FOCUSED`
+- `PRESSED`
+- `DRAGGED`
+- `SELECTED`
+- `SCROLLEDUNDER`
+- `DISABLED`
+- `ERROR`
+- `DEFAULT` - 后备状态，意思是“所有其他状态”。
 
-To configure style attribute for all Material states set its value to a literal (or class instance). For example, if you set `color` property to a literal the value will be applied to all button states:
+为了配置所有材料状态的样式属性，将其值设置为文字（或类实例）。 例如，如果将`color`属性设置为字面的属性，则将将值应用于所有按钮状态:
 
 ```python
 ButtonStyle(
@@ -196,7 +198,7 @@ ButtonStyle(
 )
 ```
 
-To configure style attribute for specific Material states set its value to a dictionary where the key is state name. For example, to configure different background colors for `HOVERED` and `FOCUSED` states and another colors for all other states:
+为特定材料状态配置样式属性，将其值设置为键是状态名称的字典。 例如，为`HOVERED`和`FOCUSED`配置不同的背景颜色，以及所有其他状态的另一种颜色:
 
 ```python
 ButtonStyle(
@@ -208,9 +210,9 @@ ButtonStyle(
 )
 ```
 
-Check the following example:
+检查以下示例:
 
-<img src="/img/blog/gradients/styled-button.gif" className="screenshot-30" />
+<img src="/website/img/blog/gradients/styled-button.gif" className="screenshot-30" />
 
 ```python
 import flet as ft
@@ -248,32 +250,32 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-#### `ButtonStyle` class
+#### `ButtonStyle`类
 
- `ButtonStyle` class has the following properties:
+`ButtonStyle`类具有以下属性:
 
-* `color` - The color for the button's Text and Icon control descendants.
-* `bgcolor` - The button's background fill color.
-* `overlay_color` - The highlight color that's typically used to indicate that the button is focused, hovered, or pressed.
-* `shadow_color` - The shadow color of the button's Material.
-* `surface_tint_color` - The surface tint color of the button's Material.
-* `elevation` - The elevation of the button's Material.
-* `animation_duration` - Defines the duration in milliseconds of animated changes for shape and elevation.
-* `padding` - The padding between the button's boundary and its child.
-* `side` - An instance of `BorderSide` class, the color and weight of the button's outline.
-* `shape` - The shape of the button's underlying Material, an instance of one of the following implementations:
-  * `StadiumBorder`
-  * `RoundedRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `CircleBorder`
-  * `BeveledRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `ContinuousRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+- `color` - 按钮文本和图标控制后代的颜色。
+- `bgcolor` - 按钮的背景填充颜色。
+- `overlay_color` - 通常用于指示按钮聚焦，悬停或按下的突出颜色。
+- `shadow_color` - 按钮材料的阴影颜色。
+- `surface_tint_color` - 按钮材料的表面色彩。
+- `elevation` - 按钮材料的高程。
+- `animation_duration` - 在动画变化的形状和高程中定义了持续时间。
+- `padding` - 按钮边界与其 child 之间的填充。
+- `side` - `BorderSide`类的实例，按钮轮廓的颜色和重量。
+- `shape` - 按钮基础材料的形状，以下实现之一的实例:
+  - `StadiumBorder`
+  - `RoundedRectangleBorder`
+    - `radius` - 边框半径，`BorderRadius`类或数字的实例。
+  - `CircleBorder`
+  - `BeveledRectangleBorder`
+    - `radius` - 边框半径，`BorderRadius`类或数字的实例。
+  - `ContinuousRectangleBorder`
+    - `radius` - 边框半径，`BorderRadius`类或数字的实例。
 
-This is an example demonstrating various button shapes:
+这是展示各种按钮形状的示例:
 
-<img src="/img/blog/gradients/button-shapes.png" className="screenshot-20" />
+<img src="/website/img/blog/gradients/button-shapes.png" className="screenshot-20" />
 
 ```python
 import flet as ft
@@ -317,46 +319,46 @@ ft.app(target=main)
 
 ### `text`
 
-The text displayed on a button.
+按钮上显示的文本。
 
 ### `tooltip`
 
-The text displayed when hovering the mouse over the button.
+悬停在按钮上时显示的文本。
 
 ### `url`
 
-The URL to open when the button is clicked. If registered, `on_click` event is fired after that.
+单击按钮时要打开的 URL。 如果已注册，`on_click`事件在此之后发射。
 
 ### `url_target`
 
-Where to open URL in the web mode:
+在 Web 模式下打开 URL 的位置:
 
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+- `_blank`（默认值） - 新 Tab/window。
+- `_self` - 当前的选项卡片/窗口。
 
-## Methods
+## 方法
 
 ### `focus()`
 
-Moves focus to a button.
+将重点移至按钮。
 
-## Events
+## 事件
 
 ### `on_blur`
 
-Fires when the control has lost focus.
+当控件失去焦点时会发射。
 
 ### `on_click`
 
-Fires when a user clicks the button.
+用户单击按钮时发射。
 
 ### `on_focus`
 
-Fires when the control has received focus.
+控件收到焦点时发射。
 
 ### `on_hover`
 
-Fires when a mouse pointer enters or exists the button response area. `data` property of event object contains `true` (string) when cursor enters and `false` when it exits.
+当鼠标指针进入或存在按钮响应区域时发射。 `data`事件对象的属性包含`true`（string）当光标输入时，`false`退出时。
 
 ```python
 import flet as ft
@@ -377,4 +379,4 @@ ft.app(target=main)
 
 ### `on_long_press`
 
-Fires when the button is long-pressed.
+长时间按钮时会发射。

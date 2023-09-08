@@ -8,42 +8,42 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [release]
 ---
 
-We are thrilled to introduce Matplotlib and Plotly charting controls in [Flet 0.1.63](https://pypi.org/project/flet/0.1.63/)!
+我们很高兴引入 matplotlib 并在[Flet 0.1.63](https://pypi.org/project/flet/0.1.63/)中绘制控制控件！
 
-[Matplotlib](https://matplotlib.org/) and [Plotly](https://plotly.com/python/) are the most recognized Python charting libraries with a ton of features. They are greatly compatible with other scientific Python libraries such as Numpy or Pandas.
+[matplotlib](https://matplotlib.org/)和[plotly](https://plotly.com/python/)是最知名的 Python 绘制图书馆，具有大量功能。 它们与其他科学的 Python 库（例如 Numpy 或 Pandas）非常兼容。
 
-No doubt, it would be nearly impossible to replicate their functionality as pure Flutter widgets. Fortunately, both Matplotlib and Plotly can export charts into various formats, such as SVG. On the other hand Flet can [display SVG images](https://github.com/flet-dev/examples/blob/main/python/controls/image/svg-image.py) and that gives a perfect combination - Flet charting controls for Matplotlib and Plotly!
+毫无疑问，将其功能复制为纯 flutter 小部件是不可能的。 幸运的是，Matplotlib 和 Plotly 都可以将图表导出到各种格式，例如 SVG。 另一方面，Flet 可以[显示 SVG 图像](https://github.com/flet-dev/examples/blob/main/python/controls/image/svg-image.py)，这给出了完美的组合 - Flet Matplotlib 和 Plotly 的图表控件！
 
-The resulting solution works so great that it's possible to display almost any example from [Matplotlib](https://matplotlib.org/stable/gallery/index.html) and [Plotly](https://plotly.com/python/) galleries - your imagination is the only limit!
+生成的解决方案非常出色，以至于可以从[matplotlib](https://matplotlib.org/stable/gallery/index.html)和[plotly](https://plotly.com/python/)画廊中显示几乎所有示例 - 您的想象力是唯一的限制！
 
-Plot a [simple bar chart](https://github.com/flet-dev/examples/blob/main/python/controls/charts/mpl-barchart.py):
+绘制[简单条形图](https://github.com/flet-dev/examples/blob/main/python/controls/charts/mpl-barchart.py):
 
-<img src="/img/docs/controls/charts/matplotlib-barchart.png" className="screenshot-60"/>
+<img src="/website/img/docs/controls/charts/matplotlib-barchart.png" className="screenshot-60"/>
 
-a nice [scatter with legend](https://github.com/flet-dev/examples/blob/main/python/controls/charts/mpl-scatter.py):
+一个不错的[带有传奇的散布](https://github.com/flet-dev/examples/blob/main/python/controls/charts/mpl-scatter.py):
 
-<img src="/img/docs/controls/charts/matplotlib-scatter.png" className="screenshot-60"/>
+<img src="/website/img/docs/controls/charts/matplotlib-scatter.png" className="screenshot-60"/>
 
-or some multi-chart [contour plot](https://github.com/flet-dev/examples/blob/main/python/controls/charts/mpl-contour.py):
+或一些多创图[CONTOUR 图](https://github.com/flet-dev/examples/blob/main/python/controls/charts/mpl-contour.py):
 
-<img src="/img/docs/controls/charts/matplotlib-contour.png" className="screenshot-60"/>
+<img src="/website/img/docs/controls/charts/matplotlib-contour.png" className="screenshot-60"/>
 
-Check the docs for Matplotlib and Plotly charting controls:
+检查文档中的 matplotlib 并绘制图表控件:
 
-* [MatplotlibChart](/docs/controls/matplotlibchart)
-* [PlotlyChart](/docs/controls/plotlychart)
+- [matplotlibchart](/docs/controls/matplotlibchart)
+- [plotlychart](/docs/controls/plotlychart)
 
-Explore [Flet chart examples](https://github.com/flet-dev/examples/tree/main/python/controls/charts).
+探索[Flet 图表示例](https://github.com/flet-dev/examples/tree/main/python/controls/charts)。
 
-Learn Python libraries by examples:
+通过示例学习 Python 库:
 
-* [Matplotlib gallery](https://matplotlib.org/stable/gallery/index.html)
-* [Plotly gallery](https://plotly.com/python/)
+- [Matplotlib Gallery](https://matplotlib.org/stable/gallery/index.html)
+- [Plotly Gallery](https://plotly.com/python/)
 
-In the future releases, we may add an interactive "toolbar" for Matplotlib charts by implementing a custom [backend](https://matplotlib.org/stable/users/explain/backends.html). Or maybe it's a great excersize for Flet users? 😉
+将来发布，我们可能会通过实现自定义[后端](https://matplotlib.org/stable/users/explain/backends.html)来为 matplotlib 图表添加一个交互式“工具栏”。 还是对于 Flet 用户来说，这是一个很棒的表现？ 😉
 
-Also, when it's time for Flet to support other languages we would need to re-visit charting to make it language-agnostic as the current charting implementation relies on Python libraries.
+另外，当 Flet 支持其他语言时，我们需要重新访问图表，以使其成为语言 - 敏捷的语言，因为当前的图表实现依赖于 Python 库。
 
-Upgrade Flet module to the latest version (`pip install flet --upgrade`), integrate auth in your app and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
+升级 Flet 模块到最新版本（`pip install flet -upgrade`），将 auth 集成在您的应用中，[让我们知道](https://discord.gg/dzWXP8SHG8)您的想法！
 
-Enjoy!
+享受！

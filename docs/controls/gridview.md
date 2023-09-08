@@ -4,22 +4,22 @@ sidebar_label: GridView
 slug: gridview
 ---
 
-A scrollable, 2D array of controls.
+可滚动的 2D 控件阵列。
 
-:::info
-GridView is very effective for large lists (thousands of items). Prefer it over wrapping [`Column`](column) or [`Row`](row) for smooth scrolling. See [Flet Icons Browser](https://github.com/flet-dev/examples/blob/main/python/apps/icons-browser/main.py) for GridView usage example.
+:::信息
+GridView 对于大型列表（成千上万的项目）非常有效。 优于包装[`Column`](column)或[`Row`](row)以进行平滑滚动。 有关 GridView 用法示例，请参见[Flet 图标浏览器](https://github.com/flet-dev/examples/blob/main/python/apps/icons-browser/main.py)。
 :::
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/layout/gridview)
+[LIVE 示例](https://flet-controls-gallery.fly.dev/layout/gridview)
 
-### Photo gallery
+### 照片库
 
-<img src="/img/docs/controls/gridview/photo-gallery.png" className="screenshot-50"/>
+<img src="/website/img/docs/controls/gridview/photo-gallery.png" className="screenshot-50"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -57,65 +57,62 @@ def main(page: ft.Page):
 
 ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
+
   </TabItem>
 </Tabs>
 
-## Properties
+## properties
 
 ### `auto_scroll`
 
-`True` if scrollbar should automatically move its position to the end when children updated. Must be `False` for `scroll_to()` method to work.
+`True`如果 children 更新时，Scrollbar 应自动将其位置移至结尾。 对于`scroll_to()`的工作方法，必须是`False`。
 
 ### `child_aspect_ratio`
 
-The ratio of the cross-axis to the main-axis extent of each child.
+跨轴的比率与每个 child 的主要轴范围。
 
 ### `controls`
 
-A list of `Control`s to display inside GridView.
+`Control` s 的列表，要在 GridView 中显示。
 
 ### `horizontal`
 
-`True` to layout GridView items horizontally.
+`True`以水平布局 gridview 项目。
 
 ### `max_extent`
 
-The maximum width or height of the grid item.
+网格项目的最大宽度或高度。
 
 ### `on_scroll_interval`
 
-Throttling in milliseconds for `on_scroll` event. Default is `10`.
+`on_scroll`事件以毫秒为单位。 默认值为`10`。
 
 ### `padding`
 
-The amount of space by which to inset the children.
+插入 children 的空间数量。
 
-See [`Container.padding`](container#padding) property for more information and possible values.
+有关更多信息和可能的值，请参见[`Container.padding`](container#padding)属性。
 
 ### `run_spacing`
 
-The number of logical pixels between each child along the cross axis.
+每个 child 沿横轴之间的逻辑像素数。
 
 ### `runs_count`
 
-The number of children in the cross axis.
+横轴中的 children 的数量。
 
 ### `spacing`
 
-The number of logical pixels between each child along the main axis.
+每个 child 沿主轴之间的逻辑像素数。
 
-## Methods
+将滚动位置移至绝对`offset`，相对`delta`或使用指定的`key`跳到控件。
 
-### `scroll_to(offset, delta, key, duration, curve)`
+有关方法详细信息和示例，请参见[`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve)。
 
-Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
-
-See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
-
-## Events
+## 事件
 
 ### `on_scroll`
 
-Fires when scroll position is changed by a user.
+用户更改滚动位置时会发射。
 
-See [`Column.on_scroll`](column#on_scroll) for event details and examples.
+有关事件详细信息和示例，请参见[`Column.on_scroll`](column#on_scroll)。

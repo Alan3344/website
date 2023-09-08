@@ -4,20 +4,20 @@ sidebar_label: DragTarget
 slug: dragtarget
 ---
 
-A control that completes drag operation when a [Draggable](#draggable) widget is dropped.
+一个控件，该控件在删除(#draggable)窗口小部件时完成拖动操作。
 
-When a draggable is dragged on top of a drag target, the drag target is asked whether it will accept the data the draggable is carrying. The drag target will accept incoming drag if it belongs to the same `group` as draggable. If the user does drop the draggable on top of the drag target (and the drag target has indicated that it will accept the draggable's data), then the drag target is asked to accept the draggable's data.
+当将拖动拖动在拖动目标的顶部时，询问拖放目标是否会接受拖动可携带的数据。 如果阻力目标属于与拖动相同的`group`，则将接受传入的阻力。 如果用户确实将拖放目标放在拖动目标的顶部（并且拖动目标表明它将接受拖放的数据），则要求拖动目标接受拖放的数据。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/utility/draggable)
+[live 示例](https://flet-controls-gallery.fly.dev/utility/draggable)
 
-### Drag and drop colors
+### 拖放颜色
 
-<img src="/img/docs/controls/drag-and-drop/drag-and-drop-colors.gif" className="screenshot-50" />
+<img src="/website/img/docs/controls/drag-and-drop/drag-and-drop-colors.gif" className="screenshot-50" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -103,35 +103,36 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-## Properties
+## properties
 
 ### `content`
 
-The `Control` that is a visual representation of the drag target.
+`Control`是阻力目标的视觉表示。
 
 ### `group`
 
-A group this drag target belongs to. For [DragTarget](dragtarget) to accept incoming drag both `Draggable` and `DragTarget` must be in the same `group`.
+该阻力目标属于的一组。 [DragTarget](dragtarget)要接受传入`Draggable`和`DragTarget`必须在同一`group`中。
 
-## Events
+## 事件
 
 ### `on_accept`
 
-Fires when the user does drop the draggable on top of the drag target (and the drag target is in the same `group` with draggable). Event handler argument is an instance of `DragTargetAcceptEvent` class with the following fields:
+当用户确实将拖放目标放在拖动目标顶部时（而拖放目标则在`group`的情况下使用拖动）。 事件处理程序参数是带有以下字段的`DragTargetAcceptEvent`类的实例:
 
-* `src_id` - unique control ID of draggable.
-* `x` - x component of the global position when the specific pointer event occurred on the draggable.
-* `y` - y component of the global position when the specific pointer event occurred on the draggable.
+- `src_id` - draggable 的唯一控制 ID。
+- `x` - 当特定指针事件发生在拖动上时，全局位置的组件。
+- `y` - Y 组件的组件是在拖放上发生特定指针事件时。
 
-Use `page.get_control(e.src_id)` to retrieve Control reference by its ID.
+使用`page.get_control(e.src_id)`通过其 ID 检索控制参考。
 
 ### `on_leave`
 
-Fires when a mouse pointer during ongoing drag event leaves the target.
+当鼠标指针发生在正在进行的拖放事件中时发射。
 
 ### `on_will_accept`
 
-Fires when draggable is dragged on top of a drag target. `data` field of event details contains `true` (String) if both `Draggable` and `DragTarget` has the same `group`; otherwise `false` (String).
+当将拖动拖动在拖动目标的顶部时发射。 `data`事件详细信息字段包含`true`（字符串），如果`Draggable`和`DragTarget`都具有相同的`group`; 否则`false`（String）。

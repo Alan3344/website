@@ -4,14 +4,14 @@ sidebar_label: NavigationRail
 slug: navigationrail
 ---
 
-A material widget that is meant to be displayed at the left or right of an app to navigate between a small number of views, typically between three and five.
+a material 小部件，该小部件应在应用程序的左侧或右侧显示，以在少数视图之间导航，通常在三到五个之间。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/navigation/navigationrail)
+[LIVE 示例](https://flet-controls-gallery.fly.dev/navigation/navigationrail)
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -60,131 +60,136 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/navigation-rail/custom-navrail.png" className="screenshot-50" />
+<img src="/website/img/docs/controls/navigation-rail/custom-navrail.png" className="screenshot-50" />
 
 ## `NavigationRail` properties
 
 ### `bgcolor`
 
-Sets the [color](/docs/guides/python/colors) of the Container that holds all of the NavigationRail's contents.
+设置容器的[颜色](/docs/guides/python/colors)，该容器容纳所有导航式内容。
 
 ### `destinations`
 
-Defines the appearance of the button items that are arrayed within the navigation rail.
+定义导航导轨中数组的按钮项的外观。
 
-The value must be a list of two or more `NavigationRailDestination` instances.
+该值必须是两个或多个`NavigationRailDestination`实例的列表。
 
 ### `extended`
 
-Indicates that the NavigationRail should be in the extended state.
+表示导航栏应处于扩展状态。
 
-The extended state has a wider rail container, and the labels are positioned next to the icons. `min_extended_width` can be used to set the minimum width of the rail when it is in this state.
+扩展状态具有更宽的导轨容器，标签位于图标旁边。 `min_extended_width`可用于在该状态下设置导轨的最小宽度。
 
-The rail will implicitly animate between the extended and normal state.
+该导轨将隐含在扩展状态和正常状态之间进行动画。
 
-If the rail is going to be in the extended state, then the `label_type` must be set to `none`.
+如果导轨将处于扩展状态，则必须将`label_type`设置为`none`。
 
-The default value is `False`.
+默认值为`False`。
 
 ### `group_alignment`
 
-The vertical alignment for the group of destinations within the rail.
+铁轨中目的地的垂直对齐。
 
-The NavigationRailDestinations are grouped together with the trailing widget, between the leading widget and the bottom of the rail.
+leading 小部件和导轨底部之间的导航式登机与落后小部件组合在一起。
 
-The value must be between `-1.0` and `1.0`.
+该值必须在`-1.0`和`1.0`之间。
 
-If `group_alignment` is `-1.0`, then the items are aligned to the top. If `group_alignment` is `0.0`, then the items are aligned to the center. If `group_alignment` is `1.0`, then the items are aligned to the bottom.
+如果`group_alignment`为`-1.0`，则将项目对齐到顶部。 如果`group_alignment`为`0.0`，则将项目对齐到中心。 如果`group_alignment`为`1.0`，则将项目对齐到底部。
 
-The default is `-1.0`.
+默认值为`-1.0`。
 
 ### `label_type`
 
-Defines the layout and behavior of the labels for the default, unextended NavigationRail.
+定义标签的布局和行为，用于默认，未扩展的导航栏。
 
-When a navigation rail is extended, the labels are always shown.
+当延长导航导轨时，始终显示标签。
 
-Property value is `NavigationRailLabelType` enum with the following values: `NONE` (default), `ALL`, `SELECTED`.
+属性值是`NavigationRailLabelType`枚举，具有以下值: `NONE`（默认），`ALL`，`SELECTED`。
 
 ### `leading`
 
-An optional leading control in the rail that is placed above the destinations.
+放置在目的地上方的导轨中的可选 leading 控制。
 
-Its location is not affected by `group_alignment`.
+它的位置不受`group_alignment`的影响。
 
-This is commonly a [`FloatingActionButton`](floatingactionbutton), but may also be a non-button, such as a logo.
+这通常是[`FloatingActionButton`](floatingactionbutton)，但也可能是非按钮，例如徽标。
 
 ### `min_extended_width`
 
-The final width when the animation is complete for setting `extended` to `True`.
+当动画完成时，将`extended`设置为`True`时的最终宽度。
 
-The default value is `256`.
+默认值为`256`。
 
 ### `min_width`
 
-The smallest possible width for the rail regardless of the destination's icon or label size.
+无论目的地的图标或标签尺寸如何，导轨的最小宽度。
 
-The default is `72`.
+默认值为`72`。
 
-This value also defines the min width and min height of the destinations.
+该值还定义了目的地的最小宽度和最小高度。
 
-To make a compact rail, set this to `56` and use `label_type='none'`.
+要制作紧凑的导轨，请将其设置为`56`并使用`label_type ='none''。
 
 ### `selected_index`
 
-The index into `destinations` for the current selected `NavigationRailDestination` or `None` if no destination is selected.
+如果未选择目的地，则为当前选择`NavigationRailDestination`或`None`的索引 in `destinations`。
 
 ### `trailing`
 
-An optional trailing control in the rail that is placed below the destinations.
+放置在目的地下方的导轨中的可选尾随控件。
 
-Its location is affected by `group_alignment`.
+它的位置受`group_alignment`的影响。
 
-This is commonly a list of additional options or destinations that is usually only rendered when `extended` is `True`.
+这通常是通常仅在`extended`为`True`的其他选项或目的地的列表。
 
-## `NavigationRail` events
+##
 
-### `on_change`
+## `NavigationRail`事件
 
-Fires when selected destination changed.
+###
 
-## `NavigationRailDestination` properties
+当选择目标更改时发射。
+
+## `NavigationRailDestination`属性
 
 ### `icon`
 
-The name of the icon of the destination.
+目的地图标的名称。
 
 ### `icon_content`
 
-The icon `Control` of the destination. Typically the icon is an [`Icon`](icon) control. Used instead of `icon` property.
+目的地的图标`Control`。 通常，图标是[`Icon`](icon)控制。 使用而不是`icon`属性。
 
-If `selected_icon_content` is provided, this will only be displayed when the destination is not selected.
+如果提供了`selected_icon_content`，则只有在未选择目标时才显示这一点。
 
-To make the NavigationRail more accessible, consider choosing an icon with a stroked and filled version, such as `icons.CLOUD` and `icons.CLOUD_QUEUE`. The icon should be set to the stroked version and `selected_icon` to the filled version.
+为了使导航拖船更容易访问，请考虑选择具有触发和填充版本的图标，例如`icons.CLOUD`和`icons.CLOUD_QUEUE`。 该图标应设置为“触发”版本，并将`selected_icon`设置为填充版本。
 
 ### `label`
 
+###
+
 ### `label_content`
 
-The label `Control` for the destination.
+目的地的标签`Control`。
 
-The label must be provided when used with the NavigationRail. When `label_type='none'`, the label is still used for semantics, and may still be used if `extended` is `True`.
+与 NavigationRail 一起使用时，必须提供标签。 当`label_type ='none''时，标签仍用于语义，如果`extended`为`True`。
 
 ### `padding`
 
-The amount of space to inset the destination item.
+插入目标项目的空间数量。
 
-See [`Container.padding`](container#padding) for more information about padding and possible values.
+有关填充和可能的值的更多信息，请参见[`Container.padding`](container#padding)。
 
 ### `selected_icon`
 
-The name of alternative icon displayed when this destination is selected.
+选择此目标时显示的替代图标的名称。
 
 ### `selected_icon_content`
 
-An alternative icon `Control` displayed when this destination is selected.
+当选择此目标时，显示了一个替代图标`Control`。
 
-If this icon is not provided, the NavigationRail will display `icon_content` in either state.
+如果未提供此图标，则 NavigationRail 将在任一状态下显示`icon_content`。

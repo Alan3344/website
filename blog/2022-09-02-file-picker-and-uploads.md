@@ -8,29 +8,29 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [release]
 ---
 
-Finally, File picker with uploads has arrived! 🎉
+最后，带有上载的文件选择器到了！ 🎉
 
-File picker control opens a native OS dialog for selecting files and directories. It's based on a fantastic [file_picker](https://pub.dev/packages/file_picker) Flutter package.
+文件选择器控件打开用于选择文件和目录的本机 OS 对话框。 它基于一个奇妙的[file_picker](https://pub.dev/packages/file_picker) flutter 软件包。
 
-It works on all platforms: Web, macOS, Window, Linux, iOS and Android.
+它在所有平台上都可以使用: Web，MacOS，Window，Linux，iOS 和 Android。
 
-<img src="/img/docs/controls/file-picker/file-picker-all-modes-demo.png" className="screenshot-80" />
+<img src="/website/img/docs/controls/file-picker/file-picker-all-modes-demo.png" className="screenshot-80" />
 
-Check out [source code of the demo above](https://github.com/flet-dev/examples/blob/main/python/controls/file-picker/file-picker-all-modes.py).
+查看[上面演示的源代码](https://github.com/flet-dev/examples/blob/main/python/controls/file-picker/file-picker-all-modes.py)。
 
-File picker allows opening three dialogs:
+文件选择器允许打开三个对话框:
 
-* **Pick files** - one or multiple, any files or only specific types.
-* **Save file** - choose directory and file name.
-* **Get directory** - select directory.
+- **选择文件** - 一个或多个，任何文件或特定类型。
+- **保存文件** - 选择目录和文件名。
+- **获取目录** - 选择目录。
 
-When running Flet app in a browser only "Pick files" option is available and it's used for uploads only as it, obviously, doesn't return a full path to a selected file.
+在仅在浏览器中运行 Flet 应用程序时，仅可用“选择文件”选项，并且它仅用于上传，因此显然不会将完整的路径返回到所选文件。
 
-Where file picker really shines is a desktop! All three dialogs return full paths to selected files and directories - great assistance to your users!
+拿到文件的地方是台式机！ 所有三个对话框都将完整的路径返回到选定的文件和目录 - 对您的用户提供了很好的帮助！
 
-## Using file picker in your app
+## 使用您的应用中的文件选择器
 
-It is recommended to add file picker to [`page.overlay.controls`](/docs/controls/page#overlay) collection, so it doesn't affect the layout of your app. Despite file picker has 0x0 size it is still considered as a control when put into `Row` or `Column`.
+建议将文件选择器添加到[`page.overlay.controls`](/docs/controls/page#overlay)集合中，以免影响应用程序的布局。 尽管文件拾取器具有 0x0 大小，但将其视为将其视为控制`Row`或`Column`时。
 
 ```python
 import flet as ft
@@ -40,23 +40,23 @@ page.overlay.append(file_picker)
 page.update()
 ```
 
-To open file picker dialog call one of the three methods:
+打开文件选择器对话框调用三种方法之一:
 
-* `pick_files()`
-* `save_file()`
-* `get_directory_path()`
+- `pick_files()`
+- `save_file()`
+- `get_directory_path()`
 
-Lambda works pretty nice for that:
+Lambda 为此做得很好:
 
 ```python
 ft.ElevatedButton("Choose files...",
     on_click=lambda _: file_picker.pick_files(allow_multiple=True))
 ```
 
-When dialog is closed `FilePicker.on_result` event handler is called which event object has one of the following properties set:
+当对话框关闭时`FilePicker.on_result`事件处理程序被调用哪个事件对象具有以下属性集之一:
 
-* `files` - "Pick files" dialog only, a list of selected files or `None` if dialog was cancelled.
-* `path` - "Save file" and "Get directory" dialogs, a full path to a file or directory or `None` if dialog was cancelled.
+- `files` - 仅“选择文件”对话框，如果取消对话框，则选择了选定文件列表或`None`的列表。
+- `path` - “保存文件”和“获取目录”对话框，如果取消对话框，则通往文件或目录的完整路径或`None`。
 
 ```python
 import flet as ft
@@ -68,18 +68,18 @@ def on_dialog_result(e: ft.FilePickerResultEvent):
 file_picker = ft.FilePicker(on_result=on_dialog_result)
 ```
 
-The last result is always available in `FilePicker.result` property.
+最后一个结果始终在`FilePicker.result`属性中可用。
 
-Check [File picker](/docs/controls/filepicker) control docs for all available dialog methods and their parameters.
+检查[文件选择器](/docs/controls/filepicker)控制文档，以获取所有可用的对话框方法及其参数。
 
-## Uploading files
+## 上传文件
 
-File picker has built-in upload capabilities that work on all platforms and the web.
+File Picker 具有内置的上传功能，可在所有平台和 Web 上使用。
 
-To upload one or more files you should call `FilePicker.pick_files()` first.
-When the files are selected by the user they are not automatically uploaded anywhere, but instead their references are kept in the file picker state.
+要上传一个或多个文件，您应该首先调用`FilePicker.pick_files()`。
+当用户选择文件时，它们不会自动将其上传到任何地方，而是将其引用保存在文件拾取器状态中。
 
-To perform an actual upload you should call `FilePicker.upload()` method and pass the list of files that need to be uploaded along with their upload URLs and upload method (`PUT` or `POST`):
+要执行实际的上传，您应该调用`FilePicker.upload()`方法，然后传递需要上传的文件列表以及其上传 URL 和上传方法（`PUT`或`POST`）:
 
 ```python
 import flet as ft
@@ -99,62 +99,62 @@ def upload_files(e):
 ft.ElevatedButton("Upload", on_click=upload_files)
 ```
 
-:::note
-If you need to separate uploads for each user you can specify a filename prepended with any number of directories in `page.get_upload_url()` call, for example:
+:::注意
+如果您需要为每个用户分开上传，则可以在`page.get_upload_url()`中使用任意数量的目录进行指定的文件名，例如:
 
 ```python
 upload_url = page.get_upload_url(f"/{username}/pictures/{f.name}", 600)
 ```
 
-`/{username}/pictures` directories will be automatically created inside `upload_dir` if not exist.
+`/{username}/pictures`目录将在`upload_dir`内部自动创建。
 :::
 
-### Upload storage
+### 上传存储
 
-Notice the usage of `page.get_upload_url()` method - it generates a presigned upload URL for Flet's internal upload storage.
+请注意`page.get_upload_url()`方法的使用 - 它为 Flet 的内部上传存储生成了预先的上传 URL。
 
-:::note Use any storage for file uploads
-You can [generate presigned upload URL](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-presigned-urls.html#generating-a-presigned-url-to-upload-a-file) for AWS S3 storage using boto3 library.
+:::注意使用任何存储进行文件上传
+您可以使用 BOTO3 库[生成预设上传 URL](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-presigned-urls.html#generating-a-presigned-url-to-upload-a-file)用于 AWS S3 存储。
 
-The same technique should work for [Wasabi](https://wasabi.com/), [Backblaze](https://www.backblaze.com/), [MinIO](https://min.io/) and any other  storage providers with S3-compatible API.
+相同的技术应适用于[wasabi](https://wasabi.com/)，[Backblaze](https://www.backblaze.com/)，[minio](https://min.io/)以及具有 S3 兼容 API 的任何其他存储提供商。
 :::
 
-To enable Flet saving uploaded files to a directory provide full or relative path to that directory in `flet.app()` call:
+要启用 Flet 将上传的文件保存到目录中，在`flet.app()`中提供了该目录的完整或相对路径:
 
 ```python
 ft.app(target=main, upload_dir="uploads")
 ```
 
-You can even put uploads inside "assets" directory, so uploaded files, e.g. pictures, docs or other media, can be accessed from a Flet client right away:
+您甚至可以在“资产”目录中放置上传，因此上传文件，例如 可以立即从 Flet 客户端访问图片，文档或其他媒体:
 
 ```python
 ft.app(target=main, assets_dir="assets", upload_dir="assets/uploads")
 ```
 
-and somewhere in your app you can display uploaded picture with:
+在应用程序中的某个地方，您可以显示上传的图片:
 
 ```python
 page.add(ft.Image(src="/uploads/<some-uploaded-picture.png>"))
 ```
 
-### Upload progress
+### 上传进度
 
-Once `FilePicker.upload()` method is called Flet client asynchronously starts uploading selected files one-by-one and reports the progress via `FilePicker.on_upload` callback.
+一旦`FilePicker.upload()`方法称为 Flet client 异步启动一个逐一上传，并通过`FilePicker.on_upload`回调报告进度。
 
-Event object of `on_upload` event is an instance of `FilePickerUploadEvent` class with the following fields:
+`on_upload`事件的事件对象是带有以下字段的`FilePickerUploadEvent`类的实例:
 
-* `file_name`
-* `progress` - a value from `0.0` to `1.0`.
-* `error`
+- `file_name`
+- `progress` - 一个从`0.0`到`1.0`的值。
+- `error`
 
-The callback is called at least twice for every uploaded file: with `0` progress before upload begins and with `1.0` progress when upload is finished. For files larger than 1 MB a progress is additionally reported for every 10% uploaded.
+每个上载文件至少调用两次回调: 在上载开始之前，`0`进度`0`进行进度，并且在上传完成后`1.0`进度进度。 对于大于 1 MB 的文件，每 10％上传每 10％也会报告进度。
 
-Check that [example](https://github.com/flet-dev/examples/blob/main/python/controls/file-picker/file-picker-upload-progress.py) demonstrating multiple file uploads:
+检查[示例](https://github.com/flet-dev/examples/blob/main/python/controls/file-picker/file-picker-upload-progress.py)演示多个文件上传:
 
-<img src="/img/docs/controls/file-picker/file-picker-multiple-uploads.png" className="screenshot-40" />
+<img src="/website/img/docs/controls/file-picker/file-picker-multiple-uploads.png" className="screenshot-40" />
 
-See [File picker](/docs/controls/filepicker) control docs for all its properties and examples.
+有关其所有属性和示例，请参见[File Picker](/docs/controls/filepicker)控制文档。
 
-Upgrade Flet module to the latest version (`pip install flet --upgrade`), give File Picker a try and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
+将 Flet 模块升级到最新版本（`pip install flet -upgrade`），尝试一下文件拾取器，然后[让我们知道](https://discord.gg/dzWXP8SHG8)您的想法！
 
-Enjoy!
+享受！

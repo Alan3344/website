@@ -4,16 +4,16 @@ sidebar_label: Radio
 slug: radio
 ---
 
-Radio buttons let people select a single option from two or more choices.
+无线电按钮让人们从两个或多个选择中选择一个选项。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/input/radio)
+[live 示例](https://flet-controls-gallery.fly.dev/input/radio)
 
-### Basic RadioGroup
+### 基本 radiogroup
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -32,15 +32,16 @@ def main(page):
     ft.Radio(value="red", label="Red"),
     ft.Radio(value="green", label="Green"),
     ft.Radio(value="blue", label="Blue")]))
-  
+
   page.add(ft.Text("Select your favorite color:"), cg, b, t)
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/radio/basic-radio.gif" className="screenshot-30"/>
+<img src="/website/img/docs/controls/radio/basic-radio.gif" className="screenshot-30"/>
 
 ### RadioGroup with `on_change` event
 
@@ -60,55 +61,54 @@ def main(page):
     ft.Radio(value="red", label="Red"),
     ft.Radio(value="green", label="Green"),
     ft.Radio(value="blue", label="Blue")]), on_change=radiogroup_changed)
-  
+
   page.add(ft.Text("Select your favorite color:"), cg, t)
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/radio/radio-with-change-event.gif" className="screenshot-30"/>
+<img src="/website/img/docs/controls/radio/radio-with-change-event.gif" className="screenshot-30"/>
 
 ## `RadioGroup` properties
 
 ### `value`
 
-Current value of the RadioGroup.
+radiogroup 的当前值。
 
-## `RadioGroup` events
+## `RadioGroup`事件
 
 ### `on_change`
 
-Fires when the state of the RadioGroup is changed.
-
-## `Radio` properties
+## `Radio`属性
 
 ### `autofocus`
 
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+如果将控件选择作为初始焦点，则为 thus。 如果一个带有自动对焦集的页面上有多个控件，则添加到页面的第一个控件将获得焦点。
 
 ### `fill_color`
 
-The [color](/docs/guides/python/colors) that fills the radio, in all `MaterialState` states:
+在所有`MaterialState`状态中填充收音机的[颜色](/docs/guides/python/colors):
 
-* `HOVERED`
-* `FOCUSED`
-* `PRESSED`
-* `DRAGGED`
-* `SELECTED`
-* `SCROLLED_UNDER`
-* `DISABLED`
-* `ERROR`
-* `DEFAULT` - fallback state, meaning "all other states".
+- `HOVERED`
+- `FOCUSED`
+- `PRESSED`
+- `DRAGGED`
+- `SELECTED`
+- `SCROLLED_UNDER`
+- `DISABLED`
+- `ERROR`
+- `DEFAULT` - 后备状态，意思是“所有其他状态”。
 
-To configure radio fill color for all Material states set `fill_color` value to a literal, for example:
+为所有材料状态配置无线电填充颜色集`fill_color`值，例如:
 
 ```python
 rd.fill_color=ft.colors.GREEN
 ```
 
-To configure fill color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `HOVERED` and `FOCUSED` states and another color for all other states:
+为了配置特定材料状态的填充颜色，将其值设置为键是状态名称的字典。 例如，为`HOVERED`和`FOCUSED`状态配置不同的填充颜色，并为所有其他状态配置另一种颜色:
 
 ```python
 rd.fill_color={
@@ -120,22 +120,22 @@ rd.fill_color={
 
 ### `label`
 
-The clickable label to display on the right of a Radio.
+可单击的标签显示在收音机右侧。
 
 ### `label_position`
 
-Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
+属性值是`LabelPosition`枚举，`LabelPosition.RIGHT`默认值。
 
 ### `value`
 
-The value to set to containing `RadioGroup` when the radio is selected.
+选择无线电时设置为包含`RadioGroup`的值。
 
-## `Radio` events
+## `Radio`事件
 
 ### `on_blur`
 
-Fires when the control has lost focus.
+当控件失去焦点时会发射。
 
 ### `on_focus`
 
-Fires when the control has received focus.
+当控件获得焦点时发射。

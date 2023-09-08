@@ -8,11 +8,11 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [releases]
 ---
 
-import Card from '@site/src/components/card';
+从'@site/src/components/card'导入卡片';
 
-We've just released [Flet 0.4.0](https://pypi.org/project/flet/) with a super exciting new feature - [packaging Flet apps into a standalone static website](/docs/guides/python/publishing-static-website) that can be run entirely in the browser! The app can be published to any free hosting for static websites such as GitHub Pages or Cloudflare Pages. Thanks to [Pyodide](https://pyodide.org/en/stable/) - a Python port to WebAssembly!
+我们刚刚发布了具有超级令人兴奋的新功能的[Flet 0.4.0](https://pypi.org/project/flet/) - [包装 Flet 应用程序中的独立静态网站](/docs/guides/python/publishing-static-website)，可以完全在浏览器中运行！ 该应用程序可以发布给静态网站的任何免费托管，例如 GitHub 页面或 CloudFlare 页面。 感谢[Pyodide](https://pyodide.org/en/stable/) - WebAssembly 的 Python 端口！
 
-<img src="/img/blog/pyodide/pyodide-logo.png" className="screenshot-50" />
+<img src="/website/img/blog/pyodide/pyodide-logo.png" className="screenshot-50" />
 
 You can quickly build awesome single-page applications (SPA) entirely in Python and host them everywhere! No HTML, CSS or JavaScript required!
 
@@ -72,17 +72,17 @@ python -m http.server --directory dist
 
 Open `http://localhost:8000` in your browser to check the published app.
 
-<img src="/img/docs/getting-started/flet-counter-safari.png" className="screenshot-50" />
+<img src="/website/img/docs/getting-started/flet-counter-safari.png" className="screenshot-50" />
 
 Here are a few live Flet apps hosted at Cloudflare Pages:
 
 export const ImageCard = ({title, href, imageUrl}) => (
-    <div className="col col--4 margin-bottom--lg">
-      <Card href={href}>
-        <img src={"/img/gallery/" + imageUrl} className="screenshot-100"/>
-        <h2>{title}</h2>
-      </Card>
-    </div>
+<div className="col col--4 margin-bottom--lg">
+<Card href={href}>
+<img src={"/img/gallery/" + imageUrl} className="screenshot-100"/>
+<h2>{title}</h2>
+</Card>
+</div>
 );
 
 <div className="margin-top--lg">
@@ -95,42 +95,36 @@ export const ImageCard = ({title, href, imageUrl}) => (
   </section>
 </div>
 
-[Check the guide](/docs/guides/python/publishing-static-website) for more information about publishing Flet apps as standalone websites.
+[检查指南](/docs/guides/python/publishing-static-website)以获取有关发布 Flet 应用程序的更多信息。
 
-## Built-in Fletd server in Python
+## 内置 Flet d 服务器
 
-Flet 0.4.0 also implements a [new Flet desktop architecture](https://flet.dev/blog/flet-mobile-update#flet-new-desktop-architecture).
+Flet 0.4.0 还实现了[新 Flet 桌面架构](https://flet.dev/blog/flet-mobile-update#flet-new-desktop-architecture)。
 
-It replaces Fletd server written in Go with a light-weight shim written in Python with a number of pros:
+它取代了 Flet d 服务器用 python 编写的轻巧垫片编写的 Flet d 服务器，并带有许多优点:
 
-1. Only 2 system processes are needed to run Flet app: Python interpreter and Flutter client.
-2. Less communication overhead (minus two network hops between Python and Fletd) and lower latency (shim uses TCP on Windows and Unix domain sockets on macOS/Linux).
-3. Shim binds to `127.0.0.1` on Windows by default which is more secure.
-4. The size of a standalone app bundle produced by `flet pack` reduced by ~8 MB.
+1.运行 Flet 应用程序只需要 2 个系统进程: Python 解释器和 Flutter 客户端。 2.较少的通信开销（减去 Python 和 Flet D 之间的两个网络啤酒花）和 Lower Latency（Shim 在 MacOS/Linux 上使用 Windows 和 Unix 域插座上使用 TCP）。 3. Shim 默认情况下在 Windows 上绑定`127.0.0.1`，这更安全。 4.由'flet Pack 生成的独立应用程序捆绑包的大小减小了〜8 MB。
 
-The implementation was also required to support Pyodide (we can't run Go web server in the browser, right?) and paves the way to iOS and Android support.
+还需要实现来支持毕可能（我们不能在浏览器中运行 GO Web 服务器，对吗？ `Image.src`，`Audio.src`，`Page.fonts`，`Container.image_src`）现在也能够通过在文件系统中提供完整的路径，以及通过提供相对路径来从本地文件加载它们。 对于桌面应用，`src`属性中的路径可能是以下一个:
 
-### Other changes
+- 相对于`assets`目录的路径，例如或没有启动斜线，例如: `/image.png`或`image.png`。 不应包括文物的名称。
+- 计算机文件系统中的绝对路径，例如 `c: \ projects \ app \ Assets \ image.png`或`/users/john/images/picture.png`。
+- 一个完整的 URL，例如 `https://mysite.com/images/pic.png`。
+- 添加`page.on_error = lambda e: print（“页面错误: ”，e.data）`查看失败的图像。
+- `flet` Python 软件包已分为两个软件包: `flet-core'和`flet`。
+- PDM 替换为诗歌。
+- `beartype`无处不在。
 
-* All controls loading resources from web URLs (`Image.src`, `Audio.src`, `Page.fonts`, `Container.image_src`) are now able to load them from local files too, by providing a full path in the file system, and from `assets` directory by providing relative path. For desktop apps a path in `src` property could be one of the following:
-  * A path relative to `assets` directory, with or without starting slash, for example: `/image.png` or `image.png`. The name of artifact dir should not be included.
-  * An absolute path within a computer file system, e.g. `C:\projects\app\assets\image.png` or `/Users/john/images/picture.png`.
-  * A full URL, e.g. `https://mysite.com/images/pic.png`.
-  * Add `page.on_error = lambda e: print("Page error:", e.data)` to see failing images.
-* `flet` Python package has separated into two packages: `flet-core` and `flet`.
-* PDM replaced with Poetry.
-* `beartype` removed everywhere.
+### 💥 破碎更改
 
-### 💥 Breaking changes
+- 默认路由方案从“ hash”更改为“路径”（在应用程序 URL 的末尾没有`/＃/`）。 使用`ft.app（main，route_url_strategy =“ hash”）
+- 在独立桌面 Flet 应用程序中不再支持 OAuth 身份验证。
 
-* Default routing scheme changed from "hash" to "path" (no `/#/` at the end of app URL). Use `ft.app(main, route_url_strategy="hash")` to get original behavior.
-* OAuth authentication is not supported anymore in standalone desktop Flet apps.
+## 异步支持
 
-## Async support
+Flet 应用程序现在可以写为异步应用程序，并将`asyncio`与其他 python async 库一起使用。 在 Flet 中自然支持调用 Coroutines，因此您无需包装它们即可同步运行。
 
-Flet apps can now be written as async apps and use `asyncio` with other Python async libraries. Calling coroutines is naturally supported in Flet, so you don't need to wrap them to run synchronously.
-
-To start with an async Flet app you should make `main()` method `async`:
+要开始使用异步 Flet 应用程序，您应该制作`main()`方法`async`:
 
 ```python
 import flet as ft
@@ -141,16 +135,16 @@ async def main(page: ft.Page):
 ft.app(main)
 ```
 
-[Read the guide](/docs/guides/python/async-apps) for more information about writing async Flet apps.
+[读取指南](/docs/guides/python/async-apps)有关编写 async Flet 应用程序的更多信息。
 
-## Conclusion
+## 结论
 
-Flet 0.4.0 brings the following exciting features:
+Flet 0.4.0 带来以下令人兴奋的功能:
 
-- Standalone web apps with Pyodide running in the browser and hosted on a cheap hosting.
-- Faster and more secure architecture with a built-in Fletd server.
-- Async apps support.
+- 独立的 Web 应用程序在浏览器中运行 Pyodide 并托管在廉价的托管上。
+- 使用内置 Flet D 服务器更快，更安全的体系结构。
+- 异步应用程序支持。
 
-Upgrade Flet module to the latest version (`pip install flet --upgrade`), give `flet publish` command a try and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
+将 Flet 模块升级到最新版本（`pip install flet -upgrade`），尝试`flet publish`命令尝试一下，[让我们知道](https://discord.gg/dzWXP8SHG8)您的想法！
 
-Hey, by the way, [Flet project](https://github.com/flet-dev/flet) has reached ⭐️ 4.2K stars ⭐️ (+1K in just one month) - keep going! 
+嘿，顺便说一句，[Flet project](https://github.com/flet-dev/flet)已经到达 ⭐️4.2k 星星 ⭐️（仅一个月内+1k） - 继续前进！

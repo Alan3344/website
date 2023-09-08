@@ -4,17 +4,17 @@ sidebar_label: Tooltip
 slug: tooltip
 ---
 
-A Material Design tooltip.
+材料设计工具提示。
 
-Tooltips provide text labels which help explain the function of a button or other user interface action. Wrap the button in a Tooltip control and provide a message which will be shown when the control is long pressed.
+工具提示提供文本标签，可帮助解释按钮或其他用户界面操作的功能。 将按钮包装在工具提示控件中，并提供一条消息，该消息将在长期按下控件时显示。
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/utility/tooltip)
+[live 示例](https://flet-controls-gallery.fly.dev/utility/tooltip)
 
-### Tooltip with a custom decoration
+### 用自定义装饰的工具提示
 
-<img src="/img/docs/controls/tooltip/custom-tooltip.gif" className="screenshot-30"/>
+<img src="/website/img/docs/controls/tooltip/custom-tooltip.gif" className="screenshot-30"/>
 
 ```python
 import math
@@ -52,89 +52,89 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-## Properties
+## properties
 
 ### `bgcolor`
 
-Background [color](/docs/guides/python/colors) of the tooltip.
+工具提示的背景[颜色](/docs/guides/python/colors)。
 
 ### `border`
 
-Border around the tooltip.
+工具提示周围的边界。
 
 ### `border_radius`
 
-Tooltip's border radius.
+工具提示的边框半径。
 
 ### `content`
 
-The `Control` that should be displayed inside the tooltip.
+应在工具提示内显示的`Control`。
 
 ### `message`
 
-The text to display in the tooltip.
+要在工具提示中显示的文本。
 
 ### `enable_feedback`
 
-When `True` (default) the tooltip should provide acoustic and/or haptic feedback.
+当`True`（默认）工具提示应提供声学和/或触觉反馈。
 
-For example, on Android a tap will produce a clicking sound and a long-press will produce a short vibration, when feedback is enabled.
+例如，在启用反馈时，在 Android 上，Tap 会产生单击的声音，而长压会产生短振动。
 
 ### `gradient`
 
-Background gradient of the tooltip
+工具提示的背景梯度
 
 ### `height`
 
-The height of the tooltip's content.
+工具提示内容的高度。
 
 ### `margin`
 
-The empty space that surrounds the tooltip.
+围绕工具提示的空白空间。
 
 ### `padding`
 
-The amount of space by which to inset the tooltip's content.
+插入工具提示内容的空间数量。
 
-On mobile, defaults to 16.0 logical pixels horizontally and 4.0 vertically. On desktop, defaults to 8.0 logical pixels horizontally and 4.0 vertically.
+在移动设备上，默认为 16.0 逻辑像素水平和 4.0 垂直。 在桌面上，默认为 8.0 逻辑像素水平和 4.0 垂直。
 
 ### `prefer_below`
 
-Whether the tooltip defaults to being displayed below the control.
+工具提示是否默认为控件下方显示。
 
-Defaults to `True`. If there is insufficient space to display the tooltip in the preferred direction, the tooltip will be displayed in the opposite direction.
+默认为`True`。 如果没有足够的空间在首选方向上显示工具提示，则该工具提示将以相反的方向显示。
 
 ### `shape`
 
-The shape of the tooltip.
+工具提示的形状。
 
 ### `show_duration`
 
-The length of time, in milliseconds, that the tooltip will be shown after a long press is released or a tap is released or mouse pointer exits the control.
+以毫秒为单位的时间长度是在释放长按或释放 TAP 或鼠标指针退出控件后显示该工具提示。
 
 ### `text_align`
 
-How the message of the tooltip is aligned horizontally.
+工具提示的消息如何水平对齐。
 
-Property value is `TextAlign` enum with the following values:
+属性值为`TextAlign`枚举，具有以下值:
 
-* `LEFT` (default)
-* `RIGHT`
-* `CENTER`
-* `JUSTIFY`
-* `START`
-* `END`
+- `LEFT`（默认）
+- `RIGHT`
+- `CENTER`
+- `JUSTIFY`
+- `START`
+- `END`
 
 ### `text_style`
 
-The style to use for the message of the tooltip.
+用于工具提示的消息的样式。
 
 ### `vertical_offset`
 
-The vertical gap between the widget and the displayed tooltip.
+小部件和显示的工具提示之间的垂直差距。
 
 ### `wait_duration`
 
-The length of time, in milliseconds, that a pointer must hover over a tooltip's control before the tooltip will be shown.
+以毫秒为单位的时间长度是，在显示工具提示之前，指针必须悬停在工具提示的控制上。
 
-Defaults to 0 milliseconds (tooltips are shown immediately upon hover).
+默认值为 0 毫秒（工具提示立即显示在悬停）上。

@@ -8,36 +8,32 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [releases]
 ---
 
-🎉 Whoo-hoo, Flet app is now on App Store! 🎉
+🎉whoo-hoo，Flet app 现在在 App Store 上！ 🎉
 
-<a href="https://apps.apple.com/app/flet/id1624979699" target="_blank"><img src="/img/blog/ios/flet-1080x1080.png" className="screenshot-50 screenshot-rounded"/></a>
+<a href="https://apps.apple.com/app/flet/id1624979699" target="_blank"><img src="/website/img/blog/ios/flet-1080x1080.png" className="screenshot-50 screenshot-rounded"/></a>
 
-With Flet iOS app you can see how your Flet Python app looks and behaves on iPhone or iPad while the app itself is running on your computer.
+使用 Flet iOS 应用程序，您可以看到 Flet Python 应用在 iPhone 或 iPad 上的外观和行为时，该应用程序本身在计算机上运行。
 
-But it's more than just testing Flet apps on the phone! Flet mobile app itself is written in Python and its publishing to App Store is an important milestone for the entire Flet project. It is a successful proof that you can create awesome mobile apps in Python only and package them so that they are accepted in App Store!
+但这不仅仅是在手机上测试 Flet 应用程序！ Flet 移动应用程序本身是用 Python 编写的，其发布到 App Store 是整个 Flet 项目的重要里程碑。 这是一个成功的证明，您只能在 Python 中创建很棒的移动应用程序并打包它们，以便它们在 App Store 中接受！
 
-**[Follow this guide](/docs/guides/python/testing-on-ios)** to get started with testing your Flet apps on iPhone or iPad. Explore the app, browse gallery, play with sample projects and app settings.
+- - [遵循本指南](/docs/guides/python/testing-on-ios) \*\*开始在 iPhone 或 iPad 上测试 Flet 应用程序。 探索应用程序，浏览图库，播放示例项目和应用程序设置。
 
-I would like to thank [Kivy project](https://kivy.org/) for making a [toolchain for iOS](https://github.com/kivy/kivy-ios) which we used to compile Python interpreter and dependencies for iOS devices. We published [serious_python](https://pub.dev/packages/serious_python) package for adding Python runtime to any Flutter app.
+我要感谢[Kivy Project](https://kivy.org/)制作了[iOS 的工具链](https://github.com/kivy/kivy-ios)，我们用来编译 Python 解释器和 iOS 设备的依赖项。 我们发布了用于将 Python 运行时添加到任何 Flutter App 的程序。
 
-## FAQ
+很快。 它现在具有＃1 优先级，我们已经开始从事它。
 
-### When Android is supported?
+### 如何打包我的 Flet App for App Store？
 
-Soon. It has #1 priority now and we've already started working on it.
+我们将为 Bootstrap Flutter 应用程序提供一个项目模板，并提供指南如何将 Flutter，`serious_python`软件包和您的 Python 应用程序组合在一起，以创建一个独立的 iOS 应用程序并将其发布到 App Store 中。
 
-### How to package my Flet app for App Store?
+今年晚些时候，我们将创建 CI 管道以充分自动化该过程。
 
-We are going to provide a project template for bootstrap Flutter app and a guide how to combine Flutter, `serious_python` package and your Python app together to create a standalone iOS app and publish it to App Store.
+查看[{`serious_python`的 readme](https://github.com/flet-dev/serious-python#usage)，以获取有关如何创建 flutter bootstrap 并包装 python 应用程序以运行它的说明。 使用[flet_example](https://github.com/flet-dev/serious-python/tree/main/example/flet_example)项目作为起点。
 
-Later this year we'll create a CI pipeline to fully automate the process.
+## Flet v0.8.0 发行笔记
 
-Check [`serious_python`'s readme](https://github.com/flet-dev/serious-python#usage) for instructions on how create a Flutter bootstrap and package your Python app to run within it. Use [flet_example](https://github.com/flet-dev/serious-python/tree/main/example/flet_example) project as a starting point.
+要在 iOS 上进行测试，您需要将安装 Flet 升级到 v0.8.0。
 
-## Flet v0.8.0 release notes
+在 V0.8.0 中，它已经[经常更改](https://github.com/flet-dev/flet/blob/main/CHANGELOG.md#080)，并且发生了一些破裂的变化。 当您升级到 0.8.0 时，请忍受我们，如果您对此有任何麻烦，请告诉我们。
 
-For testing on iOS you need to upgrade your Flet installation to v0.8.0.
-
-It's been [changed a lot](https://github.com/flet-dev/flet/blob/main/CHANGELOG.md#080) in v0.8.0 and there were some breaking changes. Bear with us while you are upgrading to 0.8.0 and let us know if you have any troubles with it.
-
-Enjoy!
+享受！

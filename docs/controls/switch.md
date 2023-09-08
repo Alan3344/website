@@ -4,18 +4,18 @@ sidebar_label: Switch
 slug: switch
 ---
 
-A toggle represents a physical switch that allows someone to choose between two mutually exclusive options.
+a 切换代表一个物理开关，允许某人在两个相互排斥的选项之间进行选择。
 
-For example, "On/Off", "Show/Hide". Choosing an option should produce an immediate result.
+例如，“开/关”，“显示/隐藏”。 选择选项应立即产生结果。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/input/switch)
+[live 示例](https://flet-controls-gallery.fly.dev/input/switch)
 
-### Basic switches
+### 基本交换机
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -42,10 +42,11 @@ def main(page):
 
 ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/switch/basic-switch.gif" className="screenshot-30"/>
+<img src="/website/img/docs/controls/switch/basic-switch.gif" className="screenshot-30"/>
 
 ### Switch with `on_change` event
 
@@ -73,66 +74,67 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/switch/switch-with-change-event.gif" className="screenshot-30"/>
+<img src="/website/img/docs/controls/switch/switch-with-change-event.gif" className="screenshot-30"/>
 
-## Properties
+## properties
 
 ### `active_color`
 
-The [color](/docs/guides/python/colors) to use when this switch is on.
+此开关打开时使用的[颜色](/docs/guides/python/colors)。
 
 ### `active_track_color`
 
-The [color](/docs/guides/python/colors) to use on the track when this switch is on.
+当此开关打开时，[颜色](/docs/guides/python/colors)将在轨道上使用。
 
-If `track_color` returns a non-null color in the `selected` state, it will be used instead of this color.
+如果`track_color`返回`selected`状态中的非无颜色，则将使用该颜色代替这种颜色。
 
 ### `autofocus`
 
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+如果将控件选择作为初始焦点，则为 thus。 如果一个带有自动对焦集的页面上有多个控件，则添加到页面的第一个将获得焦点。
 
 ### `inactive_thumb_color`
 
-The [color](/docs/guides/python/colors) to use on the thumb when this switch is off.
+当此开关关闭时，[颜色](/docs/guides/python/colors)将在拇指上使用。
 
-If `thumb_color` returns a non-null color in the default state, it will be used instead of this color.
+如果`thumb_color`在默认状态下返回非无彩色，则将其代替这种颜色。
 
 ### `inactive_track_color`
 
-The [color](/docs/guides/python/colors) to use on the track when this switch is off.
+当此开关关闭时，[颜色](/docs/guides/python/colors)将在轨道上使用。
 
-If `track_color` returns a non-null color in the default state, it will be used instead of this color.
+如果`track_color`在默认状态下返回非无效的颜色，则将使用该颜色代替这种颜色。
 
 ### `label`
 
-The clickable label to display on the right of the Switch.
+可点击标签显示在交换机右侧。
 
 ### `label_position`
 
-Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
+属性值是`LabelPosition`枚举，`LabelPosition.RIGHT`默认值。
 
 ### `thumb_color`
 
-The [color](/docs/guides/python/colors) of this Switch's thumb.
+此开关拇指的[颜色](/docs/guides/python/colors)。
 
-Resolved in the following `MaterialState` states:
+在以下`MaterialState`状态下解决:
 
-* `SELECTED`
-* `HOVERED`
-* `FOCUSED`
-* `DISABLED`
-* `DEFAULT` - fallback state, meaning "all other states".
+- `SELECTED`
+- `HOVERED`
+- `FOCUSED`
+- `DISABLED`
+- `DEFAULT` - 后备状态，意思是“所有其他状态”。
 
-To configure thumb color for all Material states set `thumb_color` value to a literal, for example:
+为所有材料状态配置拇指颜色，例如:
 
 ```python
 sw.thumb_color=ft.colors.GREEN
 ```
 
-To configure thumb color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `HOVERED` and `FOCUSED` states and another color for all other states:
+为特定材料状态配置拇指颜色，将其值设置为键是状态名称的字典。 例如，为`HOVERED`和`FOCUSED`状态配置不同的填充颜色，以及所有其他状态的另一种颜色:
 
 ```python
 sw.thumb_color={
@@ -144,30 +146,30 @@ sw.thumb_color={
 
 ### `track_color`
 
-The [color](/docs/guides/python/colors) of this Switch's track.
+此开关轨道的[颜色](/docs/guides/python/colors)。
 
-Resolved in the following `MaterialState` states:
+在以下`MaterialState`状态下解决:
 
-* `SELECTED`
-* `HOVERED`
-* `FOCUSED`
-* `DISABLED`
-* `DEFAULT` - fallback state, meaning "all other states".
+- `SELECTED`
+- `HOVERED`
+- `FOCUSED`
+- `DISABLED`
+- {`DEFAULT` - 后备状态，意思是“所有其他状态”。
 
 ### `value`
 
-Current value of the Switch.
+开关的当前值。
 
-## Events
+## 事件
 
 ### `on_blur`
 
-Fires when the control has lost focus.
+当控件失去焦点时发射。
 
 ### `on_change`
 
-Fires when the state of the Switch is changed.
+当更改开关状态时会发射。
 
 ### `on_focus`
 
-Fires when the control has received focus.
+当控件获得焦点时发射。

@@ -4,18 +4,18 @@ sidebar_label: Slider
 slug: slider
 ---
 
-A slider provides a visual indication of adjustable content, as well as the current setting in the total range of content.
+滑块提供了可调内容的视觉指示以及总内容范围内的当前设置。
 
-Use a slider when you want people to set defined values (such as volume or brightness), or when people would benefit from instant feedback on the effect of setting changes.
+当您希望人们设置定义值（例如音量或亮度），或者当人们会从即时反馈中受益于设置更改的效果时，请使用滑块。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/input/slider)
+[live 示例](https://flet-controls-gallery.fly.dev/input/slider)
 
-### Basic sliders
+### 基本滑块
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -32,10 +32,11 @@ def main(page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-### Sliders with values
+### 带值的滑块
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -52,10 +53,11 @@ def main(page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/slider/slider-with-custom-content.gif" className="screenshot-30"/>
+<img src="/website/img/docs/controls/slider/slider-with-custom-content.gif" className="screenshot-30"/>
 
 ### Slider with `on_change` event
 
@@ -78,91 +80,90 @@ def main(page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/slider/slider-with-change-event.gif" className="screenshot-30"/>
+<img src="/website/img/docs/controls/slider/slider-with-change-event.gif" className="screenshot-30"/>
 
-## Properties
+## properties
 
 ### `active_color`
 
-The [color](/docs/guides/python/colors) to use for the portion of the slider track that is active.
+[颜色](/docs/guides/python/colors)用于活跃的滑块轨道部分。
 
-The "active" side of the slider is the side between the thumb and the minimum value.
+滑块的“主动”侧是拇指和最小值之间的一侧。
 
 ### `autofocus`
 
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+如果将控件选择作为初始焦点，则为 thus。 如果一个带有自动对焦集的页面上有多个控件，则添加到页面的第一个将获得焦点。
 
 ### `divisions`
 
-The number of discrete divisions.
+离散部门的数量。
 
-Typically used with `label` to show the current discrete value.
+通常与`label`一起用于显示当前离散值。
 
-If not set, the slider is continuous.
+如果未设置，滑块是连续的。
 
 ### `inactive_color`
 
-The [color](/docs/guides/python/colors) for the inactive portion of the slider track.
+滑块轨道不活动部分的[颜色](/docs/guides/python/colors)。
 
-The "inactive" side of the slider is the side between the thumb and the maximum value.
+滑块的“不活动”侧是拇指和最大值之间的一侧。
 
 ### `label`
 
-Format with `{value}`.
+格式使用`{value}`。
 
-A label to show above the slider when the slider is active. The value of `label` must contain `{value}` which will be replaced with a current slider value.
+当滑块处于活动状态时，标签显示在滑块上方。 `label`的值必须包含`{value}`将被当前的滑块值替换。
 
-It is used to display the value of a discrete slider, and it is displayed as part of the value indicator shape.
+它用于显示离散滑块的值，并显示为值指示灯形状的一部分。
 
-If not set, then the value indicator will not be displayed.
+如果未设置，则不会显示值指示器。
 
 ### `max`
 
-The maximum value the user can select.
+用户可以选择的最大值。
 
-Defaults to `1.0`. Must be greater than or equal to `min`.
+默认为`1.0`。 必须大于或等于`min`。
 
-If the `max` is equal to the `min`, then the slider is disabled.
+如果`max`等于`min`，则禁用滑块。
 
 ### `min`
 
-The minimum value the user can select.
+用户可以选择的最小值。
 
-Defaults to `0.0`. Must be less than or equal to `max`.
+默认为`0.0`。 必须小于或等于`max`。
 
-If the `max` is equal to the `min`, then the slider is disabled.
+如果`max`等于`min`，则禁用滑块。
 
 ### `thumb_color`
 
-The [color](/docs/guides/python/colors) of the thumb.
+拇指的[颜色](/docs/guides/python/colors)。
 
 ### `value`
 
-The currently selected value for this slider.
+此滑块的当前选择值。
 
-The slider's thumb is drawn at a position that corresponds to this value.
+滑块的拇指在与此值相对应的位置上绘制。
 
-## Events
+## 事件
 
 ### `on_blur`
 
-Fires when the control has lost focus.
+当控件失去焦点时会发射。
 
 ### `on_change`
 
-Fires when the state of the Slider is changed.
+### `on_change_end`更改滑块状态时会发射。
 
-### `on_change_end`
-
-Fires when the user is done selecting a new value for the slider.
+当用户完成后，为滑块选择一个新值。
 
 ### `on_change_start`
 
-Fires when the user starts selecting a new value for the slider.
+当用户开始为滑块选择新值时发射。
 
 ### `on_focus`
 
-Fires when the control has received focus.
+当控件获得焦点时发射。

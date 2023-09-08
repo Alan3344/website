@@ -4,16 +4,16 @@ sidebar_label: Checkbox
 slug: checkbox
 ---
 
-Checkbox allows to select one or more items from a group, or switch between two mutually exclusive options (checked or unchecked, on or off).
+复选框允许从组中选择一个或多个项目，或者在两个互斥选项（已检查或未选中，打开或关闭）之间进行切换。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/input/checkbox)
+[live 示例](https://flet-controls-gallery.fly.dev/input/checkbox)
 
-### Basic checkboxes
+### 基本复选框
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -41,10 +41,11 @@ def main(page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/checkbox/basic-checkbox.gif" className="screenshot-40" />
+<img src="/website/img/docs/controls/checkbox/basic-checkbox.gif" className="screenshot-40" />
 
 ### Checkbox with `on_change` event
 
@@ -56,7 +57,7 @@ import flet as ft
 
 def main(page):
   def checkbox_changed(e):
-    t.value = f"Checkbox value changed to {c.value}" 
+    t.value = f"Checkbox value changed to {c.value}"
     t.update()
 
   c = ft.Checkbox(label="Checkbox with 'change' event", on_change=checkbox_changed)
@@ -66,79 +67,80 @@ def main(page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/checkbox/checkbox-with-change-event.gif" className="screenshot-40" />
+<img src="/website/img/docs/controls/checkbox/checkbox-with-change-event.gif" className="screenshot-40" />
 
-## Properties
+## properties
 
 ### `autofocus`
 
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+如果将控件选择作为初始焦点，则为 thus。 如果一个带有自动对焦集的页面上有多个控件，则添加到页面的第一个将获得焦点。
 
 ### `check_color`
 
-The [color](/docs/guides/python/colors) to use for the check icon when this checkbox is checked.
+检查此复选框时，用于检查图标的[颜色](/docs/guides/python/colors)。
 
 ### `fill_color`
 
-The [color](/docs/guides/python/colors) that fills the checkbox, in all Material states:
+在所有材料状态中填充复选框的[颜色](/docs/guides/python/colors):
 
-* `HOVERED`
-* `FOCUSED`
-* `PRESSED`
-* `DRAGGED`
-* `SELECTED`
-* `SCROLLEDUNDER`
-* `DISABLED`
-* `ERROR`
-* `DEFAULT` - fallback state, meaning "all other states".
+- `HOVERED`
+- `FOCUSED`
+- `PRESSED`
+- `DRAGGED`
+- `SELECTED`
+- `SCROLLEDUNDER`
+- `DISABLED`
+- `ERROR`
+- `DEFAULT` - 后备状态，意思是“所有其他状态”。
 
-To configure checkbox fill color for all Material states set `fill_color` value to a literal, for example:
+为了配置所有材料状态的复选框填充颜色集`fill_color`值，例如:
 
 ```python
 chk.fill_color=ft.colors.GREEN
 ```
 
-To configure fill color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `HOVERED` and `FOCUSED` states and another color for all other states:
+为了配置特定材料状态的填充颜色，将其值设置为键是状态名称的字典。 例如，为`HOVERED`和`FOCUSED`状态配置不同的填充颜色，并为所有其他状态配置另一种颜色:
 
 ```python
 chk.fill_color={
     ft.MaterialState.HOVERED: ft.colors.GREEN,
-    ft.MaterialState.FOCUSED: ft.colors.RED,  
+    ft.MaterialState.FOCUSED: ft.colors.RED,
     ft.MaterialState.DEFAULT: ft.colors.BLACK,
 }
 ```
 
 ### `label`
 
-The clickable label to display on the right of a checkbox.
+可点击的标签显示在复选框右侧。
 
 ### `label_position`
 
-Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
+属性值是`LabelPosition`枚举，`LabelPosition.RIGHT`默认值。
 
 ### `tristate`
 
-If `True` the checkbox's value can be `True`, `False`, or `None` (`null`).
+如果`True`复选框的值可以为`True`，`False`或`None`（`null`）。
 
-Checkbox displays a dash when its value is null.
+复选框显示仪表板时其值为 null。
 
 ### `value`
 
-Current value of the checkbox.
+复选框的当前值。
 
-## Events
+## 事件
 
 ### `on_blur`
 
-Fires when the control has lost focus.
+当控件失去焦点时发射。
 
 ### `on_change`
 
-Fires when the state of the Checkbox is changed.
+复选框的状态更改时发射。
 
 ### `on_focus`
 
-Fires when the control has received focus.
+当控件获得焦点时发射。

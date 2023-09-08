@@ -8,9 +8,9 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [how-to]
 ---
 
-Flet controls are objects and to access their properties we need to keep references (variables) to those objects.
+ Flet控件是对象，要访问其属性，我们需要将引用（变量）保留到这些对象。
 
-Consider the following example:
+考虑以下示例: 
 
 ```python {6-8,18,19,21}
 import flet as ft
@@ -38,9 +38,9 @@ def main(page):
 ft.app(target=main)
 ```
 
-In the very beginning of `main()` method we create three controls which we are going to use in button's `on_click` handler: two `TextField` for first and last names and a `Column` - container for greeting messages. We create controls with all their properties set and in the end of `main()` method, in `page.add()` call, we use their references (variables).
+在`main()`方法的开头，我们创建了三个控件，我们将在按钮的`on_click`处理程序中使用: 两个`TextField`的名称和姓氏和一个`Column`  - 用于问候消息的容器。 我们使用其所有属性集创建控件，并在`main()`方法的末尾，在`page.add()`调用中，我们使用其引用（变量）。
 
-When more and mode controls and event handlers added it becomes challenging to keep all control definitions in one place, so they become scattered across `main()` body. Glancing at `page.add()` parameters it's hard to imagine (without constant jumping to variable definitions in IDE) what would the end form look like:
+当更多和模式控制和事件处理程序添加时，将所有控制定义保持在一个地方变得具有挑战性，因此它们散布在`main()`主体上。 瞥了一眼`page.add()`参数，很难想象（没有不断跳到IDE中的可变定义）终端形式会是什么样: 
 
 ```python {2-5}
     page.add(
@@ -51,26 +51,26 @@ When more and mode controls and event handlers added it becomes challenging to k
     )
 ```
 
-Is `first_name` a TextField, does it have autofocus set? Is greetings a `Row` or a `Column`?
+`first_name`文本场是否有自动对焦集？ 问候是`Row`还是`Column`？
 
-## `Ref` class
+##  `Ref` class
 
-Flet provides `Ref` utility class which allows to define a reference to the control, use that reference in event handlers and set the reference to a real control later, while building a tree. The idea comes from [React](https://reactjs.org/docs/refs-and-the-dom.html).
+Flet提供`Ref`实用程序类，该类允许定义对控件的引用，在事件处理程序中使用该参考，并在室内构建树时将其引用以后对真实控件进行设置。 这个想法来自[React](https://reactjs.org/docs/refs-and-the-dom.html)。
 
-To define a new typed control reference:
+定义一个新的键入控制参考: 
 
 ```python
 first_name = ft.Ref[ft.TextField]()
 ```
 
-To access referenced control (control de-reference) use `Ref.current` property:
+要访问引用的控件（控制脱线）使用`Ref.current`属性: 
 
 ```python
 # empty first name
 first_name.current.value = ""
 ```
 
-To assign control to a reference set `Control.ref` property to a reference:
+将控件分配给参考集`Control.ref`属性到参考: 
 
 ```python {2}
 page.add(
@@ -78,11 +78,11 @@ page.add(
 )
 ```
 
-:::note
-All Flet controls have `ref` property.
+:::注意
+所有Flet控件具有`ref`属性。
 :::
 
-We could re-write our program to use references:
+我们可以重写我们的程序以使用参考: 
 
 ```python {7-9,21-24}
 import flet as ft
@@ -113,8 +113,8 @@ def main(page):
 ft.app(target=main)
 ```
 
-Now we can clearly see in `page.add()` the structure of the page and all the controls it's built of.
+现在，我们可以清楚地看到`page.add()`页面的结构及其构建的所有控件。
 
-Yes, the logic becomes a little bit more verbose as you need to add `.current.` to access ref's control, but it's a matter of personal preference :)
+是的，逻辑变得更加详细，因为您需要添加`.current.`才能访问ref的控制，但这是个人喜好的问题:)
 
-[Give Flet a try](/docs/guides/python/getting-started) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
+[给Flet尝试](/docs/guides/python/getting-started)，[让我们知道](https://discord.gg/dzWXP8SHG8)您的想法！

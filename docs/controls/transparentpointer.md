@@ -4,11 +4,11 @@ sidebar_label: TransparentPointer
 slug: transparentpointer
 ---
 
-TransparentPointer is the solution to ["How to pass trough all gestures between two widgets in Stack"](https://stackoverflow.com/questions/65269190/pass-trough-all-gestures-between-two-widgets-in-stack) problem.
+透明pointer是[如何通过堆栈中两个小部件之间的所有手势传递所有手势的解决方案](https://stackoverflow.com/questions/65269190/pass-trough-all-gestures-between-two-widgets-in-stack)问题。
 
-For example, if there is an `ElevatedButton` inside `Container` with `GestureDetector` then tapping on a button won't be "visible" to a gesture detector behind it. With `TransparentPointer` a tapping event doesn't stop on a button, but goes up to the parent, similar to event bubbling in HTML/JS.
+例如，如果带有`Container`内部的`ElevatedButton` `Container`}，则在其背后的手势检测器上敲击按钮不会“可见”。 使用`TransparentPointer`敲击事件不会在按钮上停止，而是向父母上升，类似于在html/js中冒泡的事件。
 
-## Example
+## 示例
 
 ```python
 import flet as ft
@@ -35,10 +35,10 @@ def main(page):
     )
 
 ft.app(target=main)
-```
+``` 
 
-## Properties
+##  properties 
 
-### `content`
+###  `content`
 
-The `Control` that should be displayed inside the TransparentPointer.
+`Control`应在透明pointer内部显示的`Control`。

@@ -4,22 +4,22 @@ sidebar_label: Draggable
 slug: draggable
 ---
 
-A control that can be dragged from to a [DragTarget](dragtarget).
+一个可以从[DragTarget](dragtarget)拖动的控件。
 
-When a draggable control recognizes the start of a drag gesture, it displays a [`content_feedback`](#content_feedback) control that tracks the user's finger across the screen. If the user lifts their finger while on top of a [DragTarget](dragtarget), that target is given the opportunity to complete drag-and-drop flow.
+当拖动控件识别拖动手势的开始时，它会显示[`content_feedback`](#content_feedback)控制，该控制在整个屏幕上跟踪用户的手指。 如果用户在[DragTarget](dragtarget)上方抬起手指，则该目标有机会完成拖放流程。
 
-This control displays [`content`](#content) when zero drags are under way. If [`content_when_dragging`](#contentwhendragging) is non-null, this control instead displays `content_when_dragging` when one or more drags are underway. Otherwise, this widget always displays `content`.
+当零拖动正在进行时，此控件显示[`content`](#content)。 如果[{`content_when_dragging`](#contentwhendragging)是非空的，则当一个或多个拖动正在进行中时，此控件会显示`content_when_dragging`。 否则，此小部件始终显示`content`。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/utility/draggable)
+[live 示例](https://flet-controls-gallery.fly.dev/utility/draggable)
 
-### Drag and drop colors
+### 拖放颜色
 
-<img src="/img/docs/controls/drag-and-drop/drag-and-drop-colors.gif" className="screenshot-50" />
+<img src="/website/img/docs/controls/drag-and-drop/drag-and-drop-colors.gif" className="screenshot-50" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -118,25 +118,26 @@ def main(page: Page):
 
 flet.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-## Properties
+## properties
 
 ### `content`
 
-`Draggable` control displays [`content`](#content) when zero drags are under way. If [`content_when_dragging`](#contentwhendragging) is non-null, this control instead displays `content_when_dragging` when one or more drags are underway. Otherwise, this control always displays `content`.
+`Draggable`控件显示[`content`](#content)当零拖动正在进行中时。 如果[{`content_when_dragging`](#contentwhendragging)是非空的，则当一个或多个拖动正在进行中时，此控件会显示`content_when_dragging`。 否则，此控件始终显示`content`。
 
 ### `content_feedback`
 
-The `Control` to show under the pointer when a drag is under way.
+`Control`在拖动开始时在指针下显示。
 
 ### `content_when_dragging`
 
-The `Control` to display instead of `content` when one or more drags are under way.
+当一个或多个拖动正在进行时，`Control`将显示而不是`content`。
 
-If this is `None`, then this widget will always display `content` (and so the drag source representation will not change while a drag is under way).
+如果这是`None`，则此窗口小部件将始终显示`content`（因此，在进行阻力时，拖放源表示不会更改）。
 
 ### `group`
 
-A group this draggable belongs to. For [DragTarget](dragtarget) to accept incoming drag both `Draggable` and `DragTarget` must be in the same `group`.
+该拖动属于的一组。 要使[DragTarget](dragtarget)接受传入`Draggable`和`DragTarget`必须在相同的`group`中。

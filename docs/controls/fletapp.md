@@ -4,24 +4,26 @@ sidebar_label: FletApp
 slug: fletapp
 ---
 
-Renders another Flet app in the current app, similar to HTML IFrame, but for Flet.
+在当前应用中呈现另一个Flet应用程序，类似于html iframe，但对于Flet。
 
-## Properties
+##  properties 
 
-### `reconnect_interval_ms`
+###  
 
-Delay, in milliseconds, between reconnection attempts.
+###  `reconnect_interval_ms`
 
-### `reconnect_timeout_ms`
+延迟，以毫秒的重新连接尝试。
 
-Total time to try reconnecting.
+###  `reconnect_timeout_ms`
 
-### `url`
+尝试重新连接的总时间。
 
-Flet app URL, e.g. `http://localhost:8550` or `flet.sock`.
+###  `url`
 
-## Events
+Flet应用程序，例如 `http://localhost:8550`或`flet.sock`。
 
-### `on_error`
+## 事件
 
-Fires when a connection or any unhandled error occurs.
+###  `on_error`
+
+当连接或任何未手动错误发生时会发射。

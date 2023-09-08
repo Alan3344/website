@@ -4,18 +4,18 @@ sidebar_label: Icon
 slug: icon
 ---
 
-Displays a Material icon.
+显示一个材料图标。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-[Icons browser](https://gallery.flet.dev/icons-browser/)
+[图标浏览器](https://gallery.flet.dev/icons-browser/)
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/displays/icon)
+[live 示例](https://flet-controls-gallery.fly.dev/displays/icon)
 
-### Icons of different colors and sizes
+### 不同颜色和大小的图标
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -37,25 +37,26 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/icon/custom-icons.png" className="screenshot-20" />
+<img src="/website/img/docs/controls/icon/custom-icons.png" className="screenshot-20" />
 
-## Properties
+## properties
 
 ### `color`
 
-Icon [color](/docs/guides/python/colors).
+图标[颜色](/docs/guides/python/colors)。
 
 ### `name`
 
-The name of the icon. You can search through the list of all available icons using open-source [Icons browser](https://gallery.flet.dev/icons-browser/) app [written in Flet](https://github.com/flet-dev/examples/blob/main/python/apps/icons-browser/main.py).
+图标的名称。 您可以使用开源[ICONS 浏览器](https://gallery.flet.dev/icons-browser/) app [写在 Flet](https://github.com/flet-dev/examples/blob/main/python/apps/icons-browser/main.py)。
 
 ### `size`
 
-Icon size. Default is 24.
+图标大小。 默认值为 24。
 
 ### `tooltip`
 
-The text displayed when hovering a mouse over the Icon.
+悬停在图标上时显示鼠标时显示的文本。

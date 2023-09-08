@@ -4,7 +4,7 @@ sidebar_label: Deploying web app
 slug: /guides/python/deploying-web-app
 ---
 
-Flet app can be deployed as a "standalone" web app which means both your Python app and Flet web server are deployed together as a bundle.
+ Flet应用程序可以部署为“独立” Web应用程序，这意味着您的Python应用程序和Flet Web服务器作为捆绑包一起部署。
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

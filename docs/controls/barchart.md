@@ -4,15 +4,15 @@ sidebar_label: BarChart
 slug: barchart
 ---
 
-Draws a bar chart.
+绘制条形图。
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/charts/barchart)
+[LIVE 示例](https://flet-controls-gallery.fly.dev/charts/barchart)
 
-### BarChart 1
+### Barchart 1
 
-<img src="/img/docs/controls/charts/barchart-sample-1.png" className="screenshot-50"/>
+<img src="/website/img/docs/controls/charts/barchart-sample-1.png" className="screenshot-50"/>
 
 ```python
 import flet as ft
@@ -108,9 +108,9 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-### BarChart 2
+### Barchart 2
 
-<img src="/img/docs/controls/charts/barchart-sample-2.gif" className="screenshot-50"/>
+<img src="/website/img/docs/controls/charts/barchart-sample-2.gif" className="screenshot-50"/>
 
 ```python
 import flet as ft
@@ -201,249 +201,245 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-## `BarChart` properties
+## `BarChart`属性
 
-<img src="/img/docs/controls/charts/barchart-diagram.svg" className="screenshot-100"/>
+<img src="/website/img/docs/controls/charts/barchart-diagram.svg" className="screenshot-100"/>
 
 ### `bar_groups`
 
-The list of `ft.BarChartGroup` to draw.
+`ft.BarChartGroup`绘制的列表。
 
 ### `groups_space`
 
-A gap between bar groups.
+条形组之间的差距。
 
 ### `animate`
 
-Controls chart implicit animation. See [`LineChart.animate`](linechart#animate) property for more information and possible values.
+控制图表隐式动画。 有关更多信息和可能的值，请参见[{`LineChart.animate`](linechart#animate)属性。
 
 ### `interactive`
 
-Enables automatic tooltips when hovering chart bars.
+在悬停图表栏时启用自动工具提示。
 
 ### `bgcolor`
 
-Background [color](/docs/guides/python/colors) of the chart.
+图表的背景[颜色](/docs/guides/python/colors)。
 
 ### `tooltip_bgcolor`
 
-Background [color](/docs/guides/python/colors) of tooltips.
+工具提示的背景[颜色](/docs/guides/python/colors)。
 
 ### `border`
 
-The border around the chart. The value is the instance of `ft.Border` class.
+图表周围的边界。 该值是`ft.Border`类的实例。
 
 ### `horizontal_grid_lines`
 
-Controls drawing of chart's horizontal lines. The value is the instance of [`ChartGridLines`](#chartgridlines) class.
+控制图表的水平线图。 该值是[`ChartGridLines`](#chartgridlines) class。
 
-### `vertical_grid_lines`
+### `vertical_grid_lines`的实例
 
-Controls drawing of chart's vertical lines. The value is the instance of [`ChartGridLines`](#chartgridlines) class.
+控制图表垂直线的图形。 该值是[`ChartGridLines`](#chartgridlines) class。
 
-### `left_axis`
+### `left_axis`的实例
 
-Configures the appearance of the left axis, its title and labels. The value is the instance of [`ChartAxis`](#chartaxis-properties) class.  
+配置左轴的外观，其标题和标签。 该值是[`ChartAxis`](#chartaxis-properties)类的实例。
 
 ### `top_axis`
 
-Configures the appearance of the top axis, its title and labels. The value is the instance of [`ChartAxis`](#chartaxis-properties) class.  
+配置顶轴的外观，其标题和标签。 该值是[`ChartAxis`](#chartaxis-properties)类的实例。
 
 ### `right_axis`
 
-Configures the appearance of the right axis, its title and labels. The value is the instance of [`ChartAxis`](#chartaxis-properties) class.  
+配置右轴的外观，其标题和标签。 该值是[`ChartAxis`](#chartaxis-properties)类的实例。
 
 ### `bottom_axis`
 
-Configures the appearance of the bottom axis, its title and labels. The value is the instance of [`ChartAxis`](#chartaxis-properties) class.  
+配置底轴的外观，其标题和标签。 该值是[`ChartAxis`](#chartaxis-properties)类的实例。
 
 ### `baseline_y`
 
-Baseline value for Y axis. Default is `0`.
+Y 轴的基线值。 默认值为`0`。
 
 ### `min_y`
 
-Configures the minimum displayed value for Y axis.
+配置 Y 轴的最小显示值。
 
 ### `max_y`
 
-Configures the maximum displayed value for Y axis.
+配置 Y 轴的最大显示值。
 
-## `BarChart` events
+## `BarChart`事件
 
 ### `on_chart_event`
 
-Fires when a bar is hovered or clicked.
+悬停或单击酒吧时发射。
 
-Event data is an instance `ft.BarChartEvent` class with the following properties:
+事件数据是具有以下属性的实例`ft.BarChartEvent`类:
 
-* `type` event type such as `PointerHoverEvent`, `PointerExitEvent`, etc.
-* `bar_index` - bar's index or `-1` if chart is hovered or clicked outside of any bar.
-* `rod_index` - rod's index or `-1` if chart is hovered or clicked outside of any bar.
-* `stack_item_index` - stack item's index or `-1` if chart is hovered or clicked outside of any bar.
+- `type`事件类型，例如`PointerHoverEvent`，`PointerExitEvent`，等。
+- `bar_index` - 栏的索引或`-1`如果图表被悬停或在任何栏外单击。
+- `rod_index` - 如果将图表悬停在任何条形外，则 ROD 的索引或`-1`。
+- {`stack_item_index` - 堆栈项目的索引或`-1`如果图表悬停或单击任何条形外。
 
-## `BarChartGroup` properties
+## `BarChartGroup` `BarChartGroup` properties
 
 ### `x`
 
-Group position on X axis.
+x 轴上的组位置。
 
 ### `bar_rods`
 
-The list of [`BarChartRod`](#barchartrod-properties) objects to display in the group.
+[`BarChartRod`](#barchartrod-properties)对象的列表要在组中显示。
 
 ### `group_vertically`
 
-If set to `True` bar rods are drawn on top of each other; otherwise bar rods are drawn next to each other. Default value is `False`.
+如果设置为`True`杆杆，则彼此绘制； 否则，将杆杆彼此绘制。 默认值为`False`。
 
 ### `bars_space`
 
-The gap between bar rods.
+条杆之间的差距。
 
-## `BarChartRod` properties
+## `BarChartRod`属性
 
 ### `rod_stack_items`
 
-Optional list of [`BarChartRodStackItem`](#barchartrodstackitem-properties) objects to draw a stacked bar.
+[`BarChartRodStackItem`](#barchartrodstackitem-properties)对象绘制堆叠栏的可选列表。
 
 ### `from_y`
 
-Specifies a starting position of a rod on Y axis. Default is `0`.
+指定杆在 Y 轴上的起始位置。 默认值为`0`。
 
 ### `to_y`
 
-Specifies an ending position of a rod on Y axis.
+指定杆在 y 轴上的结尾位置。
 
 ### `width`
 
-The width of a rod. Default is `8`.
+杆的宽度。 默认值为`8`。
 
 ### `color`
 
-Rod [color](/docs/guides/python/colors). Default is `cyan`.
+杆[颜色](/docs/guides/python/colors)。 默认值为`cyan`。
 
 ### `gradient`
 
-Gradient to draw rod's background. See [`Container.gradient`](container#gradient) property for more information and possible values.
+梯级吸引杆的背景。 有关更多信息和可能的值，请参见[`Container.gradient`](container#gradient)属性。
 
 ### `border_radius`
 
-Border radius of a bar rod. Default is `4`.
+杆杆的边界半径。 默认值为`4`。
 
 ### `border_side`
 
-Border to draw around rod. The value is the instance of `ft.BorderSide` class.
+边界在杆上绘制。 该值是`ft.BorderSide`类的实例。
 
 ### `bg_from_y`
 
-An optional starting position of a background behind a rod.
+背景背后的可选起始位置。
 
 ### `bg_to_y`
 
-An optional ending position of a background behind a rod.
+背景背后的可选结尾位置。
 
 ### `bg_color`
 
-An optional [color](/docs/guides/python/colors) of a background behind a rod.
+杆背后的背景的可选[颜色](/docs/guides/python/colors)。
 
 ### `bg_gradient`
 
-An optional gradient to draw a background with.
+可选梯度，绘制带有的背景。
 
 ### `selected`
 
-If set to `True` a tooltip is always shown on top of the bar when `BarChart.interactive` is set to `False`.
+如果将`BarChart.interactive`设置为`False` `False`时，请始终显示在`True` `True`。
 
 ### `show_tooltip`
 
-`True` (default) if a tooltip should be shown on top of hovered bar.
+`True`（默认）如果应在悬停栏的顶部显示工具提示。
 
 ### `tooltip`
 
-A custom tooltip value. Default is `to_y`.
+自定义工具提示值。 默认值为`to_y`。
 
 ### `tooltip_style`
 
-A text style to display tooltip with. The value is the instance of [`ft.TextStyle`](text#textstyle-properties) class.
+带有文本样式，以显示工具提示。 该值是[`ft.TextStyle`](text#textstyle-properties) class。
 
-### `tooltip_align`
+### `tooltip_align`的实例
 
-An align for the tooltip. The value is the instance of `ft.TextAlign` enum.
+该工具提示的对齐。 该值是`ft.TextAlign` enum。
 
-## `BarChartRodStackItem` properties
-
-### `from_y`
-
-The starting position for a stack item inside a bar rod.
+杆杆中堆栈项目的起始位置。
 
 ### `to_y`
 
-The ending position for a stack item inside a bar rod.
+杆杆中堆栈项目的结尾位置。
 
 ### `color`
 
-A [color](/docs/guides/python/colors) of stack item.
+a [color](/docs/guides/python/colors)堆栈项目。
 
 ### `border_side`
 
-A border around stack item. The value is the instance of `ft.BorderSide` class.
+堆栈项目周围的边界。 该值是`ft.BorderSide`类的实例。
 
-## `ChartGridLines` properties
+## `ChartGridLines`属性
 
-Configures the appearance of horizontal and vertical grid lines within the chart.
+在图表中配置水平和垂直网格线的外观。
 
 ### `interval`
 
-Interval between grid lines. Default is `1`.
+网格线之间的间隔。 默认值为`1`。
 
 ### `color`
 
-[Color](/docs/guides/python/colors) of a grid line.
+[颜色](/docs/guides/python/colors)网格线。
 
 ### `width`
 
-Width of a grid line. Default is `1`.
+网格线的宽度。 默认值为`1`。
 
 ### `dash_pattern`
 
-Defines dash effect of the line. The value is a circular list of dash offsets and lengths. For example, the list `[5, 10]` would result in dashes 5 pixels long followed by blank spaces 10 pixels long. By default, a solid line is drawn.
+定义行的破折号效应。 该值是仪表板偏移和长度的圆形列表。 例如，列表`[5, 10]`将导致破折号长 5 像素，然后是空白空格长 10 像素。 默认情况下，绘制一条实线。
 
-## `ChartAxis` properties
+## `ChartAxis`属性
 
-Configures chart axis.
+配置图表轴。
 
 ### `title`
 
-A `Control` to display as axis title.
+`Control`显示为轴标题。
 
 ### `title_size`
 
-Width or height of title area.
+标题区域的宽度或高度。
 
 ### `show_labels`
 
-`True` to display labels along the axis. If `labels` is empty then automatic labels are displayed. 
+`True`沿轴显示标签。 如果`labels`为空，则显示自动标签。
 
 ### `labels`
 
-The list of [`ft.ChartAxisLabel`](#chartaxislabel-properties) objects to set custom axis labels for only specific values.
+[`ft.ChartAxisLabel`](#chartaxislabel-properties)对象的列表仅设置特定值的自定义轴标签。
 
 ### `labels_interval`
 
-The interval between automatic labels.
+自动标签之间的间隔。
 
 ### `labels_size`
 
-Width or height of labels area.
+标签区域的宽度或高度。
 
-## `ChartAxisLabel` properties
+## `ChartAxisLabel`属性
 
-Configures a custom label for specific value.
+为特定值配置自定义标签。
 
 ### `value`
 
-A value to draw label for.
+绘制标签的值。
 
 ### `label`
 
-A `Control` to draw as a label.
+`Control`作为标签绘制。

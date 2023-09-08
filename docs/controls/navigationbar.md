@@ -4,17 +4,17 @@ sidebar_label: NavigationBar
 slug: navigationbar
 ---
 
-Material 3 Navigation Bar component.
+材料 3 导航栏组件。
 
-Navigation bars offer a persistent and convenient way to switch between primary destinations in an app.
+导航栏提供了一种持久和方便的方式，可以在应用程序中的主要目的地之间切换。
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/navigation/navigationbar)
+[live 示例](https://flet-controls-gallery.fly.dev/navigation/navigationbar)
 
-### A simple NavigationBar
+### 一个简单的导航栏
 
-<img src="/img/docs/controls/navigation-bar/navigation-bar-sample.gif" className="screenshot-40"/>
+<img src="/website/img/docs/controls/navigation-bar/navigation-bar-sample.gif" className="screenshot-40"/>
 
 ```python
 import flet as ft
@@ -42,64 +42,64 @@ ft.app(target=main)
 
 ### `bgcolor`
 
-The [color](/docs/guides/python/colors) of the NavigationBar itself.
+导航栏本身的[颜色](/docs/guides/python/colors)。
 
 ### `destinations`
 
-Defines the appearance of the button items that are arrayed within the navigation bar.
+定义导航栏中数组的按钮项的外观。
 
-The value must be a list of two or more `NavigationDestination` instances.
+该值必须是两个或多个`NavigationDestination`实例的列表。
 
 ### `elevation`
 
-The elevation of the NavigationBar itself.
+导航栏本身的高程。
 
 ### `label_behavior`
 
-Defines how the destinations' labels will be laid out and when they'll be displayed.
+定义如何布置目的地的标签以及何时显示。
 
-Can be used to show all labels, show only the selected label, or hide all labels.
+可用于显示所有标签，仅显示选定的标签或隐藏所有标签。
 
-Property value is `NavigationBarLabelBehavior` enum with the following values:
+属性值为`NavigationBarLabelBehavior`枚举，具有以下值:
 
-* `ALWAYS_SHOW` (default) - Always shows all of the labels under each navigation bar destination, selected and unselected.
-* `ALWAYS_HIDE` - Never shows any of the labels under the navigation bar destinations, regardless of selected vs unselected.
-* `ONLY_SHOW_SELECTED` - Only shows the labels of the selected navigation bar destination. When a destination is unselected, the label will be faded out, and the icon will be centered. When a destination is selected, the label will fade in and the label and icon will slide up so that they are both centered.
+- `ALWAYS_SHOW`（默认值） - 始终显示每个导航栏目标下的所有标签，选择和未选择。
+- `ALWAYS_HIDE` - 切勿在导航栏目的地下显示任何标签，而不论所选与未选择的选择。
+- `ONLY_SHOW_SELECTED` - 仅显示所选导航栏目的地的标签。 当未选择目的地时，标签将褪色，图标将被居中。 当选择目的地时，标签将逐渐消失，标签和图标将滑动以使它们都居中。
 
 ### `selected_index`
 
-The index into `destinations` for the current selected `NavigationDestination` or `None` if no destination is selected.
+如果未选择目的地，则为当前选择`NavigationDestination`或`None`的索引中的索引。
 
-## `NavigationBar` events
+## `NavigationBar`事件
 
-### `on_change`
+##
 
-Fires when selected destination changed.
+当选择目标更改时发射。
 
-## `NavigationDestination` properties
+## `NavigationDestination`属性
 
 ### `icon`
 
-The name of the icon of the destination.
+目的地图标的名称。
 
 ### `icon_content`
 
-The icon `Control` of the destination. Typically the icon is an [`Icon`](icon) control. Used instead of `icon` property.
+目的地的图标`Control`。 通常，图标是[`Icon`](icon)控制。 使用而不是`icon`属性。
 
-If `selected_icon_content` is provided, this will only be displayed when the destination is not selected.
+如果提供了`selected_icon_content`，则仅在未选择目标时才显示。
 
-To make the NavigationBar more accessible, consider choosing an icon with a stroked and filled version, such as `icons.CLOUD` and `icons.CLOUD_QUEUE`. The icon should be set to the stroked version and `selected_icon` to the filled version.
+要使 NavigationBar 更容易访问，请考虑选择具有触发和填充版本的图标，例如`icons.CLOUD`和`icons.CLOUD_QUEUE`。 该图标应设置为“触发”版本，`selected_icon` `selected_icon`将其设置为填充版本。
 
 ### `label`
 
-The text label that appears below the icon of this `NavigationDestination`.
+`NavigationDestination`的图标下方出现的文本标签。
 
 ### `selected_icon`
 
-The name of alternative icon displayed when this destination is selected.
+选择此目标时显示的替代图标的名称。
 
 ### `selected_icon_content`
 
-An alternative icon `Control` displayed when this destination is selected.
+选择此目的地时显示了替代图标`Control`。
 
-If this icon is not provided, the NavigationBar will display `icon_content` in either state.
+如果未提供此图标，则 NavigationBar 将在任何一个状态下显示`icon_content`。

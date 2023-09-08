@@ -2,11 +2,11 @@
 title: Flet CLI
 ---
 
-Flet command-line interface (CLI) provides an easy way to create, run and package Flet apps.
+ Flet命令行接口（CLI）提供了一种简便的方法来创建，运行和包装Flet应用程序。
 
-Available commands:
+可用命令: 
 
-* [create](create) - create a new Flet app from a template.
-* [run](run) - run Flet app.
-* [pack](pack) - package Flet app to a standalone desktop bundle.
-* [publish](publish) - publish Flet app as a standalone static web app using Pyodide.
+*  [create](create)  - 从模板创建一个新的Flet应用程序。
+* [run](run)  - 运行Flet app。
+* [pack](pack)  - 软件包Flet应用程序到独立的桌面捆绑包。
+* [publish](publish)  - 使用Pyodide发布为独立的静态Web应用程序。

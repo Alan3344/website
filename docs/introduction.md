@@ -4,20 +4,20 @@ title: Introduction
 slug: /
 ---
 
-import Tabs from '@theme/Tabs';
+从'@them/tabs'导入选项卡片;
 import TabItem from '@theme/TabItem';
 
-## What is Flet
+## 什么是 Flet
 
-Flet is a framework that allows building interactive multi-user web, desktop and mobile applications in your favorite language without prior experience in frontend development.
+Flet 是一个框架，它允许以您喜欢的语言构建交互式多用户网络，桌面和移动应用程序，而无需先前的前端开发经验。
 
-You build a UI for your program with Flet [controls](/docs/controls) which are based on [Flutter](https://flutter.dev) by Google. Flet does not just "wrap" Flutter widgets, but adds its own "opinion" by combining smaller widgets, hiding complexities, implementing UI best-practices, applying reasonable defaults - all to ensure your apps look cool and professional without extra efforts.
+您可以使用 Flet [Controls](/docs/controls)为程序构建 UI，该(/docs/controls)基于 Google 的[Flutter](https://flutter.dev)。 Flet 不仅是“包装”颤音小部件，而且还通过结合较小的小部件，隐藏复杂性，实现 UI 最佳实践，应用合理的默认值来添加自己的“意见”，以确保您的应用程序看起来很酷，而无需额外努力。
 
-## Flet app example
+## Flet 应用示例
 
-At the moment you can write Flet apps in Python and other languages will be added soon.
+目前，您可以用 Python 编写 Flet 应用程序，而其他语言将很快添加。
 
-Here is a sample "Counter" app:
+这是一个示例“计数器”应用:
 
 ```python title="counter.py"
 import flet as ft
@@ -50,43 +50,43 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-To run the app install `flet` module:
+运行应用程序安装`flet`模块:
 
 ```bash
 pip install flet
 ```
 
-and run the program:
+并运行程序:
 
 ```bash
 python counter.py
 ```
 
-The app will be started in a native OS window - what a nice alternative to Electron!
+该应用将在本机 OS 窗口中启动 - 电子的替代品！
 
 <div className="row">
-  <div className="col col--6" style={{textAlign: 'center'}}>
-    <h3>macOS</h3>
-    <img src="/img/docs/getting-started/flet-counter-macos.png" className="screenshot-70" />
-  </div>
-  <div className="col col--6" style={{textAlign: 'center'}}>
-    <h3>Windows</h3>
-    <img src="/img/docs/getting-started/flet-counter-windows.png"className="screenshot-60" />
-  </div>  
+   <div className ="col-col-6" style = {{textAlign: 'center'}}>
+     <h3> macOS </h3>
+     <img src="/website/img/docs/getting-started/flet-counter-macos.png" className="screenshot-70" />
+   </div>
+   <div className ="col-col-6" style = {{textAlign: 'center'}}>
+     <h3> Windows </h3>
+     <img src="/website/img/docs/getting-started/flet-counter-windows.png" className="screenshot-60" />
+   </div>
 </div>
 
-Now, if you want to run the app as a web app, just replace the last line with:
+现在，如果您想以 Web 应用程序运行该应用程序，只需将最后一行替换为以下方式:
 
 ```python
 ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
 
-run again and now you instantly get a web app:
+再次运行，现在您立即获得 Web 应用程序:
 
-<img src="/img/docs/getting-started/flet-counter-safari.png" className="screenshot-50" />
+<img src="/website/img/docs/getting-started/flet-counter-safari.png" className="screenshot-50" />
 
-## Tutorials
+## 教程
 
-Want to learn how to build a real app? Jump to a getting started guide for your language:
+想学习如何构建真实的应用吗？ 跳到您的语言的入门指南:
 
-* [Python](/docs/guides/python/getting-started)
+- [Python](/docs/guides/python/getting-started)

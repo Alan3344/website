@@ -8,32 +8,32 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [releases]
 ---
 
-🤖 Android support is here!
+🤖Android 支持在这里！
 
-<a href="https://play.google.com/store/apps/details?id=com.appveyor.flet" target="_blank"><img src="/img/docs/getting-started/testing-on-android/google-play-badge.png" className="screenshot-40" /></a>
+<a href="https://play.google.com/store/apps/details?id=com.appveyor.flet" target="_blank"><img src="/website/img/docs/getting-started/testing-on-android/google-play-badge.png" className="screenshot-40" /></a>
 
-With Flet Android app you can see how your Flet Python app looks and behaves on Android devices while the app itself is running on your computer.
+使用 Flet Android 应用程序，您可以看到 Flet Python App 在应用程序本身在计算机上运行时在 Android 设备上的外观和行为。
 
-Similar to iOS, Flet for Android is a Flutter app written entirely in Python with the help of two open-source packages: [`serious_python`](https://pub.dev/packages/serious_python) and [`flet`](https://pub.dev/packages/flet). Resulting app package is technically compliant with Google Play requirements, so you can publish awesome Android apps in pure Python.
+与 iOS 相似，Flet 的 Android 是一个完全在 Python 中写入 Python 的 flutter 应用程序: [{`serious_python`](https://pub.dev/packages/serious_python)和[`flet`](https://pub.dev/packages/flet)。 生成的应用程序包在技术上符合 Google Play 的要求，因此您可以在 Pure Python 中发布出色的 Android 应用程序。
 
-**[Follow this guide](/docs/guides/python/testing-on-android)** to get started with testing your Flet apps on Android. Explore the app, browse gallery, play with sample projects and app settings.
+- - [遵循本指南](/docs/guides/python/testing-on-android) \*\*开始测试 Android 上的 Flet 应用程序。 探索应用程序，浏览图库，播放示例项目和应用程序设置。
 
 ## FAQ
 
-### How to package my Flet app for Google Play?
+### 如何打包我的 Google Play Flet 应用程序？
 
-We are going to provide a project template for bootstrap Flutter app and a guide how to combine Flutter, `serious_python` package and your Python app together to create a standalone Android app and publish it to Google Play.
+我们将为 Bootstrap Flutter 应用程序提供一个项目模板，以及如何将 Flutter，`serious_python`软件包和您的 Python 应用程序组合在一起，以创建一个独立的 Android 应用程序并将其发布到 Google Play 中。
 
-Check [`serious_python`'s readme](https://github.com/flet-dev/serious-python#usage) for instructions on how create a Flutter bootstrap and package your Python app to run within it. Use [flet_example](https://github.com/flet-dev/serious-python/tree/main/example/flet_example) project as a starting point.
+检查[{`serious_python`的 readme](https://github.com/flet-dev/serious-python#usage)，以获取有关如何创建 flutter bootstrap 并包装 python 应用程序以运行它的说明。 使用[Flet_example](https://github.com/flet-dev/serious-python/tree/main/example/flet_example)项目作为起点。
 
-### Will you provide packaging for Windows, macOS and Linux?
+### 您是否会为 Windows，MacOS 和 Linux 提供包装？
 
-Yes! At the moment Flet desktop apps are packaged with `flet pack` command and PyInstaller. Produced app bundle adds performance and size overhead and is hard to customize, so we are going to replace it with native Flutter packaging.
+是的！ 目前，Flet 桌面应用程序包装了``flet pack''命令和 pyinstaller。 生产的 App Bundle 增加了性能和大小开销，并且很难自定义，因此我们将用本机扑面包装替换。
 
-## Flet v0.9.0 release notes
+## Flet v0.9.0 发行说明
 
-For testing on Android you need to upgrade your Flet installation to v0.9.0.
+要在 Android 上进行测试，您需要将 Flet 安装升级到 v0.9.0。
 
-There were [a few changes](https://github.com/flet-dev/flet/blob/main/CHANGELOG.md#090) mainly to support Android in Flet CLI. Let us know if you notice something unusual.
+有[一些更改](https://github.com/flet-dev/flet/blob/main/CHANGELOG.md#090)主要支持 Flet CLI 中的 Android。 如果您注意到一些不寻常的东西，请告诉我们。
 
-Enjoy!
+享受！

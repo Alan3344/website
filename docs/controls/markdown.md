@@ -4,16 +4,16 @@ sidebar_label: Markdown
 slug: markdown
 ---
 
-Control for rendering text in markdown format.
+控制以标记格式渲染文本的控制。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/displays/markdown)
+[live 示例](https://flet-controls-gallery.fly.dev/displays/markdown)
 
-### Markdown with GitHubWeb extensions and clickable links
+### 用 githubweb 扩展和可单击的链接标记
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -112,32 +112,32 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/markdown/custom-markdown.gif" className="screenshot-40"/>
+<img src="/website/img/docs/controls/markdown/custom-markdown.gif" className="screenshot-40"/>
 
-### Markdown with code syntax highlight
+### 用代码语法突出显示标记
 
-[Source code](https://github.com/flet-dev/examples/blob/main/python/controls/markdown/markdown-code-highlight.py)
+[源代码](https://github.com/flet-dev/examples/blob/main/python/controls/markdown/markdown-code-highlight.py)
 
-<img src="/img/docs/controls/markdown/markdown-highlight.png" className="screenshot-60"/>
+<img src="/website/img/docs/controls/markdown/markdown-highlight.png" className="screenshot-60"/>
 
-## Properties
+## properties
 
 ### `auto_follow_links`
 
-Automatically open URLs in the document. Default is `False`. If registered, `on_tap_link` event is fired after that.
+自动打开文档中的 URL。 默认值为`False`。 如果已注册，则在此之后发射`on_tap_link`事件。
 
 ### `auto_follow_links_target`
 
-Where to open URL in the web mode:
+在 Web 模式下打开 URL 的位置:
 
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+- `_blank`（默认值） - 新的选项卡片/窗口。
+- `_self` - 当前选项卡片/窗口。
 
 ### `code_style`
 
-Code block text style. The value is an instance of [`ft.TextStyle`](text#textstyle-properties) class.
+代码块文本样式。 该值是[`ft.TextStyle`](text#textstyle-properties)类的实例。
 
-An example of configuring monospace font for Markdown code blocks:
+为 Markdown 代码块配置 Monospace 字体的一个示例:
 
 ```python
     page.fonts = {
@@ -158,120 +158,124 @@ An example of configuring monospace font for Markdown code blocks:
 
 ### `code_theme`
 
-A syntax highlighting theme for code blocks.
+代码块的语法突出显示主题。
 
-Supported themes:
+支持的主题:
 
-* `a11y-dark`
-* `a11y-light`
-* `agate`
-* `an-old-hope`
-* `androidstudio`
-* `arduino-light`
-* `arta`
-* `ascetic`
-* `atelier-cave-dark`
-* `atelier-cave-light`
-* `atelier-dune-dark`
-* `atelier-dune-light`
-* `atelier-estuary-dark`
-* `atelier-estuary-light`
-* `atelier-forest-dark`
-* `atelier-forest-light`
-* `atelier-heath-dark`
-* `atelier-heath-light`
-* `atelier-lakeside-dark`
-* `atelier-lakeside-light`
-* `atelier-plateau-dark`
-* `atelier-plateau-light`
-* `atelier-savanna-dark`
-* `atelier-savanna-light`
-* `atelier-seaside-dark`
-* `atelier-seaside-light`
-* `atelier-sulphurpool-dark`
-* `atelier-sulphurpool-light`
-* `atom-one-dark-reasonable`
-* `atom-one-dark`
-* `atom-one-light`
-* `brown-paper`
-* `codepen-embed`
-* `color-brewer`
-* `darcula`
-* `dark`
-* `default`
-* `docco`
-* `dracula`
-* `far`
-* `foundation`
-* `github-gist`
-* `github` (default)
-* `gml`
-* `googlecode`
-* `gradient-dark`
-* `grayscale`
-* `gruvbox-dark`
-* `gruvbox-light`
-* `hopscotch`
-* `hybrid`
-* `idea`
-* `ir-black`
-* `isbl-editor-dark`
-* `isbl-editor-light`
-* `kimbie.dark`
-* `kimbie.light`
-* `lightfair`
-* `magula`
-* `mono-blue`
-* `monokai-sublime`
-* `monokai`
-* `night-owl`
-* `nord`
-* `obsidian`
-* `ocean`
-* `paraiso-dark`
-* `paraiso-light`
-* `pojoaque`
-* `purebasic`
-* `qtcreator_dark`
-* `qtcreator_light`
-* `railscasts`
-* `rainbow`
-* `routeros`
-* `school-book`
-* `shades-of-purple`
-* `solarized-dark`
-* `solarized-light`
-* `sunburst`
-* `tomorrow-night-blue`
-* `tomorrow-night-bright`
-* `tomorrow-night-eighties`
-* `tomorrow-night`
-* `tomorrow`
-* `vs`
-* `vs2015`
-* `xcode`
-* `xt256`
-* `zenburn`
+- `a11y-dark`
+- ``a11y-light“
+- `agate`
+- `and-hope'
+- `androidstudio`
+- ``arduino-light“
+- `arta`
+- `ascetic`
+- `ATELIER-cave-dark`
+- ``Antelier-cave-light“
+- `Atelier-dune-dark`
+- `natelier-dune-light“
+- `natelier-stuary-dark`
+- `natelier-estuary-light“
+- `Antelier-Forest-dark`
+- ```Antelier-telest-light''
+
+  ```
+- `Antelier-Heath-dark`
+- `natelier-heath-light“
+- ```Antelier-lakesdar dark'
+
+  ```
+- ```Antelier-lakes-light''
+
+  ```
+- `gatelier-plateau-dark`
+- `natelier-plateau-light“
+- `Antelier-savanna-dark`
+- `natelier-savanna-light“
+- `Antelier-seaside-dark`
+- `Antelier-seaside-light“
+- `natelier-sulphurpool-dark`
+- `natelier-sulphurpool-light'
+- `otom-one-wark-roalable“
+- `otom-one-dark`
+- ``arom-One-light“
+- `brown-paper`
+- `codepen-embed`
+- `color-brewer`
+- `darcula`
+- `dark`
+- `default`
+- `docco`
+- `dracula`
+- `far`
+- `foundation`
+- `github-gist`
+- `github`（默认）
+- `gml`
+- `googlecode`
+- ``渐变''
+- `grayscale`
+- `gruvbox-dark`
+- `gruvbox-light“
+- `hopscotch`
+- `hybrid`
+- `idea`
+- ``ir-black`
+- `'iSbl-editor-dark`
+- ``isbl-editor-light“
+- `kimbie.dark`
+- `kimbie.light`
+- `lightfair`
+- `magula`
+- `单蓝色
+- `monokai-sublime`
+- `monokai`
+- `夜烤
+- `nord`
+- `obsidian`
+- `ocean`
+- `paraiso-dark`
+- `paraiso-light“
+- `pojoaque`
+- `purebasic`
+- `qtcreator_dark`
+- `qtcreator_light`
+- `railscasts`
+- `rainbow`
+- `routeros`
+- ``School-Book'
+- `紫色阴影
+- `solarized-dark`
+- `solarized-light“
+- `sunburst`
+- `明天晚上蓝色
+- `明天晚上
+- `明天八十年代
+- `明天晚上
+- `tomorrow`
+- `vs`
+- `vs2015`
+- `xcode`
+- `xt256`
+- `zenburn`
 
 ### `extension_set`
 
-Property value is `MarkdownExtensionSet` enum with the following values: `NONE` (default), `COMMON_MARK`, `GITHUB_WEB`, `GITHUB_FLAVORED`.
+属性值为`MarkdownExtensionSet`枚举，具有以下值: `NONE`（默认），`COMMON_MARK`，`GITHUB_WEB`，`GITHUB_FLAVORED`。{44441} {444355}
 
-### `selectable`
-
-Whether rendered text is selectable or not.
+是否可以选择渲染文本。
 
 ### `value`
 
-Markdown content to render.
+将其降低到渲染。
 
-## Events
+## 事件
 
 ### `on_tap_link`
 
-Fires when a link within Markdown document is clicked/tapped. `data` property of event contains URL.
+单击/敲击 Markdown 文档中的链接时，请发射。 `data`事件的属性包含 URL。
 
-The following example opens markdown URLs in a new window:
+以下示例在新窗口中打开 Markdown URL:
 
 ```python
 import flet as ft

@@ -3,34 +3,34 @@ title: Animations
 sidebar_label: Animations
 ---
 
-## Implicit animations
+##隐式动画
 
-With implicit animations, you can animate a control property by setting a target value; whenever that target value changes, the control animates the property from the old value to the new one. Animation produces interpolated values between the old and the new value over the given *duration*. By default, the animation is *linearly* increasing the animation value, however, a *curve* can be applied to the animation which changes the value according to the provided curve. For example, `easeOutCubic` curve increases the animation value quickly at the beginning of the animation and then slows down until the target value is reached:
+使用隐式动画，您可以通过设置目标值来为控制属性进行动画动画。 每当目标值变化时，控件都会使属性从旧值到新值动画。 动画在给定的 *持续时间 *上产生旧值和新值之间的插值。 默认情况下，动画是 *线性 *增加动画值，但是，可以将 *曲线 *应用于动画，该动画根据提供的曲线更改值。 例如，`easeOutCubic`曲线在动画开始时迅速增加动画值，然后放慢脚步直到达到目标值:
 
 <video controls>
   <source src="https://flutter.github.io/assets-for-api-docs/assets/animation/curve_ease_out_cubic.mp4"/>
 </video>
 
-Each `Control` provides a number of `animate_{something}` properties, described below, to enable implicit animation of its appearance:
+每个`Control`提供了许多``animate\_ {somets}'属性，以下所述，以启用其外观的隐式动画:
 
-* `animate_opacity`
-* `animate_rotation`
-* `animate_scale`
-* `animate_offset`
-* `animate_position`
-* `animate` (Container)
+- `animate_opacity`
+- `animate_rotation`
+- `animate_scale`
+- `animate_offset`
+- `animate_position`
+- `animate`（容器）
 
-`animate_*` properties could have one of the following values:
+`animate_*`属性可以具有以下值之一:
 
-* Instance of `animation.Animation` class - allows configuring the duration (in milliseconds) and the curve of the animation, for example `animate_rotation=ft.animation.Animation(duration=300, curve="bounceOut")`. See [Curves](https://api.flutter.dev/flutter/animation/Curves-class.html) in Flutter docs for possible values. Default is `linear`.
-* `int` value - enables animation with specified duration in milliseconds and `linear` curve.
-* `bool` value - enables anumation with the duration of 1000 milliseconds and `linear` curve.
+- `animation.Animation` class 的实例 - 允许配置持续时间（以毫秒为单位）和动画的曲线，例如'animate_rotation = ft.animation.animation.animation.animation.animation.animation = arimation = arimation = amimation = amimation = artion = 300，曲线=“弹跳”）`。 有关可能的值，请参见flutter Doc中的[曲线](https://api.flutter.dev/flutter/animation/Curves-class.html)。 默认值为`linear`。
+- `int`值 - 在毫秒和`linear`曲线的指定持续时间的动画中启用动画。
+- `bool` value-启用 1000 毫秒和`linear`曲线的吞咽。
 
-### Opacity animation
+### 不透明动画
 
-Setting control's `animate_opacity` to either `True`, number or an instance of `animation.Animation` class (see above) enables implicit animation of [`Control.opacity`](/docs/controls#opacity) property.
+将控件的`animate_opacity`设置为`True`，数字或`animation.Animation` class（请参见上文）的实例启用[`Control.opacity`](/docs/controls#opacity)属性的隐式动画。
 
-<img src="/img/docs/getting-started/animations/animate-opacity.gif" className="screenshot-20" />
+<img src="/website/img/docs/getting-started/animations/animate-opacity.gif" className="screenshot-20" />
 
 ```python
 import flet as ft
@@ -60,11 +60,11 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-### Rotation animation
+### 旋转动画
 
-Setting control's `animate_rotation` to either `True`, number or an instance of `animation.Animation` class (see above) enables implicit animation of [`Control.rotate`](/docs/controls#rotate) property.
+将控件的`animate_rotation`设置为`True`，数字或`animation.Animation` class（请参见上文）的实例启用[`Control.rotate`](/docs/controls#rotate)属性的隐式动画。
 
-<img src="/img/docs/getting-started/animations/animate-rotation.gif" className="screenshot-20" />
+<img src="/website/img/docs/getting-started/animations/animate-rotation.gif" className="screenshot-20" />
 
 ```python
 from math import pi
@@ -96,11 +96,11 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-### Scale animation
+### 缩放动画
 
-Setting control's `animate_scale` to either `True`, number or an instance of `animation.Animation` class (see above) enables implicit animation of [`Control.scale`](/docs/controls#scale) property.
+将控件的`animate_scale`设置为`True`，number 或`animation.Animation` class（请参见上文）的实例启用[`Control.scale`](/docs/controls#scale)属性的隐式动画。
 
-<img src="/img/docs/getting-started/animations/animate-scale.gif" className="screenshot-20" />
+<img src="/website/img/docs/getting-started/animations/animate-scale.gif" className="screenshot-20" />
 
 ```python
 import flet as ft
@@ -131,15 +131,15 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-### Offset animation
+### 偏移动画
 
-Setting control's `animate_offset` to either `True`, number or an instance of `animation.Animation` class (see above) enables implicit animation of `Control.offset` property.
+将控件的`animate_offset`设置为`True`，数字或`animation.Animation`类的实例（请参见上文）启用`Control.offset`属性的隐式动画。
 
-`offset` property is an instance of `transform.Offset` class which specifies horizontal `x` and vertical `y` offset of a control scaled to control's size. For example, an offset `transform.Offset(-0.25, 0)` will result in a horizontal translation of one quarter the width of the control.
+`offset`属性是`transform.Offset`类的实例，该实例指定水平`x`和垂直`y`的垂直`y`偏移控制缩放到控制大小。 例如，一个偏移`transfore.frons.offset（-0.25，0）`将导致对控件宽度的四分之一的水平翻译。
 
-Offset animation is used for various sliding effects:
+偏移动画用于各种滑动效果:
 
-<img src="/img/docs/getting-started/animations/animate-offset.gif" className="screenshot-20" />
+<img src="/website/img/docs/getting-started/animations/animate-offset.gif" className="screenshot-20" />
 
 ```python
 import flet as ft
@@ -167,13 +167,13 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-### Position animation
+### 位置动画
 
-Setting control's `animate_position` to either `True`, number or an instance of `animation.Animation` class (see above) enables implicit animation of [Control's `left`, `top`, `right` and `bottom` properties](/docs/controls#left).
+将控件的`animate_position`设置为`True`，数字或`animation.Animation` class（请参见上文）的实例（请参见上文）启用[Control's `left`，`left`，`top`，`top`，`top`，`right`和`right`和`bottom` properties and `bottom` properties] 。
 
-Please note Control position works inside `Stack` control only.
+请注意，控制位置仅在`Stack`控制内部。
 
-<img src="/img/docs/getting-started/animations/animate-position.gif" className="screenshot-30" />
+<img src="/website/img/docs/getting-started/animations/animate-position.gif" className="screenshot-30" />
 
 ```python
 import flet as ft
@@ -207,11 +207,11 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-### Animated container
+### 动画容器
 
-Setting [`Container.animate`](/docs/controls/container#animate) to either `True`, number or an instance of `animation.Animation` class (see above) enables implicit animation of container properties such as size, background color, border style, gradient.
+设置[`Container.animate`](/docs/controls/container#animate)到`True`，数字或`animation.Animation` class（请参见上文）的实例（请参见上文）启用容器属性的隐式动画，例如大小，背景颜色，边框样式，渐变，渐变。
 
-<img src="/img/docs/getting-started/animations/animate-container.gif" className="screenshot-20" />
+<img src="/website/img/docs/getting-started/animations/animate-container.gif" className="screenshot-20" />
 
 ```python
 import flet as ft
@@ -236,11 +236,11 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-### Animated content switcher
+### 动画内容切换器
 
-[`AnimatedSwitcher`](/docs/controls/animatedswitcher) allows animated transition between a new control and the control previously set on the AnimatedSwitcher as a `content`.
+[{`AnimatedSwitcher`](/docs/controls/animatedswitcher)允许在新的控件与先前在动画旋转器上设置的控件之间的动画过渡为`content`。
 
-<img src="/img/docs/getting-started/animations/animated-switcher-images.gif" className="screenshot-20" />
+<img src="/website/img/docs/getting-started/animations/animated-switcher-images.gif" className="screenshot-20" />
 
 ```python
 import time
@@ -274,21 +274,21 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-### Animation end callback
+### 动画结束回调
 
-All controls with `animate_*` properties have `on_animation_end` event handler which is called
-when animation complete and cab be used to chain multiple animations.
+所有具有`animate_*`属性的控件具有`on_animation_end`事件处理程序，称为
+当动画完成并使用驾驶室来链接多个动画时。
 
-Event's object `data` field contains the name of animation:
+事件的对象`data`字段包含动画的名称:
 
-* `opacity`
-* `rotation`
-* `scale`
-* `offset`
-* `position`
-* `container`
+- `opacity`
+- `rotation`
+- `scale`
+- `offset`
+- `position`
+- `container`
 
-For example:
+例如:
 
 ```python
  c = ft.Container(

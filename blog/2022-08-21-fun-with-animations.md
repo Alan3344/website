@@ -8,68 +8,68 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [release]
 ---
 
-Despite Flet release debuting animations support was released some time ago, we've just finished documenting its new features! We all know if the feature is not documented it just doesn't exist! 😉
+尽管 Flet 发布了首次亮相动画支持，但我们刚刚发布了记录其新功能的完成！ 我们都知道是否没有记录该功能，就不存在！ 😉
 
-Flutter offers [multiple approaches](https://docs.flutter.dev/development/ui/animations) for creating animations such "implicit", "explicit", "tween", "stagered", "pre-canned" animations as well as displaying animation scenes prepared in Rive and Lottie editors.
+Flutter 提供[多种方法](https://docs.flutter.dev/development/ui/animations)用于创建动画，例如“隐式”，“显式”，“ Tween”，“ Stagered”，“预先庆祝”动画，并显示在 Rive 和 Lottie 编辑中准备的动画场景。
 
-We are starting with "implicit" animations which allows you to animate a control property by setting a target value; whenever that target value changes, the control animates the property from the old value to the new one.
+我们从“隐式”动画开始，该动画使您可以通过设置目标值来为控制属性进行动画。 每当目标值变化时，控件会使属性从旧值到新值动画。
 
-## Demo time
+## 演示时间
 
 <div style={{fontSize: "1.1rem", textAlign: "center", padding: "1rem" }}>
 <a href="https://flet-animation.herokuapp.com/">Check out this live demo!</a>
 </div>
 
-<a href="https://flet-animation.herokuapp.com/"><img src="/img/blog/animations/flet-animation-demo.gif" className="screenshot-100" /></a>
+<a href="https://flet-animation.herokuapp.com/"><img src="/website/img/blog/animations/flet-animation-demo.gif" className="screenshot-100" /></a>
 
-[Explore demo sources](https://github.com/flet-dev/flet-heroku-app). The demo is hosted on Heroku, by the way, so you can use it as a starting point for your own deployments.
+[探索演示源](https://github.com/flet-dev/flet-heroku-app)。 顺便说一句，该演示托管在 Heroku 上，因此您可以将其用作自己部署的起点。
 
-## Implicit animations
+## 隐式动画
 
-Implicit animations can be enabled for the following control properties:
+可以为以下控制属性启用隐式动画:
 
-* [Opacity](/docs/guides/python/animations#opacity-animation)
-* [Rotation](/docs/guides/python/animations#rotation-animation) (new in this release)
-* [Scale](/docs/guides/python/animations#scale-animation) (new in this release)
-* [Offset](/docs/guides/python/animations#offset-animation) (new in this release)
-* [Position](/docs/guides/python/animations#position-animation)
+- [不透明度](/docs/guides/python/animations#opacity-animation)
+- [旋转](/docs/guides/python/animations#rotation-animation)（此版本中的新）
+- [比例](/docs/guides/python/animations#scale-animation)（此版本中的新）
+- [偏移](/docs/guides/python/animations#offset-animation)（此版本中的新）
+- [位置](/docs/guides/python/animations#position-animation)
 
-Additionally, all `Container` control properties [can be now animated](/docs/guides/python/animations#animated-container) and there is a new [`AnimatedSwitcher`](/docs/controls/animatedswitcher) control for animated transition between old a new content.
+此外，所有`Container`控制属性[现在可以动画](/docs/guides/python/animations#animated-container)，并且有一个新的[`AnimatedSwitcher`](/docs/controls/animatedswitcher)控制旧内容之间的动画过渡。
 
-<img src="/img/docs/controls/animated-switcher/animated-switcher.gif" className="screenshot-20" />
+<img src="/website/img/docs/controls/animated-switcher/animated-switcher.gif" className="screenshot-20" />
 
-## Other new features
+## 其他新功能
 
-### `Markdown` control
+### `Markdown`控制
 
-Allows to render text in Markdown format. Supports various extensions: `CommonMark`, `GitHub Web` and `GitHub Flavored`.
+允许以降价格式渲染文本。 支持各种扩展: `CommonMark`，`github web''和`github affeered“ flueed”。
 
-[See `Markdown` control docs](/docs/controls/markdown) for more information and examples.
+[请参阅`Markdown`控制文档](/docs/controls/markdown)有关更多信息和示例。
 
-### URL launcher
+### URL 启动器
 
-`page.launch_url(url)` method allows programmatically opening a URL in a new browser window, for example:
+`page.launch_url(url)`方法允许在新浏览器窗口中编程打开一个 URL，例如:
 
 ```python
 page.launch_url("https://google.com")
 ```
 
-It also works nice with `Markdown` control for opening links within markdown document.
+它还可以与`Markdown`控制在 Markdown 文档中打开链接。
 
-### Keyboard shortcuts
+### Keyboard 快捷方式
 
-`Page` now contains [`on_keyboard_event`](/docs/controls/page#on_keyboard_event) event handlet to globally intercept all keystrokes.
+`Page`现在包含[`on_keyboard_event`](/docs/controls/page#on_keyboard_event)事件手点，以全球截距所有键击。
 
-Check this [simple usage example](https://github.com/flet-dev/examples/blob/main/python/controls/page/keyboard-events.py).
+检查此[简单用法示例](https://github.com/flet-dev/examples/blob/main/python/controls/page/keyboard-events.py)。
 
-### Accessibility improvements
+### 可访问性改进
 
-We added [Accessibility](/docs/guides/python/accessibility) section to the docs covering semantics support for screen readers.
+我们在涵盖屏幕读取器的语义支持的文档中添加了[可访问性](/docs/guides/python/accessibility)部分。
 
-### `ShaderMark` control
+### `ShaderMark`控制
 
-A control that applies a mask generated by a shader to its content. Allows making nice effects like [gradually fading out images](/docs/controls/shadermask#gradually-fade-out-image-to-the-bottom-edge).
+将阴暗器生成的掩码应用于其内容的控件。 允许[逐渐消失的图像](/docs/controls/shadermask#gradually-fade-out-image-to-the-bottom-edge)做出很好的效果。
 
-That's it!
+就是这样！
 
-[Give Flet a try](/docs/guides/python/getting-started) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
+[给 Flet 试试](/docs/guides/python/getting-started)，[让我们知道](https://discord.gg/dzWXP8SHG8)您的想法！

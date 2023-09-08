@@ -4,16 +4,16 @@ sidebar_label: SnackBar
 slug: snackbar
 ---
 
-A lightweight message with an optional action which briefly displays at the bottom of the screen.
+带有可选操作的轻量级消息，该消息在屏幕底部短暂显示。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/dialogs/snackbar)
+[live 示例](https://flet-controls-gallery.fly.dev/dialogs/snackbar)
 
-### SnackBar with dynamic message
+### 带有动态消息的 snackbar
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -44,89 +44,90 @@ def main(page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/snackbar/snackbar-with-custom-content.gif" className="screenshot-40"/>
+<img src="/website/img/docs/controls/snackbar/snackbar-with-custom-content.gif" className="screenshot-40"/>
 
-## Properties
+## properties
 
 ### `action`
 
-An optional action that the user can take based on the snack bar.
+用户可以根据小吃栏采取的可选操作。
 
-For example, the snack bar might let the user undo the operation that prompted the snackbar. Snack bars can have at most one action.
+例如，小吃栏可能让用户撤消促使 Snackbar 的操作。 小吃吧最多可以采用一个动作。
 
-The action should not be "dismiss" or "cancel".
+该操作不应被“解雇”或“取消”。
 
 ### `action_color`
 
-The foreground [color](/docs/guides/python/colors) of action button.
+动作按钮的前景[颜色](/docs/guides/python/colors)。
 
 ### `behavior`
 
-This defines the behavior and location of the snack bar.
+这定义了小吃吧的行为和位置。
 
-Defines where a SnackBar should appear within a psge and how its location should be adjusted when the page also includes a `FloatingActionButton` or a `NavigationBar`.
+定义 Snackbar 应在 PSGE 内出现的位置，以及该页面还包括`FloatingActionButton`或`NavigationBar`时应调整其位置。
 
-If this property is `None`, then the default is `SnackBarBehavior.FIXED`.
+如果此属性为`None`，则默认值为`SnackBarBehavior.FIXED`。
 
-If this value is `SnackBarBehavior.FLOATING`, the length of the bar is defined by either `width` or `margin`.
+如果此值为`SnackBarBehavior.FLOATING`，则条的长度由`width`或`margin`定义。
 
 ### `bgcolor`
 
-SnackBar background [color](/docs/guides/python/colors).
+Snackbar 背景[颜色](/docs/guides/python/colors)。
 
 ### `close_icon_color`
 
-An optional color for the close icon, if `show_close_icon` is `True`.
+如果`show_close_icon`为`True`。
 
 ### `content`
 
-The primary content of the snack bar. Typically a [`Text`](text) control.
+小吃吧的主要内容。 通常是[`Text`](text)控制。
 
 ### `dismiss_direction`
 
-The direction in which the SnackBar can be dismissed.
+可以解散小吃的方向。
 
-Cannot be `None`, defaults to `DismissDirection.DOWN`.
+不能为`None`，默认为`DismissDirection.DOWN`。
 
 ### `duration`
 
-The number of *milliseconds* that the SnackBar stays open for. Defaults to 4000 ([4 seconds](https://api.flutter.dev/flutter/material/SnackBar/duration.html)) when not set.
+小切子的 *毫秒 *的数量被开放。 未设置时默认为 4000（[4 秒](https://api.flutter.dev/flutter/material/SnackBar/duration.html)）。
 
 ### `elevation`
 
-The z-coordinate at which to place the snack bar. This controls the size of the shadow below the snack bar.
+放置小吃吧的 Z 坐标。 这控制了小吃棒下方阴影的大小。
 
 ### `margin`
 
-Empty space to surround the snack bar.
+空的空间包围小吃吧。
 
-This property is only used when `behavior` is `SnackBarBehavior.FLOATING`. It can not be used if `width` is specified.
+仅当`behavior`为`SnackBarBehavior.FLOATING`时，才使用此属性。 如果指定了`width`，则不能使用它。
 
 ### `open`
 
-Set to `True` to display a SnackBar. This property is automatically set to `False` once SnackBar is shown.
+设置为`True`以显示小键。 一旦显示 Snackbar，此属性会自动设置为`False`。
 
 ### `padding`
 
-The amount of padding to apply to the snack bar's content and optional action.
+适用于小吃吧的内容和可选操作的填充量。
 
 ### `show_close_icon`
 
-Whether to include a "close" icon widget.
+是否包括“关闭”图标小部件。
 
-Tapping the icon will close the snack bar.
+点击图标将关闭小吃栏。
 
 ### `width`
 
-The width of the snack bar.
+小吃吧的宽度。
 
-If width is specified, the snack bar will be centered horizontally in the available space. This property is only used when `behavior` is `SnackBarBehavior.FLOATING`. It can not be used if `margin` is specified.
+如果指定宽度，则小吃栏将在可用空间中水平居中。 仅当`behavior`为`SnackBarBehavior.FLOATING`时，才使用此属性。 如果指定了`margin`，则无法使用。
 
-## Events
+## 事件
 
 ### `on_action`
 
-Fires when action button is clicked.
+单击操作按钮时发射。

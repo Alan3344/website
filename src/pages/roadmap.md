@@ -3,53 +3,49 @@ title: Roadmap
 slug: roadmap
 ---
 
-## May-July 2023
+ ## May-July 2023 
 
-### Mobile
+### 移动
 
-* Flet Studio (in App Store and Google Play).
-* Server-driven modile apps for iOS and Android.
-* [Standalone mobile apps for iOS and Android](/blog/flet-mobile-update#flet-mobile-architecture).
+*  Flet Studio（在App Store和Google Play中）。
+* 用于iOS和Android的服务器驱动的Modile应用。
+* [iOS和Android的独立移动应用程序](/blog/flet-mobile-update#flet-mobile-architecture)。
 
-## January-March 2023
+##  1月-March 2023 
 
-### Desktop
+### 桌面
 
-* :white_check_mark: [New architecture for Flet desktop apps](/blog/flet-mobile-update#flet-new-desktop-architecture).
+* :White_check_mark: [新的架构for Flet台式应用程序(/blog/flet-mobile-update#flet-new-desktop-architecture) (/blog/flet-mobile-update#flet-new-desktop-architecture) (/blog/flet-mobile-update#flet-new-desktop-architecture)。 9860}: White_check_mark: 带有[Pyodide](https://pyodide.org/en/stable/)和Flet的独立Web应用程序。
 
-### Web
+### 开发人员体验
 
-* :white_check_mark: Standalone web apps with [Pyodide](https://pyodide.org/en/stable/) and Flet.
+* 示例应用程序: 
+     * :white_check_mark: 聊天
+     * :white_check_mark: 纸牌
+* :white_check_mark: 画廊
 
-### Developer experience
+##  2023 
 
-* Sample apps:
-    * :white_check_mark: Chat
-    * :white_check_mark: Solitaire
-* :white_check_mark: Gallery
+### 控制
 
-## 2023
+* 社区请求控件: 
+   * Navigation Drawder
+   * 视频
+   * WebView
+   * 自动完成
+* 自适应控件（根据平台而改变外观的控制）。
 
-### Controls
+### 语言支持
 
-* Community requested controls:
-  * NavigationDrawer
-  * Video
-  * WebView
-  * Autocomplete
-* Adaptive controls (controls that change their look depending on platform).
+*  go 
 
-### Language support
+### 核心功能
 
-* Go
+* 更好的测试。
+* 具有简单ORM的内置数据库: 
+   * 数据库意识`DataTable`
+* Flet apps的反应性方法。
 
-### Core functionality
+##  2024 
 
-* Better tests.
-* Built-in database with a simple ORM:
-  * Database-aware `DataTable`
-* Reactive approach for Flet apps.
-
-## 2024
-
-* [PyCon US 2024](https://pycon.blogspot.com/2021/05/pycon-us-2024-and-2025-announcement.html)
+*  [pycon US 2024](https://pycon.blogspot.com/2021/05/pycon-us-2024-and-2025-announcement.html)

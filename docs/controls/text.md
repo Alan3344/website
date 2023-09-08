@@ -4,15 +4,15 @@ sidebar_label: Text
 slug: text
 ---
 
-Text is a control for displaying text.
+文本是显示文本的控件。
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/displays/text)
+[live 示例](https://flet-controls-gallery.fly.dev/displays/text)
 
-### Custom text styles
+### 自定义文本样式
 
-<img src="/img/docs/controls/text/custom-text-styles.gif" className="screenshot-40"/>
+<img src="/website/img/docs/controls/text/custom-text-styles.gif" className="screenshot-40"/>
 
 ```python
 import flet as ft
@@ -69,9 +69,9 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-### Pre-defined theme text styles
+### 预定义的主题文本样式
 
-<img src="/img/docs/controls/text/predefined-text-styles.png" className="screenshot-40" />
+<img src="/website/img/docs/controls/text/predefined-text-styles.png" className="screenshot-40" />
 
 ```python
 import flet as ft
@@ -101,9 +101,9 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-### Font with variable weight
+### 字体，重量可变
 
-<img src="/img/docs/controls/text/variable-weight-font.gif" className="screenshot-50" />
+<img src="/website/img/docs/controls/text/variable-weight-font.gif" className="screenshot-50" />
 
 ```python
 import flet as ft
@@ -139,9 +139,9 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-### Rich text basics
+### 丰富的文本基础知识
 
-<img src="/img/docs/controls/text/richtext.png" className="screenshot-70" />
+<img src="/website/img/docs/controls/text/richtext.png" className="screenshot-70" />
 
 ```python
 import flet as ft
@@ -254,9 +254,9 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-### Rich text with borders and stroke
+### 带有边界和中风的丰富文字
 
-<img src="/img/docs/controls/text/richtext-borders-stroke.png" className="screenshot-50" />
+<img src="/website/img/docs/controls/text/richtext-borders-stroke.png" className="screenshot-50" />
 
 ```python
 import flet as ft
@@ -301,9 +301,9 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-### Rich text with gradient
+### 带有渐变的丰富文本
 
-<img src="/img/docs/controls/text/richtext-gradient.png" className="screenshot-50" />
+<img src="/website/img/docs/controls/text/richtext-gradient.png" className="screenshot-50" />
 
 ```python
 import flet as ft
@@ -331,23 +331,23 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-## Properties
+## properties
 
 ### `bgcolor`
 
-Text background [color](/docs/guides/python/colors).
+文本背景[颜色](/docs/guides/python/colors)。
 
 ### `color`
 
-Text foreground [color](/docs/guides/python/colors).
+文本前景[颜色](/docs/guides/python/colors)。
 
 ### `font_family`
 
-System or custom font family to render text with. Check [`page.fonts`](/docs/controls/page#fonts) for instructions on how to import and use custom fonts in your application.
+系统或自定义字体系列呈现文本。 检查[`page.fonts`](/docs/controls/page#fonts)以获取有关如何在应用程序中导入和使用自定义字体的说明。
 
-#### Using system fonts
+#### 使用 System Fonts
 
-You can use the fonts installed on your computer, e.g. "Consolas", "Arial", "Verdana", "Tahoma", etc. For example:
+您可以使用计算机上安装的字体，例如 “ Consolas”，“ Arial”，“ Verdana”，“ Tahoma”等。例如:
 
 ```python
 import flet as ft
@@ -360,66 +360,66 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-There is one limitation though - system fonts cannot be used in a Flet web app with "CanvasKit" renderer.
+但是，有一个限制 - 系统字体不能在 Flet Web 应用程序中使用“ Canvaskit”渲染器。
 
-Flet web app can render its UI with one of these renderers:
+Flet Web 应用程序可以使用以下一个渲染器之一渲染其 UI:
 
-* **HTML renderer** - uses a combination of HTML elements, CSS, Canvas elements, and SVG elements. This renderer has a smaller download size.
-* **CanvasKit renderer** - this renderer is fully consistent with Flutter mobile and desktop, has faster performance with higher widget density, but adds about 2MB in download size.
+- ** HTML 渲染器** - 使用 HTML 元素，CSS，Canvas 元素和 SVG 元素的组合。 该渲染器的下载尺寸较小。
+- ** canvaskit 渲染器** - 该渲染器完全与 Flutter Mobile 和 Desktop 完全一致，具有更高的小部件密度的性能更快，但下载尺寸的大约 2MB。
 
-By default, Flet uses `CanvasKit` renderer for both desktop and mobile browsers.
+默认情况下，Flet 使用`CanvasKit`渲染器用于桌面和移动浏览器。
 
-You can explicitly set what renderer to use when running a Flet program:
+您可以明确设置运行 Flet 程序时要使用的渲染器:
 
 ```python
 # ...
 ft.app(target=main, view=ft.AppView.WEB_BROWSER, web_renderer=ft.WebRenderer.HTML)
 ```
 
-Now, when you run the same program you'll see "Consolas" font is used.
+现在，当您运行相同的程序时，您会看到“ consolas”字体。
 
-Supported `web_renderer` values:
+支持的`web_renderer`值:
 
-* `canvaskit` (default) - prioritizing performance and pixel-perfect consistency on both desktop and mobile browsers.
-* `html` - optimizing download size over performance on both desktop and mobile browsers.
-* `auto` - optimizing for download size on mobile browsers and optimizing for performance on desktop browsers.
+- `canvaskit`（默认） - 优先考虑台式机和移动浏览器上的性能和像素完美的一致性。
+- `html` - 优化桌面和移动浏览器上的性能下载大小。
+- `auto` - 在移动浏览器上的下载大小优化，并在桌面浏览器上进行性能优化。
 
 ### `italic`
 
-`True` to use italic typeface.
+`True`使用斜体字体。
 
 ### `max_lines`
 
-An optional maximum number of lines for the text to span, wrapping if necessary. If the text exceeds the given number of lines, it will be truncated according to `overflow`.
+文本范围的最大最大行数，如有必要。 如果文本超过给定数量的行，则将根据`overflow`截断。
 
-If this is 1, text will not wrap. Otherwise, text will be wrapped at the edge of the box.
+如果这是 1，则文字不会包装。 否则，文本将包裹在框的边缘。
 
 ### `no_wrap`
 
-If `False` (default) the text should break at soft line breaks.
+如果`False`（默认）文本应在软线路中断。
 
-If `True`, the glyphs in the text will be positioned as if there was unlimited horizontal space.
+如果`True`，文字中的字形将被定位，就好像有无限的水平空间。
 
 ### `overflow`
 
-Property value is `TextOverflow` enum with the following values:
+属性值为`TextOverflow`枚举，具有以下值:
 
-* `FADE` (default)
-* `ELLIPSIS`
-* `CLIP`
-* `VISIBLE`
+- `FADE`（默认）
+- `ELLIPSIS`
+- `CLIP`
+- `VISIBLE`
 
 ### `selectable`
 
-`True` if text should be selectable.
+`True`如果应该选择文本。
 
 ### `semantics_label`
 
-An alternative semantics label for this text.
+本文的替代语义标签。
 
-If present, the semantics of this control will contain this value instead of the actual text.
+如果存在，此控件的语义将包含此值，而不是实际文本。
 
-This is useful for replacing abbreviations or shorthands with the full text value:
+这对于用全文价值替换缩写或速记很有用:
 
 ```python
 ft.Text("$$", semantics_label="Double dollars")
@@ -427,91 +427,91 @@ ft.Text("$$", semantics_label="Double dollars")
 
 ### `size`
 
-Text size in virtual pixels. Default is `14`.
+虚拟像素中的文本大小。 默认值为`14`。
 
 ### `spans`
 
-The list of [`ft.TextSpan`](#textspan-properties) objects to build a rich text paragraph.
+[`ft.TextSpan`](#textspan-properties)对象构建丰富的文本段落的列表。
 
 ### `style`
 
-Property value is `TextThemeStyle` enum with one of the following values:
+属性值是`TextThemeStyle`枚举，其中一个值之一:
 
-* `DISPLAY_LARGE`
-* `DISPLAY_MEDIUM`
-* `DISPLAY_SMALL`
-* `HEADLINE_LARGE`
-* `HEADLINE_MEDIUM`
-* `HEADLINE_SMALL`
-* `TITLE_LARGE`
-* `TITLE_MEDIUM`
-* `TITLE_SMALL`
-* `LABEL_LARGE`
-* `LABEL_MEDIUM`
-* `LABEL_SMALL`
-* `BODY_LARGE`
-* `BODY_MEDIUM`
-* `BODY_SMALL`
+- `DISPLAY_LARGE`
+- `DISPLAY_MEDIUM`
+- `DISPLAY_SMALL`
+- `HEADLINE_LARGE`
+- `HEADLINE_MEDIUM`
+- `HEADLINE_SMALL`
+- `TITLE_LARGE`
+- `TITLE_MEDIUM`
+- `TITLE_SMALL`
+- `LABEL_LARGE`
+- `LABEL_MEDIUM`
+- `LABEL_SMALL`
+- `BODY_LARGE`
+- `BODY_MEDIUM`
+- `BODY_SMALL`
 
 ### `text_align`
 
-Text horizontal align.
+文本水平对齐。
 
-Property value is `TextAlign` enum with the following values:
+属性值为`TextAlign`枚举，具有以下值:
 
-* `LEFT` (default)
-* `RIGHT`
-* `CENTER`
-* `JUSTIFY`
-* `START`
-* `END`
+- `LEFT`（默认）
+- `RIGHT`
+- `CENTER`
+- `JUSTIFY`
+- `START`
+- `END`
 
 ### `value`
 
-The text displayed.
+显示的文字。
 
 ### `weight`
 
-Font weight.
+字体重量。
 
-Property value is `FontWeight` enum with the following values:
+属性值为`FontWeight`枚举，具有以下值:
 
-* `NORMAL` (default)
-* `BOLD`
-* `W_100`
-* `W_200`
-* `W_300`
-* `W_400`
-* `W_500`
-* `W_600`
-* `W_700`
-* `W_800`
-* `W_900`
+- `NORMAL`（默认）
+- `BOLD`
+- `W_100`
+- `W_200`
+- `W_300`
+- `W_400`
+- `W_500`
+- `W_600`
+- `W_700`
+- `W_800`
+- `W_900`
 
-## `TextStyle` properties
+## `TextStyle`属性
 
-A style describing how to format and paint text.
+描述如何格式和绘制文本的样式。
 
 ### `bgcolor`
 
-See [`Text.bgcolor`](#bgcolor).
+参见[`Text.bgcolor`](#bgcolor)。
 
 ### `color`
 
-See [`Text.color`](#color).
+参见[`Text.color`](#color)。
 
 ### `decoration`
 
-The decorations to paint near the text (e.g., an underline).
+在文本附近绘画的装饰品（例如下划线）。
 
-The value is the instance of `ft.TextDecoration` enum:
+该值是`ft.TextDecoration`枚举的实例:
 
-* `NONE` (default) - Do not draw a decoration.
-* `UNDERLINE` - Draw a line underneath each line of text.
-* `OVERLINE` - Draw a line above each line of text.
-* `LINE_THROUGH` - Draw a line through each line of text.
+- `NONE`（默认值） - 请勿绘制装饰。
+- `UNDERLINE` - 在每行文本下方绘制一条线。
+- `OVERLINE` - 在每条文本行上方画一条线。
+- `LINE_THROUGH` - 通过每条文本行绘制一条线。
 
-The enum is a flag, so multiple decorations can be combined together, for example:
+枚举是旗帜，因此可以将多个装饰组合在一起:
 
 ```python
 style = ft.TextStyle(decoration=ft.TextDecoration.UNDERLINE | ft.TextDecoration.OVERLINE)
@@ -519,91 +519,91 @@ style = ft.TextStyle(decoration=ft.TextDecoration.UNDERLINE | ft.TextDecoration.
 
 ### `decoration_color`
 
-The [color](/docs/guides/python/colors) in which to paint the text decorations.
+[颜色](/docs/guides/python/colors)在其中绘制文本装饰。
 
 ### `decoration_style`
 
-The style in which to paint the text decorations (e.g., dashed).
+绘制文本装饰的风格（例如，虚线）。
 
-The value is the instance of `ft.TextDecorationStyle` enum:
+该值是`ft.TextDecorationStyle`枚举的实例:
 
-* `SOLID` (default) - Draw a solid line.
-* `DOUBLE` - Draw two lines.
-* `DOTTED` - Draw a dotted line.
-* `DASHED` - Draw a dashed line.
-* `WAVY` - Draw a sinusoidal line.
+- `SOLID`（默认） - 绘制一个实线。
+- `DOUBLE` - 画两行。
+- `DOTTED` - 绘制虚线。
+- `DASHED` - 画一条虚线。
+- `WAVY` - 绘制正弦线。
 
 ### `decoration_thickness`
 
-The thickness of the decoration stroke as a multiplier of the thickness defined by the font.
+装饰中风的厚度是字体定义的厚度的乘数。
 
 ### `font_family`
 
-See [`Text.font_family`](#font_family).
+请参阅[`Text.font_family`](#font_family)。
 
 ### `foreground`
 
-The paint drawn as a foreground for the text.
+油漆作为文本的前景绘制。
 
-The value is of [`ft.Paint`](canvas#paint) class.
+该值的值是[`ft.Paint`](canvas#paint) class。
 
 ### `italic`
 
-`True` to use italic typeface.
+`True`使用斜体字体。
 
 ### `shadow`
 
-See [`Container.shadow`](container#shadow).
+参见[`Container.shadow`](container#shadow)。
 
 ### `size`
 
-The size of glyphs (in logical pixels) to use when painting the text. Default is 14.
+绘画文本时要使用的字形（以逻辑像素）的大小。 默认值为 14。
 
 ### `weight`
 
-Font weight - see [Text.weight](#weight) for possible values.
+字体重量 - 有关可能的值。
 
-## `TextSpan` properties
+## `TextSpan`属性
 
-A span of text.
+文本的跨度。
 
 ### `spans`
 
-Additional spans to include as children.
+附加跨度为 children。
 
-If both `text` and `spans` are defined, the `text` will precede the `spans`.
+如果定义了`text`和`spans`，则`text`将在`spans`之前。
 
 ### `style`
 
-The [`TextStyle`](#textstyle-properties) to apply to this span.
+[`TextStyle`](#textstyle-properties)应用于此跨度。
 
 ### `text`
 
-The text contained in this span.
+此跨度包含的文本。
 
-If both `text` and `spans` are defined, the `text` will precede the `spans`.
+如果定义了`text`和`spans`，则`text`将在`spans`之前。
 
 ### `url`
 
-The URL to open when the span is clicked. If registered, `on_click` event is fired after that.
+单击跨度时要打开的 URL。 如果已注册，`on_click`事件是在此之后发射的。
 
 ### `url_target`
 
-Where to open URL in the web mode:
+在 Web 模式下打开 URL 的位置:
 
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+- `_blank`（默认值） - 新 Tab/window。
+- `_self` - 当前的选项卡片/窗口。
 
-## `TextSpan` events
+## `TextSpan`事件
 
 ### `on_click`
 
-Fires when the span is clicked.
+单击跨度时发射。
 
 ### `on_enter`
 
-Triggered when a mouse pointer has entered the span.
+鼠标指针进入跨度时触发。
 
 ### `on_exit`
 
-Triggered when a mouse pointer has exited the span.
+当鼠标指针退出跨度时触发。

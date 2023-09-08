@@ -3,9 +3,9 @@ title: Session storage
 sidebar_label: Session storage
 ---
 
-Flet provides an API for storing key-value data in user's session on a server side.
+ Flet提供了用于在服务器端将键值数据存储在用户会话中的API。
 
-Writing data to the session:
+将数据写入会话: 
 
 ```python
 # strings
@@ -19,11 +19,11 @@ page.session.set("bool_setting", True)
 page.session.set("favorite_colors", ["read", "green", "blue"])
 ```
 
-:::caution
-In the current Flet implementation the data stored in a session store is transient and is not preserved between app restarts.
+:::谨慎
+在当前Flet实现中，存储在会话存储中的数据是瞬态的，并且在应用程序重新启动之间未保留。
 :::
 
-Reading data:
+阅读数据: 
 
 ```python
 # The value is automatically converted back to the original type
@@ -33,25 +33,25 @@ colors = page.session.get("favorite_colors")
 # colors = ["read", "green", "blue"]
 ```
 
-Check if a key exists:
+检查密钥是否存在: 
 
 ```python
 page.session.contains_key("key") # True if the key exists
 ```
 
-Get all keys:
+获取所有钥匙: 
 
 ```python
 page.session.get_keys()
 ```
 
-Remove a value:
+删除一个值: 
 
 ```python
 page.session.remove("key")
 ```
 
-Clear the session storage:
+清除会话存储: 
 
 ```python
 page.session.clear()

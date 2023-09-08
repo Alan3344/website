@@ -8,34 +8,34 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [news]
 ---
 
-Flet is a fast-evolving framework with a new functionality and bug fixes being committed every other day.
+ Flet是一个快速发展的框架，具有新功能，并且每隔一天进行错误修复。
 
-The development model with one pull request per release didn't work well for the project as users waited for weeks to get hands on a new release and, honestly, from development perspective producing large "heroic" releases takes a lot of energy 🫠.
+随着用户等待数周的新版本，每个版本的一个拉力请求都对该项目的开发模型不错，而且说实话，从发展的角度来看，生产大型“英雄”发行版本需要大量的能量。
 
-From now on we'll be breaking releases into multiple pull requests with one feature/bugfix per PR.
+从现在开始，我们将以每个PR的一个功能/bugfix将版本分解为多个拉动请求。
 
-Every PR merged into `main` branch will be publishing pre-release (developmental release) package to [pypi.org](https://pypi.org/project/flet/) having version format of `X.Y.Z.devN`.
+每个PR合并到`main`分支中，都将发布预释放（开发版）软件包，以[pypi.org](https://pypi.org/project/flet/)具有`X.Y.Z.devN`的版本格式。
 
-## Installing pre-releases
+## 安装预先释放
 
-To install Flet pre-release package use the following command:
+要安装Flet预释放软件包使用以下命令: 
 
 ```
 pip install flet --pre
 ```
 
-:::info
-We recommend installing pre-release builds into a virtual environment.
+:::信息
+我们建议在虚拟环境中安装预释放的构建。
 :::
 
-## Flet versioning
+##  Flet版本
 
-Flet is switching to [Semanting Versioning](https://semver.org/) with a version number `MAJOR.MINOR.PATCH`:
+Flet用版本号`MAJOR.MINOR.PATCH`切换到[Semanting版本化](https://semver.org/): 
 
-1. `MAJOR` will be incremented when there are "incompatible API changes". Right now it's `0` and we expect to make it `1` when we feel that Flet API is stable enough.
-2. `MINOR` will be incremented when a new functionality added in a backwards compatible manner.
-3. `PATCH` will be incremented when we make backward compatible bug fixes.
+1. `MAJOR`当“不兼容的API更改”时，将会增加。 现在是`0`，当我们觉得Flet API足够稳定时，我们希望将其做到`1`。
+2. `MINOR`以向后兼容的方式添加新功能时，将会增加。
+3. `PATCH`当我们进行后退兼容的错误修复时，将会增加。
 
-According to that rule, upcoming Flet release will have version `0.2.0`. Bug fixes for that release will be labeled as `0.2.1`, `0.2.2`, etc. The release after that release will be `0.3.0` and so on.
+根据该规则，即将发布的Flet版本将具有版本`0.2.0`。 该版本的错误修复将标记为`0.2.1`，`0.2.2`等。该版本之后的版本将为`0.3.0`，依此类推。
 
-Flet pre-releases will have a format of `MAJOR.{LAST_MINOR + 1}.0.dev{BUILD}` where `LAST_MINOR` is `MINOR` version of the last release and `{BUILD}` is a build number set by [CI](https://ci.appveyor.com/project/flet-dev/flet). For example, if the last published release is `0.1.65` pre-releases will have versions `0.2.0.dev{BUILD}`. Pre-releases after `0.2.0` release will be labeled as `0.3.0.dev{BUILD}`.
+Flet预释放的格式将以`major的格式。 由[CI](https://ci.appveyor.com/project/flet-dev/flet)设置。 例如，如果最后发布的版本是`0.1.65`预释放的版本`0.2.0.dev {build}`。 `0.2.0`发布后的预释放将标记为`0.3.0.dev {build}`。

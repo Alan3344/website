@@ -3,82 +3,81 @@ title: Progressive web apps (PWA)
 sidebar_label: Progressive web apps (PWA)
 ---
 
-Progressive Web Apps, or PWAs, offer a way to turn app-like websites into website-like apps.
+渐进式 Web 应用程序（PWAS）提供了一种将类似应用程序的网站变成类似网站的应用程序的方法。
 
-Check [PWAs Turn Websites Into Apps: Here's How](https://www.pcmag.com/how-to/how-to-use-progressive-web-apps) for the PWA introduction.
+检查[PWAS 将网站变成应用: 这就是 PWA 简介的方式](https://www.pcmag.com/how-to/how-to-use-progressive-web-apps)。
 
-Browsers that support PWA ([installation instructions](#pwa-installation-instructions)):
+支持 PWA 的浏览器（[安装指令](#pwa-installation-instructions)）:
 
-* **Chrome** on all platforms
-* **Edge** on all platforms
-* **Firefox** on Android
-* **Safari** on iOS and iPadOS
+- ** Chrome **在所有平台上
+- **边缘**在所有平台上
+- ** firefox **在 Android 上
+- ** Safari ** iOS 和 iPados
 
-## Customizing PWA
+## 自定义 PWA
 
-:::info
-The information in this section is based on the following sources (check them out for more details):
+:::信息
+本节中的信息基于以下资源（查看它们以获取更多详细信息）:
 
-* [General information about PWAs](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
-* [PWA manifests](https://developer.mozilla.org/en-US/docs/Web/Manifest)
-:::
+- [有关 PWAS 的常规信息](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
+- [PWA 清单](https://developer.mozilla.org/en-US/docs/Web/Manifest)
+  :::
 
-### Manifest
+### 清单
 
-You can change PWA's name, description, colors and other information in `manifest.json` that must be put in the root of [assets directory](/docs/guides/python/deploying-web-app/customizing-web-app).
+您可以在`manifest.json`中更改 PWA 的名称，描述，颜色和其他信息，这些信息必须放在[Assets Directory](/docs/guides/python/deploying-web-app/customizing-web-app)的根源中。
 
-Here are the links to the most common manifest items that you'd like to customize:
+以下是您要自定义的最常见清单项目的链接:
 
-* [`name`](https://developer.mozilla.org/en-US/docs/Web/Manifest/name) - the name of the web application as it is usually displayed to the user.
-* [`short_name`](https://developer.mozilla.org/en-US/docs/Web/Manifest/short_name) - the name of the web application displayed to the user if there is not enough space to display `name`.
-* [`description`](https://developer.mozilla.org/en-US/docs/Web/Manifest/description) - explains what the application does.
-* [`theme_color`](https://developer.mozilla.org/en-US/docs/Web/Manifest/theme_color) - defines the default theme color for the application.
-* [`background_color`](https://developer.mozilla.org/en-US/docs/Web/Manifest/background_color) - defines a placeholder background color for the application page to display before its stylesheet is loaded.
+- [`name`](https://developer.mozilla.org/en-US/docs/Web/Manifest/name) - 通常显示给用户的 Web 应用程序的名称。
+- [`short_name`](https://developer.mozilla.org/en-US/docs/Web/Manifest/short_name) - 如果没有足够的空间显示`name`，则显示给用户的 Web 应用程序的名称。
+- [`description`](https://developer.mozilla.org/en-US/docs/Web/Manifest/description) - 说明应用程序的作用。
+- [`theme_color`](https://developer.mozilla.org/en-US/docs/Web/Manifest/theme_color) - 定义应用程序的默认主题颜色。
+- [`background_color`](https://developer.mozilla.org/en-US/docs/Web/Manifest/background_color) - 定义了占位符的背景颜色，用于在加载样式图之前显示应用程序页面。
 
-### Icons
+### iCONS
 
-Custom icons are placed in `icons` directory in the root of assets directory:
+自定义图标放在`icons`目录中的资产目录中:
 
-* `icon-192.png`, `icon-512.png` - app icons displayed in Windows taskbar.
-* `icon-maskable-192.png`, `icon-maskable-512.png` - app icons displayed in Android.
-* `apple-touch-icon-192.png` - app icon displayed in iOS.
+- `iCON-1192.png`，`iCon-512.png`- Windows Taskbar 中显示的应用程序图标。
+- ```Icon baskable-192.png`，`iCON-maskable-512.png`-在 Android 中显示的应用图标。
+- ``apple-touch-icon-192.png`- iOS 中显示的应用图标。
 
-## PWA installation instructions
+## PWA 安装说明
 
-Below is the list of browsers that allow installing Flet web app as PWA on desktop or home screen and the instructions on how to do that. You are allowed to use these instructions along with images to educate the users of your application.
+以下是允许在台式机或主屏幕上安装 Flet Web 应用程序的浏览器列表，以及有关如何执行此操作的说明。 允许您使用这些说明以及图像来教育您的应用程序的用户。
 
 ### Safari
 
-To install PWA to a home screen on iOS and iPadOS:
+要将 PWA 安装到 iOS 和 iPados 上的主屏幕上:
 
-* Tap <img src="/img/docs/getting-started/ios-share-icon.svg" className="icon-button" /> at the bottom of the screen.
-* Tap **Add to home screen <img src="/img/docs/getting-started/add-box-icon.svg" className="icon-button" />** to open install app dialog.
+- 在屏幕底部点击<img src="/website/img/docs/getting-started/ios-share-icon.svg" className="icon-button" />。
+- 点击**添加到主屏幕<img src="/website/img/docs/getting-started/add-box-icon.svg" className="icon-button" /> **打开安装应用程序对话框。
 
-### Chrome
+### chrome
 
-Chrome supports PWA on all platforms where it's available.
+Chrome 在可用的所有平台上支持 PWA。
 
-#### Desktop
+#### 桌面
 
-Chrome for desktop displays a button in the address bar to open "Install app" dialog:
+Chrome for Desktop 在地址栏中显示一个按钮以打开“安装应用程序”对话框:
 
-<img src="/img/docs/getting-started/chrome-pwa-install.png" className="screenshot-60" />
+<img src="/website/img/docs/getting-started/chrome-pwa-install.png" className="screenshot-60" />
 
-#### Mobile
+#### 移动
 
-To install app on mobile version of Chrome:
+要在 Chrome 的移动版本上安装应用程序:
 
-* Tap <img src="/img/docs/getting-started/more-vert-icon.svg" className="icon-button" /> menu button to open Chrome main menu.
-* Tap **Install app** to open app installation dialog.
+- 点击<img src="/website/img/docs/getting-started/more-vert-icon.svg" className="icon-button" />菜单按钮以打开 Chrome 主菜单。
+- 点击**安装应用程序**打开应用程序安装对话框。
 
-### Edge
+### edge
 
-Edge supports PWA on all platforms where it's available. Similar to Chrome there is a button in the address bar to open "Install app" dialog:
+Edge 在可用的所有平台上支持 PWA。 与 Chrome 类似，地址栏中有一个按钮可以打开“安装应用程序”对话框:
 
-<img src="/img/docs/getting-started/edge-pwa-install.png" className="screenshot-60" />
+<img src="/website/img/docs/getting-started/edge-pwa-install.png" className="screenshot-60" />
 
+### Android 上的 Firefox
 
-### Firefox on Android
-
-* Tap <img src="/img/docs/getting-started/more-vert-icon.svg" className="icon-button" /> menu button to open Firefox main menu.
-* Tap **Install** to open app installation dialog.
+- 点击<img src="/website/img/docs/getting-started/more-vert-icon.svg" className="icon-button" />菜单按钮以打开 Firefox 主菜单。
+- 点击**安装**打开应用程序安装对话框。

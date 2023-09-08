@@ -4,7 +4,7 @@ sidebar_label: Controls reference
 slug: /controls
 ---
 
-Flet UI is built of controls. Controls are organized into hierarchy, or a tree, where each control has a parent (except [Page](controls/page)) and container controls like [Column](controls/column), [Dropdown](controls/dropdown) can contain child controls, for example:
+ Flet UI是由控件构建的。 控件被组织为层次结构或树，每个控件都有父（[Page](controls/page)）和诸如[column](controls/column)的容器控件，[下拉下拉](controls/dropdown)可以包含child控件，用于 例子: 
 
 ```
 Page
@@ -17,36 +17,36 @@ Page
      └─ ElevatedButton
 ```
 
-[Control gallery live demo](https://flet-controls-gallery.fly.dev/layout)
+[控制库实时演示](https://flet-controls-gallery.fly.dev/layout) 
 
-## Controls by categories
+## 按类别控制
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 <DocCardList items={useCurrentSidebarCategory().items}/>
-```
+``` 
 
-## Common control properties
+## 公共控制属性
 
-Flet controls have the following properties:
+Flet控件具有以下属性: 
 
-### `bottom`
+###  `bottom`
 
-Effective inside [`Stack`](controls/stack) only. The distance that the child's bottom edge is inset from the bottom of the stack.
+在内部[`Stack`](controls/stack)内部有效。 child的底部边缘从堆栈的底部插入。
 
-### `data`
+###  `data`
 
-Arbitrary data that can be attached to a control.
+可以连接到控件的任意数据。
 
-### `disabled`
+###  `disabled`
 
-Every control has `disabled` property which is `False` by default - control and all its children are enabled.
-`disabled` property is mostly used with data entry controls like `TextField`, `Dropdown`, `Checkbox`, buttons.
-However, `disabled` could be set to a parent control and its value will be propagated down to all children recursively.
+每个控件都有`disabled`属性，该属性默认为`False`，并且启用了所有children。
+`disabled`属性主要用于`TextField`，`Dropdown`，`Checkbox`，按钮之类的数据输入控件。
+但是，`disabled`可以将其设置为父控件，其值将递归地传播到所有children。
 
-For example, if you have a form with multiple entry controls you can disable them all together by disabling container:
+例如，如果您的表单具有多个入口控件，则可以通过禁用容器来将它们全部禁用: 
 
 ```python
 c = ft.Column(controls=[
@@ -55,47 +55,45 @@ c = ft.Column(controls=[
 ])
 c.disabled = True
 page.add(c)
-```
+``` 
 
-### `expand`
+###  `expand`
 
-When a child Control is placed into a [`Column`](controls/column) or [`Row`](controls/row) you can "expand" it to fill the available space. `expand` property could be a boolean value (`True` - expand control to fill all available space) or an integer - an "expand factor" specifying how to divide a free space with other expanded child controls.
+将child控件放入[`Column`](controls/column)或[`Row`](controls/row)中时，您可以“展开”它以填充可用空间。 `expand`属性可能是布尔值（`True`  - 扩展控制以填充所有可用空间）或整数 - 指定如何将自由空间与其他扩展的child控件分配的“展开因子”。
 
-For more information and examples about `expand` property see "Expanding children" sections in [`Column`](controls/column#expanding-children) or [`Row`](controls/row#expanding-children).
+有关`expand`属性的更多信息和示例，请参见[{`Column`](controls/column#expanding-children)中的“扩展children”部分(controls/column#expanding-children)或[`Row`] `Row`](controls/row#expanding-children)。
 
-### `height`
+在虚拟像素中强加的控制高度。
 
-Imposed Control height in virtual pixels.
+###  `left`
 
-### `left`
+在内部[`Stack`](controls/stack)内部有效。 child的左侧边缘与堆栈的左侧插图。
 
-Effective inside [`Stack`](controls/stack) only. The distance that the child's left edge is inset from the left of the stack.
+###  `right`
 
-### `right`
+在内部[`Stack`](controls/stack)内部有效。 child的右边缘从堆栈的右侧插图。
 
-Effective inside [`Stack`](controls/stack) only. The distance that the child's right edge is inset from the right of the stack.
+###  `top`
 
-### `top`
+在内部[`Stack`](controls/stack)内部有效。 child的顶部边缘从堆栈的顶部插入。
 
-Effective inside [`Stack`](controls/stack) only. The distance that the child's top edge is inset from the top of the stack.
+###  `visible`
 
-### `visible`
+每个控件都具有`visible`属性，该属性为`True`，默认情况下 - 控件在页面上呈现。 将`visible`设置为`False`完全防止控件（及其所有children（如果有），则可以在页面上渲染。 隐藏的控件不能专注或使用键盘或鼠标选择，并且它们不会发出任何事件。
 
-Every control has `visible` property which is `True` by default - control is rendered on the page. Setting `visible` to `False` completely prevents control (and all its children if any) from rendering on a page canvas. Hidden controls cannot be focused or selected with a keyboard or mouse and they do not emit any events.
+###  `width`
 
-### `width`
+在虚拟像素中强加的控制宽度。
 
-Imposed Control width in virtual pixels.
+## 转换
 
-## Transformations
+###  `offset`
 
-### `offset`
+在绘制控件之前，要应用翻译转换。
 
-Applies a translation transformation before painting the control.
+翻译表示为`transform.Offset`缩放到控件的大小。 例如，`x`的`Offset`的`x`将导致控件宽度的四分之一的水平翻译。
 
-The translation is expressed as a `transform.Offset` scaled to the control's size. For example, an `Offset` with a `x` of `0.25` will result in a horizontal translation of one quarter the width of the control.
-
-The following example displays container at `0, 0` top left corner of a stack as transform applies `-1 * 100, -1 * 100` (`offset * control_size`) horizontal and vertical translations to the control:
+下面的示例显示堆栈的左上角在``0，0，0，0，0，0，0，0，0，1 offsit * control _size`）水平和垂直翻译到控件上的spact stack的左上角。
 
 ```python
 import flet as ft
@@ -120,22 +118,22 @@ def main(page: ft.Page):
     )
 
 ft.app(target=main)
-```
+``` 
 
-### `opacity`
+###  `opacity`
 
-Makes a control partially transparent. `0.0` - control is completely transparent, not painted at all. `1.0` (default) - a control is fully painted without any transparency.
+使控制部分透明。 `0.0`  - 控制是完全透明的，根本没有绘制。 `1.0`（默认） - 完全绘制控件而没有任何透明度。
 
-### `rotate`
+###  `rotate`
 
-Transforms control using a rotation around the center.
+使用围绕中心旋转进行控制。
 
-The value of `rotate` property could be one of the following types:
+`rotate`属性的值可能是以下类型之一: 
 
-* `number` - a rotation in clockwise radians. Full circle `360°` is `math.pi * 2` radians, `90°` is `pi / 2`, `45°` is `pi / 4`, etc.
-* `transform.Rotate` - allows to specify rotation `angle` as well as `alignment` - the location of rotation center.
+*  `number`  - 顺时针弧度中的旋转。 完整的圆`360°`is`n is`MATH.pi * 2`弧度，`90°is`pi / 2`，`45°`is pi / 4`，等等，等等。
+* `transform.Rotate`  - 允许指定旋转`angle`以及`alignment`  - 旋转中心的位置。
 
-For example:
+例如: 
 
 ```python
 ft.Image(
@@ -145,13 +143,13 @@ ft.Image(
     border_radius=5,
     rotate=Rotate(angle=0.25 * pi, alignment=ft.alignment.center_left)
 )
-```
+``` 
 
-### `scale`
+###  `scale`
 
-Scale control along the 2D plane. Default scale factor is `1.0` - control is not scaled. `0.5` - the control is twice smaller, `2.0` - the control is twice larger.
+沿2D平面进行比例控制。 默认比例因子为`1.0`  - 控制不缩放。 `0.5`  - 控件小两倍，`2.0`  - 控件大两倍。
 
-Different scale multipliers can be specified for `x` and `y` axis, but setting `Control.scale` property to an instance of `transform.Scale` class:
+可以为`x`和`y`轴指定不同的比例乘数，但是将`Control.scale`属性设置为`transform.Scale`类的实例: 
 
 ```python
 from dataclasses import field
@@ -163,7 +161,7 @@ class Scale:
     alignment: Alignment = field(default=None)
 ```
 
-Either `scale` or `scale_x` and `scale_y` could be specified, but not all of them, for example:
+可以指定`scale`或`scale_x`和`scale_y`，但不是全部: 
 
 ```python
 ft.Image(

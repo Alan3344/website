@@ -3,7 +3,7 @@ title: Gallery
 slug: gallery
 ---
 
-import Card from '@site/src/components/card';
+来自'@site/src/components/card'的导入卡片;
 
 export const GalleryCard = ({title, liveUrl, sourcesUrl, description, imageUrl}) => (
     <Card>
@@ -16,9 +16,9 @@ export const GalleryCard = ({title, liveUrl, sourcesUrl, description, imageUrl})
         <a className="gallery-github-link" href={sourcesUrl} title="View source code"></a>
       </div>
     </Card>
-);
+); 
 
-# Gallery
+# 画廊
 
 <div className="margin-top--lg">
   <section className="gallery-grid">

@@ -8,30 +8,33 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [releases]
 ---
 
-Flet 0.7.1 enables developers [changing scroll position](#controlling-scroll-position) and [receiving scroll notifications](#receiving-scroll-notifications) from `Page`, `View`, `Column`, `Row`, `ListView` and `GridView` controls.
+Flet 0.7.1 启用开发人员[更改滚动位置](#controlling-scroll-position)和[接收滚动通知](#receiving-scroll-notifications)来自`Page`，`View`，`View`，`Column`，`Column`，，`Row`，`Row` 1405}控件。
 
-The release also introduces theming improvements:
-* [Color scheme customization](#color-scheme-customization)
-* [Nested themes](#nested-themes)
-* [Text theming](#text-theming)
-* [Scrollbar theming](#scrollbar-theme)
-* [Tabs theming](#tabs-theming)
+该版本还介绍了主题改进:
 
-## Controlling scroll position
+- [配色方案自定义](#color-scheme-customization)
+- [嵌套主题](#nested-themes)
+-
+- [text Thewsing](#text-theming)
+-
+-
+- [ScrollBar Theming] } [TABS 主题](#tabs-theming)
 
-Scrollable controls (`Page`, `View`, `Column`, `Row`, `ListView` and `GridView`) introduce `scroll_to()` method to change their scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
+## 控制滚动位置
 
-Moving to a `key` is particularly exciting as it allows simulating the navigation between page bookmarks, kind of HTML hrefs with `#`:
+可滚动控件（`Page`，`View`，`Column`，`Row`，`ListView`和`GridView`）引入`scroll_to()`方法，将其滚动位置更改为绝对`offset`，相对`delta`，相对`delta`，相对`delta`， 使用指定`key`的控件。
 
-<img src="/img/docs/controls/column/column-scroll-to-key.gif"  className="screenshot-70 screenshot-rounded" />
+搬到`key`特别令人兴奋，因为它允许模拟页面书签之间的导航，其中一种 html hrefs``＃'': :
 
-Check the [source code](https://github.com/flet-dev/examples/blob/main/python/controls/column/column-scroll-to-key.py) of the example above.
+<img src="/website/img/docs/controls/column/column-scroll-to-key.gif"  className="screenshot-70 screenshot-rounded" />
 
-See [`Column.scroll_to`](/docs/controls/column#scroll_tooffset-delta-key-duration-curve) for more details about controlling scroll position.
+检查上述示例的[源代码](https://github.com/flet-dev/examples/blob/main/python/controls/column/column-scroll-to-key.py)。
 
-## Receiving scroll notifications
+有关控制滚动位置的更多详细信息，请参见[`Column.scroll_to`](/docs/controls/column#scroll_tooffset-delta-key-duration-curve)。
 
-All scrollable controls now provide `on_scroll` event handler which fires when a scroll position is changed. From event object properties you can determine whether scroll operation has started, finished, changed direction or scroll position went behind scrolling extent (overscroll). You can also get updates of the current scroll position as well as dimensions of the scroll area, for example:
+## 接收滚动通知
+
+现在，所有可滚动控件都提供`on_scroll`事件处理程序，该事件处理程序在更改滚动位置时会发射。 从事件对象属性中，您可以确定滚动操作是否已开始，完成，更改方向或滚动位置落后于滚动范围（OverCroll）。 您还可以获取当前滚动位置以及滚动区域的尺寸的更新，例如:
 
 ```python
 import flet as ft
@@ -59,19 +62,19 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-See [`Column.on_scroll`](/docs/controls/column#on_scroll) for more details about scroll notification.
+有关滚动通知的更多详细信息，请参见[`Column.on_scroll`](/docs/controls/column#on_scroll)。
 
-Check [infinite scroll example](https://github.com/flet-dev/examples/blob/main/python/controls/column/column-infinite-list.py).
+检查[无限滚动示例](https://github.com/flet-dev/examples/blob/main/python/controls/column/column-infinite-list.py)。
 
-## Color scheme customization
+## 配色方案自定义
 
-Until today the only way to control color scheme for your application was specifying `color_scheme_seed` when creating a new `ft.Theme` object.
+直到今天，在创建新的`ft.Theme`对象时，为您的应用程序控制配色方案的唯一方法是指定`color_scheme_seed`。
 
-This release enables you to fine tune all 30 colors based on the [Material spec](https://m3.material.io/styles/color/the-color-system/color-roles) and used by various Flet controls.
+此版本使您可以根据[材料规格](https://m3.material.io/styles/color/the-color-system/color-roles)微调所有 30 种颜色，并由各种 Flet 控件使用。
 
-<img src="/img/blog/theme-scrolling/material-theme-builder.png"  className="screenshot-70 screenshot-rounded" />
+<img src="/website/img/blog/theme-scrolling/material-theme-builder.png"  className="screenshot-70 screenshot-rounded" />
 
-You can even use [Material Theme Builder](https://m3.material.io/theme-builder#/dynamic) and apply exported color palette to your app, for example:
+您甚至可以使用[材料主题构建器](https://m3.material.io/theme-builder#/dynamic)并将导出的调色板应用于您的应用:
 
 ```python
 page.theme = ft.Theme(
@@ -83,17 +86,15 @@ page.theme = ft.Theme(
 )
 ```
 
-See [`ColorScheme` class](/docs/controls/page#colorscheme-class) for more details.
+有关更多详细信息，请参见[`ColorScheme` class](/docs/controls/page#colorscheme-class)。
 
-## Nested themes
+该版本的另一个很棒的功能是嵌套主题！
 
-Another awesome feature of this release is nested themes!
+您可以使用应用程序的一部分来使用其他主题或覆盖某些主题样式用于特定控件。
 
-You can have a part of your app to use a different theme or override some theme styles for specific controls.
+记得`page`对象具有`theme`和`theme_mode`属性吗？ 现在`Container`具有`theme`和`theme_mode`属性！
 
-Remember `page` object having `theme` and `theme_mode` properties? Now `Container` has `theme` and `theme_mode` properties too!
-
-`Container.theme` accepts the same `ft.Theme` object as a page. Specifying `theme_mode` in the container means you don't want to inherit parent theme, but want a completely new, unique scheme for all controls inside the container. However, if the container does not have `theme_mode` property set then the styles from its `theme` property will override the ones from the parent, inherited theme:
+`Container.theme`接受相同的`ft.Theme`对象作为页面。 在容器中指定`theme_mode`意味着您不想继承父主题，但需要一个全新的独特方案，用于容器内的所有控件。 但是，如果容器没有`theme_mode`属性设置，则来自其`theme`属性的样式将覆盖父母的主题:
 
 ```python
 import flet as ft
@@ -136,13 +137,13 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-<img src="/img/blog/theme-scrolling/nested-themes.png"  className="screenshot-60" />
+<img src="/website/img/blog/theme-scrolling/nested-themes.png"  className="screenshot-60" />
 
-## Scrollbar theme
+## scrollbar 主题
 
-You can now customize the look and fill of scrollbars in your application (or a particular scroillbar with [nested themes](#nested-themes)).
+现在，您可以自定义应用程序中的滚动条（或具有[嵌套主题](#nested-themes)的特定 scroillbar）。
 
-It could be done via [`page.theme.scrollbar_theme`](/docs/controls/page#scrollbartheme-class) property, for example:
+可以通过[`page.theme.scrollbar_theme`](/docs/controls/page#scrollbartheme-class)属性来完成:
 
 ```python
 page.theme = ft.Theme(
@@ -166,11 +167,11 @@ page.theme = ft.Theme(
 )
 ```
 
-<img src="/img/docs/controls/column/column-scroll-to.png"  className="screenshot-60" />
+<img src="/website/img/docs/controls/column/column-scroll-to.png"  className="screenshot-60" />
 
-## Text theming
+## 文本主题
 
-Material 3 design defines [5 groups of text styles with 3 sizes in each group](/docs/controls/text#pre-defined-theme-text-styles): "Display", "Headline", "Title", "Label" and "Body" which are used across Flet controls. You can now customize each of those styles with `page.theme.text_theme`, for example:
+材料 3 设计定义了[5 组文本样式，每个组中有 3 种尺寸](/docs/controls/text#pre-defined-theme-text-styles): “显示”，“标题”，“标题”，“标签”和“正文”，这些均在 Flet 控件中使用。 现在，您可以使用`page.theme.text_theme`自定义每种样式，例如:
 
 ```python
 import flet as ft
@@ -185,15 +186,13 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-<img src="/img/blog/theme-scrolling/text-theme.png"  className="screenshot-50" />
+<img src="/website/img/blog/theme-scrolling/text-theme.png"  className="screenshot-50" />
 
-Apparently, `Body Medium` is used by `Text` control as a default style.
+显然，`Text`控制用作默认样式的“身体介质”。
 
-See [`TextTheme` class](/docs/controls/page#texttheme-class) for more details.
+有关更多详细信息，请参见[`TextTheme` class](/docs/controls/page#texttheme-class)
 
-## Tabs theming
-
-You can now control the look and feel of `Tabs` control. In this release `Tabs` adds a bunch of new properties and there is a new [`page.theme.tabs_theme`](/docs/controls/page#tabstheme-class) property to style all tabs in your app:
+现在，您可以控制`Tabs`控制的外观。 在此版本中`Tabs`添加了一堆新属性，并且有一个新的[`page.theme.tabs_theme`](/docs/controls/page#tabstheme-class)属性，以样式的应用程序中的所有选项卡片:
 
 ```python
 page.theme = ft.Theme(
@@ -211,26 +210,26 @@ page.theme = ft.Theme(
 )
 ```
 
-<img src="/img/blog/theme-scrolling/tabs-theme.png"  className="screenshot-60" />
+<img src="/website/img/blog/theme-scrolling/tabs-theme.png"  className="screenshot-60" />
 
-See [`TabsTheme` class](/docs/controls/page#tabstheme-class) for more details.
+有关更多详细信息，请参见[`TabsTheme` class](/docs/controls/page#tabstheme-class)。
 
-## Other changes
+## 其他更改
 
 ### Flutter 3.10
 
-This Flet release is based on Flutter 3.10 which [brings new features, performance and size optimizations](https://medium.com/flutter/whats-new-in-flutter-3-10-b21db2c38c73). As a result, most of Flet dependencies bumped their versions too, so if you notice any issues please let us know.
+此 Flet 的发行版基于 flutter 3.10，它具有新功能，性能和大小优化](https://medium.com/flutter/whats-new-in-flutter-3-10-b21db2c38c73)。 结果，大多数 Flet 依赖项也碰到了他们的版本，因此，如果您注意到任何问题，请告诉我们。
 
-### Color emoji in web apps
+### color color emoji 在 Web 应用程序中
 
-Color emoji support in web apps are back! In Flutter 3.7 color emoji were disabled in "CanvasKit" renderer (default in Flet) because of their font size (8 MB!) and returned back as an opt-in in Flutter 3.10. You can enable color emoji in server-driven app with `use_color_emoji` argument:
+Web 应用程序中的颜色表情符号支持又回来了！ 在“ canvaskit”渲染器（Flet 中默认）中，由于其字体大小（8 mb！），在颤动 3.7 颜色的表情符中被禁用，并作为选择加入 3.10 的选择。 您可以使用`use_color_emoji`参数在服务器驱动的应用中启用颜色表情符号:
 
 ```python
 ft.app(main, use_color_emoji=True)
 ```
 
-and [use `--use-color-emoji` switch](/docs/guides/python/publishing-static-website#color-emojis) when publishing app as a static side.
+和[使用` -  use-color-emoji` switch](/docs/guides/python/publishing-static-website#color-emojis)在发布应用程序作为静态方面时。
 
-That's all for today!
+这就是今天！
 
-Upgrade Flet module to the latest version (`pip install flet --upgrade`) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
+升级 Flet 模块到最新版本（`pip install fles -upgrade`）和[让我们知道](https://discord.gg/dzWXP8SHG8)您的想法！

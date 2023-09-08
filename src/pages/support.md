@@ -3,32 +3,32 @@ title: Support
 hide_table_of_contents: true
 ---
 
-# Support
+＃支持
 
-## Documentation
+## 文档
 
-Browse [Flet docs](/docs).
+浏览[Flet docs](/docs)。
 
-## Discord
+##  discord
 
-Meet Flet community on [Flet Discord server](https://discord.gg/dzWXP8SHG8).
+在[Flet Discord Server]上遇到Flet社区(https://discord.gg/dzWXP8SHG8)。
 
-## GitHub issues
+##  github问题
 
-Submit an issue or feature request at [Flet project issues](https://github.com/flet-dev/flet/issues).
+在[Flet项目问题上提交问题或功能请求](https://github.com/flet-dev/flet/issues)。
 
-## GitHub discussions
+##  github讨论
 
-Start a new discussion at [Flet project discussions](https://github.com/flet-dev/flet/discussions).
+在[Flet项目讨论](https://github.com/flet-dev/flet/discussions)。
 
-## Twitter
+##  Twitter上开始新的讨论
 
-Follow us on [@fletdev](https://twitter.com/fletdev).
+在[@fletdev](https://twitter.com/fletdev)。
 
-## StackOverflow
+##  stackoverflow上关注我们
 
-Ask your question or search for solution on [StackOverflow](https://stackoverflow.com/questions/tagged/flet).
+询问您的问题或在[stackoverflow](https://stackoverflow.com/questions/tagged/flet)上搜索解决方案。
 
-## Email
+## 电子邮件
 
-Contact us by email: hello@flet.dev
+通过电子邮件与我们联系: hello@flet.dev

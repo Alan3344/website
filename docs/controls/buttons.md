@@ -4,7 +4,7 @@ sidebar_label: Buttons
 slug: buttons
 ---
 
-import Card from '@site/src/components/card';
+从'@site/src/components/card'导入卡片';
 
 export const ImageCard = ({title, href, imageUrl}) => (
     <div className="col col--4 margin-bottom--lg">
@@ -15,7 +15,7 @@ export const ImageCard = ({title, href, imageUrl}) => (
     </div>
 );
 
-[Live example](https://flet-controls-gallery.fly.dev/buttons)
+[LIVE示例](https://flet-controls-gallery.fly.dev/buttons)
 
 <div className="margin-top--lg">
   <section className="row">

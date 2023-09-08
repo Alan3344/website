@@ -3,66 +3,66 @@ title: Authentication
 sidebar_label: Authentication
 ---
 
-You can implement user authentication ("Login with X" buttons) in your Flet app using 3rd-party identity providers such as GitHub, Google, Azure, Auth0, LinkedIn and others.
+您可以在 Flet 应用中使用第三方身份提供者，例如 Github，Google，Google，Azure，Auth0，LinkedIn 等，在您的 Flet 应用中实现用户身份验证（“使用 X”按钮）。
 
-Identity provider must support [OAuth 2.0 Authorization Code Flow](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow) to retrieve API access token.
+身份提供商必须支持[OAUTH 2.0 授权代码流](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow)才能检索 API 访问令牌。
 
-Built-in Flet login with credentials and user management is planned for future releases.
-If you have a requirement to create and manage user accounts in your app you can implement it
-by your own or use [Auth0](https://auth0.com/user-management) identity provider which provides
-a generous free tier.
+内置 Flet 登录具有凭据和用户管理的登录计划以未来发行。
+如果您需要在应用程序中创建和管理用户帐户，则可以实现它
+通过您自己或使用[auth0](https://auth0.com/user-management)身份提供商
+慷慨的自由层。
 
-Flet authentication features:
+Flet 身份验证功能:
 
-* Works with Flet desktop, web and mobile apps.
-* Using multiple authentication providers in one app.
-* Built-in OAuth providers with automatic user details fetching:
-  * GitHub
-  * Azure
-  * Google
-  * Auth0
-* Optional groups fetching.
-* Automatic token refresh.
-* Login with a saved token ("Remember me").
-* Custom OAuth providers.
+- 与 Flet 桌面，Web 和移动应用程序一起使用。
+- 在一个应用程序中使用多个身份验证提供商。
+- 带有自动用户详细信息的内置 OAuth 提供商获取:
+  - github
+  - azure
+  - 谷歌
+  - auth0
+- 可选组提取。
+- 自动令牌刷新。
+- 使用保存的令牌登录（“记住我”）。
+- 自定义 OAuth 提供商。
 
-## Login process overview
+## 登录过程概述
 
-* Configure OAuth provider (built-in or generic) with Client ID, Client secret, Redirect URL.
-* Call `page.login(provider)` to initiate OAuth web flow.
-* User is being redirected to OAuth provider website.
-* On provider website user signs in and gives consent to access service API with requested scopes.
-* Provider website redirects to Flet's OAuth callback URL with authorization code.
-* Flet exchanges authorization code for a token and calls `page.on_login` event handler.
-* Flet app can retrieve API token from `page.auth.token` property and user details from `page.auth.user`.
+- 配置 OAuth Provider（内置或通用），带有客户端 ID，客户端秘密，重定向 URL。
+- 调用`page.login(provider)`启动 OAuth Web 流。
+- 用户正在重定向到 OAuth 提供商网站。
+- 在提供商网站上，用户登录并同意使用请求的范围访问服务 API。
+- 提供商网站将带有授权代码的 oauth 回调 URL 重定向到 Flet 的 OAuth 回调 URL。
+- Flet 将授权代码换成令牌，并调用`page.on_login`事件处理程序。
+- Flet 应用程序可以从`page.auth.token`属性和用户详细信息中检索`page.auth.user`的用户详细信息。
 
-## Configuring OAuth provider
+## 配置 Oauth Provider
 
-Flet has the following built-in OAuth providers:
+Flet 具有以下内置的 OAuth 提供商:
 
-* GitHub
-* Azure
-* Google
-* Auth0
+- github
+- azure
+- 谷歌
+- auth0
 
-Additionally, you can configure a generic OAuth provider and provide authorization, token and user info endpoints.
+此外，您可以配置通用的 OAuth 提供商并提供授权，令牌和用户信息终点。
 
-In this guide we will configure Flet login page with GitHub account.
+在本指南中，我们将使用 GitHub 帐户配置 Flet 登录页面。
 
-To integrate Flet authentication with GitHub a new [GitHub OAuth app](https://github.com/settings/developers) should be registered first (**Profile settings** → **Developer settings** → **OAuth Apps**).
+要与 github 集成 Flet 身份验证，应首先注册新的[GitHub Oauth App](https://github.com/settings/developers)（**配置文件设置**→**开发人员设置**→** OAuth Apps **）。
 
-**Authorization callback URL** should be in the format:
+- \*授权回调 URL \*\*应采用格式:
 
 ```
 {application-url}/api/oauth/redirect
 ```
 
-<img src="/img/docs/getting-started/authentication/github-new-oauth-app.png" className="screenshot-40" />
+<img src="/website/img/docs/getting-started/authentication/github-new-oauth-app.png" className="screenshot-40" />
 
 On OAuth app details page click "Generate a new client secret" button.
 Copy "Client ID" and "Client secret" values to a safe place - you'll need them in a Flet app.
 
-<img src="/img/docs/getting-started/authentication/github-oauth-app-details.png" className="screenshot-40" />
+<img src="/website/img/docs/getting-started/authentication/github-oauth-app-details.png" className="screenshot-40" />
 
 ## Sign in with OAuth provider
 
@@ -112,11 +112,11 @@ $ export GITHUB_CLIENT_SECRET="<client_secret>"
 
 Run the program and click "Login with GitHub" button. GitHub authorize app page will be opened in:
 
-* **Desktop** app - a new browser window or tab.
-* **Web** app - a new popup window (make sure popup blocker is off).
-* **Mobile** app - an in-app web browser.
+- **Desktop** app - a new browser window or tab.
+- **Web** app - a new popup window (make sure popup blocker is off).
+- **Mobile** app - an in-app web browser.
 
-<img src="/img/docs/getting-started/authentication/github-oauth-authorize.png" className="screenshot-40" />
+<img src="/website/img/docs/getting-started/authentication/github-oauth-authorize.png" className="screenshot-40" />
 
 ### Redirect URL
 
@@ -142,19 +142,19 @@ page.login(
 
 `page.login()` method has a number of arguments to control authentication process:
 
-* `fetch_user` (bool) - whether to fetch user details into `page.auth.user`. Default is `True`.
-* `fetch_groups` (bool) - whether to fetch user groups into `page.auth.user.groups`. Default is `False`.
-* `scope` - a list of scopes to request.
-* `saved_token` - a JSON snapshot of `page.auth.token` to restore authorization from. Token can be serialized with `page.auth.token.to_json()`, enscrypted and saved in [`page.client_storage`](/docs/guides/python/client-storage). See below.
-* `on_open_authorization_url` - a callback to open a browser with authorization URL. See below.
-* `complete_page_html` - a custom HTML contents of "You've been successfully authenticated. Close this page now" page.
-* `redirect_to_page` (bool) - used with Flet web app only when authorization page is opened in the same browser tab.
+- `fetch_user` (bool) - whether to fetch user details into `page.auth.user`. Default is `True`.
+- `fetch_groups` (bool) - whether to fetch user groups into `page.auth.user.groups`. Default is `False`.
+- `scope` - a list of scopes to request.
+- `saved_token` - a JSON snapshot of `page.auth.token` to restore authorization from. Token can be serialized with `page.auth.token.to_json()`, enscrypted and saved in [`page.client_storage`](/docs/guides/python/client-storage). See below.
+- `on_open_authorization_url` - a callback to open a browser with authorization URL. See below.
+- `complete_page_html` - a custom HTML contents of "You've been successfully authenticated. Close this page now" page.
+- `redirect_to_page` (bool) - used with Flet web app only when authorization page is opened in the same browser tab.
 
 The result of `page.login()` call is an instance of `Authorization` class with the following fields:
 
-* **`token`** - OAuth token used to access provider's API. See below.
-* **`user`** - user details with a mandatory `id` field and other fields specific to OAuth provider.
-* **`provider`** - an instance of OAuth provider used for authorization.
+- **`token`** - OAuth token used to access provider's API. See below.
+- **`user`** - user details with a mandatory `id` field and other fields specific to OAuth provider.
+- **`provider`** - an instance of OAuth provider used for authorization.
 
 A reference to the last authorization is saved in `page.auth` property.
 
@@ -172,8 +172,8 @@ Upon successful or failed authorization `page.on_login` event handler is called.
 
 Event handler argument `e` is an instance of `LoginEvent` class with the following properties:
 
-* `error` (str) - OAuth error.
-* `error_description` (str) - OAuth error description.
+- `error` (str) - OAuth error.
+- `error_description` (str) - OAuth error description.
 
 Authorization was successful if `error` is an empty string.
 
@@ -242,12 +242,12 @@ print("Email:", page.auth.user["email"])
 
 Upon successful authorization `page.auth.token` will contain OAuth token that can be used to access providers's API. Token object has the following properties:
 
-* `access_token` - access token used as an authorization token in API request header.
-* `scope` - token's scope.
-* `token_type` - access token type, e.g. `Bearer`.
-* `expires_in` - optional number of seconds when access token expires.
-* `expires_at` - optional time (`time.time()` + `expires_in`) when access token expires.
-* `refresh_token` - optional refresh token which is used to get a new access token, when the old one expires.
+- `access_token` - access token used as an authorization token in API request header.
+- `scope` - token's scope.
+- `token_type` - access token type, e.g. `Bearer`.
+- `expires_in` - optional number of seconds when access token expires.
+- `expires_at` - optional time (`time.time()` + `expires_in`) when access token expires.
+- `refresh_token` - optional refresh token which is used to get a new access token, when the old one expires.
 
 Usually, only `page.auth.token.access_token` is needed to call provider's API,
 for example to list user's GitHub repositories:
@@ -279,6 +279,7 @@ token = page.auth.token
 # some other code
 access_token = token.access_token # token could expire by this moment
 ```
+
 :::
 
 ## Saving and restoring an auth token
@@ -375,31 +376,31 @@ complete_page_html = """
   <p>You've been successfully signed in! You can close this tab or window now.</p>
 </body>
 </html>
-"""
+”“”
 
-page.login(
-    provider,
-    complete_page_html=complete_page_html,
-)
+page.login（
+     提供者，
+     完整_page_html =完整_page_html，
+）
 ```
 
 You can also change web app to open provider's authorization page in the same tab which might be more familiar to your users and save them from dealing with popup blockers:
 
-```python
-page.login(
-    provider,
-    on_open_authorization_url=lambda url: page.launch_url(url, web_window_name="_self"),
-    redirect_to_page=True
-)
+```Python
+page.login（
+     提供者，
+     on_open_authorization_url = lambda url: page.launch_url（url，web_window_name =“ _ self”），
+     redirect_to_page = true
+）
 ```
 
 To open flow in a new tab (notice `_self` replaced with `_blank`):
 
-```python
-page.login(
-    provider,
-    on_open_authorization_url=lambda url: page.launch_url(url, web_window_name="_blank")
-)
+```Python
+page.login（
+     提供者，
+     on_open_authorization_url = lambda url: page.launch_url（url，web_window_name =“ _ blank”）
+）
 ```
 
 ## Configuring a custom OAuth provider
@@ -410,24 +411,24 @@ Following the instructions in [LinkedIn Authorization Code Flow guide](https://l
 to get all required parameters to configure LinkedIn OAuth provider to allow users of your Flet app to login
 with their LinkedIn accounts:
 
-```python {9-16}
+```Python {9-16}
 import os
 
 import flet
-from flet import ElevatedButton, Page
-from flet.auth import OAuthProvider
+来自Flet Import EvipatedButton，页面
+来自flet.auth import oauthprovider
 
-def main(page: Page):
-    provider = OAuthProvider(
-        client_id=os.getenv("LINKEDIN_CLIENT_ID"),
-        client_secret=os.getenv("LINKEDIN_CLIENT_SECRET"),
-        authorization_endpoint="https://www.linkedin.com/oauth/v2/authorization",
-        token_endpoint="https://www.linkedin.com/oauth/v2/accessToken",
-        user_endpoint="https://api.linkedin.com/v2/me",
-        user_scopes=["r_liteprofile", "r_emailaddress"],
-        user_id_fn=lambda u: u["id"],
-        redirect_url="http://localhost:8550/api/oauth/redirect",
-    )
+DEF主（页面: 页面）:
+     提供者= oauthprovider（
+         client_id = os.getEnv（“ linkedin_client_id”），
+         client_secret = os.getEnv（“ linkedin_client_secret”），
+         授权_endpoint =“ https://www.linkedin.com/oauth/v2/authorization”，
+         token_endpoint =“ https://www.linkedin.com/oauth/v2/accesstoken”，
+         user_endpoint =“ https://api.linkedin.com/v2/me”，
+         user_scopes = [“ r_liteprofile”，“ r_emailaddress”]，
+         user_id_fn = lambda u: u [“ id”]，
+         redirect_url =“ http: // localhost: 8550/api/oauth/redirect”，
+     ）
 
     def login_click(e):
         page.login(provider)
@@ -441,15 +442,15 @@ def main(page: Page):
     page.on_login = on_login
     page.add(ElevatedButton("Login with LinkedIn", on_click=login_click))
 
-flet.app(target=main, port=8550, view=flet.WEB_BROWSER)
+flet.app（target = main，port = 8550，view = flet.web_browser）
 ```
 
-Mandatory provider settings:
+强制提供者设置:
 
-* `client_id`
-* `client_secret`
-* `authorization_endpoint`
-* `token_endpoint`
-* `redirect_url`
+- `client_id`
+- `client_secret`
+- `authorization_endpoint`
+- `token_endpoint`
+- `redirect_url`
 
-Similar to other examples client ID and client secret are fetched from environment variables.
+与其他示例类似的客户 ID 和客户端秘密是从环境变量中获取的。

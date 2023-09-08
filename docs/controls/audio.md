@@ -4,17 +4,17 @@ sidebar_label: Audio
 slug: audio
 ---
 
-A control to simultaneously play multiple audio files. Works on macOS, Linux, Windows, iOS, Android and web.
-Based on [audioplayers](https://pub.dev/packages/audioplayers) Flutter widget.
+同时播放多个音频文件的控件。 在MACOS，Linux，Windows，iOS，Android和Web上使用。
+基于[Audioplayers](https://pub.dev/packages/audioplayers) flutter小部件。
 
-Audio control is non-visual and should be added to `page.overlay` list.
+音频控制是非视觉的，应添加到`page.overlay`列表中。
 
 import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import TabItem from '@theme/TabItem'; 
 
-## Examples
+## 示例
 
-### Autoplay audio
+### 自动播放音频
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -39,9 +39,9 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
   </TabItem>
-</Tabs>
+</Tabs> 
 
-### Audio with playback controls
+### 带有播放控件的音频
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -110,115 +110,115 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
   </TabItem>
-</Tabs>
+</Tabs> 
 
-## Properties
+##  properties 
 
-### `autoplay`
+###  `autoplay`
 
-Starts playing audio as soon as audio control is added to a page.
+在将音频控件添加到页面中，就开始播放音频。
 
-:::note
-Autoplay works in desktop, mobile apps and Safari browser, but doesn't work in Chrome/Edge.
+:::注意
+AutoPlay在台式机，移动应用程序和Safari浏览器中工作，但在Chrome/Edge中不起作用。
 :::
 
-### `balance`
+###  `balance`
 
-Sets the stereo balance.
+设置立体声平衡。
 
--1 - The left channel is at full volume; the right channel is silent. 1 - The right channel is at full volume; the left channel is silent. 0 - Both channels are at the same volume.
+-1-左通道已完整卷； 正确的渠道是无声的。 1-正确的频道已全部； 左通道是无声的。 0-两个通道都处于相同的音量。
 
-:::note
-Setting balance is supported on Windows and Linux only.
+:::注意
+仅在Windows和Linux上支持设置平衡。
 :::
 
-### `get_current_position()`
+###  `get_current_position()`
 
-Returns the current position in milliseconds.
+返回毫秒中的当前位置。
 
-### `get_duration()`
+###  `get_duration()`
 
-Returns the duration of audio in milliseconds.
+返回毫秒中的音频持续时间。
 
-### `playback_rate`
+###  `playback_rate`
 
-Sets the playback rate. iOS and macOS have limits between 0.5 and 2x Android SDK version should be 23 or higher.
+设置播放率。 iOS和MACO的限制在0.5至2x Android SDK版本之间应为23或更高。
 
-### `release_mode`
+###  `release_mode`
 
-Sets the release mode. The following values are supported:
+设置发布模式。 支持以下值: 
 
-* `ReleaseMode.RELEASE` (default) - Releases all resources, just like calling `release()` method. In Android, the media player is quite resource-intensive, and this will let it go. Data will be buffered again when needed (if it's a remote file, it will be downloaded again). In iOS and macOS, works just like `stop()` method.
-* `ReleaseMode.LOOP` - Keeps buffered data and plays again after completion, creating a loop. Notice that calling stop method is not enough to release the resources when this mode is being used.
-* `ReleaseMode.STOP` - Stops audio playback but keep all resources intact. Use this if you intend to play again later.
+*  `ReleaseMode.RELEASE`（默认） - 释放所有资源，就像调用`release()`方法一样。 在Android中，媒体播放器的资源很密集，这将使它消失。 数据将在需要时再次缓冲（如果是远程文件，将再次下载）。 在iOS和macOS中，就像`stop()`方法一样的工作。
+* `ReleaseMode.LOOP`  - 保持缓冲数据并在完成后再次播放，创建一个循环。 请注意，使用此模式时，通话停止方法不足以释放资源。
+* `ReleaseMode.STOP`  - 停止音频播放，但保持所有资源完整。 如果您打算稍后再播放，请使用此。
 
-### `src`
+###  `src`
 
-Sets the URL to the audio file. It could be an asset URL, see [Image.src](/docs/controls/image#src) for more information about assets.
+将URL设置为音频文件。 它可能是资产URL，有关资产的更多信息，请参见[Image.src](/docs/controls/image#src)。
 
-### `src_base64`
+###  `src_base64`
 
-Sets the contents of audio file encoded in base-64 format.
+设置以基本64格式编码的音频文件的内容。
 
-## Methods
+## 方法
 
-### `pause()`
+###  `pause()`
 
-Stops playing audio.
+停止播放音频。
 
-### `play()`
+###  `play()`
 
-Starts playing audio for the beginning.
+开始从头开始播放音频。
 
-### `release()`
+###  `release()`
 
-Stops playing and releases the resources associated with this audio control.
-The resources are going to be fetched or buffered again as soon as you call `resume()` or change the source.
+停止播放并释放与此音频控件相关的资源。
+调用`resume()`或更改源头后，资源将再次获取或缓冲。
 
-### `resume()`
+###  `resume()`
 
-Resumes playing audio from the current position.
+简历当前位置播放音频。
 
-### `seek()`
+###  `seek()`
 
-Moves the cursor to the desired position.
+将光标移至所需位置。
 
-Method arguments:
+方法参数: 
 
-* `position_milliseconds` - desired position in milliseconds.
+*  `position_milliseconds`  - 在毫秒中所需的位置。
 
-### `volume`
+###  `volume`
 
-Sets the volume (amplitude).
+设置音量（振幅）。
 
-0 is mute and 1 is the max volume. The values between 0 and 1 are linearly interpolated.
+0是静音，1是最大音量。 0到1之间的值是线性插值的。
 
-## Events
+## 事件
 
-### `on_duration_changed`
+###  `on_duration_changed`
 
-Fires as soon as audio duration is available (it might take a while to download or buffer it).
+一旦有音频持续时间（可能需要花费一段时间才能下载或缓冲）。
 
-Event's `e.data` contains audio duration in milliseconds.
+事件的`e.data`包含毫秒的音频持续时间。
 
-### `on_loaded`
+###  `on_loaded`
 
-Fires when an audio is loaded/buffered.
+加载/缓冲音频时发射。
 
-### `on_position_changed`
+###  `on_position_changed`
 
-Fires when audio position is changed. Will continuously update the position of the playback every 1 second if the status is playing. Can be used for a progress bar.
+更改音频位置时会发射。 如果状态正在播放，将每1秒不断更新一次播放的位置。 可用于进度栏。
 
-### `on_seek_complete`
+###  `on_seek_complete`
 
-Fires on seek completions. An event is going to be sent as soon as the audio seek is finished.
+搜索完成。 
 
-### `on_state_changed`
+###  `on_state_changed`一旦音频搜索完成，就要发送活动。
 
-Fires when audio player state changes. Event's `e.data` contains one of the following states:
+当音频播放器状态更改时，会发射。 事件的`e.data`包含以下状态之一: 
 
-* `stopped`
+*  `stopped`
 * `playing`
 * `paused`
 * `completed`
-* `disposed` 
+* `disposed`

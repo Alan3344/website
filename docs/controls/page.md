@@ -1,53 +1,54 @@
+
 ---
 title: Page
 sidebar_label: Page
 slug: page
 ---
 
-Page is a container for [`View`](/docs/controls/view) controls.
+页面是[`View`](/docs/controls/view)控件的容器。
 
-A page instance and the root view are automatically created when a new user session started.
+新用户会话启动时，会自动创建页面实例和根视图。
 
 import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import TabItem from '@theme/TabItem'; 
 
-## Properties
+##  properties 
 
-### `auto_scroll`
+###  `auto_scroll`
 
-`True` if scrollbar should automatically move its position to the end when children updated. Must be `False` for `scroll_to()` method to work.
+`True`如果children更新时，Scrollbar应自动将其位置移至结尾。 对于`scroll_to()`工作的方法必须为`False`。
 
-### `appbar`
+###  `appbar`
 
-A [`AppBar`](/docs/controls/appbar) control to display at the top of the Page.
+a [`AppBar`](/docs/controls/appbar)控制在页面顶部显示。
 
-### `banner`
+###  `banner`
 
-A [`Banner`](/docs/controls/banner) control to display at the top of the Page.
+a [`Banner`](/docs/controls/banner)控件显示在页面顶部。
 
-### `bgcolor`
+###  `bgcolor`
 
-Background color of the Page.
+页面的背景颜色。
 
-A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` format (e.g. `#CC0000`) or a named color from `flet.colors` module.
+颜色值可能是`＃argb`格式（例如＃ffcc0000`），`＃rgb` format（例如'＃cc0000`）或来自`flet.colors`模块的命名颜色的十六进制值。
 
-### `bottom_sheet`
+###  `bottom_sheet` `bottom_sheet` `bottom_sheet` `bottom_sheet` `bottom_sheet`
 
-[`BottomSheet`](bottomsheet) control to display.
+[`BottomSheet`](bottomsheet)控制。
 
-### `client_ip`
+###  `client_ip`
 
-🌎 Web only. IP address of the connected user.
+🌎仅Web。 连接用户的IP地址。
 
-### `client_user_agent`
+###  `client_user_agent`
 
-🌎 Web only. Browser details of the connected user.
+🌎仅Web。 连接用户的浏览器详细信息。
 
-### `controls`
+###  `controls`
 
-A list of Controls to display on the Page.
+在页面上显示的控件列表。
 
-For example, to add a new control to a page:
+例如，在页面上添加新控件: 
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -60,7 +61,7 @@ page.update()
 </TabItem>
 </Tabs>
 
-or to get the same result as above using `page.add()` shortcut method:
+或使用`page.add()`快捷方式获得与上述相同的结果: 
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -72,7 +73,7 @@ page.add(ft.Text("Hello!"))
 </TabItem>
 </Tabs>
 
-To remove the top most control on the page:
+要删除页面上最高控制的最高控制: 
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -83,43 +84,43 @@ page.update()
 ```
 
 </TabItem>
-</Tabs>
+</Tabs> 
 
-### `dark_theme`
+###  `dark_theme`
 
-Set this property to an instance of `theme.Theme` to customize dark theme.
+将此属性设置为`theme.Theme`的实例以自定义黑暗主题。
 
-### `debug`
+###  `debug`
 
-`True` if Flutter client of Flet app is running in debug mode.
+`True`如果Flet app的flutter客户端以调试模式运行。
 
-### `design`
+###  `design`
 
-Reserved for future use.
+保留供将来使用。
 
-### `dialog`
+###  `dialog`
 
-An [`AlertDialog`](/docs/controls/alertdialog) control to display.
+an [`AlertDialog`](/docs/controls/alertdialog)控制。
 
-### `floating_action_button`
+###  `floating_action_button`
 
-A [`FloatingActionButton`](/docs/controls/floatingactionbutton) control to display on top of Page content.
+a [`FloatingActionButton`](/docs/controls/floatingactionbutton)控制以显示在页面上的内容。
 
-### `fonts`
+###  `fonts`
 
-Allows importing custom fonts and use them with [`Text.font_family`](/docs/controls/text#font_family) or apply to the entire app via `theme.font_family`.
+允许导入自定义字体，并将它们与[`Text.font_family`](/docs/controls/text#font_family)一起使用，或通过`theme.font_family`应用于整个应用程序。
 
-The following font formats can be used with Flet:
+以下字体格式可以与Flet: 
 
-* `.ttc`
+*  `.ttc`一起使用
 * `.ttf`
 * `.otf`
 
-The value of `fonts` property is a dictionary where key is the font family name to refer that font and the value is the URL of the font file to import.
+`fonts`属性的值是词典，其中键是字体姓名，即引用字体和值是要导入的字体文件的URL。
 
-Font can be imported from external resource by providing an absolute URL or from application assets by providing relative URL and `assets_dir`.
+可以通过提供相对URL和`assets_dir`提供绝对URL或从应用程序资产中导入字体。
 
-Specify `assets_dir` in `flet.app()` call to set the location of assets that should be available to the application. `assets_dir` could be a relative to your `main.py` directory or an absolute path. For example, consider the following program structure:
+在`flet.app()`中指定`assets_dir`调用，以设置应适用于应用程序的资产的位置。 `assets_dir`可能是您`main.py`目录或绝对路径的相对。 例如，考虑以下程序结构: 
 
 ```
 /assets
@@ -128,7 +129,7 @@ Specify `assets_dir` in `flet.app()` call to set the location of assets that sho
 main.py
 ```
 
-Now, the following program loads "Kanit" font from GitHub and "Open Sans" from the assets. "Kanit" is set as a default app font and "Open Sans" is used for a specific Text control:
+现在，以下程序从Github加载“ Kanit”字体，资产中的“开放sans”。 “ kanit”设置为默认应用程序字体，“打开sans”用于特定的文本控件: 
 
 ```python
 import flet as ft
@@ -149,55 +150,55 @@ def main(page: ft.Page):
 ft.app(target=main, assets_dir="assets")
 ```
 
-:::note
-At the moment only [**static**](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide#standard_or_static_fonts) fonts are supported, i.e. fonts containing only one spacific width/weight/style combination, for example "Open Sans Regular" or "Roboto Bold Italic".
+:::注意
+目前，仅支持[** static **](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide#standard_or_static_fonts)字体，即仅包含一个可比性宽度/重量/样式组合的字体，例如“打开常规”或“ Roboto Bold Italic”。
 
-[**Variable**](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide#variable_fonts) fonts support is still [work in progress](https://github.com/flutter/flutter/issues/33709).
+[**变量**](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide#variable_fonts)字体支持仍然[正在进行中的工作](https://github.com/flutter/flutter/issues/33709)。
 
-However, if you need to use a variable font in your app you can create static "instantiations" at specific weights using [**fonttools**](https://pypi.org/project/fonttools/), then use those:
+但是，如果您需要在应用中使用变量字体，则可以使用[** fonttools **](https://pypi.org/project/fonttools/)以特定权重创建静态“实例”，然后使用这些: 
 
     fonttools varLib.mutator ./YourVariableFont-VF.ttf wght=140 wdth=85
 
-To explore available font features (e.g. possible options for `wght`) use [**Wakamai Fondue**](https://wakamaifondue.com/beta/) online tool.
+要探索可用的字体功能（例如`wght`的可能选项）使用[** wakamai fondue **](https://wakamaifondue.com/beta/)在线工具。
 :::
 
-### `height`
+###  `height`
 
-A height of a web page or content area of a native OS window containing Flet app. This property is read-only. It's usually being used inside [`page.on_resize`](#on_resize) handler.
+包含Flet应用的本机OS窗口的网页或内容区域的高度。 此属性是只读的。 它通常用于[`page.on_resize`](#on_resize)处理程序。
 
-### `horizontal_alignment`
+###  `horizontal_alignment`
 
-How the child Controls should be placed horizontally.
+child控件应如何水平放置。
 
-Default value is `CrossAxisAlignment.START` which means on the left side of the Page.
+默认值为`CrossAxisAlignment.START`，这意味着页面的左侧。
 
-Property value is `CrossAxisAlignment` enum with the following values:
+属性值是`CrossAxisAlignment`枚举，具有以下值: 
 
-* `START` (default)
+*  `START`（默认）
 * `CENTER`
 * `END`
 * `STRETCH`
-* `BASELINE`
+* `BASELINE` 
 
-### `name`
+###  `name`
 
-Page name as specified in `ft.app()` call. Page name is set when Flet app is running as web app. This is a portion of the URL after host name.
+`ft.app()`中指定的页名。 当Flet应用程序作为Web应用程序运行时，设置了页名。 这是主机名之后URL的一部分。
 
-### `navigation_bar`
+###  `navigation_bar`
 
-[`NavigationBar`](navigationbar) control to display at the bottom of the page.
+[`NavigationBar`](navigationbar)控制在页面底部显示。
 
-### `on_scroll_interval`
+###  `on_scroll_interval`
 
-Throttling in milliseconds for `on_scroll` event. Default is `10`.
+`on_scroll`事件以毫秒为单位。 默认值为`10`。
 
-### `overlay`
+###  `overlay`
 
-A list of `Control`s displayed as a stack on top of main page contents.
+`Control` s的列表显示为主页内容的堆栈。
 
-### `padding`
+###  `padding`
 
-A space between page contents and its edges. Default value is 10 pixels from each side. To set zero padding:
+页面内容与其边缘之间的空间。 默认值来自每一侧的10像素。 设置零填充: 
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -210,29 +211,29 @@ page.update()
 </TabItem>
 </Tabs>
 
-See [`Container.padding`](container#padding) for more information and possible values.
+有关更多信息和可能的值，请参见[`Container.padding`](container#padding)。
 
-### `platform`
+###  `platform`
 
-Operating system the application is running on:
+操作系统应用程序正在运行以下命令
 
-* `ios`
+*  `ios`
 * `android`
 * `macos`
 * `linux`
-* `windows`
+* `windows` 
 
-### `platform_brightness`
+###  `platform_brightness`
 
-The current brightness mode of the host platform: `ft.ThemeMode.LIGHT` or `ft.ThemeMode.DARK`.
+主机平台的当前亮度模式: `ft.ThemeMode.LIGHT`或`ft.ThemeMode.DARK`。
 
-### `pubsub`
+###  `pubsub`
 
-A simple PubSub implementation for passing messages between app sessions.
+一个简单的pubsub实现，用于在应用程序会话之间传递消息。
 
-#### `subscribe(handler)`
+####  `subscribe(handler)`
 
-Subscribe current app session for broadcast (no topic) messages. `handler` is a function or method with a single `message` argument, for example:
+订阅当前应用程序会话以进行广播（无主题）消息。 `handler`是一个函数或方法，具有单个`message`参数，例如: 
 
 ```python
 def main(page: ft.Page):
@@ -241,11 +242,11 @@ def main(page: ft.Page):
         print(message)
 
     page.pubsub.subscribe(on_broadcast_message)
-```
+``` 
 
-#### `subscribe_topic(topic, handler)`
+#### `subscribe_topic（topic，handler）`
 
-Subscribe current app session to a specific topic. `handler` is a function or method with two arguments: `topic` and `message`, for example:
+将当前应用程序会话订阅到特定主题。 `handler`是具有两个参数的函数或方法: `topic`和`message`，例如: 
 
 ```python
 def main(page: ft.Page):
@@ -254,11 +255,11 @@ def main(page: ft.Page):
         print(topic, message)
 
     page.pubsub.subscribe_topic("general", on_message)
-```
+``` 
 
-#### `send_all(message)`
+####  `send_all(message)`
 
-Broadcast message to all subscribers. `message` could be anything: a simple literal or a class instance, for example:
+向所有订户广播消息。 `message`可以是什么: 例如: 简单的文字或类实例，例如: 
 
 ```python
 @dataclass
@@ -277,23 +278,22 @@ def main(page: ft.Page):
         page.pubsub.send_all(Message("John", "Hello, all!"))
 
     page.add(ft.ElevatedButton(text="Send message", on_click=on_send_click))
-```
+``` 
 
-#### `send_all_on_topic(topic, message)`
+#### `send_all_on_topic（主题，消息）``
 
-Send message to all subscribers on specific topic.
+将消息发送给所有有关特定主题的订户。
 
-#### `send_others(message)`
+####  `send_others(message)`
 
-Broadcast message to all subscribers except sender.
+向除发送者以外的所有订户的广播消息。
 
-#### `send_others_on_topic(topic, message)`
+#### `send_others_on_topic（主题，消息）'
+将消息发送给所有特定主题的订阅者，但发件人除外。
 
-Send message to all subscribers on specific topic except sender.
+####  `unsubscribe()`
 
-#### `unsubscribe()`
-
-Unsubscribe current app session from broadcast messages, for example:
+从广播消息中退订当前应用程序会话，例如: 
 
 ```python
 @dataclass
@@ -307,15 +307,15 @@ def main(page: ft.Page):
         page.pubsub.unsubscribe()
 
     page.add(ft.ElevatedButton(text="Leave chat", on_click=on_leave_click))
-```
+``` 
 
-#### `unsubscribe_topic(topic)`
+####  `unsubscribe_topic(topic)`
 
-Unsubscribe current app session from specific topic.
+从特定主题中取消订阅当前应用程序会话。
 
-#### `unsubscribe_all()`
+####  `unsubscribe_all()`
 
-Unsubscribe current app session from broadcast messages and all topics, for example:
+从广播消息和所有主题中取消订阅当前应用程序会话，例如: 
 
 ```python
 def main(page: ft.Page):
@@ -323,54 +323,54 @@ def main(page: ft.Page):
         page.pubsub.unsubscribe_all()
 
     page.on_close = client_exited
-```
+``` 
 
-### `pwa`
+###  `pwa`
 
-`True` if the application is running as Progressive Web App (PWA). Read-only.
+`True`如果应用程序作为渐进式Web应用程序（PWA）运行。 只读。
 
-### `query`
+###  `query`
 
-A part of app URL after `?`. The value is an instance of `QueryString` with helper methods for fetching query parameters.
+``？''之后的应用程序的一部分。 该值是`QueryString`的实例，带有用于获取查询参数的辅助方法。
 
-### `route`
+###  `route`
 
-Get or sets page's navigation route. See [Navigation and routing](/docs/guides/python/navigation-and-routing) section for 
-more information and examples.
+获取或设置页面的导航路线。 请参阅[导航和路由](/docs/guides/python/navigation-and-routing)部分
+更多信息和示例。
 
-### `rtl`
+###  `rtl`
 
-`True` to set text direction to right-to-left. Default is `False`.
+`True`将文本方向设置为左右。 默认值为`False`。
 
-### `scroll`
+###  `scroll`
 
-Enables a vertical scrolling for the Page to prevent its content overflow.
+启用页面垂直滚动，以防止其内容溢出。
 
-Property value is an optional `ScrollMode` enum with `None` as default.
+属性值是默认值`None`的可选`ScrollMode`枚举。
 
-Supported values:
+支持的值: 
 
-* `None` (default) - the Row is non-scrollable and its content could overflow.
-* `AUTO` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
-* `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
-* `ALWAYS` - scrolling is enabled and scroll bar is always shown.
-* `HIDDEN` - scrolling is enabled, but scroll bar is always hidden.
+*  `None`（默认值） - 该行不可滚动，其内容可能会溢出。
+* `AUTO`  - 启用滚动，并且仅在滚动时显示滚动条。
+* `ADAPTIVE`  - 启用滚动，并在运行应用程序或桌面时始终显示滚动条。
+* `ALWAYS`  - 启用滚动，并始终显示滚动条。
+* `HIDDEN`  - 启用滚动，但滚动条总是隐藏的。
 
-### `session`
+###  `session`
 
-A simple KV storage for session data.
+会话数据的简单KV存储。
 
-### `session_id`
+###  `session_id`
 
-A unique ID of user's session. This property is read-only.
+用户会话的独特ID。 此属性仅读取。
 
-### `spacing`
+###  `spacing`
 
-Vertical spacing between controls on the Page. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
+页面上的控件之间的垂直间距。 默认值是10个虚拟像素。 仅当`alignment`设置为`start`，`end`或`center`。
 
-### `splash`
+###  `splash`时，仅应用间距。
 
-A `Control` that will be displayed on top of Page contents. [`ProgressBar`](/docs/controls/progressbar) or [`ProgressRing`](/docs/controls/progressring) could be used as an indicator for some lengthy operation, for example:
+`Control`将显示在页面内容的顶部。 [`ProgressBar`](/docs/controls/progressbar)或[`ProgressRing`](/docs/controls/progressring)可以用作漫长操作的指示器，例如: 
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -396,15 +396,15 @@ ft.app(target=main)
 ```
 
 </TabItem>
-</Tabs>
+</Tabs> 
 
-### `show_semantics_debugger`
+###  `show_semantics_debugger`
 
-`True` turns on an overlay that shows the accessibility information reported by the framework.
+`True`打开一个覆盖层，该覆盖层显示框架报告的可访问性信息。
 
-### `theme`
+###  `theme`
 
-Set this property to an instance of `theme.Theme` to customize light theme. Currently, a theme can only be automatically generated from a "seed" color. For example, to generate light theme from a green color:
+将此属性设置为`theme.Theme`的实例，以自定义光主题。 当前，主题只能自动从“种子”颜色生成。 例如，从绿色生成光主题: 
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -417,129 +417,124 @@ page.update()
 </TabItem>
 </Tabs>
 
-`Theme` class has the following properties:
+`Theme`类具有以下属性: 
 
-* `color_scheme_seed` - a seed color to algorithmically derive the rest of theme colors from.
-* `color_scheme` - an instance of [`ft.ColorScheme`](#colorscheme-class) class that allows to customize Material colors scheme derived from `color_scheme_seed`.
-* `text_theme` - an instance of [`ft.TextTheme`](#texttheme-class) class to customize text styles that contrasts with the card and canvas colors.
-* `primary_text_theme` - an instance of [`ft.TextTheme`](#texttheme-class) class describing a text theme that contrasts with the primary color.
-* `scrollbar_theme` - an instance of [`ft.ScrollbarTheme`](#scrollbartheme-class) class customizing the appearance of scrollbars across the app.
-* `tabs_theme` - an instance of [`ft.TabsTheme`](#tabstheme-class) class customizing the appearance of `Tabs` control across the app.
-* `font_family` - the base font for all UI elements.
-* `use_material3` - `True` (default) to use Material 3 design; otherwise Material 2.
-* `visual_density` - `ThemeVisualDensity` enum: `STANDARD` (default), `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
-* `page_transitions` - an instance of `PageTransitionsTheme` that allows customizing navigation page transitions for different platforms. See section [below](#navigation-transitions).
+*  `color_scheme_seed`  - 一种种子颜色，以算法从中得出其余的主题颜色。
+* `color_scheme`  -  [`ft.ColorScheme`]](#colorscheme-class)类的实例，该类允许自定义从`color_scheme_seed`派生的材料颜色方案。
+* `text_theme`  -  [`ft.TextTheme`]](#texttheme-class)类的实例，用于自定义与卡片片和帆布颜色对比的文本样式。
+* `primary_text_theme`  -  [`ft.TextTheme`]](#texttheme-class)类的实例描述了与主要颜色对比的文本主题。
+* `scrollbar_theme`  -  [`ft.ScrollbarTheme`]的实例(#scrollbartheme-class)类自定义整个应用程序上的scrollbars的外观。
+* `tabs_theme`  -  [`ft.TabsTheme`]的实例(#tabstheme-class)类在应用程序上自定义`Tabs`控制的外观。
+* `font_family`  - 所有UI元素的基本字体。
+* `use_material3`  -  `True`（默认）使用材料3设计； 否则材料2。
+* `visual_density`  -  `ThemeVisualDensity` enum: `STANDARD`（默认），`COMPACT`，`COMFORTABLE`，`ADAPTIVE_PLATFORM_DENSITY`。
+* `page_transitions`  -  `PageTransitionsTheme`的实例，允许自定义不同平台的导航页面过渡。 请参阅[下面](#navigation-transitions)部分。
 
-:::note
-Read this [note about system fonts](/docs/controls/text#using-system-fonts) if you like to use them in `font_family` of your theme.
-:::
+:::注意
+如果您想在主题的`font_family`中使用它们。
 
-#### `ColorScheme` class
+一组30种颜色，基于[物质规格](https://m3.material.io/styles/color/the-color-system/color-roles)，可用于配置大多数组件的颜色属性。 在[Flutter Docs](https://api.flutter.dev/flutter/material/ColorScheme-class.html)中阅读有关`ColorScheme`的更多信息。
 
-A set of 30 colors based on the [Material spec](https://m3.material.io/styles/color/the-color-system/color-roles) that can be used to configure the color properties of most components. Read more about `ColorScheme` in [Flutter docs](https://api.flutter.dev/flutter/material/ColorScheme-class.html).
+`ColorScheme`类具有以下属性: 
 
-`ColorScheme` class has the following properties:
+*  `primary`  - 在应用程序的屏幕和组件上显示的颜色最常显示。
+* `on_primary`  - 在`primary`上绘制时显然可以清晰的颜色。
+* `primary_container`  - 一种用于元素所需的颜色所需的重点，而不是`primary`。
+* `on_primary_container`  - 在`primary_container`上绘制时显然可以辨别的颜色。
+* `secondary`  - 一种重音颜色，用于UI中不太突出的组件，例如滤清器芯片，同时扩大了颜色表达的机会。
+* `on_secondary`  - 在`secondary`上绘制时显然可以清晰的颜色。
+* `secondary_container`  - 一种颜色，用于元素所需的重点少于`secondary`。
+* `on_secondary_container`  - 在`secondary_container`上绘制时显然可以清晰的颜色。
+* `tertiary`  - 一种用作对比的颜色，可以平衡`primary`和`secondary`颜色，或者引起人们对元素（例如输入字段）的高度关注。
+* `on_tertiary`  - 在`tertiary`上绘制时显然可以辨别的颜色。
+* `tertiary_container`  - 一种用于元素所需的颜色，需要较少的重点，而不是`tertiary`。
+* `on_tertiary_container`  - 在`tertiary_container`上绘制时显然可以清晰的颜色。
+* `error`  - 用于输入验证错误的颜色，例如 对于`TextField.error_text`。
+* `on_error`  - 在`error`上绘制时显然可以清晰的颜色。
+* `error_container`  - 用于错误元素所需的颜色所需的重点比`error`。
+* `on_error_container`  - 在`error_container`上绘制时显然可以辨别的颜色。
+* `background`  - 一种通常出现在可滚动内容后面的颜色。
+* `on_background`  - 在`background`上绘制时显然可以清晰的颜色。
+* `surface`  -  `Card`之类的小部件的背景颜色。
+* `on_surface`  - 在`surface`上绘制时显然可以清晰的颜色。
+* `surface_variant`  -  `surface`的颜色变体，可用于使用`surface`与组件进行区分。
+* `on_surface_variant`  - 在`surface_variant`上绘制时显然可以清晰的颜色。
+* `outline`  - 一种实用颜色，可以创建边界和重点以提高可用性。
+* `outline_variant`  - 当不需要3: 1对比时，可以为装饰元素创建边界的实用颜色，例如分隔器或装饰元素。
+* `shadow`  - 一种颜色用来绘制高架组件的滴阴影。
+* `scrim`  - 一种颜色用来绘制模态组件周围的碎片。
+* `inverse_surface`  - 用于显示周围UI中看到的反面的表面颜色，例如在`SnackBar`中，以引起注意力。
+* `on_inverse_surface`  - 在`inverse_surface`上绘制时显然可以辨别的颜色。
+* `inverse_primary`  - 用于在`inverse_surface`背景上显示突出显示颜色的强调颜色，例如`SnackBar`中的按钮文本。
+* `surface_tint`  - 一种颜色用作表面颜色上的覆盖层，以指示组件的高程。
 
-* `primary` - The color displayed most frequently across your app’s screens and components.
-* `on_primary` - A color that's clearly legible when drawn on `primary`.
-* `primary_container` - A color used for elements needing less emphasis than `primary`.
-* `on_primary_container` - A color that's clearly legible when drawn on `primary_container`.
-* `secondary` - An accent color used for less prominent components in the UI, such as filter chips, while expanding the opportunity for color expression.
-* `on_secondary` - A color that's clearly legible when drawn on `secondary`.
-* `secondary_container` - A color used for elements needing less emphasis than `secondary`.
-* `on_secondary_container` - A color that's clearly legible when drawn on `secondary_container`.
-* `tertiary` - A color used as a contrasting accent that can balance `primary` and `secondary` colors or bring heightened attention to an element, such as an input field.
-* `on_tertiary` - A color that's clearly legible when drawn on `tertiary`.
-* `tertiary_container` - A color used for elements needing less emphasis than `tertiary`.
-* `on_tertiary_container` - A color that's clearly legible when drawn on `tertiary_container`.
-* `error` - The color to use for input validation errors, e.g. for `TextField.error_text`.
-* `on_error` - A color that's clearly legible when drawn on `error`.
-* `error_container` - A color used for error elements needing less emphasis than `error`.
-* `on_error_container` - A color that's clearly legible when drawn on `error_container`.
-* `background` - A color that typically appears behind scrollable content.
-* `on_background` - A color that's clearly legible when drawn on `background`.
-* `surface` - The background color for widgets like `Card`.
-* `on_surface` - A color that's clearly legible when drawn on `surface`.
-* `surface_variant` - A color variant of `surface` that can be used for differentiation against a component using `surface`.
-* `on_surface_variant` - A color that's clearly legible when drawn on `surface_variant`.
-* `outline` - A utility color that creates boundaries and emphasis to improve usability.
-* `outline_variant` - A utility color that creates boundaries for decorative elements when a 3:1 contrast isn’t required, such as for dividers or decorative elements.
-* `shadow` - A color use to paint the drop shadows of elevated components.
-* `scrim` - A color use to paint the scrim around of modal components.
-* `inverse_surface` - A surface color used for displaying the reverse of what’s seen in the surrounding UI, for example in a `SnackBar` to bring attention to an alert.
-* `on_inverse_surface` - A color that's clearly legible when drawn on `inverse_surface`.
-* `inverse_primary` - An accent color used for displaying a highlight color on `inverse_surface` backgrounds, like button text in a `SnackBar`.
-* `surface_tint` - A color used as an overlay on a surface color to indicate a component's elevation.
+####  `TextTheme` class class class
 
-#### `TextTheme` class
+自定义文本样式。
 
-Customizes text styles.
+`TextTheme`类具有`ft.TextStyle`类型的以下属性: 
 
-`TextTheme` class has the following properties of `ft.TextStyle` type:
+*  `body_large`  - 最大的身体样式。 身体样式用于更长的文本段落。
+* `body_medium`  - 身体样式的中间尺寸。 身体样式用于更长的文本段落。 材料的默认文本样式。
+* `body_small`  - 最小的身体样式。
+* `display_large`  - 最大的显示样式。 作为屏幕上最大的文本，显示样式是为简短而重要的文本或数字保留的。 它们在大屏幕上工作最佳。
+* `display_medium`  - 显示样式的中间尺寸。
+* `display_small`  - 显示样式的最小。
+* `headline_large`  - 最大的标题样式。 标题样式比显示样式小。 它们最适合较小的屏幕上的简短高强调文本。
+* `headline_medium`  - 标题样式的中间尺寸。
+* `headline_small`  - 标题最小的样式。
+* `label_large`  - 最大的标签样式。 标签样式是较小的实用风格，用于UI区域，例如组件内部的文本或内容主体中的很小的支撑文本，例如字幕。 用于`ElevatedButton`，`TextButton`和`OutlinedButton`上的文本。
+* `label_medium`  - 标签样式的中间尺寸。
+* `label_small`  - 标签样式的最小。
+* `title_large`  - 标题样式的最大。 标题比标题样式小，应用于较短的中强调文本。
+* `title_medium`  - 标题样式的中间大小。
+* `title_small`  - 标题样式的最小。
 
-* `body_large` - Largest of the body styles. Body styles are used for longer passages of text.
-* `body_medium` - Middle size of the body styles. Body styles are used for longer passages of text. The default text style for Material.
-* `body_small` - Smallest of the body styles.
-* `display_large` - Largest of the display styles. As the largest text on the screen, display styles are reserved for short, important text or numerals. They work best on large screens.
-* `display_medium` - Middle size of the display styles.
-* `display_small` - Smallest of the display styles.
-* `headline_large` - Largest of the headline styles. Headline styles are smaller than display styles. They're best-suited for short, high-emphasis text on smaller screens.
-* `headline_medium` - Middle size of the headline styles.
-* `headline_small` - Smallest of the headline styles.
-* `label_large` - Largest of the label styles. Label styles are smaller, utilitarian styles, used for areas of the UI such as text inside of components or very small supporting text in the content body, like captions. Used for text on `ElevatedButton`, `TextButton` and `OutlinedButton`.
-* `label_medium` - Middle size of the label styles.
-* `label_small` - Smallest of the label styles.
-* `title_large` - Largest of the title styles. Titles are smaller than headline styles and should be used for shorter, medium-emphasis text.
-* `title_medium` - Middle size of the title styles.
-* `title_small` - Smallest of the title styles.
+####  `ScrollbarTheme` class class
 
-#### `ScrollbarTheme` class
+自定义应用程序上滚动条的颜色，厚度和形状。
 
-Customizes the colors, thickness, and shape of scrollbars across the app.
+`ScrollbarTheme`类具有以下属性: 
 
-`ScrollbarTheme` class has the following properties:
+*  `thumb_visibility`  - 指示即使在不进行滚动的情况下，也应可见滚动条拇指。 当`False`时，将在滚动过程中显示滚动条，否则会淡出。 当`True`时，滚动条将永远可见，永远不会淡出。 属性值可以是单个布尔值，也可以是`ft.MaterialState`的字典作为键，而布尔值则为值。
+* `thickness`  - 可滚动的横轴中滚动条的厚度。 属性值可以是单个浮点值，也可以是`ft.MaterialState`的字典，作为键，float作为值。
+* `track_visibility`  - 指示应可见滚动条。 当`True`时，只要拇指可见，滚动条轨道就会始终可见。 如果看不见卷轴拇指，则轨道也不可见。 当`None`时，默认为`False`。 如果此属性为`None`，则使用`ScrollbarTheme.track_visibility` `Theme.scrollbar_theme`。 如果也是`None`，则默认值为`False`。 属性值可以是单个布尔值，也可以是`ft.MaterialState`的字典作为键，而布尔值则为值。
+* `radius`  - 滚动拇指的圆形矩形角的半径。
+* `thumb_color`  - 覆盖滚动条拇指的默认颜色。 该值是单个颜色字符串或`ft.MaterialState`字典。
+* `track_color`  - 覆盖Scrollbar Track的默认颜色。 该值是单个颜色字符串或`ft.MaterialState`字典。
+* `track_border_color`  - 覆盖滚动条轨道边框的默认颜色。 该值是单个颜色字符串或`ft.MaterialState`字典。
+* `cross_axis_margin`  - 逻辑像素中从卷轴拇指到最近的横轴边缘的距离。 滚动条轨道消耗了这个空间。 不得无效，默认为0。
+* `main_axis_margin`  - 距滚子拇指的距离的距离距离逻辑像素的距离始于视口的边缘。 它会影响可用的油漆区域的数量。 滚动条轨道消耗了这个空间。 不得无效，默认为0。
+* `min_thumb_length`  - 首选的滚动拇指最小尺寸可以收缩到总滚动范围较大时，当前可见的视口很小，并且视图不会超过。
+* `interactive`  - 滚动栏是否应具有互动性并响应拇指上的拖动，还是在轨道区域敲击。 当`False`时，滚动条不会响应手势或悬停事件，并且可以单击它。 默认为`True`时`None`，除非在Android上，nandroid将默认为`None`时默认为`None`。
 
-* `thumb_visibility` - Indicates that the scrollbar thumb should be visible, even when a scroll is not underway. When `False`, the scrollbar will be shown during scrolling and will fade out otherwise. When `True`, the scrollbar will always be visible and never fade out. Property value could be either a single boolean value or a dictionary with `ft.MaterialState` as keys and boolean as values.
-* `thickness` - the thickness of the scrollbar in the cross axis of the scrollable. Property value could be either a single float value or a dictionary with `ft.MaterialState` as keys and float as values.
-* `track_visibility` - Indicates that the scrollbar track should be visible. When `True`, the scrollbar track will always be visible so long as the thumb is visible. If the scrollbar thumb is not visible, the track will not be visible either. Defaults to `False` when `None`. If this property is `None`, then `ScrollbarTheme.track_visibility` of `Theme.scrollbar_theme` is used. If that is also `None`, the default value is `False`. Property value could be either a single boolean value or a dictionary with `ft.MaterialState` as keys and boolean as values.
-* `radius` - The Radius of the scrollbar thumb's rounded rectangle corners.
-* `thumb_color` - Overrides the default Color of the Scrollbar thumb. The value is either a single color string or `ft.MaterialState` dictionary.
-* `track_color` - Overrides the default Color of the Scrollbar track. The value is either a single color string or `ft.MaterialState` dictionary.
-* `track_border_color` - Overrides the default Color of the Scrollbar track border. The value is either a single color string or `ft.MaterialState` dictionary.
-* `cross_axis_margin` - Distance from the scrollbar thumb to the nearest cross axis edge in logical pixels. The scrollbar track consumes this space. Must not be null and defaults to 0.
-* `main_axis_margin` - Distance from the scrollbar thumb's start and end to the edge of the viewport in logical pixels. It affects the amount of available paint area. The scrollbar track consumes this space. Mustn't be null and defaults to 0.
-* `min_thumb_length` - The preferred smallest size the scrollbar thumb can shrink to when the total scrollable extent is large, the current visible viewport is small, and the viewport is not overscrolled.
-* `interactive` - Whether the Scrollbar should be interactive and respond to dragging on the thumb, or tapping in the track area. When `False`, the scrollbar will not respond to gesture or hover events, and will allow to click through it. Defaults to `True` when `None`, unless on Android, which will default to `False` when `None`.
+自定义整个应用程序上`Tabs`控件的外观。
 
-#### `TabsTheme` class
+`TabsTheme`类具有以下属性: 
 
-Customizes the appearance of `Tabs` control across the app.
+*  `divider_color`  - 分别的颜色。
+* `indicator_border_radius`  - 指标角的半径。
+* `indicator_border_side`  - 所选选项卡片下方绘制的水平线的颜色和重量。
+* `indicator_padding`  - 找到相对于选项卡片的边界的选定选项卡片的下划线。 `indicator_tab_size`属性可用于根据`False`或带有`True`的整个选项卡片来定义标签指示器的边界。
+* `indicator_color`  - 所选选项卡片下方的线的颜色。
+* `indicator_tab_size`  -  `True`指示器以获取整个选项卡片。
+* `label_color`  - 选定标签标签的颜色。
+* `unselected_label_color`  - 未选择的标签标签的颜色。
+* `overlay_color`  - 定义墨水响应焦点，悬停和飞溅颜色。 如果指定，则根据`MaterialState.FOCUSED`，`MaterialState.HOVERED`和`MaterialState.PRESSED`的一个解决方案。
 
-`TabsTheme` class has the following properties:
+#### 导航过渡
 
-* `divider_color` - The color of the divider.
-* `indicator_border_radius` - The radius of the indicator's corners.
-* `indicator_border_side` - The color and weight of the horizontal line drawn below the selected tab.
-* `indicator_padding` - Locates the selected tab's underline relative to the tab's boundary. The `indicator_tab_size` property can be used to define the tab indicator's bounds in terms of its (centered) tab widget with `False`, or the entire tab with `True`.
-* `indicator_color` - The color of the line that appears below the selected tab.
-* `indicator_tab_size` - `True` for indicator to take entire tab.
-* `label_color` - The color of selected tab labels.
-* `unselected_label_color` - The color of unselected tab labels.
-* `overlay_color` - Defines the ink response focus, hover, and splash colors. If specified, it is resolved against one of `MaterialState.FOCUSED`, `MaterialState.HOVERED`, and `MaterialState.PRESSED`.
+`theme.page_transitions`允许自定义不同平台的导航页面过渡。 该值是`PageTransitionsTheme`类的实例，具有以下可选属性: 
 
-#### Navigation transitions
+*  `android`（默认值为`FADE_UPWARDS`）
+* `ios`（默认值为`CUPERTINO`）
+* `macos`（默认值为`ZOOM`）
+* `linux`（默认值为`ZOOM`）
+* `windows`（默认值为`ZOOM`）
 
-`theme.page_transitions` allows customizing navigation page transitions for different platforms. The value is an instance of `PageTransitionsTheme` class with the following optional properties:
+支持的过渡为`ft.PageTransitionTheme`枚举: `NONE`（零延迟过渡而无需任何动画），`FADE_UPWARDS`，`OPEN_UPWARDS`，`ZOOM`，`ZOOM`，`CUPERTINO`。
 
-* `android` (default value is `FADE_UPWARDS`)
-* `ios` (default value is `CUPERTINO`)
-* `macos` (default value is `ZOOM`)
-* `linux` (default value is `ZOOM`)
-* `windows` (default value is `ZOOM`)
-
-Supported transitions is `ft.PageTransitionTheme` enum: `NONE` (zero delay transition without any animation), `FADE_UPWARDS`, `OPEN_UPWARDS`, `ZOOM`, `CUPERTINO`.
-
-An simple example:
+一个简单的示例: 
 
 ```python
 theme = ft.Theme()
@@ -550,19 +545,19 @@ theme.page_transitions.linux = ft.PageTransitionTheme.ZOOM
 theme.page_transitions.windows = ft.PageTransitionTheme.NONE
 page.theme = theme
 page.update()
-```
+``` 
 
-### `theme_mode`
+###  `theme_mode`
 
-Page theme.
+页面主题。
 
-Property value is an optional `ThemeMode` enum with `SYSTEM` as default.
+属性值是带有`SYSTEM`的可选`ThemeMode`枚举。
 
-Supported values: `SYSTEM` (default), `LIGHT` or `DARK`.
+支持的值: `SYSTEM`（默认值），`LIGHT`或`DARK`。
 
-### `title`
+###  `title`
 
-A title of browser or native OS window, for example:
+例如，浏览器或本机OS窗口的标题: 
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -573,52 +568,52 @@ page.update()
 ```
 
 </TabItem>
-</Tabs>
+</Tabs> 
 
-### `url`
+###  `url`
 
-The complete web app's URL.
+完整的Web应用程序的URL。
 
-### `vertical_alignment`
+###  `vertical_alignment`
 
-How the child Controls should be placed vertically.
+child控件应垂直放置。
 
-For example, `MainAxisAlignment.START`, the default, places the children at the top of a Page.
+例如，`MainAxisAlignment.START`，默认值将children放在页面顶部。
 
-Property value is `MainAxisAlignment` enum with the following values:
+属性值是`MainAxisAlignment`枚举，具有以下值: 
 
-* `START` (default)
+*  `START`（默认）
 * `END`
 * `CENTER`
 * `SPACE_BETWEEN`
 * `SPACE_AROUND`
-* `SPACE_EVENLY`
+* `SPACE_EVENLY` 
 
-### `views`
+###  `views`
 
-A list of [`View`](/docs/controls/view) controls to build navigation history.
+[`View`]](/docs/controls/view)控制以构建导航历史记录的列表。
 
-The last view in the list is the one displayed on a page.
+列表中的最后一个视图是页面上显示的视图。
 
-The first view is a "root" view which cannot be popped.
+第一个视图是无法弹出的“根”视图。
 
-### `web`
+###  `web`
 
-`True` if the application is running in the web browser.
+`True`如果应用程序在Web浏览器中运行。
 
-### `width`
+###  `width`
 
-A width of a web page or content area of a native OS window containing Flet app. This property is read-only. It's usually being used inside [`page.on_resize`](#on_resize) handler.
+包含Flet应用程序的本机OS窗口的网页或内容区域的宽度。 此属性是只读的。 通常在[`page.on_resize`](#on_resize)处理器内使用。
 
-### `window_always_on_top`
+###  `window_always_on_top`
 
-🖥️ Desktop only. Sets whether the window should show always on top of other windows. Default is `False`.
+🖥️桌面。 设置窗口是否应始终在其他窗口的顶部显示。 默认值为`False`。
 
-### `window_bgcolor`
+###  `window_bgcolor`
 
-🖥️ Desktop only. Sets background color of an application window.
+🖥️桌面。 设置应用程序窗口的背景颜色。
 
-Use together with `page.bgcolor` to make a window transparent:
+与`page.bgcolor`一起使用以使窗口透明: 
 
 ```python
 import flet as ft
@@ -633,102 +628,97 @@ def main(page: ft.Page):
     page.add(ft.ElevatedButton("I'm a floating button!"))
 
 ft.app(target=main)
-```
+``` 
 
-### `window_focused`
+###  `window_focused`
 
-🖥️ Desktop only. Set to `True` to focus a native OS window with a Flet app.
+🖥️桌面。 设置为`True`，以Flet app。
 
-### `window_frameless`
+🖥️桌面。 设置为`True`使应用程序窗口无框。
 
-🖥️ Desktop only. Set to `True` to make app window frameless.
+###  `window_full_screen`
 
-### `window_full_screen`
+🖥️桌面。 将设置为`True`以将App的本机OS窗口切换到完整屏幕模式。 默认值为`False`。
 
-🖥️ Desktop only. Set to `True` to switch app's native OS window to a fullscreen mode. Default is `False`.
+###  `window_height`
 
-### `window_height`
+🖥️桌面。 获取或设置包含Flet app的本机OS窗口的高度。
 
-🖥️ Desktop only. Get or set the height of a native OS window containing Flet app.
+###  `window_left`
 
-### `window_left`
+🖥️桌面。 获取或设置本机OS窗口的水平位置 - 距屏幕左边缘的虚拟像素的距离。
 
-🖥️ Desktop only. Get or set a horizontal position of a native OS window - a distance in virtual pixels from the left edge of the screen.
+###  `window_maximizable`
 
-### `window_maximizable`
+🖥️桌面。 设置为`False`以隐藏/禁用本机OS窗口的“最大化”按钮。 默认值为`True`。
 
-🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Maximize" button. Default is `True`.
+###  `window_maximized`
 
-### `window_maximized`
+🖥️桌面。 `True`如果包含Flet应用程序的本机OS窗口最大化； 否则`False`。 将此属性设置为`True`以编程性地最大化窗口并将其设置为`False`以脱离它。
 
-🖥️ Desktop only. `True` if a native OS window containing Flet app is maximized; otherwise `False`. Set this property to `True` to programmatically maximize the window and set it to `False` to unmaximize it.
+###  `window_max_height`
 
-### `window_max_height`
+🖥️桌面。 获取或设置包含Flet app的本机OS窗口的最大高度。
 
-🖥️ Desktop only. Get or set the maximum height of a native OS window containing Flet app.
+###  `window_max_width`
 
-### `window_max_width`
+🖥️桌面。 获取或设置包含Flet app的本机OS窗口的最大宽度。
 
-🖥️ Desktop only. Get or set the maximum width of a native OS window containing Flet app.
+###  `window_minimizable`
 
-### `window_minimizable`
+🖥️桌面。 设置为`False`以隐藏/禁用本机OS窗口的“最小化”按钮。 默认值为`True`。
 
-🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Minimize" button. Default is `True`.
+###  `window_minimized`
 
-### `window_minimized`
+🖥️桌面。 `True`如果包含Flet应用程序的本机OS窗口被最小化； 否则`False`。 将此属性设置为`True`以编程方式最小化窗口并将其设置为`False`以还原。
 
-🖥️ Desktop only. `True` if a native OS window containing Flet app is minimized; otherwise `False`. Set this property to `True` to programmatically minimize the window and set it to `False` to restore it.
+###  `window_min_height`
 
-### `window_min_height`
+🖥️桌面。 获取或设置包含Flet app的本机OS窗口的最小高度。
 
-🖥️ Desktop only. Get or set the minimum height of a native OS window containing Flet app.
+###  `window_min_width`
 
-### `window_min_width`
+🖥️桌面。 获取或设置包含Flet app的本机OS窗口的最小宽度。
 
-🖥️ Desktop only. Get or set the minimum width of a native OS window containing Flet app.
+###  `window_movable`
+🖥️桌面。 仅MacOS。 设置为`False`，以防止用户更改包含Flet应用程序的本机OS窗口的位置。 默认值为`True`。
 
-### `window_movable`
+###  `window_opacity`
 
-🖥️ Desktop only. macOS only. Set to `False` to prevent user from changing a position of a native OS window containing Flet app. Default is `True`.
+🖥️桌面。 设置本机OS窗口的不透明度。 该值必须在`0.0`（完全透明）和`1.0`（完全不透明）之间。
 
-### `window_opacity`
+###  `window_resizable`
 
-🖥️ Desktop only. Sets the opacity of a native OS window. The value must be between `0.0` (fully transparent) and `1.0` (fully opaque).
+🖥️桌面。 设置为`False`，以防止用户调整包含Flet应用程序的本机OS窗口。 默认值为`True`。
 
-### `window_resizable`
+###  `window_title_bar_hidden`
 
-🖥️ Desktop only. Set to `False` to prevent user from resizing a native OS window containing Flet app. Default is `True`.
+🖥️桌面。 设置为`True`隐藏窗口标题栏。 请参阅[`WindowDragArea`](windowdragarea)允许移动的控制
+带隐藏标题栏的应用窗口。
 
-### `window_title_bar_hidden`
+###  `window_title_bar_buttons_hidden`
 
-🖥️ Desktop only. Set to `True` to hide window title bar. See [`WindowDragArea`](windowdragarea) control that allows moving
-an app window with hidden title bar.
+🖥️桌面。 设置为`True`以隐藏标题栏隐藏时隐藏窗口动作按钮。 仅MacOS。
 
-### `window_title_bar_buttons_hidden`
+###  `window_top`
 
-🖥️ Desktop only. Set to `True` to hide window action buttons when a title bar is hidden. macOS only.
+🖥️桌面。 获取或设置本机OS窗口的垂直位置 - 距屏幕顶部边缘的虚拟像素中的距离。
 
-### `window_top`
+###  `window_prevent_close`
 
-🖥️ Desktop only. Get or set a vertical position of a native OS window - a distance in virtual pixels from the top edge of the screen.
+🖥️桌面。 设置为`True`以拦截本机关闭信号。 可以与[``page.on_window_event（colles）`](#on_window_event)事件处理程序和[`page.window_destroy()`](#window_destroy)一起使用，以实现App Exit exin确认逻辑 - 请参见[`page.window_destroy()`] 4921} `window_progress_bar`
 
-### `window_prevent_close`
+🖥️桌面。 从`0.0`到`1.0`的值在任务栏（Windows）或Dock（MacOS）应用程序按钮上显示进度栏。
 
-🖥️ Desktop only. Set to `True` to intercept the native close signal. Could be used together with [`page.on_window_event (close)`](#on_window_event) event handler and [`page.window_destroy()`](#window_destroy) to implement app exit confirmation logic - see [`page.window_destroy()`](#window_destroy) for code example.
+###  `window_skip_task_bar`
 
-### `window_progress_bar`
+🖥️桌面。 设置为`True`以隐藏任务栏（Windows）或Dock（MacOS）的应用程序。
 
-🖥️ Desktop only. The value from `0.0` to `1.0` to display a progress bar on Task Bar (Windows) or Dock (macOS) application button.
+###  `window_visible`
 
-### `window_skip_task_bar`
+🖥️桌面。 设置为`True`以使应用程序窗口可见。 当应用从隐藏的窗口开始时使用。
 
-🖥️ Desktop only. Set to `True` to hide application from the Task Bar (Windows) or Dock (macOS).
-
-### `window_visible`
-
-🖥️ Desktop only. Set to `True` to make application window visible. Used when the app is starting with a hidden window.
-
-The following program starts with a hidden window and makes it visible in 3 seconds:
+以下程序从隐藏的窗口开始，使其在3秒内可见: 
 
 ```python
 from time import sleep
@@ -749,115 +739,111 @@ def main(page: ft.Page):
 ft.app(target=main, view=ft.AppView.FLET_APP_HIDDEN)
 ```
 
-Note `view=ft.AppView.FLET_APP_HIDDEN` which hides app window on start.
+注意`view=ft.AppView.FLET_APP_HIDDEN`，它在开始时隐藏了应用程序窗口。
 
-### `window_width`
+###  `window_width`
 
-🖥️ Desktop only. Get or set the width of a native OS window containing Flet app.
+🖥️桌面。 获取或设置包含Flet app的本机OS窗口的宽度。
 
-## Methods
+## 方法
 
-### `can_launch_url(url)`
+###  `can_launch_url(url)`
 
-Checks whether the specified URL can be handled by some app installed on the device.
+检查是否可以通过设备上安装的某些应用程序来处理指定的URL。
 
-Returns `True` if it is possible to verify that there is a handler available. A `False` return value can indicate either that there is no handler available, or that the application does not have permission to check. For example:
+返回`True`如果可以验证是否有一个处理程序。 `False`返回值可以指示没有可用的处理程序，或者该应用程序无权检查。 例如: 
 
-* On recent versions of Android and iOS, this will always return `False` unless the application has been configuration to allow querying the system for launch support.
-* On web, this will always return `False` except for a few specific schemes that are always assumed to be supported (such as http(s)), as web pages are never allowed to query installed applications.
+* 在Android和iOS的最新版本上，这将始终返回`False`，除非应用程序已配置以允许查询系统以寻求启动支持。
+* 在Web上，这将始终返回`False`，除了一些始终被假定支持的特定方案（例如http（s）），因为永远不允许网页查询安装的应用程序。
 
-### `close_banner()`
+###  `close_banner()`
 
-Closes active banner.
+关闭活动横幅。
 
-### `close_bottom_sheet()`
+###  `close_bottom_sheet()`
 
-Closes active bottom sheet.
+关闭活动的底部表。
 
-### `close_dialog()`
+###  `close_dialog()`
 
-Closes active dialog.
+关闭主动对话框。
 
-### `close_in_app_web_view()`
+###  `close_in_app_web_view()`
 
-📱 Mobile only. Closes in-app web view opened with `launch_url()`.
+📱仅移动。 关闭使用`launch_url()`打开的应用内Web视图。
 
-### `error(message)`
-
-
-### `fetch_page_details()`
+###  `error(message)`
 
 
-### `get_clipboard()`
-
-Get the last text value saved to a clipboard on a client side.
-
-### `get_control(id)`
+###  `fetch_page_details()`
 
 
-### `get_upload_url(file_name, expires)`
+###  `get_clipboard()`
 
-Generates presigned upload URL for built-in upload storage:
+将最后一个文本值保存到客户端的剪贴板上。
 
-* `file_name` - a relative to upload storage path.
-* `expires` - a URL time-to-live in seconds.
+###  `get_control(id)`
 
-For example:
+
+### `get_upload_url（file_name，expires）`
+
+生成预先上传的URL用于内置上传存储: 
+
+*  `file_name`  - 一个相对于上载存储路径。
+* `expires`  - 几秒钟内的URL时间。
+
+例如: 
 
 ```python
 upload_url = page.get_upload_url("dir/filename.ext", 60)
 ```
 
-To enable built-in upload storage provide `upload_dir` argument to `flet.app()` call:
+要启用内置的上传存储，将`upload_dir`参数提供给`flet.app()`调用: 
 
 ```python
 ft.app(target=main, upload_dir="uploads")
-```
+``` 
 
-### `go(route)`
+###  `go(route)`
 
-A helper method that updates [`page.route`](#route), calls [`page.on_route_change`](#on_route_change) event handler to update views and finally calls `page.update()`.
+更新[`page.route`]](#route)的辅助方法，调用[`page.on_route_change`](#on_route_change)事件处理程序更新视图，最后调用`page.update()`。
 
-### `insert(at, *controls)`
+插入`page.controls`列表的特定索引。
 
-Inserts controls at specific index of `page.controls` list.
+###  `launch_url(url)`
 
-### `launch_url(url)`
+在新的浏览器窗口中打开`url`。
 
-Opens `url` in a new browser window.
+可选方法参数: 
 
-Optional method arguments:
+*  `web_window_name`  - 窗口tab/window tab/window url in: `_self`  - 相同的浏览器选项卡片，`_blank`  - 一个新的浏览器选项卡片（或移动设备上的外部应用程序）或`<your name>`）或`<your name>`}  - 一个命名选项卡片。
+* `web_popup_window`  - 设置为`True`以在浏览器弹出窗口中显示URL。 默认值为`False`。
+* `window_width`  - 可选，弹出窗口宽度。
+* `window_height`  - 可选，弹出窗口高度。
 
-* `web_window_name` - window tab/name to open URL in: `_self` - the same browser tab, `_blank` - a new browser tab (or in external application on mobile device) or `<your name>` - a named tab.
-* `web_popup_window` - set to `True` to display a URL in a browser popup window. Default is `False`.
-* `window_width` - optional, popup window width.
-* `window_height` - optional, popup window height.
+### `login（提供者，fetch_user，fetch_groups，scope，scope，saved_token，on_open_authorization_url，on_page_page_html，redirect_to_page，授权）
 
-### `login(provider, fetch_user, fetch_groups, scope, saved_token, on_open_authorization_url, complete_page_html, redirect_to_page, authorization)`
+启动Oauth流动。 有关更多信息和示例，请参见[Authentication](/docs/guides/python/authentication)指南。
 
-Starts OAuth flow. See [Authentication](/docs/guides/python/authentication) guide for more information and examples.
+###  `logout()`
 
-### `logout()`
+清除当前的身份验证上下文。 有关更多信息和示例，请参见[authentication](/docs/guides/python/authentication#signing-out)指南。
 
-Clears current authentication context. See [Authentication](/docs/guides/python/authentication#signing-out) guide for more information and examples.
+###  `remove(*controls)`
 
-### `remove(*controls)`
+从`page.controls`列表中删除特定控件。
 
-Removes specific controls from `page.controls` list.
+###  `remove_at(index)`
 
-### `remove_at(index)`
+从`page.controls`列表中删除控件。
 
-Remove controls from `page.controls` list at specific index.
+将滚动位置移至绝对`offset`，相对`delta`或使用指定的`key`跳到控件。
 
-### `scroll_to(offset, delta, key, duration, curve)`
+有关方法和示例，请参见[`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve)。
 
-Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
+###  `set_clipboard(data)`
 
-See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
-
-### `set_clipboard(data)`
-
-Set clipboard data on a client side (user's web browser or a desktop), for example:
+例如，将剪贴板数据设置在客户端（用户的Web浏览器或桌面）上: 
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -867,37 +853,34 @@ page.set_clipboard("This value comes from Flet app")
 ```
 
 </TabItem>
-</Tabs>
+</Tabs> 
 
-### `show_banner(banner: Banner)`
+### `show_banner（Banner: Banner）``
 
-Displays the banner at the top of the page.
+在页面顶部显示横幅。
 
-### `show_bottom_sheet(bottom_sheet: BottomSheet)`
+### `show_bottom_sheet（bottom_sheet: bottonssheet）``
 
-Displays bottom sheet at the bottom of the page.
+在页面底部显示底部表。
 
-### `show_dialog(dialog: AlertDialog)`
+### `show_dialog（对话: alertdialog）``
 
-Displays dialog.
+显示对话框。
 
-### `show_snack_bar(snack_bar: SnackBar)`
+### `show_snack_bar（snack_bar: snackbar）``
 
-Displays SnackBar at the bottom of the page.
+在页面底部显示Snackbar。
 
-`snack_bar` - A [`SnackBar`](/docs/controls/snackbar) control to display at the bottom of the Page.
+`snack_bar`  -  a [`SnackBar`](/docs/controls/snackbar)控件以显示在
+🖥️桌面。 将应用程序的本机OS窗口移至屏幕中心。
 
-### `window_center()`
+###  `window_close()`
 
-🖥️ Desktop only. Move app's native OS window to a center of the screen.
+🖥️桌面。 关闭应用程序窗口。
 
-### `window_close()`
+###  `window_destroy()`
 
-🖥️ Desktop only. Closes application window.
-
-### `window_destroy()`
-
-🖥️ Desktop only. Forces closing app's native OS window. This method could be used with `page.window_prevent_close = True` to implement app exit confirmation:
+🖥️桌面。 强迫关闭应用程序的本地操作系统窗口。 该方法可以与`page.window_prevent_close = true”一起使用以实现应用程序出口确认: 
 
 ```python
 import flet as ft
@@ -935,33 +918,33 @@ def main(page: ft.Page):
     page.add(ft.Text('Try exiting this app by clicking window\'s "Close" button!'))
 
 ft.app(target=main)
-```
+``` 
 
-### `window_to_front()`
+###  `window_to_front()`
 
-🖥️ Desktop only. Brings application window to a foreground.
+🖥️桌面。 将应用程序窗口带到前景。
 
-## Events
+## 事件
 
-### `on_close`
+###  `on_close`
 
-Fires when a session has expired after configured amount of time (60 minutes by default).
+当会话在配置的时间（默认情况下为60分钟）之后，会议过期。
 
-### `on_connect`
+###  `on_connect`
 
-Fires when a web user (re-)connects to a page session. It is not triggered when an app page is first opened, but is triggered when the page is refreshed, or Flet web client has re-connected after computer was unlocked. This event could be used to detect when a web user becomes "online".
+当Web用户（重新）连接到页面会话时，会发射。 首先打开应用程序页面时，它不会触发，但是当刷新该页面时触发，或者Flet Web客户端已在计算机解锁后重新连接。 此事件可用于检测网络用户何时“在线”。
 
-### `on_disconnect`
+###  `on_disconnect`
 
-Fires when a web user disconnects from a page session, i.e. closes browser tab/window.
+当Web用户从页面会话中断开连接时，请触发，即关闭浏览器选项卡片/窗口。
 
-### `on_error`
+###  `on_error`
 
-Fires when unhandled exception occurs.
+发生未经治疗的例外时发射。
 
-### `on_keyboard_event`
+###  `on_keyboard_event`
 
-Fires when a keyboard key is pressed. Event object `e` is an instance of `KeyboardEvent` class:
+按下键盘键时发射。 事件对象`e`是`KeyboardEvent`类的实例: 
 
 ```python
 @dataclass
@@ -973,23 +956,23 @@ class ft.KeyboardEvent:
     meta: bool
 ```
 
-Check a [simple usage example](https://github.com/flet-dev/examples/blob/main/python/controls/page/keyboard-events.py).
+检查[简单用法示例](https://github.com/flet-dev/examples/blob/main/python/controls/page/keyboard-events.py)。
 
-### `on_login`
+###  `on_login`
 
-Fires upon successful or failed OAuth authorization flow. See [Authentication](/docs/guides/python/authentication#checking-authentication-results) guide for more information and examples.
+在成功或失败的OAUTH授权流程中开火。 有关更多信息和示例，请参见[Authentication](/docs/guides/python/authentication#checking-authentication-results)指南。
 
-### `on_logout`
+###  `on_logout`
 
-Fires after `page.logout()` call.
+在`page.logout()`呼叫。
 
-### `on_platform_brigthness_change`
+###  `on_platform_brigthness_change`之后。
 
-Fires when brightness of app host platform has changed.
+当App主机平台的亮度发生变化时。
 
-### `on_resize`
+###  `on_resize`
 
-Fires when a browser or native OS window containing Flet app is resized by a user, for example:
+例如，用户调整了包含Flet应用程序的浏览器或本机OS窗口时，请进行射击。
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -1002,45 +985,45 @@ page.on_resize = page_resize
 ```
 
 </TabItem>
-</Tabs>
+</Tabs> 
 
-### `on_route_change`
+###  `on_route_change`
 
-Fires when page route changes either programmatically, by editing application URL or using browser Back/Forward buttons.
+通过编辑应用程序URL或使用浏览器向后/向前按钮进行编程时，页面路由会更改页面路由时发射。
 
-Event object `e` is an instance of `RouteChangeEvent` class:
+事件对象`e`是`RouteChangeEvent`类的实例: 
 
 ```python
 class RouteChangeEvent(ft.ControlEvent):
     route: str     # a new page root
-```
+``` 
 
-### `on_scroll`
+###  `on_scroll`
 
-Fires when page's scroll position is changed by a user.
+用户更改页面滚动位置时会发射。
 
-See [`Column.on_scroll`](docs/controls/column#on_scroll) for event details and examples.
+有关事件详细信息和示例，请参见[`Column.on_scroll`](docs/controls/column#on_scroll)。
 
-### `on_view_pop`
+###  `on_view_pop`
 
-Fires when the user clicks automatic "Back" button in [`AppBar`](/docs/controls/appbar) control.
+当用户在[`AppBar`](/docs/controls/appbar)控制中单击自动“返回”按钮时发射。
 
-Event object `e` is an instance of `ViewPopEvent` class:
+事件对象`e`是`ViewPopEvent`类的实例: 
 
 ```python
 class ViewPopEvent(ft.ControlEvent):
     view: ft.View
 ```
 
-where `view` is an instance of [`View`](/docs/controls/view) control that contains the AppBar.
+其中`view`是[`View`](/docs/controls/view)控件的实例，其中包含AppBar。
 
-### `on_window_event`
+###  `on_window_event`
 
-Fires when an application's native OS window changes its state: position, size, maximized, minimized, etc.
+当应用程序的本机操作系统窗口改变其状态时，会发射: 位置，大小，最大化，最小化等。
 
-`data` contains window's event name:
+`data`包含Window的事件名称: 
 
-* `close`
+*  `close`
 * `focus`
 * `blur`
 * `maximize`
@@ -1048,8 +1031,8 @@ Fires when an application's native OS window changes its state: position, size, 
 * `minimize`
 * `restore`
 * `resize`
-* `resized` (macOS and Windows only)
+* `resized`（仅MACOS和Windows）
 * `move`
-* `moved` (macOS and Windows only)
+* `moved`（仅MACOS和Windows）
 * `enterFullScreen`
 * `leaveFullScreen`

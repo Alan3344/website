@@ -4,15 +4,15 @@ sidebar_label: LineChart
 slug: linechart
 ---
 
-Draws a line chart.
+绘制一个线图。
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/charts/linechart)
+[live 示例](https://flet-controls-gallery.fly.dev/charts/linechart)
 
-### LineChart 1
+### linechart 1
 
-<img src="/img/docs/controls/charts/linechart-sample-1.gif" className="screenshot-50"/>
+<img src="/website/img/docs/controls/charts/linechart-sample-1.gif" className="screenshot-50"/>
 
 ```python
 import flet as ft
@@ -215,9 +215,9 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-### LineChart 2
+### linechart 2
 
-<img src="/img/docs/controls/charts/linechart-sample-2.gif" className="screenshot-50"/>
+<img src="/website/img/docs/controls/charts/linechart-sample-2.gif" className="screenshot-50"/>
 
 ```python
 import flet as ft
@@ -355,312 +355,308 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-## `LineChart` properties
+## `LineChart`属性
 
-<img src="/img/docs/controls/charts/linechart-diagram.svg" className="screenshot-100"/>
+<img src="/website/img/docs/controls/charts/linechart-diagram.svg" className="screenshot-100"/>
 
 ### `data_series`
 
-A list of [`LineChartData`](#linechartdata-properties) controls drawn as separate lines on a chart.
+[`LineChartData`](#linechartdata-properties)控制绘制为图表上的单独行的列表。
 
 ### `animate`
 
-Controls chart implicit animation.
+控制图表隐式动画。
 
-The value of `animate` property could be one of the following types:
+`animate`属性的值可能是以下类型之一:
 
-* `bool` - `True` to enable chart animation with `linear` curve and `1000` milliseconds duration.
-* `int` - enables chart animation with `linear` curve and specified number of milliseconds.
-* `ft.Animation(duration: int, curve: str)` - enables chart animation with specified duration and transition curve.
+- `bool` - `True`以使用`linear`曲线和`1000` MILLISECONDS 的持续时间启用图表动画。
+- `int` - 启用使用`linear`曲线和指定的毫秒数的图表动画。
+- `ft.animation（持续时间: int，曲线: str）` - 启用具有指定持续时间和过渡曲线的图表动画。
 
-If `animate` is `None` then `linear` animation with `150` milliseconds duration is enabled by default.
+如果`animate`为`None`，则`linear`用`150` milliseconds 持续时间默认启用。
 
-### `interactive`
+### `interactive` `interactive`
 
-Enables automatic tooltips and points highlighting when hovering over the chart.
+在悬停在图表上时，启用自动工具提示和点突出显示。
 
 ### `bgcolor`
 
-Background [color](/docs/guides/python/colors) of the chart.
+图表的背景[颜色](/docs/guides/python/colors)。
 
 ### `tooltip_bgcolor`
 
-Background [color](/docs/guides/python/colors) of tooltips.
+工具提示的背景[颜色](/docs/guides/python/colors)。
 
 ### `border`
 
-The border around the chart. The value is the instance of `ft.Border` class.
+图表周围的边界。 该值是`ft.Border`类的实例。
 
 ### `point_line_start`
 
-The start of the vertical line drawn under the selected point. Default is chart's bottom edge.
+垂直线在选定点下绘制的垂直线的开始。 默认值是图表的底部边缘。
 
 ### `point_line_end`
 
-The end of the vertical line drawn at selected point position. Default is data point's `y` value.
+垂直线在选定点位置绘制的末端。 默认值是数据点的`y`值。
 
 ### `horizontal_grid_lines`
 
-Controls drawing of chart's horizontal lines. The value is the instance of [`ChartGridLines`](#chartgridlines) class.
+控制图表的水平线图。 该值是[`ChartGridLines`](#chartgridlines) class。
 
-### `vertical_grid_lines`
+### `vertical_grid_lines`的实例
 
-Controls drawing of chart's vertical lines. The value is the instance of [`ChartGridLines`](#chartgridlines) class.
+控制图表垂直线的图形。 该值是[`ChartGridLines`](#chartgridlines) class。
 
-### `left_axis`
+### `left_axis`的实例
 
-Configures the appearance of the left axis, its title and labels. The value is the instance of [`ChartAxis`](#chartaxis-properties) class.  
+配置左轴的外观，其标题和标签。 该值是[`ChartAxis`](#chartaxis-properties)类的实例。
 
 ### `top_axis`
 
-Configures the appearance of the top axis, its title and labels. The value is the instance of [`ChartAxis`](#chartaxis-properties) class.  
+配置顶轴的外观，其标题和标签。 该值是[`ChartAxis`](#chartaxis-properties)类的实例。
 
 ### `right_axis`
 
-Configures the appearance of the right axis, its title and labels. The value is the instance of [`ChartAxis`](#chartaxis-properties) class.  
+配置右轴的外观，其标题和标签。 该值是[`ChartAxis`](#chartaxis-properties)类的实例。
 
 ### `bottom_axis`
 
-Configures the appearance of the bottom axis, its title and labels. The value is the instance of [`ChartAxis`](#chartaxis-properties) class.
+配置底轴的外观，其标题和标签。 该值是[`ChartAxis`](#chartaxis-properties) class。
 
-### `baseline_x`
+### `baseline_x`的实例
 
-Baseline value for X axis. Default is `0`.
+X 轴的基线值。 默认值为`0`。
 
 ### `min_x`
 
-Configures the minimum displayed value for X axis.
+配置 X 轴的最小显示值。
 
 ### `max_x`
 
-Configures the maximum displayed value for X axis.
+配置 X 轴的最大显示值。
 
 ### `baseline_y`
 
-Baseline value for Y axis. Default is `0`.
+Y 轴的基线值。 默认值为`0`。
 
 ### `min_y`
 
-Configures the minimum displayed value for Y axis.
+配置 Y 轴的最小显示值。
 
 ### `max_y`
 
-Configures the maximum displayed value for Y axis.
+配置 Y 轴的最大显示值。
 
-## `LineChart` events
+## `LineChart`事件
 
 ### `on_chart_event`
 
-Fires when a chart line is hovered or clicked.
+当图表线悬停或单击时会发射。
 
-Event data is an instance `ft.LineChartEvent` class with the following properties:
+事件数据是具有以下属性的实例`ft.LineChartEvent`类:
 
-* `type` event type such as `PointerHoverEvent`, `PointerExitEvent`, etc.
-* `bar_index` - line's index or `-1` if no line hovered.
-* `spot_index` - line point's index or `-1` if no point hovered.
+- `type`事件类型，例如`PointerHoverEvent`，`PointerExitEvent`，等。
+- `bar_index` - 如果没有线路，则行索引或`-1`。
+- `spot_index` - 线点的索引或`-1`如果没有点悬停。
 
 ## `LineChartData` properties
 
 ### `data_points`
 
-A list of points (dots) of [`LineChartDataPoint`](#linechartdatapoint-properties) type representing a single chart line.
+[{`LineChartDataPoint`](#linechartdatapoint-properties)的点（点）列表（点）} type 代表单个图表行。
 
 ### `curved`
 
-Set to `True` to draw chart line as a curve. Default is `False`.
+设置为`True`以绘制图表线作为曲线。 默认值为`False`。
 
 ### `color`
 
-A [color](/docs/guides/python/colors) of chart line.
+图表线的 A [颜色](/docs/guides/python/colors)。
 
 ### `gradient`
 
-Gradient to draw line's background. See [`Container.gradient`](container#gradient) property for more information and possible values.
+绘制线路背景的梯度。 有关更多信息和可能的值，请参见[`Container.gradient`](container#gradient)属性。
 
 ### `stroke_width`
 
-The width of a chart line.
+图表线的宽度。
 
 ### `stroke_cap_round`
 
-Set to `True` to draw rounded line caps. Default is `False`.
+设置为`True`以绘制圆形线盖。 默认值为`False`。
 
 ### `dash_pattern`
 
-Defines dash effect of the line. The value is a circular list of dash offsets and lengths. For example, the list `[5, 10]` would result in dashes 5 pixels long followed by blank spaces 10 pixels long. By default, a solid line is drawn.
+定义行的破折号效应。 该值是仪表板偏移和长度的圆形列表。 例如，列表`[5, 10]`将导致虚线长 5 像素，然后是空白空间长 10 像素长。 默认情况下，绘制一条实线。
 
 ### `shadow`
 
-Shadow to drop by a chart line. The value is the instance of `ft.Shadow` class.
+阴影以图表线掉落。 该值是`ft.Shadow`类的实例。
 
 ### `above_line_bgcolor`
 
-Fill the area above chart line with the specified [color](/docs/guides/python/colors).
+用指定的[color](/docs/guides/python/colors)填充图表上方的区域。
 
 ### `above_line_gradient`
 
-Fill the area above chart line with the specified gradient.
+用指定的梯度填充图表线上的区域。
 
 ### `above_line_cutoff_y`
 
-Cut off filled area above line chart at specific Y value.
+切断以特定 y 值的线图上方的填充区域。
 
 ### `above_line`
 
-A vertical line drawn between a line point and the top edge of the chart. The value is an instance of [`ChartPointLine`](#chartpointline-properties) class.
+线点和图表顶部边缘之间绘制的垂直线。 该值是[`ChartPointLine`](#chartpointline-properties) class。
 
-### `below_line_bgcolor`
+### `below_line_bgcolor`的实例
 
-Fill the area below chart line with the specified [color](/docs/guides/python/colors).
+用指定的[颜色](/docs/guides/python/colors)填充图下图以下区域。
 
 ### `below_line_gradient`
 
-Fill the area below chart line with the specified gradient.
+用指定的梯度填充图表线下方的区域。
 
 ### `below_line_cutoff_y`
 
-Cut off filled area below line chart at specific Y value.
+切断以特定 y 值的截止区域图下的填充区域。
 
 ### `below_line`
 
-A vertical line drawn between a line point and the bottom edge of the chart. The value is an instance of [`ChartPointLine`](#chartpointline-properties) class.
+在图表的底部和图表的底部边缘之间绘制的垂直线。 该值是[`ChartPointLine`](#chartpointline-properties) class。
 
-### `selected_below_line`
+### `selected_below_line`的实例
 
-A vertical line drawn between selected line point and the bottom adge of the chart. The value is either `True` - draw a line with default style, `False` - do not draw a line under selected point, or an instance of [`ChartPointLine`](#chartpointline-properties) class to specify line style to draw.
+在选定的线点和图表的底部绘制的垂直线。 该值是`True` - 用默认样式绘制一条线，`False` - 请勿在选定点下绘制一条线，或者[`ChartPointLine`]的实例{`ChartPointLine`](#chartpointline-properties)类以指定绘制的行样式。{4191 } `point`
 
-### `point`
+配置线点（点）的外观和形状。 该属性的值是`True` - 用默认样式绘制一个点，`False` - 请勿绘制线路，或者是`ChartPointShape`类的实现之一:
 
-Configures the appearance and shape of a line point (dot). The value of this property is either `True` - draw a point with default style, `False` - do not draw a line point, or one of the implementations of `ChartPointShape` class:
-
-* `ChartCirclePoint` - circle point
-* `ChartSquarePoint` - square point
-* `ChartCrossPoint` - cross point
+- `ChartCirclePoint` - 圆点点
+- `ChartSquarePoint` - 平方点
+- `ChartCrossPoint` - 跨点
 
 ### `selected_point`
 
-Configures the appearance and shape of a selected line point. See [`LineChartData.point`](#point) for supported property values.
+配置选定的线点的外观和形状。 有关支持的属性值，请参见[`LineChartData.point`](#point)。
 
 ## `LineChartDataPoint` properties
 
 ### `x`
 
-The position of a point on `X` axis.
+`X`轴的点位置。
 
 ### `y`
 
-The position of a point on `Y` axis.
+`Y`轴的点位置。
 
 ### `selected`
 
-Draw the point as selected when `LineChart.interactive` is set to False.
+`LineChart.interactive`设置为 false 时，将点绘制为选择的点。
 
 ### `show_tooltip`
 
-`True` (default) if a tooltip should be shown on top of hovered data point.
+`True`（默认）如果应在盘旋数据点的顶部显示工具提示。
 
 ### `tooltip`
 
-A custom tooltip value. Default is `y`.
+自定义工具提示值。 默认值为`y`。
 
 ### `tooltip_style`
 
-A text style to display tooltip with. The value is the instance of [`ft.TextStyle`](text#textstyle-properties) class.
+带有文本样式，以显示工具提示。 该值是[`ft.TextStyle`](text#textstyle-properties) class。
 
-### `tooltip_align`
+### `tooltip_align`的实例
 
-An align for the tooltip. The value is the instance of `ft.TextAlign` enum.
+该工具提示的对齐。 该值是`ft.TextAlign`枚举的实例。
 
 ### `point`
 
-Configures the appearance and shape of a line point. See [`LineChartData.point`](#point) for supported property values.
+配置线点的外观和形状。 有关支持的属性值，请参见[`LineChartData.point`](#point)。
 
 ### `selected_point`
 
-Configures the appearance and shape of a selected line point. See [`LineChartData.point`](#point) for supported property values.
+配置选定的线点的外观和形状。 有关支持的属性值，请参见[`LineChartData.point`](#point)。
 
 ### `show_above_line`
 
-`True` to display a line above data point. Default is `True`.
+`True`在数据点上方显示一行。 默认值为`True`。
 
 ### `show_below_line`
 
-`True` to display a line below data point. Default is `True`.
+`True`在数据点下方显示一行。 默认值为`True`。
 
 ### `selected_below_line`
 
-A vertical line drawn between selected line point and the bottom adge of the chart. The value is either `True` - draw a line with default style, `False` - do not draw a line under selected point, or an instance of [`ChartPointLine`](#chartpointline-properties) class to specify line style to draw.
+在选定的线点和图表的底部绘制的垂直线。 该值是`True` - 绘制默认样式的线，`False` - 请勿在选定点下绘制一条线，或者[`ChartPointLine`]的实例{`ChartPointLine`](#chartpointline-properties) class class class class class class to draw。{4190 } `ChartGridLines`属性
 
-## `ChartGridLines` properties
-
-Configures the appearance of horizontal and vertical grid lines within the chart.
+在图表中配置水平和垂直网格线的外观。
 
 ### `interval`
 
-Interval between grid lines. Default is `1`.
+网格线之间的间隔。 默认值为`1`。
 
 ### `color`
 
-[Color](/docs/guides/python/colors) of a grid line.
+[颜色](/docs/guides/python/colors)网格线的。
 
 ### `width`
 
-Width of a grid line. Default is `1`.
+网格线的宽度。 默认值为`1`。
 
 ### `dash_pattern`
 
-Defines dash effect of the line. The value is a circular list of dash offsets and lengths. For example, the list `[5, 10]` would result in dashes 5 pixels long followed by blank spaces 10 pixels long. By default, a solid line is drawn.
+定义行的破折号效应。 该值是仪表板偏移和长度的圆形列表。 例如，列表`[5, 10]`将导致虚线长 5 像素，然后是空白空间长 10 像素长。 默认情况下，绘制一条实线。
 
-## `ChartAxis` properties
+## `ChartAxis`属性
 
-Configures chart axis.
+配置图表轴。
 
 ### `title`
 
-A `Control` to display as axis title.
+`Control`显示为轴标题。
 
 ### `title_size`
 
-Width or height of title area.
+标题区域的宽度或高度。
 
 ### `show_labels`
 
-`True` to display labels along the axis. If `labels` is empty then automatic labels are displayed. 
+`True`沿轴显示标签。 如果`labels`为空，则显示自动标签。
 
 ### `labels`
 
-The list of [`ft.ChartAxisLabel`](#chartaxislabel-properties) objects to set custom axis labels for only specific values.
+[`ft.ChartAxisLabel`](#chartaxislabel-properties)对象的列表仅设置特定值的自定义轴标签。
 
 ### `labels_interval`
 
-The interval between automatic labels.
+自动标签之间的间隔。
 
 ### `labels_size`
 
-Width or height of labels area.
+标签区域的宽度或高度。
 
-## `ChartAxisLabel` properties
+## `ChartAxisLabel`属性
 
-Configures a custom label for specific value.
+为特定值配置自定义标签。
 
 ### `value`
 
-A value to draw label for.
+绘制标签的值。
 
 ### `label`
 
-A `Control` to draw as a label.
+`Control`作为标签绘制。
 
 ## `ChartPointLine` properties
 
 ### `color`
 
-[Color](/docs/guides/python/colors) of the line.
+[颜色](/docs/guides/python/colors)行。
 
 ### `width`
 
-Width of the line.
+线的宽度。
 
 ### `dash_pattern`
 
-Dash pattern of the line.
+线的破折号图案。

@@ -4,15 +4,15 @@ sidebar_label: SafeArea
 slug: safearea
 ---
 
-A control that insets its `content` by sufficient padding to avoid intrusions by the operating system.
+通过足够填充以避免操作系统侵入的控件，将其`content`插入其`content`。
 
-For example, this will indent the `content` by enough to avoid the status bar at the top of the screen.
+例如，这将足以避免屏幕顶部的状态栏缩进`content`。
 
-It will also indent the `content` by the amount necessary to avoid The Notch on the iPhone X, or other similar creative physical features of the display.
+它还将按照iPhone X上的缺口或显示屏的其他类似的创意物理功能所需的量来缩小`content`。
 
-When a `minimum` padding is specified, the greater of the `minimum` padding or the safe area padding will be applied.
+当指定`minimum`填充时，将应用`minimum`填充的较大或安全区域填充。
 
-## Example
+## 示例
 
 ```python
 import flet as ft
@@ -42,39 +42,38 @@ def main(page: ft.Page):
     )
 
 ft.app(main)
-```
+``` 
 
-## Properties
+##  properties 
 
-### `bottom`
+###  `bottom`
 
-Whether to avoid system intrusions on the bottom side of the screen. Default is `True`.
+是否避免系统入侵屏幕的底部。 默认值为`True`。
 
-### `content`
+###  `content`
 
-A `Control` to display inside safe area.
+`Control`在安全区域内显示。
 
-### `left`
+###  `left`
 
-Whether to avoid system intrusions on the left. Default is `True`.
+是否避免在左侧进行系统入侵。 默认值为`True`。
 
-### `maintain_bottom_view_padding`
+###  `maintain_bottom_view_padding`
 
-Specifies whether the `SafeArea` should maintain the bottom `MediaQueryData.viewPadding` instead of the bottom `MediaQueryData.padding`, defaults to `False`.
+指定`SafeArea`是否应维护底部`MediaQueryData.viewPadding`而不是底部`MediaQueryData.padding`，默认为`False`。
 
-For example, if there is an onscreen keyboard displayed above the SafeArea, the padding can be maintained below the obstruction rather than being consumed. This can be helpful in cases where your layout contains flexible controls, which could visibly move when opening a software keyboard due to the change in the padding value. Setting this to true will avoid the UI shift.
+例如，如果在SafeArea上方显示了屏幕键盘，则可以将填充物保持在障碍物下方而不是消耗。 在布局包含灵活的控件的情况下，这可能会有所帮助，由于填充值的变化，打开软件键盘时可以明显移动。 将此设置为true将避免使用UI偏移。
 
-### `minimum`
+###  `minimum`
 
-This minimum padding to apply.
+此最低填充物要申请。
 
-The greater of the minimum insets and the media padding will be applied.
 
-### `right`
 
-Whether to avoid system intrusions on the right. Default is `True`.
+###  `right`
 
-### `top`
+是否避免在右侧进行系统入侵。 默认值为`True`。
 
-Whether to avoid system intrusions at the top of the screen, typically the system status bar. Default is `True`.
+###  `top`
 
+是否避免在屏幕顶部的系统入侵，通常是系统状态栏。 默认值为`True`。

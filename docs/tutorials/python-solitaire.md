@@ -4,40 +4,40 @@ sidebar_label: Python - Solitaire game
 slug: python-solitaire
 ---
 
-In this tutorial we will show you step-by-step creation of a famous Klondike solitaire game in Python with Flet. For an inspiration, we looked at this online game: https://www.solitr.com/
+在本教程中，我们将与 Flet 一起在 Python 中逐步展示著名的 Klondike Solitaire 游戏。 为了获得灵感，我们查看了此在线游戏: https://www.solitr.com/
 
-This tutorial is aimed at beginner/intermediate level Python developers who have basic knowledge of Python and object oriented programming.
+本教程针对的是对 Python 和面向对象编程的基本知识的初学者/中级 Python 开发人员。
 
-Here you can see the final result that you are going to achieve with Flet and this tutorial:
+在这里，您可以看到您将使用 Flet 和本教程实现的最终结果:
 https://gallery.flet.dev/solitaire/
 
-<img src="/img/docs/solitaire-tutorial/part1_final.gif" className="screenshot-50" />
+<img src="/website/img/docs/solitaire-tutorial/part1_final.gif" className="screenshot-50" />
 
-We have broken down the game implementation into the following steps:
+我们将游戏实现分解为以下步骤:
 
-* [Getting started with Flet](#getting-started-with-flet)
-* [Proof of concept app for draggable cards](#proof-of-concept-app-for-draggable-cards)
-* [Fanned card piles](#fanned-card-piles)
-* [Solitaire setup](#solitaire-setup)
-* [Solitaire rules](#solitaire-rules)
-* [Winning the game](#winning-the-game)
-* [Deploying the app](#deploying-the-app)
+- [从 Flet 开始启动 Flet](#getting-started-with-flet)
+- [可拖动卡片的概念应用程序](#proof-of-concept-app-for-draggable-cards)
+- [扇形卡片桩](#fanned-card-piles)
+- [Solitaire 设置](#solitaire-setup)
+- [Solitaire 规则](#solitaire-rules)
+- [赢得游戏](#winning-the-game)
+- [部署应用程序](#deploying-the-app)
 
-In the Part 2 (will be covered in the next tutorial) we'll be adding Appbar with options to start new game, view game rules and change game settings.
+在第 2 部分中（下一个教程将介绍）我们将添加 Appbar，其中包括启动新游戏，查看游戏规则和更改游戏设置的选项。
 
-## Getting started with Flet
+## 从 Flet 开始
 
-To create a Flet web app you don't need to know HTML, CSS or JavaScript, but you do need a basic knowledge of Python and object-oriented programming.
+要创建一个 Flet Web 应用程序，您不需要了解 HTML，CSS 或 JavaScript，但是您确实需要有关 Python 和面向对象的编程的基本知识。
 
-Flet requires Python 3.7 or above. To create a web app in Python with Flet, you need to install `flet` module first:
+Flet 需要 Python 3.7 或更高。 要使用 Flet 在 Python 中创建 Web 应用程序，您需要先安装`flet`模块:
 
 ```bash
 pip install flet
 ```
 
-To start, let's create a simple hello-world app.
+首先，让我们创建一个简单的 Hello-World 应用程序。
 
-Create `hello.py` with the following contents:
+使用以下内容创建`hello.py`:
 
 ```python
 import flet as ft
@@ -48,61 +48,62 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-Run this app and you will see a new window with a greeting:
+运行此应用程序，您将看到一个带有问候的新窗口:
 
-<img src="/img/docs/tutorial/todo-app-hello-world.png" className="screenshot-40" />
+<img src="/website/img/docs/tutorial/todo-app-hello-world.png" className="screenshot-40" />
 
-## Proof of concept app for draggable cards
+## 可拖动卡片的概念应用程序证明
 
-For the proof of concept, we will only be using three types of controls:
-* [Stack](/docs/controls/stack) - will be used as a parent control for absolute positioning of slots and cards
-* [GestureDetector](/docs/controls/gesturedetector) - the card that will be moved within the Stack
-* [Container](/docs/controls/container) - the slot where the card will be dropped. Also will be used as `content` for the GestureDetector.
+对于概念证明，我们将仅使用三种类型的控件:
 
-We have broken down the proof of concept app into four easy steps, so that after each step you have a complete short program to run and test.
+- [stack](/docs/controls/stack) - 将用作插槽和卡片绝对定位的父控制
+- [GETUREDETECTOR](/docs/controls/gesturedetector) - 将在堆栈中移动的卡片
+- [容器](/docs/controls/container) - 卡片将删除卡片的插槽。 也将用作 GETUREDETECTOR 的`content`。
 
-###  Step 1: Drag the card around
+我们已经将概念应用程序的证明分为四个简单的步骤，因此在每个步骤之后，您都有一个完整的简短程序进行运行和测试。
 
-In this step we will create a `Stack` (Solitaire game field) and a `GestureDetector` (Solitaire card). The card will then be added to the list of the Stack `controls`. `Top` and `left` properties of the GestureDetector are used for absolute positioning of the card in the Stack.
+### 步骤 1: 将卡片拖动
+
+在此步骤中，我们将创建一个`Stack`（Solitaire 游戏字段）和`GestureDetector`（Solitaire Card）。 然后，该卡片将被添加到堆栈`controls`的列表中。 `Top`和`left`盖帽的属性用于在堆栈中绝对定位卡片。
 
 ```python
 import flet as ft
 
 def main(page: ft.Page):
- 
+
    card = ft.GestureDetector(
        left=0,
        top=0,
        content=ft.Container(bgcolor=ft.colors.GREEN, width=70, height=100),
-   )   
- 
+   )
+
    page.add(ft.Stack(controls=[card], width=1000, height=500))
- 
+
 ft.app(target=main)
 ```
 
-Run the app to see the the card added to the stack:
-<img src="/img/docs/solitaire-tutorial/drag_and_drop1.png" className="screenshot-50" />
+运行应用程序以查看添加到堆栈的卡片:
+<img src="/website/img/docs/solitaire-tutorial/drag_and_drop1.png" className="screenshot-50" />
 
-To be able to move the card, we'll create a `drag` method that will be called in `on_pan_update` event of GestureDetector which happens every `drag_interval` while the user drags the card with their mouse.
+为了能够移动卡片，我们将创建一个`drag`方法，该方法将在`on_pan_update`的`on_pan_update`事件中调用，该事件发生在每个`drag_interval`时，当用户用鼠标拖动卡片时。
 
-To show the card's movement, we’ll be updating the card’s `top` and `left` properties in the `drag` method each time the `on_pan_update` event happens.
+为了显示该卡片的动作，我们将在`drag`方法中更新卡片的`top`和`left`属性，每当发生`on_pan_update`事件时。
 
-Below is the simplest code for dragging GestureDetector in Stack:
+以下是在堆栈中拖动 fenureteTector 的最简单代码:
 
 ```python
 import flet as ft
- 
+
 # Use of GestureDetector for with on_pan_update event for dragging card
 # Absolute positioning of controls within stack
- 
+
 def main(page: ft.Page):
- 
+
    def drag(e: ft.DragUpdateEvent):
        e.control.top = max(0, e.control.top + e.delta_y)
        e.control.left = max(0, e.control.left + e.delta_x)
        e.control.update()
- 
+
    card = ft.GestureDetector(
        mouse_cursor=ft.MouseCursor.MOVE,
        drag_interval=5,
@@ -110,26 +111,29 @@ def main(page: ft.Page):
        left=0,
        top=0,
        content=ft.Container(bgcolor=ft.colors.GREEN, width=70, height=100),
-   )   
- 
+   )
+
    page.add(ft.Stack(controls=[card], width=1000, height=500))
- 
+
 ft.app(target=main)
 ```
 
-Now you can see the card moving:
-<img src="/img/docs/solitaire-tutorial/drag_and_drop2.gif" className="screenshot-50" />
+现在您可以看到卡片移动:
+<img src="/website/img/docs/solitaire-tutorial/drag_and_drop2.gif" className="screenshot-50" />
 
-:::note
-After any properties of a control are updated, an `update()` method of the control (or its parent control) should be called for the update to take effect.
+:::注意
+更新控件的任何属性后，应要求对控件的`update()`方法（或其母体控件）进行更新生效。
 :::
 
-### Step 2: Drop the card in the slot or bounce it back
+###
 
-The goal of this step is to be able to drop a card into a slot if it is close enough and bounce it back if it’s not.
-<img src="/img/docs/solitaire-tutorial/drag_and_drop3.gif" className="screenshot-50" />
+### 步骤 2: 将卡片片放在插槽或弹跳中 回来了
 
-Let’s create a `Container` control that will represent a slot to which we’ll be dropping the card:
+此步骤的目标是，如果它足够近，则能够将卡片片放入插槽中，如果不是，则可以将其弹回。
+<img src="/website/img/docs/solitaire-tutorial/drag_and_drop3.gif" className="screenshot-50" />
+
+让我们创建一个`Container`控件，该控件将代表一个插槽，我们将删除卡片:
+
 ```python
 slot = ft.Container(
     width=70, height=100, left=200, top=0, border=ft.border.all(1)
@@ -137,7 +141,8 @@ slot = ft.Container(
 page.add(ft.Stack(controls = [slot, card], width=1000, height=500))
 ```
 
-`on_pan_end` event of the card is called when the card is dropped: 
+`on_pan_end`卡片的事件在删除卡片时被调用:
+
 ```python
 card = ft.GestureDetector(
     mouse_cursor=ft.MouseCursor.MOVE,
@@ -150,7 +155,7 @@ card = ft.GestureDetector(
 )
 ```
 
-On this event, we’ll call `drop` method to check if the card is close enough to the slot (let’s say it’s closer than 20px to the slot), and `place` it there:
+在此事件中，我们将调用`drop`方法检查卡片是否足够接近插槽（例如，它比插槽更接近 20px），`place`它在那里:
 
 ```python
 def drop(e: ft.DragEndEvent):
@@ -168,9 +173,10 @@ def place(card, slot):
     page.update()
 ```
 
-Now, if the card is not close enough, we need to bounce it back to its original position. Unfortunately, we don’t know the original position coordinates, since the card’s `top` and `left` properties were changed on `on_pan_update` event.
+现在，如果卡片还不够近，我们需要将其弹回原始位置。 不幸的是，我们不知道原始位置坐标，因为卡片在`on_pan_update`事件上更改了卡片的`top`和`left`属性。
 
-To solve this problem, let’s create a `Solitaire` class object to remember the original position of the card when `on_pan_start` event of the card is called:
+要解决此问题，让我们创建一个`Solitaire`类对象，以记住卡片片的原始位置，当卡片的`on_pan_start`事件称为:
+
 ```python
 class Solitaire:
    def __init__(self):
@@ -185,7 +191,8 @@ def start_drag(e: ft.DragStartEvent):
     e.control.update()
 ```
 
-Now let’s update `on_pan_end` event with the option to bounce card back:
+现在，让我们更新`on_pan_end`事件，并以弹跳卡片的选项:
+
 ```python
 def bounce_back(game, card):
     """return card to its original position"""
@@ -206,11 +213,12 @@ def drop(e: ft.DragEndEvent):
     e.control.update()
 ```
 
-The full code for this step can be found [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/solitaire/solitaire-drag-and-drop/step2.py).
+可以找到此步骤的完整代码[此处](https://github.com/flet-dev/examples/blob/main/python/tutorials/solitaire/solitaire-drag-and-drop/step2.py)。
 
-### Step 3: Adding a second card
+### 步骤 3: 添加第二张卡片
 
-Eventually, we’ll need 52 cards to play the game. For our proof of concept, let’s add a second card:
+最终，我们将需要 52 张卡片来玩游戏。 为了获得概念证明，让我们添加第二张卡片:
+
 ```python
 
    card2 = ft.GestureDetector(
@@ -228,10 +236,10 @@ Eventually, we’ll need 52 cards to play the game. For our proof of concept, le
    page.add(ft.Stack(controls=controls, width=1000, height=500))
 ```
 
-Now, if you run the app with the two cards, you will notice that when you move the cards around, the yellow card (card2) is moving as expected but the green the card (card1) is moving under the yellow card. 
-<img src="/img/docs/solitaire-tutorial/drag_and_drop4.gif" className="screenshot-50" />
+现在，如果您使用两张卡片运行该应用程序，您会注意到，当您四处移动卡片时，黄牌（card2）正在按预期移动，但是绿色卡片（card1）在黄牌下移动。
+<img src="/website/img/docs/solitaire-tutorial/drag_and_drop4.gif" className="screenshot-50" />
 
-It happens because card2 is added to the list of stack `controls` after card1. To fix this problem, we need to move the draggable card to the top of the list of controls on `on_pan_start` event:
+之所以发生，是因为 Card2 在 Card1 之后添加到堆栈`controls`的列表中。 要解决此问题，我们需要将可拖动卡片移至`on_pan_start`事件上的控件列表的顶部:
 
 ```python
 def move_on_top(card, controls):
@@ -246,14 +254,15 @@ def start_drag(e: ft.DragStartEvent):
     solitaire.start_left = e.control.left
 ```
 
-Now the two cards can be dragged without issues:
-<img src="/img/docs/solitaire-tutorial/drag_and_drop5.gif" className="screenshot-50" />
+现在，可以将两张卡片拖动而没有问题:
+<img src="/website/img/docs/solitaire-tutorial/drag_and_drop5.gif" className="screenshot-50" />
 
-The full code for this step can be found [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/solitaire/solitaire-drag-and-drop/step3.py).
+可以找到此步骤的完整代码[此处](https://github.com/flet-dev/examples/blob/main/python/tutorials/solitaire/solitaire-drag-and-drop/step3.py)。
 
-### Step 4: Adding more slots
+### 步骤 4: 添加更多插槽
 
-As a final step for the proof of concept app, let’s create two more slots:
+作为概念应用程序证明的最后一步，让我们创建两个插槽:
+
 ```python
 slot0 = ft.Container(
     width=70, height=100, left=0, top=0, border=ft.border.all(1)
@@ -270,7 +279,7 @@ slot2 = ft.Container(
 slots = [slot0, slot1, slot2]
 ```
 
-When creating new cards, we’ll will not specify their `top` and `left` position now, but instead, will place them to the `slot0`:
+创建新卡片时，我们将不会立即指定其`top`和`left`位置，而是将它们放在`slot0`:
 
 ```python
 # deal cards
@@ -278,7 +287,7 @@ place(card1, slot0)
 place(card2, slot0)
 ```
 
-`on_pan_end` event, where we check if a card is close to a slot, we will now go through the list of slots to find where the card should be dropped:
+`on_pan_end`事件，我们检查卡片是否接近插槽，我们现在将浏览插槽列表以查找应删除卡片的位置:
 
 ```python
 def drop(e: ft.DragEndEvent):
@@ -290,39 +299,39 @@ def drop(e: ft.DragEndEvent):
             place(e.control, slot)
             e.control.update()
             return
-        
+
     bounce_back(solitaire, e.control)
     e.control.update()
 ```
 
-As a result, the two cards can be dragged between the three slots:
-<img src="/img/docs/solitaire-tutorial/drag_and_drop6.gif" className="screenshot-50" />
+结果，可以在三个插槽之间拖动两张卡片:
+<img src="/website/img/docs/solitaire-tutorial/drag_and_drop6.gif" className="screenshot-50" />
 
-The full code for this step can be found [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/solitaire/solitaire-drag-and-drop/step4.py).
+可以找到此步骤的完整代码[此处](https://github.com/flet-dev/examples/blob/main/python/tutorials/solitaire/solitaire-drag-and-drop/step4.py)。
 
-Congratulations on completing the proof of concept app for the Solitaire game! Now you can work with `GestureDetector` to move cards inside `Stack` and place them to certain `Containers`, which is a great part of the game to begin with.
+恭喜您完成了 Solitaire 游戏的概念应用程序！ 现在，您可以与`GestureDetector`一起工作，将卡片移入`Stack`并将其放置到某些`Containers`中，这是游戏开始的重要组成部分。
 
-## Fanned card piles
+## 扇形卡片片堆
 
-In the proof of concept app you have accomplished the task of dropping a card to a slot in proximity or bounce it back. If there is already a card in that slot, the new card is placed on top of it, covering it completely.
+在概念应用程序的证明中，您已经完成了将卡片丢给插槽的任务，或者反弹。 如果该插槽中已经有一张卡片，则将新卡片放在其顶部，将其完全覆盖。
 
-In the actual Solitaire game, if there is already a card in a tableau slot, you want to place the draggable card a bit lower, so that you can see the previous card too, and if there are two cards, even lower. Those are called “fanned piles”.
+在实际的单人游戏中，如果已经有一张卡片片插槽中的卡片片，则要将可拖动卡片放低一点，以便您也可以看到上一张卡片，如果有两张卡片，甚至较低。 这些被称为“扇形桩”。
 
-Then, we want to be able to pick a card from the fanned pile that is not the top card of the pile and drag the card together with all the cards below it:
-<img src="/img/docs/solitaire-tutorial/fanned_piles3.gif" className="screenshot-50" />
+然后，我们希望能够从扇形堆中挑选一张不是堆的顶部卡片片，并将卡片与下面的所有卡片一起拖动:
+<img src="/website/img/docs/solitaire-tutorial/fanned_piles3.gif" className="screenshot-50" />
 
-To be able to do that, it would be useful to have the information about the pile of cards in the slot from which the card is dragged, as well as in the slot to which it is being dropped. Let’s restructure our program and get it ready for the implementation of the fanned piles.
+为此，拥有有关拖动卡片的插槽中以及掉落的插槽中的插槽中的一堆卡片的信息将很有用。 让我们重组我们的程序，并为实施扇形桩做好准备。
 
-### Slot, Card and Solitaire classes
+### 插槽，卡片和纸牌课程
 
-A slot could have a `pile` property that would hold a list of cards that were placed there. Now the slot is a `Container` control object, and we can’t add any new properties to it. Let’s create a new `Slot` class that will inherit from `Container` and add a `pile` property to it:
+一个插槽可以具有`pile`属性，该属性将保存在此处放置的卡片列表。 现在，插槽是`Container`控制对象，我们无法向其添加任何新属性。 让我们创建一个新的`Slot`类，该类将从`Container`继承，然后添加一个`pile`属性:
 
 ```python
 SLOT_WIDTH = 70
 SLOT_HEIGHT = 100
- 
+
 import flet as ft
- 
+
 class Slot(ft.Container):
    def __init__(self, top, left):
        super().__init__()
@@ -334,14 +343,15 @@ class Slot(ft.Container):
        self.border=ft.border.all(1)
 ```
 
-Similarly to `Slot` class, let’s create a new `Card` class with `slot` property to remember in which slot it resides. It will inherit from `GestureDetector` and we’ll move all card-related methods to it:
+与`Slot`类类似，让我们使用`slot`属性创建一个新的`Card`类，要记住它驻留在哪个插槽中。 它将从`GestureDetector`继承，我们将将所有与卡片相关的方法移动到它:
+
 ```python
 CARD_WIDTH = 70
 CARD_HEIGTH = 100
 DROP_PROXIMITY = 20
- 
+
 import flet as ft
- 
+
 class Card(ft.GestureDetector):
    def __init__(self, solitaire, color):
        super().__init__()
@@ -356,33 +366,33 @@ class Card(ft.GestureDetector):
        self.solitaire = solitaire
        self.color = color
        self.content=ft.Container(bgcolor=self.color, width=CARD_WIDTH, height=CARD_HEIGTH)
-   
+
    def move_on_top(self):
        """Moves draggable card to the top of the stack"""
        self.solitaire.controls.remove(self)
        self.solitaire.controls.append(self)
        self.solitaire.update()
- 
+
    def bounce_back(self):
        """Returns card to its original position"""
        self.top = self.slot.top
        self.left = self.slot.left
        self.update()
- 
+
    def place(self, slot):
        """Place card to the slot"""
        self.top = slot.top
        self.left = slot.left
- 
+
    def start_drag(self, e: ft.DragStartEvent):
        self.move_on_top()
        self.update()
- 
+
    def drag(self, e: ft.DragUpdateEvent):
        self.top = max(0, self.top + e.delta_y)
        self.left = max(0, self.left + e.delta_x)
        self.update()
- 
+
    def drop(self, e: ft.DragEndEvent):
        for slot in self.solitaire.slots:
            if (
@@ -392,24 +402,26 @@ class Card(ft.GestureDetector):
                self.place(slot)
                self.update()
                return
-         
+
        self.bounce_back()
        self.update()
 ```
 
-:::note
-Note: since each card has `slot` property now, there is no need to remember `start_left` and `start_top` position of the draggable card in Solitaire class anymore, because we can just bounce it back to it’s slot.
+:::注意
+注意: 由于每张卡片现在都有`slot`属性，因此无需记住`start_left`和`start_top`在 Solitaire 类中的可拖动卡片的位置`start_top`，因为我们只需将其弹回到它的插槽。
+:::。
 :::
 
-Let’s update `Solitaire` class to inherit from `Stack`, and move the creation of cards and slots there:
+让我们更新`Solitaire`类从`Stack`继承，然后将卡片片和插槽的创建移动到那里:
+
 ```python
 SOLITAIRE_WIDTH = 1000
 SOLITAIRE_HEIGHT = 500
- 
+
 import flet as ft
 from slot import Slot
 from card import Card
- 
+
 class Solitaire(ft.Stack):
    def __init__(self):
        super().__init__()
@@ -418,24 +430,24 @@ class Solitaire(ft.Stack):
        self.cards = []
        self.width = SOLITAIRE_WIDTH
        self.height = SOLITAIRE_HEIGHT
- 
+
    def did_mount(self):
        self.create_card_deck()
        self.create_slots()
        self.deal_cards()
- 
+
    def create_card_deck(self):
        card1 = Card(self, color="GREEN")
        card2 = Card(self, color="YELLOW")
        self.cards = [card1, card2]
- 
+
    def create_slots(self):
        self.slots.append(Slot(top=0, left=0))
        self.slots.append(Slot(top=0, left=200))
        self.slots.append(Slot(top=0, left=300))
        self.controls.extend(self.slots)
        self.update()
- 
+
    def deal_cards(self):
        self.controls.extend(self.cards)
        for card in self.cards:
@@ -443,38 +455,41 @@ class Solitaire(ft.Stack):
        self.update()
 ```
 
-:::note
-If you try to call `create_slots()` and `create_card_deck()` and `deal_cards()` methods  `__init__()` method of the Solitaire class, it will cause an error “Control must be added to the page first”. To fix this, we  create slots and cards inside the `did_mount()` method, which happens immediately after the stack is added to the page.
+:::注意
+如果您尝试调用`create_slots()`和`create_card_deck()`和`deal_cards()`方法`__init__()` solitaire 类方法`__init__()`，则会导致错误“必须先添加控件到页面上”。 为了解决此问题，我们在`did_mount()`方法内创建插槽和卡片片，该方法在将堆栈添加到页面后立即发生。
 :::
 
-Our main program will be very simple now:
+现在，我们的主要程序将非常简单:
+
 ```python
 import flet as ft
 from solitaire import Solitaire
- 
+
 def main(page: ft.Page):
-  
+
    solitaire = Solitaire()
- 
+
    page.add(solitaire)
- 
+
 ft.app(target=main)
 ```
 
-You can find the full source code for this step [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-classes). It works exactly the same way as the proof of concept app, but re-written with the new classes to be ready for adding more complex functionality to it. 
+您可以找到此步骤的完整源代码[此处](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-classes)。 它的工作方式与概念应用程序完全相同，但用新类重写，可以为其添加更复杂的功能。
 
-### Placing card with offset
+### 放置带有偏移的卡片
 
-When the card is being placed to a slot in the `card.place()` method, we need to do three things:
-* Remove the card from its original slot, if it exists
-* Change card’s slot to the new slot
-* Add the card to the new slot’s pile
+当卡片将卡片放在`card.place()`方法中的插槽上时，我们需要做三件事:
+
+- 如果存在，将卡片从其原始插槽中删除
+- 将卡片的插槽更改为新插槽
+- 将卡片添加到新的老虎机堆中
+
 ```python
 def place(self, slot):
     # remove card from it's original slot, if exists
     if self.slot is not None:
         self.slot.pile.remove(self)
-    
+
     # change card's slot to a new slot
     self.slot = slot
 
@@ -482,22 +497,25 @@ def place(self, slot):
     slot.pile.append(self)
 ```
 
-When updating card’s `top` and `left` position, `left` should remain the same, but `top` will depend on the length of the new slot’s pile:
+更新卡片的`top`和`left`位置时，`left`应保持不变，但是`top`将取决于新插槽堆的长度:
+
 ```python
     self.top = slot.top + len(slot.pile) * CARD_OFFSET
     self.left = slot.left
 ```
 
-Now the cards are placed with offset which gives us the fanned pile look:
-<img src="/img/docs/solitaire-tutorial/fanned_piles1.png" className="screenshot-50" />
+现在，将卡片片放置在偏移量中，这使我们散发着扇形的堆外观:
+<img src="/website/img/docs/solitaire-tutorial/fanned_piles1.png" className="screenshot-50" />
 
-### Drag pile of cards
-If you try to drag the card from the bottom of the pile now, it will look like this:
-<img src="/img/docs/solitaire-tutorial/fanned_piles2.gif" className="screenshot-50" />
+### 拖拉卡片片
 
-To fix this problem, we need to update all the methods that work with the draggable card to work with the draggable pile instead.
+如果您现在尝试从堆的底部拖动卡片片，则看起来像这样:
+<img src="/website/img/docs/solitaire-tutorial/fanned_piles2.gif" className="screenshot-50" />
 
-Let’s create `get_draggable_pile()` method that will return list of cards that need to be dragged together, starting with the card you picked:
+为了解决此问题，我们需要更新与可拖动卡片一起使用的所有方法，以便与可拖动堆一起使用。
+
+让我们创建`get_draggable_pile()`方法，该方法将返回需要一起拖动的卡片的列表，从您选择的卡片开始:
+
 ```python
 def get_draggable_pile(self):
     """returns list of cards that will be dragged together, starting with the current card"""
@@ -506,7 +524,8 @@ def get_draggable_pile(self):
     return [self]
 ```
 
-Then, we’ll update `move_on_top()` method:
+然后，我们将更新`move_on_top()`方法:
+
 ```python
 def move_on_top(self):
     """Brings draggable card pile to the top of the stack"""
@@ -516,7 +535,8 @@ def move_on_top(self):
     self.solitaire.update()
 ```
 
-Additionally, we need to update `drag()` method to go through the draggable pile and update positions of all the cards being dragged: 
+此外，我们需要更新`drag()`方法，以遍历可拖动的堆并更新所有被拖动卡片的位置:
+
 ```python
 def drag(self, e: ft.DragUpdateEvent):
     draggable_pile = self.get_draggable_pile()
@@ -525,8 +545,9 @@ def drag(self, e: ft.DragUpdateEvent):
         card.left = max(0, self.left + e.delta_x)
         card.update()
 ```
- 
-Also, we need to update `place()` method to place place the draggable pile to the slot:
+
+另外，我们需要更新`place()`方法，将可拖动堆放在插槽中:
+
 ```python
 def place(self, slot):
     """Place draggable pile to the slot"""
@@ -539,17 +560,18 @@ def place(self, slot):
         # remove card from it's original slot, if exists
         if card.slot is not None:
             card.slot.pile.remove(card)
-    
+
         # change card's slot to a new slot
         card.slot = slot
 
         # add card to the new slot's pile
         slot.pile.append(card)
-    
+
     self.solitaire.update()
 ```
 
-Finally, if no slot in proximity is found, we need to bounce the whole pile back to its original position:
+最后，如果找不到近距离的插槽，我们需要将整个堆弹回其原始位置:
+
 ```python
 def bounce_back(self):
     """Returns draggable pile to its original position"""
@@ -560,30 +582,32 @@ def bounce_back(self):
     self.solitaire.update()
 ```
 
-The full source code of this step can be found [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-fanned-piles). Now we can drag and drop cards in fanned piles, which means we are ready for the real deal! 
+可以找到此步骤的完整源代码[此处](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-fanned-piles)。 现在，我们可以将卡片片拖放堆中的堆堆，这意味着我们已经准备好实现真正的交易了！
 
-## Solitaire setup
+## Solitaire 设置
 
-Let’s take a look at the [wikipedia article about Klondike (solitaire)](https://en.wikipedia.org/wiki/Klondike_(solitaire)#Rules):
+让我们看一下有关 Klondike（Solitaire）的[Wikipedia 文章](https://en.wikipedia.org/wiki/Klondike_(solitaire) #rules）:
 
-> Klondike is played with a standard 52-card deck.
+> klondike 播放了标准的 52 张牌甲板。
 
-> After shuffling, a tableau of seven fanned piles of cards is laid from left to right. From left to right, each pile contains one more card than the last. The first and left-most pile contains a single upturned card, the second pile contains two cards, the third pile contains three cards, the fourth pile contains four cards, the fifth pile contains five cards, the sixth pile contains six cards, and the seventh pile contains seven cards. The topmost card of each pile is turned face up.
-The remaining cards form the stock and are placed facedown at the upper left of the layout.
+> 改组后，从左到右放置了一堆七张扇形纸牌的图片。 从左到右，每个桩都包含比最后一张卡片更多的卡片。 第一和最左的堆包含一张上升的卡片片，第二块包含两张卡片片，第三张堆包含三张卡片片，第四张桩包含四张卡片片，第五张堆包含五张卡片片 第七桩包含七张卡片。 每个堆的最高卡片都被朝上。
+> 其余卡片片形成库存，并将其朝向布局左上方。
 
-> The four foundations (light rectangles in the upper right of the figure) are built up by suit from Ace (low in this game) to King, and the tableau piles can be built down by alternate colors.
+> 四个基础（图右上方的轻矩形）是由从 Ace（低点中的低）到 King 建立的，可以通过其他颜色来建造 Tableau Pile。
 
-<img src="/img/docs/solitaire-tutorial/game_setup_wiki.png" className="screenshot-40" />
+<img src="/website/img/docs/solitaire-tutorial/game_setup_wiki.png" className="screenshot-40" />
 
-We will now work on this setup step by step.
+现在，我们将逐步进行此设置。
 
-### Create card deck
-The first step is to create a full deck of cards in Solitaire class. Each card should have a `suit` property (hearts, diamonds, clubs and spades) and a `rank` property (from Ace to King). 
-For the suit, its `color` is important, because tableau piles are built by alternate colors.
+### 创建卡片片甲板
 
-For the rank, its `value` is important, because foundations are built from the lowest (Ace) to the highest (King) rank value.
+第一步是在纸牌班上创建完整的卡片片。 每张卡片应具有`suit`属性（心脏，钻石，俱乐部和黑桃）和`rank`属性（从王牌到国王）。
+对于这套西装，它的`color`很重要，因为 Tableau Pile 是由其他颜色构建的。
 
-In solitaire.py, create `Suite` and `Rank` classes:
+对于等级而言，其`value`很重要，因为基础是从最低（ACE）到最高（国王）等级值的基础。
+
+在 solitaire.py 中，创建`Suite`和`Rank`类:
+
 ```python
 class Suite:
     def __init__(self, suite_name, suite_color):
@@ -595,7 +619,9 @@ class Rank:
         self.name = card_name
         self.value = card_value
 ```
-Now, in the `Card` class, instead of accepting the color as an argument, we’ll be accepting `suite` and `rank` in `__init__()`. Additionally, we’ll add `face_up` property to the card and the Container will now has image of the back of the card as its `content`:
+
+现在，在`Card`类中，我们不接受颜色作为参数，而是在`__init__()`中接受`suite`和`rank`。 此外，我们将`face_up`属性添加到卡片中，并且容器现在将具有卡片的背面图像为`content`:
+
 ```python
 class Card(ft.GestureDetector):
     def __init__(self, solitaire, suite, rank):
@@ -618,16 +644,20 @@ class Card(ft.GestureDetector):
             border_radius = ft.border_radius.all(6),
             content=ft.Image(src="card_back.png"))
 ```
-All the images for the face up cards, as well as card back are stored in the “images” folder in the same directory as main.py [link to github]. 
 
-:::note
-For the reference to the image file to work, we need to specify the folder were it resides in the assets_dir in main.py:
+面朝上卡片的所有图像以及卡片背部的所有图像都存储在与 main..py [link go github]同一目录中的“图像”文件夹中。
+
+:::注意
+为了引用对要工作的图像文件，我们需要指定文件夹位于 main.py 中的 Assets_dir 中:
+
 ```python
 ft.app(target=main, assets_dir="images")
 ```
+
 :::
 
-Finally, in `solitaire.create_card_deck()` we'll create lists of suites and ranks and then the 52-card deck:
+最后，在`solitaire.create_card_deck()`中，我们将创建套件和排名的列表，然后创建 52 张卡片牌:
+
 ```python
 def create_card_deck(self):
     suites = [
@@ -658,18 +688,20 @@ def create_card_deck(self):
         for rank in ranks:
             self.cards.append(Card(solitaire=self, suite=suite, rank=rank))
 ```
-The card deck is ready to be dealed, and now we need to create the layout for it.
 
-### Create slots
+该卡片甲板已经准备好被交易了，现在我们需要为其创建布局。
 
-Klondike solitaire game layout should look like this:
+### 创建插槽
 
-<img src="/img/docs/solitaire-tutorial/solitaire-layout.svg" className="screenshot-80" />
+klondike solitaire 游戏布局应该看起来像这样:
 
-Let’s create all those slots in `solitaire.create_slots()`:
+<img src="/website/img/docs/solitaire-tutorial/solitaire-layout.svg" className="screenshot-80" />
+
+让我们在`solitaire.create_slots()`中创建所有这些插槽:
+
 ```python
 def create_slots(self):
-    
+
     self.stock = Slot(top=0, left=0, border=ft.border.all(1))
     self.waste = Slot(top=0, left=100, border=None)
 
@@ -692,13 +724,14 @@ def create_slots(self):
     self.update()
 ```
 
-:::note
-Note: some slots should have visible border and some shouldn’t, so we added border to the list of arguments for the creation of `Slot` objects.
+:::注意
+注意: 有些插槽应该具有可见的边框，有些则不应该，因此我们将边框添加到创建`Slot`对象的论点列表中。
 :::
 
-### Deal cards
+### 交易卡片
 
-Let's start with shuffling the cards and adding them to the list of controls:
+让我们从整理卡片片并将其添加到控件列表中开始:
+
 ```python
 def deal_cards(self):
     random.shuffle(self.cards)
@@ -706,16 +739,17 @@ def deal_cards(self):
     self.update()
 ```
 
-Then we'll deal the cards to the tableau piles from left to right so that each pile contains one more card than the last, and place the remaining cards to the stock pile:
+然后，我们将将卡片从左到右交付给 Tableau Pile，以便每个堆包含一张比最后一张卡片更多的卡片，然后将剩余的卡片放在库存堆中:
+
 ```python
 def deal_cards(self):
     random.shuffle(self.cards)
     self.controls.extend(self.cards)
-    
+
     # deal to tableau
     first_slot = 0
     remaining_cards = self.cards
-    
+
     while first_slot < len(self.tableau):
         for slot in self.tableau[first_slot:]:
             top_card = remaining_cards[0]
@@ -726,13 +760,15 @@ def deal_cards(self):
     # place remaining cards to stock pile
     for card in remaining_cards:
         card.place(self.stock)
-    
+
     self.update()
 ```
-Let’s run the program and see where we are at now:
-<img src="/img/docs/solitaire-tutorial/game_setup1.png" className="screenshot-40" />
 
-Cards in stock were placed in a fanned pile in the same manner as to the tableau, but they should have been placed to a regular pile instead. To fix this problem, let’s add this condition to the `card.place()` method:
+让我们来运行程序，看看我们现在的位置:
+<img src="/website/img/docs/solitaire-tutorial/game_setup1.png" className="screenshot-40" />
+
+将库存的卡片片放在扇形的堆中，其方式与 Tableau 相同，但应该放置在常规堆中。 要解决此问题，让我们将此条件添加到`card.place()`方法:
+
 ```python
 def place(self, slot):
     """Place draggable pile to the slot"""
@@ -742,12 +778,14 @@ def place(self, slot):
         self.top = slot.top
     self.left = slot.left
 ```
-Now cards are only placed in fanned piles to tableau:
-<img src="/img/docs/solitaire-tutorial/game_setup2.png" className="screenshot-40" />
 
-If you try moving the cards around now, the program won’t work. The reason for this is that in the `card.drop()` method iterates through list of slots which we don’t have now. 
+现在，卡片片仅放在扇形堆中到 Tableau:
+<img src="/website/img/docs/solitaire-tutorial/game_setup2.png" className="screenshot-40" />
 
-Let’s update the method to go separately through foundations and tableau:
+如果您现在尝试移动卡片片，则该程序将无法正常工作。 这样做的原因是，在`card.drop()`中，方法通过我们现在没有的插槽列表迭代。
+
+让我们更新以通过基础和 Tableau 分开进行的方法:
+
 ```python
 def drop(self, e: ft.DragEndEvent):
     for slot in self.solitaire.tableau:
@@ -767,52 +805,58 @@ def drop(self, e: ft.DragEndEvent):
             self.place(slot)
             self.update()
             return
-        
+
     self.bounce_back()
     self.update()
 ```
 
-### Reveal top cards in tableau piles
+### 在 Tableau Pite 中揭示顶级卡片片
 
-Now we have the correct game setup and as a last touch we need to reveal the topmost cards in tableau piles.
+现在，我们有了正确的游戏设置，作为最后的触摸，我们需要在 Tableau Pile 中揭示最上方的卡片片。
 
-In `Slot` class, create a `get_top_card()` method:
+在`Slot`类中，创建一个`get_top_card()`方法:
+
 ```python
 def get_top_card(self):
     if len(self.pile) > 0:
         return self.pile[-1]
 ```
-In `Card` class, create `turn_dace_up()` method:
+
+在`Card`类中，创建`turn_dace_up()`方法:
+
 ```python
 def turn_face_up(self):
     self.face_up = True
     self.content.content.src=f"/images/{self.rank.name}_{self.suite.name}.svg"
     self.update()
 ```
-Finally, reveal the topmost cards in the `solitaire.deal_cards()`:
+
+最后，在`solitaire.deal_cards()`中显示最上方的卡片:
+
 ```python
 for slot in self.tableau:
     slot.get_top_card().turn_face_up()
     self.update()
 ```
 
-Let’s see how it looks now:
-<img src="/img/docs/solitaire-tutorial/game_setup3.png" className="screenshot-50" />
+让我们看看现在的外观:
+<img src="/website/img/docs/solitaire-tutorial/game_setup3.png" className="screenshot-50" />
 
-The full source code for this step can be found [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-game-setup).
+可以找到此步骤的完整源代码[此处](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-game-setup)。
 
-Congratulations on completing the Solitaire game setup! You’ve created a full 52-card deck, built layout with stock, waste, foundations and tableau piles, dealt the cards and revealed the top cards in tableau. Let’s move on to the next item on our todo list, which is Solitaire Rules.
+恭喜您完成了 Solitaire 游戏设置！ 您已经创建了一个完整的 52 张牌甲板，其中包括库存，废物，地基和塔图桩的布局，并在 Tableau 中透露了顶级卡片片。 让我们继续进入我们的待办事项列表上的下一个项目，即单人规则。
 
-## Solitaire rules
+## solitaire 规则
 
-If you run your current version of Solitaire, you’ll notice that you can do some crazy things with your cards:
-<img src="/img/docs/solitaire-tutorial/game_rules1.gif" className="screenshot-50" />
+如果您运行当前版本的 Solitaire，您会注意到您可以用卡片片做一些疯狂的事情:
+<img src="/website/img/docs/solitaire-tutorial/game_rules1.gif" className="screenshot-50" />
 
-Now it is time to implement some rules.
+现在是时候实施一些规则了。
 
-### General rules
+### 一般规则
 
-Currently, we can move any card, but only face-up cards should be moved. Let’s add this check in `start_drag`, `drag` and `drop` methods of the card:
+目前，我们可以移动任何卡片片，但只能移动面对面的卡片。 让我们在`start_drag`，`drag`和`drop`卡片的方法中添加此检查:
+
 ```python
 def start_drag(self, e: ft.DragStartEvent):
     if self.face_up:
@@ -837,7 +881,7 @@ def drop(self, e: ft.DragEndEvent):
                 self.place(slot)
                 self.update()
                 return
-        
+
         for slot in self.solitaire.foundations:
             if (
                     abs(self.top - slot.top) < DROP_PROXIMITY
@@ -846,12 +890,13 @@ def drop(self, e: ft.DragEndEvent):
                 self.place(slot)
                 self.update()
                 return
-        
+
     self.bounce_back()
     self.update()
 ```
 
-Now let’s specify `click` method for the `on_tap` event of the card to reveal the card if you click on a faced-down top card in a tableau pile:
+现在，让我们指定卡片的`click`方法`on_tap`事件，如果您单击 Tableau Pile 中的脸部倒入顶部卡片，则可以显示该卡片:
+
 ```python
 def click(self, e):
     if self.slot in self.solitaire.tableau:
@@ -860,12 +905,12 @@ def click(self, e):
             self.update()
 ```
 
-Let's check how it works:
-<img src="/img/docs/solitaire-tutorial/game_rules2.gif" className="screenshot-50" />
+让我们检查一下它的工作方式:
+<img src="/website/img/docs/solitaire-tutorial/game_rules2.gif" className="screenshot-50" />
 
-### Foundations rules
+### 基础规则
 
-At the moment we can place fanned piles to foundations, which shouldn’t be allowed. Let’s check the draggable pile length to fix it:
+目前，我们可以将扇形的堆放在基础上，不允许这样做。 让我们检查可拖动的桩长以修复它:
 
 ```python
 def drop(self, e: ft.DragEndEvent):
@@ -877,7 +922,7 @@ def drop(self, e: ft.DragEndEvent):
             self.place(slot)
             self.update()
             return
-    
+
     if len(self.get_draggable_pile()) == 1:
         for slot in self.solitaire.foundations:
             if (
@@ -887,14 +932,15 @@ def drop(self, e: ft.DragEndEvent):
                 self.place(slot)
                 self.update()
                 return
-        
+
     self.bounce_back()
     self.update()
 ```
 
-Then, of course, not any card can be placed to a foundation. According to the rules, a foundation should start with an Ace and then the cards of the same suite can be placed on top of it to build a pile form Ace to King.
+然后，当然，没有任何卡片都可以放在基础上。 根据规则，基金会应从 ACE 开始，然后可以将同一套房的卡片放在其顶部，以建立向 King 建立 Ace Ace。
 
-Let’s add this rule to Solitaire class:
+让我们将此规则添加到纸牌课上:
+
 ```python
 def check_foundations_rules(self, card, slot):
     top_card = slot.get_top_card()
@@ -907,7 +953,8 @@ def check_foundations_rules(self, card, slot):
         return card.rank.name == "Ace"
 ```
 
-We’ll check this rule in `drop()` method before placing a card to a foundation slot:
+在将卡片放置到基础插槽之前，我们将在`drop()`方法中检查此规则:
+
 ```python
 def drop(self, e: ft.DragEndEvent):
     if self.face_up:
@@ -919,7 +966,7 @@ def drop(self, e: ft.DragEndEvent):
                 self.place(slot)
                 self.update()
                 return
-        
+
         if len(self.get_draggable_pile()) == 1:
             for slot in self.solitaire.foundations:
                 if (
@@ -929,12 +976,13 @@ def drop(self, e: ft.DragEndEvent):
                     self.place(slot)
                     self.update()
                     return
-        
+
         self.bounce_back()
         self.update()
 ```
 
-As a final touch for foundations rules, let’s implement `doublclick` method for `on_double_tap` event of a card. It will be checking if the faced-up card fits into any of the foundations and place it there:
+作为基础规则的最终触摸，让我们实现`doublclick`的方法`on_double_tap`卡片的事件。 它将检查面对的卡片是否适合任何基础并将其放在那里:
+
 ```python
    def doubleclick(self, e):
        if self.face_up:
@@ -946,11 +994,11 @@ As a final touch for foundations rules, let’s implement `doublclick` method fo
                    return
 ```
 
-### Tableau rules
+### tableau 规则
 
-Finally, let's implement the rules to build tableau piles down from King to Ace by alternating suite color. Additionally, only King can be placed to an empty tableau slot.
+最后，让我们实施规则以建立 Tableau 通过交替的套件颜色从国王到王牌堆积。 此外，只能将国王放在一个空的图表上。
+让我们添加这些针对纸牌课的规则:
 
-Let’s add these rules for Solitaire class:
 ```python
 def check_tableau_rules(self, card, slot):
     top_card = slot.get_top_card()
@@ -963,7 +1011,9 @@ def check_tableau_rules(self, card, slot):
     else:
         return card.rank.name == "King"
 ```
-Similarly to the foundations rules, we’ll check tableau rules before placing a card to a tableau pile:
+
+与基金会规则类似，我们将在将卡片放置到 Tableau 堆之前检查 Tableau 规则:
+
 ```python
 def drop(self, e: ft.DragEndEvent):
     if self.face_up:
@@ -975,7 +1025,7 @@ def drop(self, e: ft.DragEndEvent):
                 self.place(slot)
                 self.update()
                 return
-        
+
         if len(self.get_draggable_pile()) == 1:
             for slot in self.solitaire.foundations:
                 if (
@@ -985,16 +1035,17 @@ def drop(self, e: ft.DragEndEvent):
                     self.place(slot)
                     self.update()
                     return
-        
+
         self.bounce_back()
         self.update()
 ```
 
-### Stock and waste
+### 库存和废物
 
-To properly play Solitaire game right now we are missing the remaining cards that are piled in the stock.
+为了正确地玩纸牌游戏，我们缺少库存中堆积的剩余卡片片。
 
-Let’s update `click()` method of the card to go through the stock pile and place the cards to waste as we go:
+让我们更新卡片的`click()`方法，以通过库存堆，将卡片片放在我们的出发时浪费:
+
 ```python
 def click(self, e):
     if self.slot in self.solitaire.tableau:
@@ -1008,7 +1059,8 @@ def click(self, e):
         self.solitaire.update()
 ```
 
-That’s it! Now you can properly play solitaire, but it very difficult to win the game if you cannot pass though the waste again. Let’s implement `click()` for `on_click` event of the stock Slot to go thought the stock pile again:
+就是这样！ 现在，您可以正确地玩纸牌，但是如果您不能再次通过浪费，很难赢得比赛。 让我们实现`click()` `on_click`库存插槽的事件，以便再次考虑库存堆:
+
 ```python
 class Slot(ft.Container):
    def __init__(self, solitaire, top, left, border):
@@ -1022,24 +1074,26 @@ class Slot(ft.Container):
        self.solitaire=solitaire
        self.border=border
        self.border_radius = ft.border_radius.all(6)
-  
+
    def click(self, e):
        if self == self.solitaire.stock:
            self.solitaire.restart_stock()
 ```
 
-`restart_stock()` method in `Solitaire` class will place all cards from waste to stock again:
+`restart_stock()` `Solitaire`类中的方法将再次将所有卡片片放置在废物中:
+
 ```python
 def restart_stock(self):
     while len(self.waste.pile) > 0:
         card = self.waste.get_top_card()
         card.turn_face_down()
         card.move_on_top()
-        card.place(self.stock)   
+        card.place(self.stock)
     self.update
 ```
 
-For `card.place()` method to work properly with cards from Stock and Waste, we’ve added a condition to `card.get_draggable_pile()`, so that it returns the top card only and not the whole pile:
+对于`card.place()`的方法，可以与库存和废物的卡片正确配合使用，我们将条件添加到`card.get_draggable_pile()`，以便它仅返回顶部卡片，而不是整个堆:
+
 ```python
 def get_draggable_pile(self):
     """returns list of cards that will be dragged together, starting with the current card"""
@@ -1047,17 +1101,19 @@ def get_draggable_pile(self):
         return self.slot.pile[self.slot.pile.index(self):]
     return [self]
 ```
-All done! The full source code for this step can be found [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-game-rules).
 
-Let’s move on to the last step of the game itself - detecting the situation when you have won.
+全做完了！ 可以找到此步骤的完整源代码[此处](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-game-rules)。
 
-## Winning the game
+让我们继续进行游戏本身的最后一步 - 检测您赢得的情况。
 
-According to [wikipedia](https://en.wikipedia.org/wiki/Klondike_(solitaire)#Probability_of_winning), some suggest the chances of winning the game as being 1 in 30 games. 
+## 赢得游戏
 
-Knowing that the chances of winning are quite low, we should plan on showing the user something exciting when that finally happens.
+根据[Wikipedia](https://en.wikipedia.org/wiki/Klondike_(solitaire) #probability_of_winning），有些人暗示赢得比赛的机会为 30 场比赛中的 1 场。
 
-First, let’s add a check for the winning condition to `Solitaire` class. If all four foundations contain total of 52 cards, then you have won:
+知道获胜的机会很低，我们应该计划向用户向用户展示一些令人兴奋的事情。
+
+首先，让我们将获胜条件的检查添加到`Solitaire`类中。 如果所有四个基础总共包含 52 张卡片，那么您将赢:
+
 ```python
 def check_win(self):
     cards_num = 0
@@ -1067,12 +1123,13 @@ def check_win(self):
         return True
     return False
 ```
- 
-We’ll be checking if this condition is true each time a card is placed to a foundation:
+
+每当将卡片放置在基础上时，我们将检查这种情况是否为真:
+
 ```python
 def place(self, slot):
     """Place draggable pile to the slot"""
-    
+
     draggable_pile = self.get_draggable_pile()
 
     for card in draggable_pile:
@@ -1085,23 +1142,24 @@ def place(self, slot):
         # remove card from it's original slot, if exists
         if card.slot is not None:
             card.slot.pile.remove(card)
-    
+
         # change card's slot to a new slot
         card.slot = slot
 
         # add card to the new slot's pile
         slot.pile.append(card)
-    
+
     if self.solitaire.check_win():
         self.solitaire.winning_sequence()
-    
+
     self.solitaire.update()
 ```
 
-Finally, if the winning condition is met, it will trigger a winning sequence involving [position animation](https://flet.dev/docs/guides/python/animations#position-animation):
+最后，如果满足获胜条件，它将触发涉及[位置动画](https://flet.dev/docs/guides/python/animations#position-animation)的获胜序列:
+
 ```python
 def winning_sequence(self):
-    for slot in self.foundations:   
+    for slot in self.foundations:
         for card in slot.pile:
             card.animate_position=1000
             card.move_on_top()
@@ -1110,34 +1168,35 @@ def winning_sequence(self):
             self.update()
     self.controls.append(ft.AlertDialog(title=ft.Text("Congratulations! You won!"), open=True))
 ```
-As you can imagine, it took me a while before I could win the game and take this video, but here it is:
-<img src="/img/docs/solitaire-tutorial/winning_the_game.gif" className="screenshot-50" />
 
-Wow! We did it. You can find the full source code for the Part 1 of the Solitaire game [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-final-part1). 
+您可以想象，我花了一段时间才赢得游戏并拍摄此视频，但是这里是:
+<img src="/website/img/docs/solitaire-tutorial/winning_the_game.gif" className="screenshot-50" />
 
-In Part 2 we will be adding top menu with options to restart the game, view game rules and change game settings such as waste size, number of passes through the waste and card back image.
+哇！ 我们做到了。 您可以找到 Solitaire Game [此处](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-final-part1)的第 1 部分的完整源代码。
 
-Now, as we have a decent desktop version of the game, let’s deploy it as a web app to share with your friends and colleagues.
+在第 2 部分中，我们将添加带有选项的顶部菜单，以重新启动游戏，查看游戏规则并更改游戏设置，例如废物尺寸，通过废物和卡片片映像的通行数。
 
-## Deploying the app
+现在，由于我们有一个不错的桌面版本，让我们将其部署为网络应用程序以与您的朋友和同事共享。
 
-Congratulations! You have created your Solitaire game app in Python with Flet, and it looks awesome!
+## 部署该应用程序
 
-Now it's time to share your app with the world!
+恭喜！ 您已经用 Flet 在 Python 中创建了 Solitaire Game 应用程序，看起来很棒！
 
-[Follow these instructions](/docs/guides/python/deploying-web-app) to deploy your Flet app as a web app to Fly.io or Replit.
+现在是时候与世界共享您的应用程序了！
 
-## Summary
+[遵循以下说明](/docs/guides/python/deploying-web-app)将您的 Flet 应用程序部署为 web 应用程序，以 Fly.io 或 replesit。
 
-In this tutorial, you have learnt how to:
+## summary
 
-* Create a simple Flet app;
-* Drag and drop cards with GestureDetector;
-* Create your own classes that inherit from Flet controls;
-* Design UI layout using absolute positioning of controls in Stack;
-* Implement implicit animations;
-* Deploy your Flet app to the web;
+在本教程中，您已经学会了如何:
 
-For further reading you can explore [controls](/docs/controls) and [examples repository](https://github.com/flet-dev/examples/tree/main/python).
+- 创建一个简单的 Flet app;
+- 用手势拖放卡片片拖放卡片；
+- 创建自己的类，该类从 Flet 控件继承；
+- 使用堆栈中控件的绝对定位设计 UI 布局；
+- 实施隐式动画；
+- 将您的 Flet 应用程序部署到 Web；
 
-We would love to hear your feedback! Please drop us an [email](mailto:hello@flet.dev), join the discussion on [Discord](https://discord.gg/dzWXP8SHG8), follow on [Twitter](https://twitter.com/fletdev).
+为了进一步阅读，您可以探索[控件](/docs/controls)和[示例存储库](https://github.com/flet-dev/examples/tree/main/python)。
+
+我们很乐意倾听您的反馈！ 请给我们放置一个[电子邮件](mailto:hello@flet.dev)，加入[Discord](https://discord.gg/dzWXP8SHG8)的讨论，请在[Twitter](https://twitter.com/fletdev)上关注。

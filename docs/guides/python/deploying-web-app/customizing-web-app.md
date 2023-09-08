@@ -3,15 +3,15 @@ title: Customizing web app
 sidebar_label: Customizing web app
 ---
 
-When you open Flet app in the browser its `index.html`, Flutter engine, favicon, images and other web app resources are served by Flet Server (aka "Flet daemon" or `fletd`). These resources are bundled with `flet` Python package. However, there are situations when you need to modify the contents of certain files to customize appearance of your app or its behavior, for example:
+当您在浏览器中打开Flet应用程序时，Flet server（aka“ Flet daemon} daemon”或`fletd`）在浏览器中`index.html`，Flutter Engine，Favicon，Favicon，Image和其他Web应用程序资源提供服务。 这些资源与`flet` Python软件包捆绑在一起。 但是，在某些情况下，您需要修改某些文件的内容以自定义应用程序的外观或其行为的外观，例如: 
 
-* Favicon.
-* App loading animation.
-* `manifest.json` with PWA details.
-* `index.html` which includes app description and touch icon.
+*  favicon。
+* 应用程序加载动画。
+* `manifest.json`带有PWA详细信息。
+* `index.html`，其中包括应用程序描述和触摸图标。
 
 
-You can specify `assets_dir` in `flet.app()` call to set the location of assets that should be available to the application. `assets_dir` could be a relative to your `main.py` directory or an absolute path. For example, consider the following program structure:
+您可以在`flet.app()`中指定`assets_dir`调用以设置应用程序可用的资产位置。 `assets_dir`可能是您`main.py`目录或绝对路径的相对。 例如，考虑以下程序结构: 
 
 ```
 /assets
@@ -19,7 +19,7 @@ You can specify `assets_dir` in `flet.app()` call to set the location of assets 
 main.py
 ```
 
-You can access your images in the application as following:
+您可以在应用程序中访问您的图像如下: 
 
 ```python {4,8}
 import flet as ft
@@ -31,14 +31,14 @@ ft.app(
     target=main,
     assets_dir="assets"
 )
-```
+``` 
 
-#### Favicon
+####  favicon
 
-To override favicon with your own put `favicon.png` file into the root of assets directory. It should be a PNG image with the size of at least 32x32 pixels.
+用自己的put `favicon.png`文件覆盖资产目录的根。 它应该是一个PNG图像，其大小至少为32x32像素。
 
-#### Loading animation
+#### 加载动画
 
-To override Flet animation image put `icons/loading-animation.png` image with your own app logo into the the root of assets directory.
+要覆盖Flet动画图像将`iCONS/loading-animation.png`映像带有您自己的应用徽标映射到资产目录的根目录中。
 
-If you like to completely customize Flutter app initialization logic you can modify [Flet's original `index.html`](https://github.com/flet-dev/flet/blob/main/client/web/index.html) following the [instructions in Flutter documentation](https://docs.flutter.dev/development/platform-integration/web/initialization). A customized `index.html` must be placed in the root of assets directory.
+如果您想完全自定义Flutter应用程序初始化逻辑，则可以按照[Flutter Documentation中的指令](https://docs.flutter.dev/development/platform-integration/web/initialization)修改[Flet的原始`index.html`](https://github.com/flet-dev/flet/blob/main/client/web/index.html)。 必须将自定义的`index.html`放置在资产目录的根部。

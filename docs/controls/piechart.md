@@ -4,15 +4,15 @@ sidebar_label: PieChart
 slug: piechart
 ---
 
-Draws a pie chart.
+绘制饼图。
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/charts/piechart)
+[LIVE 示例](https://flet-controls-gallery.fly.dev/charts/piechart)
 
 ### PieChart 1
 
-<img src="/img/docs/controls/charts/piechart-sample-1.gif" className="screenshot-30"/>
+<img src="/website/img/docs/controls/charts/piechart-sample-1.gif" className="screenshot-30"/>
 
 ```python
 import flet as ft
@@ -68,7 +68,7 @@ ft.app(main)
 
 ### PieChart 2
 
-<img src="/img/docs/controls/charts/piechart-sample-2.gif" className="screenshot-30"/>
+<img src="/website/img/docs/controls/charts/piechart-sample-2.gif" className="screenshot-30"/>
 
 ```python
 import flet as ft
@@ -140,7 +140,7 @@ ft.app(main)
 
 ### PieChart 3
 
-<img src="/img/docs/controls/charts/piechart-sample-3.gif" className="screenshot-30"/>
+<img src="/website/img/docs/controls/charts/piechart-sample-3.gif" className="screenshot-30"/>
 
 ```python
 import flet as ft
@@ -230,87 +230,87 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-## `PieChart` properties
+## `PieChart`属性
 
-<img src="/img/docs/controls/charts/piechart-diagram.svg" className="screenshot-40"/>
+<img src="/website/img/docs/controls/charts/piechart-diagram.svg" className="screenshot-40"/>
 
 ### `animate`
 
-Controls chart implicit animation. See [`LineChart.animate`](linechart#animate) property for more information and possible values.
+控制图表隐式动画。 有关更多信息和可能的值，请参见[`LineChart.animate`](linechart#animate)属性。
 
 ### `center_space_color`
 
-Free space [color](/docs/guides/python/colors) in the middle of a chart.
+自由空间[颜色](/docs/guides/python/colors)在图表中间。
 
 ### `center_space_radius`
 
-Free space radius in the middle of a chart.
+图表中间的自由空间半径。
 
 ### `sections_space`
 
-A gap between `sections`.
+`sections`。
 
-### `start_degree_offset`
+### `start_degree_offset`之间的差距
 
-By default, `sections` are drawn from zero degree (right side of the circle) clockwise.
-You can change the starting point, by setting `start_degree_offset` (in degrees).
+默认情况下，`sections`顺时针从零度（圆的右侧）绘制。
+您可以通过设置`start_degree_offset`（以度为单位）来更改起点。
 
 ### `sections`
 
-A list of `PieChartSection` controls drawn in a circle.
+`PieChartSection`控制绘制的列表。
 
-## `PieChart` events
+## `PieChart`事件
 
 ### `on_chart_event`
 
-Fires when a chart section is hovered or clicked.
+当图表部分悬停或单击时，会发射。
 
-Event data is an instance `ft.PieChartEvent` class with the following properties:
+事件数据是具有以下属性的实例`ft.PieChartEvent`类:
 
-* `type` event type such as `PointerHoverEvent`, `PointerExitEvent`, etc.
-* `section_index` - section's index or `-1` if no section hovered.
+- `type`事件类型，例如`PointerHoverEvent`，`PointerExitEvent`，等等。
+- `section_index` - 截面的索引或`-1`如果没有部分悬停。
 
 ## `PieChartSection` properties
 
 ### `value`
 
-Determines how much the section should occupy. This depends on sum of all sections, each section should occupy (`value` / sumValues) * 360 degrees.
+确定该部分应占用多少。 这取决于所有部分的总和，每个部分都应占据（`value` / sumvalues） \* 360 度。
 
 ### `radius`
 
-External radius of the section.
+部分的外部半径。
 
 ### `color`
 
-Background [color](/docs/guides/python/colors) of the section.
+背景[颜色](/docs/guides/python/colors)部分。
 
 ### `border_side`
 
-The border around section shape. The value is an instance of `ft.BorderSide` class.
+截面周围的边界。 该值是`ft.BorderSide`类的实例。
 
 ### `title`
 
-A title drawn at the center of the section. No title is drawn if `title` is empty.
+在本节中心绘制的标题。 如果`title`为空，则无标题。
 
 ### `title_style`
 
-The style to draw `title` with. The value is an instance of [`ft.TextStyle`](text#textstyle-properties)  `ft.TextStyle` class.
+用`title`绘制的样式。 该值是[`ft.TextStyle`](text#textstyle-properties) `ft.TextStyle`类的实例。
 
 ### `title_position`
 
-By default title is drawn in the middle of the section, but its position can be changed
-with `title_position` property which value must be between `0.0` and `1.0`:
+默认标题在本节的中间绘制，但可以更改其位置
+使用`title_position`属性，其值必须在`0.0`和`1.0`之间:
 
-* `0.0` means near the center;
-* `1.0` means near the outside of the pie chart.
+- `0.0` `0.0`意味着在中心附近；
+- `1.0`表示饼图外部附近。
 
 ### `badge`
 
-An optional `Control` drawn in the middle of a section.
+在部分中间绘制的可选`Control`。
 
 ### `badge_position`
 
-By default the badge is drawn in the middle of the section, but its position can be changed with `badge_position` property which value must be between `0.0` and `1.0`:
+默认情况下，徽章是在本节中间绘制的，但是可以使用`badge_position`属性更改其位置，该属性必须在`0.0`和`1.0`之间，而`1.0`:
 
-* `0.0` means near the center;
-* `1.0` means near the outside of the pie chart.
+- `0.0`意味着在中心附近；
+- `1.0`表示饼图外部附近。

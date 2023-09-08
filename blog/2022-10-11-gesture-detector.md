@@ -8,13 +8,13 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [release]
 ---
 
-We've just released [Flet 0.1.62](https://pypi.org/project/flet/0.1.62/) with support of gestures processing!
+我们刚刚发布了[Flet 0.1.62](https://pypi.org/project/flet/0.1.62/)，并支持手势处理！
 
-There is a new control - [GestureDetector](/docs/controls/gesturedetector) which allows handling all sorts of gestures: single and double taps with a left (primary) and right (secondary) mouse (pointer) buttons, vertical, horizontal and bi-directional drags, zoom (pinch-in and pinch-out) gestures as well as hover events. Now, by wrapping it into `GestureDetector`, you can make any Flet control "clickable" and "draggable"!
+有一个新的控件 - [GETUREDETECTOR](/docs/controls/gesturedetector)，它允许处理各种手势: 带有左侧（主）和右（次级）鼠标（指针）按钮的单个和双龙头，垂直，水平和双向阻力， 变焦（捏合和捏）手势以及悬停事件。 现在，通过将其包裹到`GestureDetector`中，您可以制作任何 Flet 控制“可单击”和“拖动”！
 
-Here is a simple example of an app which allows you to drag containers inside a Stack:
+这是一个应用程序的简单示例，它允许您将容器拖到堆栈中:
 
-<img src="/img/blog/gesture-detector/gesture-detector-demo.gif" className="screenshot-50" />
+<img src="/website/img/blog/gesture-detector/gesture-detector-demo.gif" className="screenshot-50" />
 
 ```python
 import flet as ft
@@ -38,10 +38,10 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-Gesture detector is yet another great addition to a collection of Flet primitives that allows you to build apps limited only by your imagination. 2D drawing coming later this month is going to complete that ensemble!
+手势探测器是 Flet 基本集合集合的又一个很好的补充，它使您能够仅受到想象力限制的应用程序。 本月晚些时候到来的 2D 绘图将完成该合奏！
 
-That release wasn't about only gestures though - that was a "stabilization" release too. We fixed a number of bugs and added a bunch of other small features which you can [see here](https://github.com/flet-dev/flet/issues?q=is%3Aissue+milestone%3AControls-S2+is%3Aclosed).
+该版本不仅仅是手势 - 这也是“稳定”的发布。 我们修复了许多错误，并添加了许多其他小功能，您可以[请参见此处](https://github.com/flet-dev/flet/issues?q=is%3Aissue+milestone%3AControls-S2+is%3Aclosed)。
 
-Upgrade Flet module to the latest version (`pip install flet --upgrade`), integrate auth in your app and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
+升级 Flet 模块到最新版本（`pip install install flet -upgrade`），将 auth 集成在您的应用中，并[让我们知道](https://discord.gg/dzWXP8SHG8)您的想法！
 
-Enjoy!
+享受！

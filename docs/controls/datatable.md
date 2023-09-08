@@ -4,15 +4,15 @@ sidebar_label: DataTable
 slug: datatable
 ---
 
-A Material Design data table.
+材料设计数据表。
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/layout/datatable)
+[live 示例](https://flet-controls-gallery.fly.dev/layout/datatable)
 
-### A simple DataTable
+### 一个简单的数据表
 
-<img src="/img/docs/controls/datatable/datatable-minimal.png" className="screenshot-50"/>
+<img src="/website/img/docs/controls/datatable/datatable-minimal.png" className="screenshot-50"/>
 
 ```python
 import flet as ft
@@ -54,9 +54,9 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-### A styled DataTable
+### 样式的数据表
 
-<img src="/img/docs/controls/datatable/datatable-styled.png" className="screenshot-70"/>
+<img src="/website/img/docs/controls/datatable/datatable-styled.png" className="screenshot-70"/>
 
 ```python
 import flet as ft
@@ -104,294 +104,281 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-
 ## `DataTable` properties
 
 ### `bgcolor`
 
-The background [color](/docs/guides/python/colors) for the table.
+表的背景[颜色](/docs/guides/python/colors)。
 
 ### `border`
 
-The border around the table. An instance of `ft.Border` class.
+桌子周围的边界。 `ft.Border`类的实例。
 
-See [`Container.border`](/docs/controls/container#border) property for more information and examples.
+有关更多信息和示例，请参见[`Container.border`](/docs/controls/container#border)属性。
 
 ### `border_radius`
 
-Border corners.
+边界角。
 
-See [`Container.border`](/docs/controls/container#border) property for more information and examples.
+有关更多信息和示例，请参见[`Container.border`](/docs/controls/container#border)属性。
 
 ### `checkbox_horizontal_margin`
 
-Horizontal margin around the checkbox, if it is displayed.
+如果显示了该复选框的水平边距。
 
 ### `column_spacing`
 
-The horizontal margin between the contents of each data column.
+每个数据列的内容之间的水平边缘。
 
 ### `columns`
 
-A list of [`DataColumn`](#datacolumn) controls describing table columns.
+[`DataColumn`](#datacolumn)控制表列的列表。
 
 ### `data_row_color`
 
-The background [color](/docs/guides/python/colors) for the data rows.
+数据行的背景[颜色](/docs/guides/python/colors)。
 
-The effective background color can be made to depend on the `MaterialState` state, i.e. if the row is selected, pressed, hovered, focused, disabled or enabled. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent background color.
+可以使有效的背景颜色依赖于`MaterialState`状态，即，如果选择了，按下，按下，悬停，集中，禁用，禁用或启用该行。 颜色被描绘成排行榜的覆盖层。 为了确保可见行的墨水井（按下时，悬停并集中注意力），建议使用透明的背景颜色。
 
-See [`Checkbox.fill_color`](/docs/controls/checkbox#fill_color) property for more information and examples.
+有关更多信息和示例，请参见[`Checkbox.fill_color`](/docs/controls/checkbox#fill_color)属性。
 
-### `data_row_min_height`
+### {288814}
 
-The minimum height of each row (excluding the row that contains column headings).
+每行的最小高度（不包括包含列标题的行）。
 
 ### `data_row_max_height`
 
-The maximum height of each row (excluding the row that contains column headings).
+每行的最大高度（不包括包含列标题的行）。
 
 ### `data_text_style`
 
-The text style for data rows. An instance of [`ft.TextStyle`](text#textstyle-properties) class.
+数据行的文本样式。 [`ft.TextStyle`](text#textstyle-properties) class。
 
-### `divider_thickness`
+### `divider_thickness`的实例
 
-The width of the divider that appears between `TableRow`s.
+`TableRow` s 之间出现的分隔线的宽度。
 
-Must be greater than or equal to zero. This value defaults to 1.0.
+必须大于或等于零。 此值默认为 1.0。
 
 ### `gradient`
 
-The background gradient for the table.
+表的背景梯度。
 
-See [`Container.gradient`](/docs/controls/container#gradient) property for more information and examples.
+有关更多信息和示例，请参见[`Container.gradient`](/docs/controls/container#gradient)属性。
 
-### `heading_row_color`
+### {288822}
 
-The background [color](/docs/guides/python/colors) for the heading row.
+标题行的背景[颜色](/docs/guides/python/colors)。
 
-The effective background color can be made to depend on the `MaterialState` state, i.e. if the row is pressed, hovered, focused when sorted. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent color.
+可以使有效的背景颜色取决于`MaterialState`状态，即，在排序时按下行，悬停，聚焦。 颜色被描绘成排行榜的覆盖层。 为了确保可见行的墨水井（按下时，悬停并集中注意力），建议使用半透明的颜色。
 
-See [`Checkbox.fill_color`](/docs/controls/checkbox#fill_color) property for more information and examples.
+有关更多信息和示例，请参见[`Checkbox.fill_color`](/docs/controls/checkbox#fill_color)属性。
 
 ### `heading_row_height`
 
-The height of the heading row.
+标题行的高度。
 
 ### `heading_text_style`
 
-The text style for the heading row. An instance of [`ft.TextStyle`](text#textstyle-properties) class.
+标题行的文字样式。 [`ft.TextStyle`](text#textstyle-properties) class。
 
-### `horizontal_lines`
+### `horizontal_lines`的实例
 
-Set the [color](/docs/guides/python/colors) and width of horizontal lines between rows. An instance of `ft.BorderSide` class.
+设置[颜色](/docs/guides/python/colors)和行之间的水平线宽度。 `ft.BorderSide`类的实例。
 
 ### `horizontal_margin`
 
-The horizontal margin between the edges of the table and the content in the first and last cells of each row.
+表的边缘和每行的第一个和最后一个单元格中的内容之间的水平边缘。
 
-When a checkbox is displayed, it is also the margin between the checkbox the content in the first data column.
+显示复选框时，它也是第一个数据列中的内容之间的余量。
 
-### `rows`
+### {288331}
 
-A list of [`DataRow`](#datarow) controls defining table rows.
+[`DataRow`](#datarow)控制表行的列表。
 
 ### `show_bottom_border`
 
-Whether a border at the bottom of the table is displayed.
+是否显示桌子底部的边框。
 
-By default, a border is not shown at the bottom to allow for a border around the table defined by decoration.
+默认情况下，底部未显示边框，以允许由装饰定义的表周围的边框。
 
 ### `show_checkbox_column`
 
-Whether the control should display checkboxes for selectable rows.
+控件是否应显示可选行的复选框。
 
-If `True`, a `Checkbox` will be placed at the beginning of each row that is selectable. However, if `DataRow.on_select_changed` is not set for any row, checkboxes will not be placed, even if this value is `True`.
+如果`True`，则将`Checkbox`放置在可选的每行的开头。 但是，如果未为任何行设置`DataRow.on_select_changed`，即使此值为`True`，也不会放置复选框。
 
-If `False`, all rows will not display a `Checkbox`.
+如果`False`，所有行都不会显示`Checkbox`。
 
 ### `sort_ascending`
 
-Whether the column mentioned in `sort_column_index`, if any, is sorted in ascending order.
+`sort_column_index`中提到的列是否以升序排序。
 
-If `True`, the order is ascending (meaning the rows with the smallest values for the current sort column are first in the table).
+如果`True`，则订单正在上升（这意味着当前排序列的最小值的行首先在表中）。
 
-If `False`, the order is descending (meaning the rows with the smallest values for the current sort column are last in the table).
+如果`False`，则订单正在下降（这意味着当前排序列的最小值的行在表中。
 
 ### `sort_column_index`
 
-The current primary sort key's column.
+当前的主排序键的列。
 
-If specified, indicates that the indicated column is the column by which the data is sorted. The number must correspond to the index of the relevant column in `columns`.
+如果指定，则指示指示的列是对数据进行排序的列。 该数字必须对应于`columns`中相关列的索引。
 
-Setting this will cause the relevant column to have a sort indicator displayed.
+设置这将导致相关列显示一个排序指示器。
 
-When this is `None`, it implies that the table's sort order does not correspond to any of the columns.
+当这是`None`时，这意味着表的排序顺序与任何一列都不对应。
 
 ### `vertical_lines`
 
-Set the [color](/docs/guides/python/colors) and width of vertical lines between columns. An instance of `ft.BorderSide` class.
+设置列之间的[颜色](/docs/guides/python/colors)和垂直线的宽度。 `ft.BorderSide`类的实例。
 
-## `DataTable` events
+## `DataTable`事件
 
 ### `on_select_all`
 
-Invoked when the user selects or unselects every row, using the checkbox in the heading row.
+使用标题行中的复选框选择或取消选择每一行时调用。
 
-If this is `None`, then the `DataRow.on_select_changed` callback of every row in the table is invoked appropriately instead.
+如果这是`None`，则适当调用表中每个行的`DataRow.on_select_changed`回调。
 
-To control whether a particular row is selectable or not, see `DataRow.on_select_changed`. This callback is only relevant if any row is selectable.
-
-
-
+要控制特定行是否可选，请参见`DataRow.on_select_changed`。 此回调仅在可选的任何行时才相关。
 
 ## `DataColumn`
 
-Column configuration for a `DataTable`.
+`DataTable`的列配置。
 
-One column configuration must be provided for each column to display in the table.
+必须为每列提供一个列配置以在表中显示。
 
 ### `label`
 
-The column heading.
+列标题。
 
-Typically, this will be a `Text` control. It could also be an `Icon` (typically using size 18), or a `Row` with an icon and some text.
+通常，这将是`Text`控件。 它也可能是`Icon`（通常使用尺寸 18），或带有图标和一些文本的`Row`。
 
 ### `numeric`
 
-Whether this column represents numeric data or not.
-
-The contents of cells of columns containing numeric data are right-aligned.
+该列是否代表数字数据。
 
 ### `tooltip`
 
-The column heading's tooltip.
+列标题的工具提示。
 
-This is a longer description of the column heading, for cases where the heading might have been abbreviated to keep the column width to a reasonable size.
+这是对列标题的更长描述，对于标题可能
+当用户要求使用此列对表进行排序时。
 
-## `DataColumn` events
-
-### `on_sort`
-
-Called when the user asks to sort the table using this column.
-
-If not set, the column will not be considered sortable.
-
-
+如果未设置，则该列将不可分类。
 
 ## `DataRow`
 
-Row configuration and cell data for a DataTable.
+数据表的行配置和单元格数据。
 
-One row configuration must be provided for each row to display in the table.
+必须为每行提供一个行配置，以在表中显示。
 
-The data for this row of the table is provided in the `cells` property of the `DataRow` object.
+表的这一行数据在`cells`属性`DataRow`对象的属性中提供。
 
 ### `cells`
 
-The data for this row - a list of [`DataCell`](#datacell) controls.
+此行的数据 - [`DataCell`](#datacell)控件的列表。
 
-There must be exactly as many cells as there are columns in the table.
+表格必须与表中的列一样多。
 
 ### `color`
 
-The [color](/docs/guides/python/colors) for the row.
+该行的[颜色](/docs/guides/python/colors)。
 
-By default, the color is transparent unless selected. Selected rows has a grey translucent color.
+默认情况下，除非选择，否则颜色是透明的。 选定的行具有灰色半透明的颜色。
 
-The effective color can depend on the `MaterialState` state, if the row is selected, pressed, hovered, focused, disabled or enabled. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent color.
+有效的颜色可以取决于`MaterialState`状态，如果选择该行，按下，悬停，集中，残障或启用行。 颜色被描绘成排行榜的覆盖层。 为了确保可见行的墨水井（按下时，悬停并集中注意力），建议使用半透明的颜色。
 
-See [`Checkbox.fill_color`](/docs/controls/checkbox#fill_color) property for more information and examples.
+有关更多信息和示例，请参见[`Checkbox.fill_color`](/docs/controls/checkbox#fill_color)属性。
 
 ### `selected`
 
-Whether the row is selected.
+是否选择了行。
 
-If `on_select_changed` is non-null for any row in the table, then a checkbox is shown at the start of each row. If the row is selected (`True`), the checkbox will be checked and the row will be highlighted.
+如果`on_select_changed`对于表中的任何一行都是不为空的，则在每行开始时显示一个复选框。 如果选择该行（`True`），则将检查复选框，并突出显示该行。
 
-Otherwise, the checkbox, if present, will not be checked.
+否则，将不会检查复选框。
 
-## `DataRow` events
+## `DataRow`事件
 
 ### `on_long_press`
 
-Called if the row is long-pressed.
+如果行是长期压力的，请调用。
 
-If a `DataCell` in the row has its `DataCell.on_tap`, `DataCell.on_double_tap`, `DataCell.on_long_press`, `DataCell.on_tap_cancel` or `DataCell.on_tap_down` callback defined, that callback behavior overrides the gesture behavior of the row for that particular cell.
+如果该行中的`DataCell`的`DataCell.on_tap`，`DataCell.on_double_tap`，`DataCell.on_long_press`，`DataCell.on_tap_cancel`或`DataCell.on_tap_cancel`或`DataCell.on_tap_down`定义的回调，该回调行为超出了该特定单元格的行为。
 
-### `on_select_changed`
+###
 
-Called when the user selects or unselects a selectable row.
+### 。 `on_select_changed`
 
-If this is not null, then the row is selectable. The current selection state of the row is given by selected.
+当用户选择或取消选择可选行时，请致电。
 
-If any row is selectable, then the table's heading row will have a checkbox that can be checked to select all selectable rows (and which is checked if all the rows are selected), and each subsequent row will have a checkbox to toggle just that row.
+如果这不是零，则可以选择该行。 该行的当前选择状态由选定给出。
 
-A row whose `on_select_changed` callback is null is ignored for the purposes of determining the state of the "all" checkbox, and its checkbox is disabled.
+如果可以选择任何行，则表的标题行将具有一个可以检查的复选框，可以选择所有可选行（如果选择了所有行（如果选择了所有行）），并且每个后续行都将具有一个复选框，以切换该行 。
 
-If a `DataCell` in the row has its `DataCell.on_tap` callback defined, that callback behavior overrides the gesture behavior of the row for that particular cell.
+为了确定“所有”复选框的状态，`on_select_changed`回调被忽略为 null 的行被忽略，并且其复选框被禁用。
 
-
+如果该行中的`DataCell`的`DataCell.on_tap`定义了`DataCell.on_tap`，则回调行为覆盖了该特定单元格的行的手势行为。
 
 ## `DataCell`
 
-The data for a cell of a `DataTable`.
+`DataTable`单元格的数据。
 
-One list of DataCell objects must be provided for each `DataRow` in the `DataTable`.
+必须在`DataTable`中为每个`DataRow`提供数据量对象列表。
 
-### `content`
+### {288892}
 
-The data for the row.
+行的数据。
 
-Typically a `Text` control or a `Dropdown` control.
+通常是`Text`控制或`Dropdown`控制。
 
-If the cell has no data, then a `Text` widget with placeholder text should be provided instead, and `placeholder` should be set to `True`.
+如果单元格没有数据，则应提供带有占位符文本的`Text`小部件，并且应将`placeholder`设置为`True`。
 
-This control can only have one child. To lay out multiple children, let this control's child be a widget such as `Row`, `Column`, or `Stack`, which have `controls` property, and then provide the children to that widget.
+此控件只能有一个 child。 要布置多个 children，请让此控件的 child 成为一个小部件，例如`Row`，`Column`或`Stack`，它们具有`controls`属性，然后为该窗口提供 children。
 
 ### `placeholder`
 
-Whether the child is actually a placeholder.
+child 实际上是占位符。
 
-If this is `True`, the default text style for the cell is changed to be appropriate for placeholder text.
+如果是`True`，则将单元格的默认文本样式更改为适合占位符文本。
 
-### `show_edit_icon`
+### {2888104}
 
-Whether to show an edit icon at the end of the cell.
+是否在单元格的末端显示编辑图标。
 
-This does not make the cell actually editable; the caller must implement editing behavior if desired (initiated from the `on_tap` callback).
+这并不能使细胞实际上可以编辑； 如果需要，呼叫者必须实现编辑行为（从`on_tap`回调开始）。
 
-If this is set, `on_tap` should also be set, otherwise tapping the icon will have no effect.
+如果设置了此设置，则还应设置`on_tap`，否则点击图标将没有效果。
 
 ## `DataCell` events
 
-### `on_double_tap`
+### {2888108}
 
-Called when the cell is double tapped.
+当单元重敲打时调用。
 
-If non-null, tapping the cell will call this callback. If null (including `on_tap`, `on_long_press`, `on_tap_cancel` and `on_tap_down`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+如果非无效，请点击单元格会调用此回调。 如果 null（包括`on_tap`，`on_long_press`，`on_tap_cancel`和{2888112}），则点击该单元格将尝试选择该行（如果提供`DataRow.on_select_changed`）。
 
-### `on_long_press`
+### `on_long_press` `on_long_press` `on_long_press`
 
-Called if the cell is long-pressed.
+如果单元格长期被调用。
 
-If non-null, tapping the cell will invoke this callback. If null (including `on_double_tap`, `on_tap`, `on_tap_cancel` and `on_tap_down`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+如果非编号，点击单元将调用此回调。 如果 null（包括`on_double_tap`，`on_tap`，`on_tap_cancel`和{2888112}），则点击该单元格将尝试选择该行（如果提供`DataRow.on_select_changed`）。
 
-### `on_tap`
+### {2888105} {2888105}
 
-Called if the cell is tapped.
+如果细胞被轻拍，请调用。
 
-If non-null, tapping the cell will call this callback. If null (including `on_double_tap`, `on_long_press`, `on_tap_cancel` and `on_tap_down`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+如果非无效，请点击单元格会调用此回调。 如果 null（包括`on_double_tap`，`on_long_press`，`on_tap_cancel`和{2888112}），则敲击单元格将尝试选择行（如果提供`DataRow.on_select_changed`）。
 
-### `on_tap_cancel`
+### {2888111} {2888111}}
 
-Called if the user cancels a tap was started on cell.
+如果用户取消了单元，请在单元格上启动点击。
 
-If non-null, cancelling the tap gesture will invoke this callback. If null (including `on_tap`, `on_double_tap`, `on_long_press`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+如果非无效，则取消水龙头手势将调用此回调。 如果 null（包括`on_tap`，`on_double_tap`，`on_long_press`），则敲击单元格将尝试选择该行（如果提供`DataRow.on_select_changed`）。
 
-### `on_tap_down`
+### {2888112}
 
-Called if the cell is tapped down.
+如果单元格被敲击，请调用。
 
-If non-null, tapping the cell will call this callback. If null (including `on_tap` `on_double_tap`, `on_long_press` and `on_tap_cancel`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+如果非无效，请点击单元格会调用此回调。 如果 null（包括`on_tap` `on_double_tap`，`on_long_press`和{2888111}），则敲击单元格将尝试选择该行（如果提供`DataRow.on_select_changed`）。

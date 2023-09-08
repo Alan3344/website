@@ -3,45 +3,46 @@ title: Creating realtime chat app in Python
 sidebar_label: Python - Realtime Chat app
 ---
 
-In this tutorial we are going to create a trivial in-memory Chat app that will help you understand Flet framework basics. This app could be a good starting point to creating your own more complex and useful projects.
+在本教程中，我们将创建一个琐碎的内存聊天应用程序，该应用程序将帮助您理解 Flet 框架基础知识。 该应用程序可能是创建自己更复杂和有用的项目的好起点。
 
-In this tutorial you will learn how to:
+在本教程中，您将学习如何:
 
-* [Create your first Flet app](#getting-started-with-flet)
-* [Add page controls and handle events](#adding-page-controls-and-handling-events)
-* [Broadcast messages using built-in PubSub library](#broadcasting-chat-messages)
-* [Use AlertDialog control for accepting user name](#user-name-dialog)
-* [Enhance user interface with re-usable controls](#enhancing-user-interface)
-* [Deploy the app as a web app](#deploying-the-app)
-* [Deliver the app as a Progressive Web App (PWA)](#progressive-web-app-pwa)
+- [创建您的第一个 Flet app](#getting-started-with-flet)
+- [添加页面控件和处理事件](#adding-page-controls-and-handling-events)
+- [使用内置 PubSub 库的广播消息](#broadcasting-chat-messages)
+- [使用 AlertDialog 控件接受用户名](#user-name-dialog)
+- [使用可重复使用控件增强用户界面](#enhancing-user-interface)
+- [将应用程序部署为 Web 应用程序](#deploying-the-app)
+- [作为渐进式 Web 应用程序（PWA）提供该应用程序](#progressive-web-app-pwa)
 
-The complete application will look like this:
+完整的应用程序看起来像这样:
 
-<img src="/img/docs/chat-tutorial/chat.gif" className="screenshot-50" />
+<img src="/website/img/docs/chat-tutorial/chat.gif" className="screenshot-50" />
 
-You can play with a live demo [here](https://flet-chat.fly.dev).
+您可以使用实时演示[此处](https://flet-chat.fly.dev)。
 
-The full code for the chat app can be found [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/chat/chat.py).
+可以找到聊天应用程序的完整代码[此处](https://github.com/flet-dev/examples/blob/main/python/tutorials/chat/chat.py)。
 
-## Getting started with Flet
+## 开始使用 Flet 开始
 
-It's a tradition to start with "Hello, world!" app!
+这是从“你好，世界！”开始的传统。 应用程序！
 
-Flet requires Python 3.7 or above. To create a Flet app in Python, you need to install `flet` module first:
+Flet 需要 Python 3.7 或更高。 要在 Python 中创建 Flet 应用程序，您需要先安装`flet`模块:
 
 ```bash
 pip install flet
 ```
 
-:::noteUpgrading Flet
-To upgrade `flet` module run:
+:::NoteUpgrading Flet
+升级`flet`模块运行以下命令
 
 ```bash
 pip install flet --upgrade
 ```
+
 :::
 
-Create `hello.py` with the following contents:
+使用以下内容创建`hello.py`:
 
 ```python title="hello.py"
 import flet as ft
@@ -52,25 +53,25 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-Run this app and you will see a new window with a greeting:
+运行此应用程序，您将看到一个带有问候的新窗口:
 
-<img src="/img/docs/tutorial/todo-app-hello-world.png" className="screenshot-40" />
+<img src="/website/img/docs/tutorial/todo-app-hello-world.png" className="screenshot-40" />
 
-## Adding page controls and handling events
+## 添加页面控件和处理事件
 
-To start, we want to be able to take user input (chat message) and show messages history on the screen. The layout for this step could look like this:
+首先，我们希望能够获取用户输入（聊天消息）并在屏幕上显示消息历史记录。 此步骤的布局看起来像这样:
 
-<img src="/img/docs/chat-tutorial/chat-layout-1.svg" className="screenshot-70" />
+<img src="/website/img/docs/chat-tutorial/chat-layout-1.svg" className="screenshot-70" />
 
+要实现此布局，我们将使用这些 Flet 控件:
 
-To implement this layout we will be using these Flet controls:
-* [Column](/docs/controls/column) - a container to display chat messages (Text controls) vertically.
-* [Text](/docs/controls/text) - chat message displayed in the chat Column.
-* [TextField](/docs/controls/textfield) - input control used for taking new message input from the user.
-* [ElevatedButton](/docs/controls/elevatedbutton) - "Send" button that will add new message to the chat Column.
-* [Row](/docs/controls/row) - a container to display TextField and ElevatedButton horizontally.
+- [列](/docs/controls/column) - 一个容器垂直显示聊天消息（文本控件）。
+- [text](/docs/controls/text) - 聊天列中显示的聊天消息。
+- [textfield](/docs/controls/textfield) - 用于从用户获取新消息输入的输入控件。
+- [EvipedButton](/docs/controls/elevatedbutton) - “发送”按钮，将新消息添加到聊天列中。
+- [row](/docs/controls/row) - 一个容器水平显示 Textfield 和抬高 to。
 
-Create `chat.py` with the following contents:
+使用以下内容创建`chat.py`:
 
 ```python
 import flet as ft
@@ -91,50 +92,53 @@ def main(page: ft.Page):
 ft.app(main, view=ft.AppView.WEB_BROWSER)
 ```
 
-When user clicks on the "Send" button, it triggers `on_click` event which calls `send_click` method. `send_click` then adds new `Text` control to the list of Column `controls` and clears `new_message` TextField value.
+当用户单击“发送”按钮时，它会触发`on_click`事件，该事件调用`send_click`方法。 `send_click`然后将新的`Text`控制到列`controls`的列表中，并清除`new_message` textfield 值。
 
-:::note
-After any properties of a control are updated, an `update()` method of the control (or its parent control) should be called for the update to take effect.
+:::注意
+更新控件的任何属性后，应要求对控件的`update()`方法（或其父对控件）进行更新生效。
 :::
 
-Chat app now looks like this:
-<img src="/img/docs/chat-tutorial/chat-1.png" className="screenshot-40" />
+聊天应用现在看起来像这样:
+<img src="/website/img/docs/chat-tutorial/chat-1.png" className="screenshot-40" />
 
-## Broadcasting chat messages
+## 广播聊天消息
 
-In the previous step we have created a simple web app that takes input from the user and displays chats messages on the screen. If you open this app in two web browser tabs, it will create two app sessions. Each session will have its own list of messages.
+在上一步中，我们创建了一个简单的 Web 应用程序，该应用程序从用户中获取输入，并在屏幕上显示聊天消息。 如果您在两个 Web 浏览器选项卡片中打开此应用程序，它将创建两个应用程序会话。 每个会话都会有自己的消息列表。
 
-To build a realtime chat app, you need to somehow pass the messages between chat app sessions. When a user sends a message, it should be broadcasted to all other app sessions and displayed on their pages.
+要构建一个实时聊天应用程序，您需要以某种方式传递聊天应用程序会话之间的消息。 当用户发送消息时，应将其广播到所有其他应用程序会话并在其页面上显示。
 
-Flet provides a simple built-in [PubSub](/docs/guides/python/pub-sub) mechanism for asynchronous communication between page sessions.
+Flet 提供了一个简单的内置[pubsub](/docs/guides/python/pub-sub)在页面之间的异步通信的机制。
 
-First, we need subscribe the user to receive broadcast messages:
+首先，我们需要订阅用户接收广播消息:
+
 ```python
     page.pubsub.subscribe(on_message)
 ```
 
-`pubsub.subsribe()` method will add current app session to the list of subscribers. It accepts `handler` as an argument, that will later be called at the moment a publisher calls `pubsub.send_all()` method.
+`pubsub.subsribe()`方法将将当前的应用程序会话添加到订户列表中。 它接受`handler`作为一个参数，以后将在发布者调用`pubsub.send_all()`方法的那一刻被调用。
 
-In the `handler` we will be adding new message (`Text`) to the list of chat `controls`:
+在`handler`中，我们将在 chat `controls`的列表中添加新消息（`Text`）:
+
 ```python
     def on_message(message: Message):
         chat.controls.append(ft.Text(f"{message.user}: {message.text}"))
         page.update()
 ```
 
-Finally, you need to call `pubsub.send_all()` method when the user clicks on "Send" button:
+最后，当用户单击“发送”按钮时，您需要调用`pubsub.send_all()`方法:
+
 ```python
     def send_click(e):
         page.pubsub.send_all(Message(user=page.session_id, text=new_message.value))
         new_message.value = ""
         page.update()
 
-    page.add(chat, ft.Row([new_message, ft.ElevatedButton("Send", on_click=send_click)]))   
+    page.add(chat, ft.Row([new_message, ft.ElevatedButton("Send", on_click=send_click)]))
 ```
 
-`pubsub.send_all()` will call the `on_message()` and pass on the Message object down to it.
+`pubsub.send_all()`将调用`on_message()`，然后将消息对象传递给它。
 
-Here is the full code for this step:
+这是此步骤的完整代码:
 
 ```python
 import flet as ft
@@ -165,13 +169,13 @@ def main(page: ft.Page):
 ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
 
-<img src="/img/docs/chat-tutorial/chat-2.gif" className="screenshot-100" />
+<img src="/website/img/docs/chat-tutorial/chat-2.gif" className="screenshot-100" />
 
-## User name dialog
+## 用户名对话框
 
-Chat app that you have created in the previous step has basic functionality needed to exchange messages between user sessions. It is not very user-friendly though, since it shows `session_id` that sent a message, which doesn't tell much about who you are communicating with. 
+您在上一步中创建的聊天应用具有在用户会话之间交换消息所需的基本功能。 但是，它不是很好的用户友好，因为它显示了发送消息的`session_id`，该消息并没有说明与您交流的人。
 
-Let's improve our app to show user name instead of `session_id` for each message. To capture user name, we will be using [`AlertDialog`](/docs/controls/alertdialog) control. Let's add it to the page:
+让我们改进我们的应用程序以显示每个消息的用户名而不是`session_id`。 要捕获用户名，我们将使用[`AlertDialog`](/docs/controls/alertdialog)控制。 让我们将其添加到页面:
 
 ```python
     user_name = ft.TextField(label="Enter your name")
@@ -186,17 +190,16 @@ Let's improve our app to show user name instead of `session_id` for each message
     )
 ```
 
-:::note
-A dialog will be opened on the start of the program since we have set its `open` property to `True`.
-:::
+:::注意
+由于我们已经将其`open`属性设置为`True`。
+:::，将在程序开始时打开一个对话框
 
+<img src="/website/img/docs/chat-tutorial/username-dialog.png" className="screenshot-40" />
 
-<img src="/img/docs/chat-tutorial/username-dialog.png" className="screenshot-40" />
+当用户单击“加入聊天”按钮时，它将调用`join_click`方法，该方法应向所有订户发送消息，并通知他们用户已加入聊天。 此消息应该与常规聊天消息不同，例如:
+<img src="/website/img/docs/chat-tutorial/chat-4.png" className="screenshot-40" />
 
-When the user clicks on "Join chat" button, it will call `join_click` method that should send a message to all subscribers, informing them that the user has joined the chat. This message should look different from the regular chat message, for example, like this:
-<img src="/img/docs/chat-tutorial/chat-4.png" className="screenshot-40" />
-
-Let's add `message_type` property to the `Message` class to differentiate between login and chat messages:
+让我们将`message_type`属性添加到`Message`类中，以区分登录和聊天消息:
 
 ```python
 class Message():
@@ -206,7 +209,7 @@ class Message():
         self.message_type = message_type
 ```
 
-We will be checking `message_type` in `on_message` method:
+我们将在`on_message`中检查`message_type`方法:
 
 ```python
 def on_message(message: Message):
@@ -219,9 +222,9 @@ def on_message(message: Message):
     page.update()
 ```
 
-Messages of "login_message" and "chat_message" types will now be sent on two events: when user joins the chat and when user sends a message. 
+现在将在两个事件上发送“ login_message”和“ chat_message”类型的消息: 当用户加入聊天时，用户发送消息时。
 
-Let's create `join_click` method:
+让我们创建`join_click`方法:
 
 ```python
 def join_click(e):
@@ -234,13 +237,13 @@ def join_click(e):
         page.pubsub.send_all(Message(user=user_name.value, text=f"{user_name.value} has joined the chat.", message_type="login_message"))
         page.update()
 ```
-We used [page session storage](/docs/guides/python/session-storage) to store user_name for its future use in `send_click` method to send chat messages.
 
-:::note
-User name dialog will close as soon as we set its `open` property to `False` and call `update()` method. 
+我们使用[页面会话存储](/docs/guides/python/session-storage)将 User_name 存储在`send_click`方法中以发送聊天消息的未来使用。
+
+:::注意
+用户名对话框将在我们将其`open`属性设置为`False`并调用`update()`方法后立即关闭。
 :::
-
-Finally, let's update `send_click` method to use `user_name` that we previosly saved using `page.session`:
+最后，让我们更新`send_click`方法，使用`user_name`我们使用`page.session`进行保存的`user_name`:
 
 ```python
 def send_click(e):
@@ -249,26 +252,26 @@ def send_click(e):
     page.update()
 ```
 
-The full code for this step can be found [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/chat/chat_3.py).
+可以找到此步骤的完整代码[此处](https://github.com/flet-dev/examples/blob/main/python/tutorials/chat/chat_3.py)。
 
-<img src="/img/docs/chat-tutorial/chat-3.gif" className="screenshot-100" />
+<img src="/website/img/docs/chat-tutorial/chat-3.gif" className="screenshot-100" />
 
-## Enhancing user interface
+## 增强用户界面
 
-Chat app that you have created in the previous step already serves its purpose of exchanging messages between users with basic login functionality. 
+您在上一步中创建的聊天应用程序已经达到了具有基本登录功能之间在用户之间交换消息的目的。
 
-Before moving on to [deploying your app](#deploying-the-app), we suggest adding some extra features to it that will improve user experience and make the app look more professional.
+在进行[部署应用程序](#deploying-the-app)之前，我们建议在其中添加一些额外功能，以改善用户体验并使应用程序看起来更专业。
 
-### Re-usable user controls
+### 可重复使用的用户控件
 
-You may want to show messages in a different format, like this:
-<img src="/img/docs/chat-tutorial/chat-layout-chatmessage.svg" className="screenshot-70" />
+您可能需要以不同的格式显示消息，例如:
+<img src="/website/img/docs/chat-tutorial/chat-layout-chatmessage.svg" className="screenshot-70" />
 
-Chat message will now be a `Row` containing [`CircleAvatar`](/docs/controls/circleavatar) with username initials and `Column` that contains two `Text` controls: user name and message text.
+聊天消息现在将是包含[`CircleAvatar`](/docs/controls/circleavatar)的`Row`，带有用户名缩写和`Column`，其中包含两个`Text`控件: 用户名和消息文本。
 
-We will need to show quite a few chat messages in the chat app, so it makes sense to create your own reusable control. Lets create a new `ChatMessage` class that will inherit from `Row`.
+我们需要在聊天应用程序中显示很多聊天消息，因此创建自己的可重复使用的控件是有意义的。 让我们创建一个新的`ChatMessage`类，该类将从`Row`继承。
 
-When creating an instance of `ChatMessage` class, we will pass a `Message` object as an argument and then `ChatMessage` will display itself based on `message.user_name` and `message.text`:
+当创建`ChatMessage`类的实例时，我们将以参数为`Message`对象，然后`ChatMessage`将基于`message.user_name`和`message.text`:
 
 ```python
 class ChatMessage(ft.Row):
@@ -313,16 +316,17 @@ class ChatMessage(ft.Row):
         return colors_lookup[hash(user_name) % len(colors_lookup)]
 
 ```
-`ChatMessage` control extracts initials and algorithmically derives avatar color from a username.
-Later, if you decide to improve control layout or its logic, it won't affect the rest of the program - that's the power of encapsulation!
 
-### Laying out controls
+`ChatMessage`控件提取缩写，算法从用户名衍生了头像颜色。
+稍后，如果您决定改善控制布局或其逻辑，它不会影响程序的其余部分 - 这是封装的力量！
 
-Now you can use your brand new `ChatMessage` to build a better layout for the chat app:
+### 布置控件
 
-<img src="/img/docs/chat-tutorial/chat-layout-2.svg" className="screenshot-70" />
+现在，您可以使用全新的`ChatMessage`为聊天应用程序构建更好的布局:
 
-Instances of `ChatMessage` will be created instead of plain `Text` chat messages in `on_message` method:
+<img src="/website/img/docs/chat-tutorial/chat-layout-2.svg" className="screenshot-70" />
+
+将创建`ChatMessage`的实例，而不是`on_message`中的普通`Text`聊天消息:
 
 ```python
     def on_message(message: Message):
@@ -334,14 +338,14 @@ Instances of `ChatMessage` will be created instead of plain `Text` chat messages
         page.update()
 ```
 
-Other improvements suggested with the new layout are:
+新布局提出的其他改进是:
 
-* [`ListView`](/docs/controls/listview) instead of `Column` for displaying messages, to be able to scroll through the messages later
-* `Container` for displaing border around `ListView`
-* [`IconButton`](/docs/controls/iconbutton) instead of `ElevatedButton` to send messages
-* Use of [`expand`](/docs/controls#expand) property for controls to fill available space
+- [`ListView`](/docs/controls/listview)，而不是显示消息的`Column`，以便稍后浏览消息
+- `Container`用于显示`ListView`周围的边框
+- [`IconButton`](/docs/controls/iconbutton)而不是`ElevatedButton`发送消息
+- 使用[`expand`](/docs/controls#expand)属性以填充可用空间
 
-Here is how you can implement this layout:
+这是您可以实现此布局的方式:
 
 ```python
     # Chat messages
@@ -385,79 +389,78 @@ Here is how you can implement this layout:
     )
 ```
 
-The full code for this step can be found [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/chat/chat.py).
+可以找到此步骤的完整代码[此处](https://github.com/flet-dev/examples/blob/main/python/tutorials/chat/chat.py)。
 
-This is the final version of the chat app for the purpose of this tutorial. Below you can read more about the enhancements that we have made.
+这是聊天应用程序的最终版本，目的是本教程。 下面您可以阅读有关我们所做的增强功能的更多信息。
 
-### Keyboard support
+### Keyboard 支持
 
-#### Focusing input controls
+#### 聚焦输入控件
 
-All data entry controls have `autofocus` property which when set to `True` moves initial focus to the control. If there is more than one control on a page with `autofocus` set, then the first one added to the page will get focus.
+所有数据输入控件具有`autofocus`属性，将其设置为`True`时，将初始焦点移至控件。 如果一个页面上有`autofocus`设置的页面上有多个控件，则添加到页面上的第一个将获得焦点。
 
-We set `autofocus=True` on a username TextField inside a dialog and then on a TextField for entering chat message to set initial focus on it when the dialog is closed.
+我们在对话框内的用户名 Textfield 上设置`autofocus=True`，然后在 Textfield 上设置`autofocus=True`，以输入聊天消息，以在对话框关闭时将其设置为初始关注。
 
-When a user click "Send" button or presses Enter to submit a chat message, TextField loses focus.
-To programmatically set control focus we used [`TextField.focus()`](/docs/controls/textfield#focus) method.
+当用户单击“发送”按钮或按 Enter 提交聊天消息时，Textfield 失去了焦点。
+要编程设置的控制焦点，我们使用了[`TextField.focus()`](/docs/controls/textfield#focus)方法。
 
-#### Submitting forms on `Enter`
+#### 在`Enter`上提交表单
 
-It's so tempting to submit forms with just pushing `Enter` button on the keyboard! Type your name in the dialog, hit `Enter`, type a new message, hit `Enter`, type another, hit `Enter` - no mouse involved at all! 🚀
+仅在键盘上按`Enter`按钮提交表格非常诱人！ 在对话框中键入您的名字，命中`Enter`，键入新消息，命中`Enter`，键入另一个，点击`Enter` - 根本不涉及鼠标！ 🚀
 
-Flet has support for that by providing [`TextField.on_submit`](/docs/controls/textfield#on_submit) event handler which fires when a user press `Enter` button while the focus is on the TextField.
+Flet 通过提供[`TextField.on_submit`]](/docs/controls/textfield#on_submit)事件处理程序来支持它，该事件处理程序在用户按`Enter`按钮时将射击`Enter`按钮，而焦点是在 TextField 上。
 
-#### Entering multiline messages
+#### 输入多动邮件。
 
-What about multiline TextFields where `Enter` must advance a cursor to the next line? We've got that covered too! `TextField` control has [`shift_enter`](/docs/controls/textfield#shift_enter) property which when set to `True` enables Discord-like behavior: to get to a new line user presses `Shift`+`Enter` while hitting just `Enter` submits a form.
+`Enter`必须将光标推向下一行的多行文本菲尔德呢？ 我们也涵盖了！ `TextField`控制具有[`shift_enter`](/docs/controls/textfield#shift_enter)属性，当将其设置为`True`时，该属性启用了类似于 Discord 的行为: 到达新线路用户按下`Shift` 表格。
 
-### Animated scrolling to the last message
+### 动画滚动到最后一条消息
 
-Noticed a nice animation of scrolling to the last message in a chat window? It could be enabled by setting [`ListView.auto_scroll`](/docs/controls/listview#auto_scroll) property to `True`. The top most `Page` class, being a scrollable container itself, also supports [`auto_scroll`](/docs/controls/page#auto_scroll).
+注意到在聊天窗口中滚动到最后一条消息的好动画吗？ 可以通过将[`ListView.auto_scroll`](/docs/controls/listview#auto_scroll)设置为`True`来启用。 最高的`Page`类，是可滚动容器本身，也支持[`auto_scroll`](/docs/controls/page#auto_scroll)。
 
-### Page title
+### 页面标题
 
-Final touch - page title that could be changed as simply as:
+最终触摸 - 可以简单地更改为:
 
 ```python
 page.title = "Flet Chat"
 page.update()
 ```
 
-## Deploying the app
+## 部署应用程序
 
-Congratulations! You have created your Chat app in Python with Flet, and it looks awesome!
+恭喜！ 您已经使用 Flet 在 Python 中创建了聊天应用程序，看起来很棒！
 
-Now it's time to share your app with the world!
+现在是时候与世界共享您的应用程序了！
 
-[Follow these instructions](/docs/guides/python/deploying-web-app/hosting-providers) to deploy your Flet app as a web app to Fly.io or Replit.
+[遵循以下说明](/docs/guides/python/deploying-web-app/hosting-providers)将您的 Flet 应用程序部署到 Fly.io 或 REPLIT。
 
-## What's next
+## 接下来是什么
 
-There are plenty of features we could implement to improve this chat app:
+我们可以实现许多功能来改进此聊天应用:
 
-* Disconnect, reconnect, session timeout
-* Upload/download images
-* Authentication, avatars
-* Using database for the storage
-* Chat channels, topics
-* Full-text search
-* Emojis, markdown
-* Bots
-* Mobile app
+- 断开，重新连接，会话超时
+- 上传/下载图像
+- 身份验证，化身
+- 使用数据库进行存储
+- 聊天频道，主题
+- 全文搜索
+- 表情符号，降价
+- 机器人
+- 移动应用
 
-Please let us know if you would like to contribute to the app/tutorial and share it with other Flet developers.
+如果您想为应用程序/教程做出贡献并与其他 Flet 开发人员共享。
 
-## Summary
+## 摘要
 
-In this tutorial, you have learnt how to:
+在本教程中，您已经学会了如何:
 
-* Create a simple Flet app;
-* Add page controls and handle events;
-* Use built in PubSub library;
-* User AlertDialog for entering user name;
-* Build page layout with reusable controls;
-* Deploy your Flet app to the web;
+- 创建一个简单的 Flet app;
+- 添加页面控件和处理事件；
+- 使用在 PubSub 库中建造；
+- 用于输入用户名的用户 AlertDialog；
+- 使用可重复使用的控件构建页面布局；
+- 将您的 Flet 应用程序部署到 Web；
 
-For further reading you can explore [controls](/docs/controls) and [examples repository](https://github.com/flet-dev/examples/tree/main/python).
-
-We would love to hear your feedback! Please drop us an [email](mailto:hello@flet.dev), join the discussion on [Discord](https://discord.gg/dzWXP8SHG8), follow on [Twitter](https://twitter.com/fletdev).
+为了进一步阅读，您可以探索[控件](/docs/controls)和[示例存储库](https://github.com/flet-dev/examples/tree/main/python)。
+我们很乐意倾听您的反馈！ 请给我们一个[电子邮件](mailto:hello@flet.dev)，加入[Discord](https://discord.gg/dzWXP8SHG8)的讨论，请在[Twitter](https://twitter.com/fletdev)上关注。

@@ -3,9 +3,9 @@ title: User controls
 sidebar_label: User controls
 ---
 
-User control (`UserControl`) allows building isolated re-usable components by combining existing Flet controls. User control behaves like a `Control`, could have methods and properties.
+用户控制（`UserControl`）允许通过组合现有 Flet 控件来构建隔离的可重复使用组件。 用户控制的行为就像`Control`，可以具有方法和属性。
 
-Below is a minimal example of user control:
+以下是用户控制的最小示例:
 
 ```python
 import flet as ft
@@ -20,7 +20,7 @@ def main(page):
 ft.app(target=main)
 ```
 
-UserControl must implement `build()` method that is called to build control's UI and should returns a single `Control` instance or a `List` of controls. `UserControl` is inherited from [`Stack`](/docs/controls/stack), so multiple children will be arranged on top of each other. If you need to arrange control's UI differently use [`Row`](/docs/controls/row), [`Column`](/docs/controls/column) or other [layout controls](/docs/controls/layout), for example:
+UserControl 必须实现`build()`的方法，该方法被称为构建控件的 UI，并且应返回一个`Control`实例或控件的`List`。 `UserControl`是从[`Stack`](/docs/controls/stack)继承的，因此多个 children 将彼此安排。 如果您需要以不同的方式安排 Control 的 UI 使用[`Row`](/docs/controls/row)，[`Column`](/docs/controls/column)或其他[Layout Controls](/docs/controls/layout)例如: :
 
 ```python
 class GreeterControl(ft.UserControl):
@@ -31,7 +31,7 @@ class GreeterControl(ft.UserControl):
         ])
 ```
 
-UserControl is isolated from outside layout, i.e. when `update()` method is called for the parent control any changes inside the UserControl are not included into the update digest. UserControl should call `self.update()` to push its changes to a Flet page, for example:
+UserControl 与外部布局隔离，即，当`update()`方法称为父对照时，USERCONTROL 内部的任何更改都不包含在更新摘要中。 UserControl 应该致电`self.update()`将其更改推向 Flet 页面，例如:
 
 ```python
 import flet as ft
@@ -53,9 +53,9 @@ def main(page):
 ft.app(target=main)
 ```
 
-<img src="/img/docs/getting-started/user-control-counter.gif" className="screenshot-40" />
+<img src="/website/img/docs/getting-started/user-control-counter.gif" className="screenshot-40" />
 
-You could either declare event handlers (e.g. `def add_click(self, e)`) and control references (e.g. `self.text`) as class members or implement all UserControl's logic inside `build()` method using local variables and inner functions. For example, the code above could be rewritten as:
+您可以将事件处理程序（例如`def add_click（self，e）`）和控制引用（例如`self.text`）称为类成员，也可以使用本地变量和内部功能实现所有 USERCONTROL 的逻辑。 例如，以上代码可以重写为:
 
 ```python
 class Counter(ft.UserControl):
@@ -72,11 +72,11 @@ class Counter(ft.UserControl):
         return ft.Row([text, ft.ElevatedButton("Add", on_click=add_click)])
 ```
 
-:::note
-`counter` cannot be declared as a local variable as it won't be visible inside `add_click` method, so it must be declared as a class field `self.counter`.
+:::注意
+`counter`不能将其声明为局部变量，因为它在`add_click`方法内看不到它，因此必须将其声明为类字段`self.counter`。
 :::
 
-User control can have a constructor to pass custom data, for example:
+用户控件可以具有传递自定义数据的构造函数，例如:
 
 ```python
 import flet as ft
@@ -104,16 +104,16 @@ def main(page):
 ft.app(target=main)
 ```
 
-:::note
-`super().__init__()` must be always called in your own constructor.
+:::注意
+`super().__init__()`必须始终在您自己的构造函数中调用。
 :::
 
-User control provides life-cycle "hook" methods:
+用户控件提供生命周期“钩”方法:
 
-* `did_mount()` - called after the `UserControl` added to a page and assigned transient `id`.
-* `will_unmount()` - called before the `UserControl` is removed from a page.
+- `did_mount()` - 在`UserControl`添加到页面并分配的瞬态`id`后调用。
+- `will_unmount()` - 在从页面上删除`UserControl`之前调用。
 
-Using those methods we could implement a simple "countdown" control:
+使用这些方法，我们可以实现一个简单的“倒计时”控制:
 
 ```python
 import flet as ft
@@ -150,4 +150,4 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<img src="/img/docs/getting-started/user-control-countdown.gif" className="screenshot-40" />
+<img src="/website/img/docs/getting-started/user-control-countdown.gif" className="screenshot-40" />

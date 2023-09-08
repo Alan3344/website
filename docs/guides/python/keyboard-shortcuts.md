@@ -3,19 +3,19 @@ title: Keyboard shortcuts
 sidebar_label: Keyboard shortcuts
 ---
 
-A solid keyboard support is a key for user productivity while using your web and, especially, desktop app. Indeed, it could be really annoying to constantly switch between mouse and keyboard.
+可靠的键盘支持是使用网络（尤其是桌面应用程序）时用户生产力的关键。 确实，在鼠标和键盘之间不断切换可能真的很烦人。
 
-In addition to form controls' `.autofocus` property and [`TextField.focus()`](/docs/controls/textfield#focus) method Flet allows handling "global" keyboard events.
+除了形式控制'`.autofocus`属性和[`TextField.focus()`](/docs/controls/textfield#focus)方法 Flet 允许处理“全局”键盘事件。
 
-To capture all keystrokes implement `page.on_keyboard_event` handler. Event handler parameter `e` is an instance of `KeyboardEvent` class with the following properties:
+要捕获所有击键，实现`page.on_keyboard_event`处理程序。 事件处理程序参数`e`是带有以下属性的`KeyboardEvent`类的实例:
 
-* `key` - a textual representation of a pressed key, e.g. `A`, `Enter` or `F5`.
-* `shift` - `True` if "Shift" key is pressed.
-* `ctrl` - `True` if "Control" key is pressed.
-* `alt` - `True` if "Alt" ("Option") key is pressed.
-* `meta` - `True` if "Command" key is pressed.
+- `key` - 按下键的文本表示，例如。 `A`，`Enter`或`F5`。
+- `shift` - `True`如果按下“ shift”键。
+- `ctrl` - `True`如果按下“控制”键。
+- `alt` - `True`如果按下“ alt”（“ option”）键。
+- `meta` - `True`如果按下“命令”键。
 
-This is a simple usage example:
+这是一个简单的用法示例:
 
 ```python
 import flet as ft
@@ -35,7 +35,7 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
-<img src="/img/docs/getting-started/keyboard-shortcuts.png" className="screenshot-100" />
 
+<img src="/website/img/docs/getting-started/keyboard-shortcuts.png" className="screenshot-100" />
 
-Here is [more advanced example](https://github.com/flet-dev/examples/blob/main/python/controls/page/keyboard-events.py).
+这是[更高级的示例](https://github.com/flet-dev/examples/blob/main/python/controls/page/keyboard-events.py)。

@@ -4,16 +4,16 @@ sidebar_label: FilePicker
 slug: filepicker
 ---
 
-A control that allows you to use the native file explorer to pick single or multiple files, with extensions filtering support and upload.
+一个控件，该控件允许您使用本机文件资源管理器选择单个或多个文件，并具有扩展程序过滤支持和上传。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/utility/filepicker)
+[live 示例](https://flet-controls-gallery.fly.dev/utility/filepicker)
 
-### Pick multiple files
+### 选择多个文件
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -50,159 +50,160 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-### All dialog modes
+### 所有对话模式
 
-<img src="/img/docs/controls/file-picker/file-picker-all-modes-demo.png" className="screenshot-70" />
+<img src="/website/img/docs/controls/file-picker/file-picker-all-modes-demo.png" className="screenshot-70" />
 
-[Source code](https://github.com/flet-dev/examples/blob/main/python/controls/file-picker/file-picker-all-modes.py)
+[源代码](https://github.com/flet-dev/examples/blob/main/python/controls/file-picker/file-picker-all-modes.py)
 
-### Upload multiple files
+### 上传多个文件
 
-<img src="/img/docs/controls/file-picker/file-picker-multiple-uploads.png" className="screenshot-40" />
+<img src="/website/img/docs/controls/file-picker/file-picker-multiple-uploads.png" className="screenshot-40" />
 
-[Source code](https://github.com/flet-dev/examples/blob/main/python/controls/file-picker/file-picker-upload-progress.py)
+[源代码](https://github.com/flet-dev/examples/blob/main/python/controls/file-picker/file-picker-upload-progress.py)
 
-## Properties
+## properties
 
 ### `allowed_extensions`
 
-Allow picking files with specified extensions only.
+允许仅使用指定的扩展名选择文件。
 
-The value of this property is a list of strings, e.g. `["pdf", "svg", "jpg"]`.
+该属性的价值是字符串列表，例如 `["pdf", "svg", "jpg"]`。
 
 ### `allow_multiple`
 
-Allow selecting multiple files.
+允许选择多个文件。
 
 ### `dialog_title`
 
-Can be optionally set on desktop platforms to set the modal window title. It will be ignored on other platforms.
+可以选择在桌面平台上设置以设置模式窗口标题。 它将在其他平台上忽略。
 
 ### `file_name`
 
-Works for "Save file" dialog only. Can be set to a non-empty string to provide a default file name.
+仅用于“保存文件”对话框。 可以设置为非空字符串以提供默认文件名。
 
 ### `file_type`
 
-Allow to pick files of specific group.
+允许选择特定组的文件。
 
-Property value is `FilePickerFileType` enum with the following values:
+属性值是`FilePickerFileType`枚举，具有以下值:
 
-* `ANY` (default) - any file
-* `IMAGE`
-* `VIDEO`
-* `MEDIA` - `VIDEO` and `IMAGE`
-* `AUDIO`
-* `CUSTOM` - only files with extensions from `allowed_extensions` list
+- `ANY`（默认） - 任何文件
+- `IMAGE`
+- `VIDEO`
+- `MEDIA` - `VIDEO`和`IMAGE`
+- `AUDIO`
+- `CUSTOM` - 仅来自`allowed_extensions` list
 
-### `initial_directory`
+### `initial_directory`的扩展名的文件
 
-Can be optionally set to an absolute path to specify where the dialog should open. Only supported on Linux, macOS, and Windows.
+可以选择将其设置为绝对路径，以指定对话框应打开的位置。 仅在 Linux，MacOS 和 Windows 上支持。
 
 ### `result`
 
-Result is set when the dialog is closed.
+对话框关闭时，将设置结果。
 
-The value of this property is an instance of `FilePickerResultEvent` class:
+该属性的值是`FilePickerResultEvent`类的实例:
 
-* `path` - result of "Save file" or "Get directory path" dialogs: selected file path or directory path respectively. `None` if dialog was cancelled.
-* `files` result of "Pick files" dialog: a list of `FilePickerFile` class instances. `None` if dialog was cancelled.
+- `path` - “保存文件”或“ get Directory Path”对话框的结果: 所选的文件路径或目录路径。 `None`如果取消对话框。
+- `files`“选择文件”对话框的结果: `FilePickerFile`类实例的列表。 `None`如果取消对话框。
 
-`FilePickerFile` class properties:
+`FilePickerFile`类属性:
 
-* `name` - file name without a path.
-* `path` - full path to a file. Works for desktop and mobile only. `None` on web.
-* `size` - file size in bytes.
+- `name` - 没有路径的文件名。
+- `path` - 文件的完整路径。 仅适用于桌面和移动设备。 `None`在 Web 上。
+- `size` - 字节中的文件大小。
 
-## Methods
+## 方法
 
 ### `get_directory_path()`
 
-Selects a directory and returns its absolute path.
+选择一个目录并返回其绝对路径。
 
-You could either set the following file picker properties or provide their values in the method call:
+您可以设置以下文件拾取器属性或在方法调用中提供其值:
 
-* `dialog_title`
-* `initial_directory`
+- `dialog_title`
+- `initial_directory`
 
 ### `pick_files()`
 
-Retrieves the file(s) from the underlying platform.
+从基础平台检索文件。
 
-You could either set the following file picker properties or provide their values in the method call:
+您可以设置以下文件拾取器属性或在方法调用中提供其值:
 
-* `dialog_title`
-* `initial_directory`
-* `file_type`
-* `allowed_extensions`
-* `allow_multiple`
+- `dialog_title`
+- `initial_directory`
+- `file_type`
+- `allowed_extensions`
+- `allow_multiple`
 
 ### `save_file()`
 
-Opens a save file dialog which lets the user select a file path and a file name to save a file.
+打开一个保存文件对话框，该对话框让用户可以选择一个文件路径和一个文件名来保存文件。
 
-This function does not actually save a file. It only opens the dialog to let the user choose a location and file name. This function only returns the path to this (non-existing) file in `FilePicker.result.path` property.
+此功能实际上并未保存文件。 它仅打开对话框，让用户选择位置和文件名。 此功能仅返回`FilePicker.result.path`属性中的此（不存在的）文件的路径。
 
-This method is only available on desktop platforms (Linux, macOS & Windows).
+此方法仅在桌面平台（Linux，MacOS 和 Windows）上可用。
 
-You could either set the following file picker properties or provide their values in the method call:
+您可以设置以下文件拾取器属性或在方法调用中提供其值:
 
-* `dialog_title`
-* `file_name`
-* `initial_directory`
-* `file_type`
-* `allowed_extensions`
+- `dialog_title`
+- `file_name`
+- `initial_directory`
+- `file_type`
+- `allowed_extensions`
 
 ### `upload()`
 
-Uploads selected files to specified upload URLs.
+将选定的文件上传到指定的上传 URL。
 
-Before calling upload [`pick_files()`](#pick_files) must be called, so the internal file picker selection is not empty.
+在调用上载[`pick_files()`](#pick_files)之前，必须调用内部文件选择器选择不是空的。
 
-Method arguments:
+方法参数:
 
-* `files` - a list of `FilePickerUploadFile` class instances.
+- `files` - `FilePickerUploadFile`类实例的列表。
 
-Each list item specifies which file should be uploaded to the upload URL with `PUT` (default) or `POST` method.
+每个列表项目指定应使用`PUT`（默认）或`POST`方法上传到上传 URL 的文件。
 
-* `name`
-* `upload_url`
-* `method` (`PUT` (default), `POST`)
+- `name`
+- `upload_url`
+- `method`（`PUT`（默认），`POST`）
 
-`upload_url` is, generally, a presigned URL (like [AWS S3 object upload URL](https://docs.aws.amazon.com/AmazonS3/latest/userguide/PresignedUrlUploadObject.html)).
+`upload_url`通常是一个预先的 URL（例如[AWS S3 对象上传 URL](https://docs.aws.amazon.com/AmazonS3/latest/userguide/PresignedUrlUploadObject.html)）。
 
-For built-in upload storage a signed upload URL can be generated with the following call:
+对于内置的上传存储，可以使用以下调用来生成已签名的上传 URL:
 
 ```python
 upload_url = page.get_upload_url("dir/filename.ext", 60)
 ```
 
-First argument is a relative to upload storage path.
-Second argument is a URL time-to-live in seconds.
+第一个参数是与上传存储路径相对的。
+第二个论点是在几秒钟内使用的 URL 时间。
 
-To enable built-in upload storage provide `upload_dir` argument to `flet.app()` call:
+要启用内置的上传存储，将`upload_dir`的参数提供给`flet.app()`调用:
 
 ```python
 ft.app(target=main, upload_dir="uploads")
 ```
 
-## Events
+## 事件
 
 ### `on_result`
 
-Fires when file picker dialog is closed.
+关闭文件选择器对话框时发射。
 
-Event object is an instance of `FilePickerResultEvent` class. See [`FilePicker.result`](#result) for class properties.
+事件对象是`FilePickerResultEvent`类的实例。 有关类属性，请参见[`FilePicker.result`](#result)。
 
 ### `on_upload`
 
-Fires when a file upload progress is updated.
+当文件上传进度更新时，启动。
 
-Event object is an instance of `FilePickerUploadEvent` class:
+事件对象是`FilePickerUploadEvent`类的实例:
 
-* `file_name`
-* `progress` - a value from `0.0` to `1.0`.
-* `error`
+- `file_name`
+- `progress` - 一个从`0.0`到`1.0`的值。
+- `error`

@@ -4,36 +4,36 @@ sidebar_label: Python - To-Do app
 slug: python-todo
 ---
 
-In this tutorial we will show you, step-by-step, how to create a ToDo web app in Python using Flet framework and then share it on the internet. The app is a single-file console program of just [180 lines (formatted!) of Python code](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py), yet it is a multi-session, modern single-page application with rich, responsive UI:
+在本教程中，我们将逐步向您展示如何使用 Flet 框架在 Python 中创建一个 TODO Web 应用程序，然后在 Internet 上共享。 该应用程序是一个单文件控制台程序，仅[Python Code 的 180 行（格式化！）](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py)，但它是一个具有丰富，响应式 UI 的多条文，现代的单页应用程序:
 
-<img src="/img/docs/tutorial/todo-complete-demo-web.gif" className="screenshot-70" />
+<img src="/website/img/docs/tutorial/todo-complete-demo-web.gif" className="screenshot-70" />
 
-You can see the live demo [here](https://gallery.flet.dev/todo/).
+您可以看到实时演示[此处](https://gallery.flet.dev/todo/)。
 
-We chose a ToDo app for the tutorial, because it covers all of the basic concepts you would need to create any web app: building a page layout, adding controls, handling events, displaying and editing lists, making reusable UI components, and deployment options.
+我们为教程选择了一个 TODO 应用程序，因为它涵盖了创建任何 Web 应用所需的所有基本概念: 构建页面布局，添加控件，处理事件，显示和编辑列表，可重复使用的 UI 组件以及部署选项以及部署选项 。
 
-The tutorial consists of the following steps:
+该教程由以下步骤组成:
 
-* [Getting started with Flet](#getting-started-with-flet)
-* [Adding page controls and handling events](#adding-page-controls-and-handling-events)
-* [View, edit and delete list items](#view-edit-and-delete-list-items)
-* [Filtering list items](#filtering-list-items)
-* [Final touches](#final-touches)
-* [Deploying the app](#deploying-the-app)
+- [以 Flet 的入门 Flet](#getting-started-with-flet)
+- [添加页面控件和处理事件](#adding-page-controls-and-handling-events)
+- [查看，编辑和删除列表项目](#view-edit-and-delete-list-items)
+- [过滤列表项目](#filtering-list-items)
+- [最终触摸](#final-touches)
+- [部署应用程序](#deploying-the-app)
 
-## Getting started with Flet
+## 从 Flet 开始
 
-To write a Flet web app you don't need to know HTML, CSS or JavaScript, but you do need a basic knowledge of Python and object-oriented programming.
+要编写 Flet Web 应用程序，您不需要了解 HTML，CSS 或 JavaScript，但是您确实需要有关 Python 和面向对象的编程的基本知识。
 
-Flet requires Python 3.7 or above. To create a web app in Python with Flet, you need to install `flet` module first:
+Flet 需要 Python 3.7 或更高。 要使用 Flet 在 Python 中创建 Web 应用程序，您需要先安装`flet`模块:
 
 ```bash
 pip install flet
 ```
 
-To start, let's create a simple hello-world app.
+首先，让我们创建一个简单的 Hello-World 应用程序。
 
-Create `hello.py` with the following contents:
+使用以下内容创建`hello.py`:
 
 ```python
 import flet as ft
@@ -44,17 +44,17 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-Run this app and you will see a new window with a greeting:
+运行此应用程序，您将看到一个带有问候的新窗口:
 
-<img src="/img/docs/tutorial/todo-app-hello-world.png" className="screenshot-40" />
+<img src="/website/img/docs/tutorial/todo-app-hello-world.png" className="screenshot-40" />
 
-## Adding page controls and handling events
+## 添加页面控件和处理事件
 
-Now we're ready to create a multi-user ToDo app.
+现在，我们已经准备好创建一个多用户 TODO 应用。
 
-To start, we'll need a [TextField](/docs/controls/textfield) for entering a task name, and an "+" [FloatingActionButton](/docs/controls/floatingactionbutton) with an event handler that will display a [Checkbox](/docs/controls/checkbox) with a new task.
+首先，我们需要一个[textfield](/docs/controls/textfield)来输入任务名称，并带有一个事件处理程序，将显示一个新任务，并将显示[复选框](/docs/controls/checkbox)。
 
-Create `todo.py` with the following contents:
+使用以下内容创建`todo.py`:
 
 ```python
 import flet as ft
@@ -72,19 +72,19 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-Run the app and you should see a page like this:
+运行该应用程序，您应该看到这样的页面:
 
-<img src="/img/docs/tutorial/todo-app-1.png" className="screenshot-40" />
+<img src="/website/img/docs/tutorial/todo-app-1.png" className="screenshot-40" />
 
-### Page layout
+### 页面布局
 
-Now let's make the app look nice! We want the entire app to be at the top center of the page, taking up 600 px width. The TextField and the "+" button should be aligned horizontally, and take up full app width:
+现在，让我们的应用看起来不错！ 我们希望整个应用程序位于页面的顶部中心，占用 600 个 PX 宽度。 TextField 和“+”按钮应水平对齐，并占用完整的应用程序宽度:
 
-<img src="/img/docs/tutorial/todo-diagram-1.svg" className="screenshot" />
+<img src="/website/img/docs/tutorial/todo-diagram-1.svg" className="screenshot" />
 
-[`Row`](/docs/controls/row)  is a control that is used to lay its children controls out horizontally on a page. [`Column`](/docs/controls/column) is a control that is used to lay its children controls out vertically on a page.
+[`Row`](/docs/controls/row)是用于将其 children 放置在页面上的控件。 [`Column`](/docs/controls/column)是用于将其 children 放置在页面上的控件。
 
-Replace `todo.py` contents with the following:
+用以下内容替换`todo.py`内容:
 
 ```python
 import flet as ft
@@ -117,15 +117,15 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-Run the app and you should see a page like this:
+运行该应用程序，您应该看到这样的页面:
 
-<img src="/img/docs/tutorial/todo-app-2.png" className="screenshot-50" />
+<img src="/website/img/docs/tutorial/todo-app-2.png" className="screenshot-50" />
 
-### Reusable UI components
+### 可重复使用的 UI 组件
 
-While we could continue writing our app in the `main` function, the best practice would be to create a reusable UI component. Imagine you are working on an app header, a side menu, or UI that will be a part of a larger project. Even if you can't think of such uses right now, we still recommend creating all your web apps with composability and reusability in mind.
+虽然我们可以继续在`main`函数中编写应用程序，但最好的做法是创建可重复使用的 UI 组件。 想象一下，您正在使用应用程序标头，侧面菜单或 UI，这将成为大型项目的一部分。 即使您现在无法想到这种用途，我们仍然建议您牢记合成性和可重复使用性创建所有 Web 应用程序。
 
-To make a reusable ToDo app component, we are going to encapsulate its state and presentation logic in a separate class: 
+为了使可重复使用的 todo 应用程序组件，我们将在单独的类中封装其状态和演示逻辑:
 
 ```python
 import flet as ft
@@ -169,8 +169,8 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-:::note
-Try adding two `TodoApp` components to the page:
+:::注意
+尝试将两个`TodoApp`组件添加到页面:
 
 ```python
 # create application instance
@@ -183,19 +183,19 @@ page.add(app1, app2)
 
 :::
 
-## View, edit and delete list items
+## 查看，编辑和删除列表项目
 
-In the [previous step](#adding-page-controls-and-handling-events), we created a basic ToDo app with task items shown as checkboxes. Let's improve the app by adding "Edit" and "Delete" buttons next to a task name. The "Edit" button will switch a task item to edit mode.
+在[上一个步骤](#adding-page-controls-and-handling-events)中，我们创建了一个基本的 TODO 应用，其中显示为复选框。 让我们通过在任务名称旁边添加“编辑”和“删除”按钮来改进应用程序。 “编辑”按钮将将任务项切换为编辑模式。
 
-<img src="/img/docs/tutorial/todo-diagram-2.svg" className="screenshot" />
+<img src="/website/img/docs/tutorial/todo-diagram-2.svg" className="screenshot" />
 
-Each task item is represented by two rows: `display_view` row with Checkbox, "Edit" and "Delete" buttons and `edit_view` row with TextField and "Save" button. `view` column serves as a container for both `display_view` and `edit_view` rows.
+每个任务项由两个行表示: `display_view`与复选框，“编辑”和“删除”按钮和`edit_view`行带有 TextField 和“ Save”按钮。 `view`列用作`display_view`和`edit_view`行的容器。
 
-Before this step, the code was short enough to be fully included in the tutorial. Going forward, we will be highlighting only the changes introduced in a step.
+在此步骤之前，该代码足够简短，可以将其完全包含在教程中。 展望未来，我们将仅强调一步中引入的更改。
 
-Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/todo/to-do-4.py). Below we will explain the changes we've done to implement view, edit, and delete tasks.
+从[此处](https://github.com/flet-dev/examples/blob/main/python/tutorials/todo/to-do-4.py)复制此步骤的整个代码。 在下面，我们将解释为实现视图，编辑和删除任务所做的更改。
 
-To encapsulate task item views and actions, we introduced a new `Task` class:
+为了封装任务项的视图和操作，我们引入了一个新的`Task`类:
 
 ```python
 class Task(ft.UserControl):
@@ -259,7 +259,7 @@ class Task(ft.UserControl):
         self.update()
 ```
 
-Additionally, we changed `TodoApp` class to create and hold `Task` instances when the "Add" button is clicked:
+此外，我们更改了`TodoApp`类以创建并保持`Task`实例，当“添加”按钮单击时:
 
 ```python
 class TodoApp(ft.UserControl):
@@ -275,7 +275,7 @@ class TodoApp(ft.UserControl):
         self.update()
 ```
 
-For "Delete" task operation, we implemented `task_delete()` method in `TodoApp` class which accepts task control instance as a parameter:
+对于“删除”任务操作，我们在`TodoApp`类中实现了`task_delete()`方法，该方法接受任务控制实例为参数:
 
 ```python
 class TodoApp(ft.UserControl):
@@ -285,7 +285,7 @@ class TodoApp(ft.UserControl):
         self.update()
 ```
 
-Then, we passed a reference to `task_delete` method into Task constructor and called it on "Delete" button event handler:
+然后，我们将对`task_delete`方法的引用传递到任务构造器中，并在“删除”按钮事件处理程序上称其为:
 
 ```python
 class Task(ft.UserControl):
@@ -294,23 +294,23 @@ class Task(ft.UserControl):
         self.task_name = task_name
         self.task_delete = task_delete
 
-        # ...        
+        # ...
 
     def delete_clicked(self, e):
         self.task_delete(self)
 ```
 
-Run the app and try to edit and delete tasks:
+运行应用程序并尝试编辑和删除任务:
 
-<img src="/img/docs/tutorial/view-edit-delete.gif" className="screenshot-50" />
+<img src="/website/img/docs/tutorial/view-edit-delete.gif" className="screenshot-50" />
 
-## Filtering list items
+## 过滤列表项目
 
-We already have a functional ToDo app where we can create, edit, and delete tasks. To be even more productive, we want to be able to filter tasks by their status.
+我们已经拥有一个功能性的托尔德应用程序，可以在其中创建，编辑和删除任务。 为了提高生产力，我们希望能够通过其状态过滤任务。
 
-Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/todo/to-do-5.py). Below we will explain the changes we've done to implement filtering.
+从[此处](https://github.com/flet-dev/examples/blob/main/python/tutorials/todo/to-do-5.py)复制此步骤的整个代码。 下面我们将解释我们为实施过滤所做的更改。
 
-`Tabs` control is used to display filter:
+`Tabs`控件用于显示过滤器:
 
 ```python
 
@@ -348,9 +348,8 @@ class TodoApp(ft.UserControl):
         )
 ```
 
-To display different lists of tasks depending on their statuses, we could maintain three lists with "All", "Active" and "Completed" tasks. We, however, chose an easier approach where we maintain the same list and only change a task's visibility depending on its status.
-
-In `TodoApp` class we overrided `update()` method which iterates through all the tasks and updates their `visible` property depending on the status of the task:
+要显示任务的不同列表，根据其状态，我们可以使用“全部”，“ Active”和“已完成”任务维护三个列表。 但是，我们选择了一种更简单的方法，即我们维护相同的列表，并且仅根据其状态更改任务的可见性。
+在`TodoApp`类中，我们覆盖了`update()`方法，该方法通过所有任务迭代并根据任务的状态更新其`visible`属性:
 
 ```python
 class TodoApp(ft.UserControl):
@@ -368,7 +367,7 @@ class TodoApp(ft.UserControl):
         super().update()
 ```
 
-Filtering should occur when we click on a tab or change a task status. `TodoApp.update()` method is called when Tabs selected value is changed or Task item checkbox is clicked:
+当我们单击选项卡片或更改任务状态时，应进行过滤。 {96523 \_
 
 ```python
 class TodoApp(ft.UserControl):
@@ -397,15 +396,15 @@ class Task(ft.UserControl):
         self.task_status_change(self)
 ```
 
-Run the app and try filtering tasks by clicking on the tabs:
+运行应用程序并通过单击选项卡片: 尝试过滤任务:
 
-<img src="/img/docs/tutorial/todo-app-filtering.gif" className="screenshot-50" />
+<img src="/website/img/docs/tutorial/todo-app-filtering.gif" className="screenshot-50" />
 
-## Final touches
+## 最终触摸
 
-Our Todo app is almost complete now. As a final touch, we will add a footer (`Column` control) displaying the number of incomplete tasks (`Text` control) and a "Clear completed" button.
+我们的 TODO 应用程序现在几乎完成了。 作为最后的触摸，我们将添加一个页脚（`Column`控件），以显示不完整的任务（`Text`控制）和“清除完成”按钮。
 
-Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py). Below we highlighted the changes we've done to implement the footer:
+从[此处](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py)复制此步骤的整个代码。 下面我们强调了我们为实施页脚所做的更改:
 
 ```python
 class TodoApp():
@@ -466,28 +465,28 @@ class TodoApp():
         super().update()
 ```
 
-Run the app:
+运行应用程序:
 
-<img src="/img/docs/tutorial/todo-app-4.png" className="screenshot-50" />
+<img src="/website/img/docs/tutorial/todo-app-4.png" className="screenshot-50" />
 
-## Deploying the app
+## 部署应用程序
 
-Congratulations! You have created your first Python app with Flet, and it looks awesome!
+恭喜！ 您已经使用 Flet 创建了第一个 Python 应用程序，看起来很棒！
 
-Now it's time to share your app with the world!
+现在是时候与世界共享您的应用程序了！
 
-[Follow these instructions](/docs/guides/python/deploying-web-app) to deploy your Flet app as a web app to Fly.io or Replit.
+[遵循以下说明](/docs/guides/python/deploying-web-app)将您的 Flet 应用程序部署到 Fly.io 或 REPLIT。
 
-## Summary
+## 摘要
 
-In this tutorial, you have learnt how to:
+在本教程中，您已经学会了如何:
 
-* Create a simple Flet app;
-* Work with Reusable UI components;
-* Design UI layout using `Column` and `Row` controls;
-* Work with lists: view, edit and delete items, filtering;
-* Deploy your Flet app to the web;
+- 创建一个简单的 Flet app;
+- 使用可重复使用的 UI 组件；
+- 使用`Column`和`Row`控件设计 UI 布局；
+- 使用列表: 查看，编辑和删除项目，过滤；
+- 将您的 Flet 应用程序部署到 Web；
 
-For further reading you can explore [controls](/docs/controls) and [examples repository](https://github.com/flet-dev/examples/tree/main/python).
+为了进一步阅读，您可以探索[控件](/docs/controls)和[示例存储库](https://github.com/flet-dev/examples/tree/main/python)。
 
-We would love to hear your feedback! Please drop us an [email](mailto:hello@flet.dev), join the discussion on [Discord](https://discord.gg/dzWXP8SHG8), follow on [Twitter](https://twitter.com/fletdev).
+我们很乐意倾听您的反馈！ 请给我们一个[电子邮件](mailto:hello@flet.dev)，加入[Discord](https://discord.gg/dzWXP8SHG8)的讨论，请在[Twitter](https://twitter.com/fletdev)上关注。

@@ -4,18 +4,18 @@ sidebar_label: AlertDialog
 slug: alertdialog
 ---
 
-A material design alert dialog.
+a material design 警报对话框。
 
-An alert dialog informs the user about situations that require acknowledgement. An alert dialog has an optional title and an optional list of actions. The title is displayed above the content and the actions are displayed below the content.
+警报对话框通知用户需要确认的情况。 警报对话框具有可选标题和可选的操作列表。 标题显示在内容上方，操作显示在内容下方。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/dialogs/alertdialog)
+[live 示例](https://flet-controls-gallery.fly.dev/dialogs/alertdialog)
 
-### Basic and modal dialogs
+### 基本和模态对话框
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -63,89 +63,91 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/alertdialog/alertdialog-with-custom-content.gif" className="screenshot-50" />
+<img src="/website/img/docs/controls/alertdialog/alertdialog-with-custom-content.gif" className="screenshot-50" />
 
-## Properties
+## properties
 
 ### `actions`
 
-The (optional) set of actions that are displayed at the bottom of the dialog.
+在对话框底部显示的（可选）操作集。
 
-Typically this is a list of [`TextButton`](textbutton) controls.
+通常，这是[`TextButton`](textbutton)控制的列表。
 
 ### `actions_alignment`
 
-Defines the horizontal layout of the actions according to the same rules as for [`Row.alignment`](row#alignment).
+根据[`Row.alignment`](row#alignment)的规则，根据相同规则定义动作的水平布局。
 
-Property value is `MainAxisAlignment` enum with `MainAxisAlignment.END` as default.
+属性值是`MainAxisAlignment`用`MainAxisAlignment.END`作为默认值的枚举。
 
 ### `actions_padding`
 
-Padding around the set of actions at the bottom of the dialog.
+围绕对话框底部的一组动作填充。
 
-Typically used to provide padding to the button bar between the button bar and the edges of the dialog.
+通常用于在按钮栏和对话框边缘之间的按钮栏上提供填充。
 
-If are no actions, then no padding will be included. The padding around the button bar defaults to zero.
+如果没有动作，则不会包括填充。 按钮栏周围的填充默认为零。
 
-See [`Container.padding`](container#padding) for more information about padding and possible values.
+有关填充和可能的值的更多信息，请参见[`Container.padding`](container#padding)。
 
 ### `content`
 
-The (optional) content of the dialog is displayed in the center of the dialog in a lighter font. Typically this is a [`Column`](column) that contains the dialog's [`Text`](text) message.
+对话框的（可选）内容显示在对话框的中心中，以较轻的心态显示。 通常，这是一个[`Column`](column)，其中包含对话框的[`Text`](text)消息。
 
 ### `content_padding`
 
-Padding around the content.
+围绕内容填充。
 
-If there is no content, no padding will be provided. Otherwise, padding of 20 pixels is provided above the content to separate the content from the title, and padding of 24 pixels is provided on the left, right, and bottom to separate the content from the other edges of the dialog.
+如果没有内容，则不会提供填充。 否则，在内容上方提供 20 个像素的填充物，以将内容与标题分开，并在左，右和底部提供 24 像素的填充，以将内容与对话框的其他边缘分开。
 
-See [`Container.padding`](container#padding) for more information about padding and possible values.
+有关填充和可能的值的更多信息，请参见[`Container.padding`](container#padding)。
 
 ### `modal`
 
-Whether dialog can be dismissed by clicking the area outside of it.
+是否可以通过单击其外部区域来忽略对话框。
 
 ### `open`
 
-Set to `True` to display a dialog.
+设置为`True`显示对话框。
 
 ### `shape`
 
-The shape of the dialog's border.
+对话框边界的形状。
 
-The value is an instance of one of the following implementations:
-  * `StadiumBorder`
-  * `RoundedRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `CircleBorder`
-  * `BeveledRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `ContinuousRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+该值是以下实现之一的实例:
 
-The default shape is a `RoundedRectangleBorder` with a radius of 4.0.
+- `StadiumBorder`
+- `RoundedRectangleBorder`
+  - `radius` - 边界半径，`BorderRadius`类或一个数字的实例。
+- `CircleBorder`
+- `BeveledRectangleBorder`
+  - `radius` - 边界半径，一个`BorderRadius`类或数字的实例。
+- `ContinuousRectangleBorder`
+  - `radius` - 边框半径，`BorderRadius`类或数字的实例。
+
+默认形状为`RoundedRectangleBorder`，半径为 4.0。
 
 ### `title`
 
-The (optional) title of the dialog is displayed in a large font at the top of the dialog.
+对话框的（可选）标题显示在对话框顶部的大字体中。
 
-Typically a [`Text`](text) control.
+通常是[`Text`](text)控制。
 
 ### `title_padding`
 
-Padding around the title.
+围绕标题填充。
 
-If there is no title, no padding will be provided. Otherwise, this padding is used.
+如果没有标题，则不会提供填充。 否则，使用此填充物。
 
-This property defaults to providing 24 pixels on the top, left, and right of the title. If the content is not null, then no bottom padding is provided (but see `content_padding`). If it is not set, then an extra 20 pixels of bottom padding is added to separate the title from the actions.
+该属性默认为标题的顶部，左和右提供 24 个像素。 如果内容不是零，则没有提供底部填充（但请参见`content_padding`）。 如果未设置，则添加额外的 20 像素底部填充以将标题与动作分开。
 
-See [`Container.padding`](container#padding) for more information about padding and possible values.
+有关填充和可能的值的更多信息，请参见[`Container.padding`](container#padding)。
 
-## Events
+## 事件
 
 ### `on_dismiss`
 
-Fires when dialog is dimissed.
+对话框时发生射击。

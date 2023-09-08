@@ -4,19 +4,19 @@ sidebar_label: Semantics
 slug: semantics
 ---
 
-A control that annotates the control tree with a description of the meaning of the widgets.
+一个控件，以说明窗口小部件的含义来注释控制树。
 
-Used by accessibility tools, search engines, and other semantic analysis software to determine the meaning of the application.
+可访问性工具，搜索引擎和其他语义分析软件用于确定应用程序的含义。
 
 import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import TabItem from '@theme/TabItem'; 
 
-## Properties
+##  properties 
 
-### `content`
+###  `content`
 
-A `Control` to annotate.
+`Control`到注释。
 
-### `label`
+###  `label`
 
-Semantics label.
+语义标签。

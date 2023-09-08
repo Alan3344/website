@@ -8,15 +8,15 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [releases]
 ---
 
-We've just released Flet 0.10.0 with FastAPI support!
+我们刚刚发布了 Flet 0.10.0，并获得了 FastApi 支持！
 
-<img src="/img/blog/fastapi/fastapi-logo-teal.png" className="screenshot-60" />
+<img src="/website/img/blog/fastapi/fastapi-logo-teal.png" className="screenshot-60" />
 
-[FastAPI](https://fastapi.tiangolo.com/) coupled with Uvicorn, Hypercorn, Gunicorn or other web server replaces built-in Flet web server (Fletd) to reliably run production Flet workloads.
+[FastApi](https://fastapi.tiangolo.com/)与 Uvicorn，HyperCorn，Gunicorn 或其他 Web 服务器相结合，替换了内置的 Flet Web Server（Flet D），以可靠地运行生产 Flet 工作负载。
 
-On the other hand, seasoned FastAPI developers can use Flet to easily add interactive, real-time dashboards and admin UI to their existing or new FastAPI services.
+另一方面，经验丰富的 FastAPI 开发人员可以使用 Flet 轻松添加交互式，实时仪表板和管理 UI，并在其现有或新的 FastApi 服务中添加。
 
-## A minimal app example
+## 一个最小的应用程序示例
 
 ```python
 import flet as ft
@@ -30,36 +30,36 @@ async def main(page: ft.Page):
 app = flet_fastapi.app(main)
 ```
 
-It's a simple app that just outputs "Hello, Flet!" on a web page.
+这是一个简单的应用程序，它只是输出“您好，Flet！” 在网页上。
 
-To run the app install Flet for FastAPI and Uvicorn:
+为了运行 Fastapi 和 Uvicorn 的应用程序安装 Flet:
 
 ```
 pip install flet-fastapi
 pip install uvicorn
 ```
 
-Save the code above to `hello.py` and then start uvicorn as:
+将上述代码保存到`hello.py`，然后启动 Uvicorn 作为:
 
 ```
 uvicorn hello:app
 ```
 
-Open the browser and navigate to http://127.0.0.1:8000 to see the app running.
+打开浏览器并导航到http://127.0.0.1:8000以查看应用程序运行。
 
-:::note
-Flet app must be [async](/docs/guides/python/async-apps) in order to work with FastAPI WebSocket handler.
+:::注意
+Flet 应用程序必须是[async](/docs/guides/python/async-apps)才能与 FastApi WebSocket 处理程序一起工作。
 :::
 
-## Features and benefits
+##
 
-* [Multiple Flet apps on a single domain](/docs/guides/python/deploying-web-app/running-flet-with-fastapi#hosting-multiple-flet-apps-under-the-same-domain) - mapped to the root and/or sub-paths.
-* Simple [one-line mappings](/docs/guides/python/deploying-web-app/running-flet-with-fastapi#how-it-works) or [individual endpoint configurations](/docs/guides/python/deploying-web-app/running-flet-with-fastapi#configuring-individual-flet-endpoints).
-* Light-weight async wrapper around FastAPI WebSocket connection for greater concurrency.
-* Serves Flet static files with user assets and app meta-information customization.
-* Uploads handler for `FilePicker` control.
-* OAuth callback handler for authentication flows.
+- [1600} [多个 Flet 应用程序在一个域中] 根和/或子路径。
+- 简单[单行映射](/docs/guides/python/deploying-web-app/running-flet-with-fastapi#how-it-works)或[单个端点配置](/docs/guides/python/deploying-web-app/running-flet-with-fastapi#configuring-individual-flet-endpoints)。
+- 围绕 FastApi Websocket 连接的轻量级异步包装器，以获得更大的并发。
+- 使用用户资产和应用元信息自定义提供 Flet 静态文件。
+- 上传处理程序以`FilePicker`控制。
+- oauth 回调处理程序用于身份验证流。
 
-Check [the guide](/docs/guides/python/deploying-web-app/running-flet-with-fastapi) for complete information about Flet with FastAPI.
+检查[指南](/docs/guides/python/deploying-web-app/running-flet-with-fastapi)，以获取有关使用 FastApi 的 Flet 的完整信息。
 
-Let us know what you think by joining [Flet Discord server](https://discord.gg/dzWXP8SHG8) or creating a new thread on [Flet GitHub discussions](https://github.com/flet-dev/flet/discussions).
+通过加入[Flet Discord Server](https://discord.gg/dzWXP8SHG8)或在[Flet github 讨论](https://github.com/flet-dev/flet/discussions)上创建一个新线程，让我们知道您的想法。

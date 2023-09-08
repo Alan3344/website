@@ -4,21 +4,21 @@ sidebar_label: ProgressRing
 slug: progressring
 ---
 
-A material design circular progress indicator, which spins to indicate that the application is busy.
+a material design 圆形进度指示器，它旋转以表明应用程序很忙。
 
-A control that shows progress along a circle.
+显示沿圆圈进展的控件。
 
-There are two kinds of circular progress indicators:
+有两种循环进度指标:
 
-* *Determinate*. Determinate progress indicators have a specific value at each point in time, and the value should increase monotonically from `0.0` to `1.0`, at which time the indicator is complete. To create a determinate progress indicator, use a non-null value between `0.0` and `1.0`.
-* *Indeterminate*. Indeterminate progress indicators do not have a specific value at each point in time and instead indicate that progress is being made without indicating how much progress remains. To create an indeterminate progress indicator, use a null value.
+- _确定_。 确定的进度指标在每个时间点具有一个特定的值，并且该值应单调从`0.0`到`1.0`，在此期间完成指示器已完成。 要创建确定的进度指示器，请在`0.0`和`1.0`之间使用非 NULL 值。
+- _不确定 _。 不确定的进度指标在每个时间点都没有特定的值，而是指出进度是在没有指示进度的情况下进行的。 要创建不确定的进度指标，请使用空值。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/displays/progressring)
+[LIVE 示例](https://flet-controls-gallery.fly.dev/displays/progressring)
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -47,29 +47,30 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/progress-ring/custom-progress-rings.gif" className="screenshot-30"/>
+<img src="/website/img/docs/controls/progress-ring/custom-progress-rings.gif" className="screenshot-30"/>
 
-## Properties
+## properties
 
 ### `bgcolor`
 
-[Color](/docs/guides/python/colors) of the circular track being filled by the circular indicator.
+圆形轨道的[颜色](/docs/guides/python/colors)由圆形指示器填充。
 
 ### `color`
 
-The progress indicator's [color](/docs/guides/python/colors).
+进度指示器的[颜色](/docs/guides/python/colors)。
 
 ### `stroke_width`
 
-The width of the line used to draw the circle.
+该行的宽度用于绘制圆圈。
 
 ### `tooltip`
 
-The text displayed when hovering the mouse over the control.
+将鼠标悬停在控件上时显示的文本。
 
 ### `value`
 
-The value of this progress indicator. A value of 0.0 means no progress and 1.0 means that progress is complete. The value will be clamped to be in the range 0.0-1.0. If null, this progress indicator is indeterminate, which means the indicator displays a predetermined animation that does not indicate how much actual progress is being made.
+该进度指标的价值。 值为 0.0 表示没有进度，而 1.0 表示进度已经完成。 该值将被夹在 0.0-1.0 范围内。 如果无效，则此进度指标是不确定的，这意味着指标显示一个预定的动画，该动画并未指示正在取得多少实际进度。

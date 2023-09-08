@@ -4,33 +4,33 @@ sidebar_label: Python - Calculator app
 slug: python-calculator
 ---
 
-In this tutorial we will show you, step-by-step, how to create a Calculator app in Python using Flet framework and deploy it as a web app. The app is [a simple console program](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc.py), yet it is a multi-platform application with similar to iPhone calculator app UI:
+在本教程中，我们将逐步向您展示如何使用 Flet 框架在 Python 中创建计算器应用程序，并将其部署为 Web 应用程序。 该应用程序是[简单的控制台程序](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc.py)，但它是一个多平台应用程序，其类似于 iPhone Calculator App UI:
 
-<img src="/img/docs/calc-tutorial/calc-app.gif" className="screenshot-40" />
+<img src="/website/img/docs/calc-tutorial/calc-app.gif" className="screenshot-40" />
 
-You can find the live demo [here](https://gallery.flet.dev/calculator/).
+您可以找到实时演示[此处](https://gallery.flet.dev/calculator/)。
 
-In this tutorial, we will cover all of the basic concepts for creating a web app: building a page layout, adding controls, making reusable UI components, handling events, and deployment options.
+在本教程中，我们将介绍创建 Web 应用程序的所有基本概念: 构建页面布局，添加控件，可重复使用的 UI 组件，处理事件和部署选项。
 
-The tutorial consists of the following steps:
+该教程包括以下步骤:
 
 import TOCInline from '@theme/TOCInline';
 
-<TOCInline toc={toc} maxHeadingLevel={2} />
+<tocinline toc = {toc} maxheadingLevel = {2} />
 
-## Getting started with Flet
+## 从 Flet 开始
 
-To write a Flet web app you don't need to know HTML, CSS or JavaScript, but you do need a basic knowledge of Python and object-oriented programming.
+要编写 Flet Web 应用程序，您不需要了解 HTML，CSS 或 JavaScript，但是您确实需要有关 Python 和面向对象的编程的基本知识。
 
-Flet requires Python 3.7 or above. To create a web app in Python with Flet, you need to install `flet` module first:
+Flet 需要 Python 3.7 或更高。 要使用 Flet 在 Python 中创建 Web 应用程序，您需要先安装`flet`模块:
 
 ```bash
 pip install flet
 ```
 
-To start, let's create a simple hello-world app.
+首先，让我们创建一个简单的 Hello-World 应用程序。
 
-Create `hello.py` with the following contents:
+使用以下内容创建`hello.py`:
 
 ```python
 import flet as ft
@@ -41,17 +41,17 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-Run this app and you will see a new window with a greeting:
+运行此应用程序，您将看到一个带有问候的新窗口:
 
-<img src="/img/docs/tutorial/todo-app-hello-world.png" className="screenshot-40" />
+<img src="/website/img/docs/tutorial/todo-app-hello-world.png" className="screenshot-40" />
 
-## Adding page controls
+## 添加页面控件
 
-Now you are ready to create a calculator app.
+现在，您准备创建一个计算器应用程序。
 
-To start, you'll need a [Text](/docs/controls/text) control for showing the result of calculation, and a few [ElevatedButtons](/docs/controls/elevatedbutton) with all the numbers and actions on them.
+首先，您需要一个[text](/docs/controls/text)控件来显示计算结果，以及几个[升高的 Buttons](/docs/controls/elevatedbutton)，其中所有数字和动作上的所有数字和动作。
 
-Create `calc.py` with the following contents:
+使用以下内容创建`calc.py`:
 
 ```python
 import flet as ft
@@ -88,15 +88,15 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-Run the app and you should see a page like this:
+运行该应用程序，您应该看到这样的页面:
 
-<img src="/img/docs/calc-tutorial/calc-app-1.png" className="screenshot-10" />
+<img src="/website/img/docs/calc-tutorial/calc-app-1.png" className="screenshot-10" />
 
-## Building page layout
+## 建筑页面布局
 
-Now let's arrange the text and buttons in 6 horizontal [rows](/docs/controls/row).
+现在，让我们将文本和按钮安排在 6 个水平[行](/docs/controls/row)中。
 
-Replace `calc.py` contents with the following:
+用以下内容替换`calc.py`内容:
 
 ```python
 import flet as ft
@@ -153,36 +153,36 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-Run the app and you should see a page like this:
+运行该应用程序，您应该看到这样的页面:
 
-<img src="/img/docs/calc-tutorial/calc-app-2.png" className="screenshot-40" />
+<img src="/website/img/docs/calc-tutorial/calc-app-2.png" className="screenshot-40" />
 
-### Using Container for decoration
+### 使用容器进行装饰
 
-To add a black background with rounded border around the calculator, we will be using [Container](/docs/controls/container) control. Container may decorate only one control, so we will need to wrap all the 6 rows into a single vertical [Column](/docs/controls/container) that will be used as the container's `content`:
-<img src="/img/docs/calc-tutorial/container-layout.svg" className="screenshot" />
+要在计算器周围添加带有圆形边框的黑色背景，我们将使用[容器](/docs/controls/container)控制。 容器只能装饰一个控件，因此我们需要将所有 6 行包裹在一个垂直[列](/docs/controls/container)中，该(/docs/controls/container)将用作容器的`content`:
+<img src="/website/img/docs/calc-tutorial/container-layout.svg" className="screenshot" />
 
-To complete the UI portion of the program, update `color` and `size` properties for the Text, and `color` and `bgcolor` properties for the buttons. For even alignment of the buttons within the rows, we will be using `expand` property as shown on the diagram above.  
+要完成程序的 UI 部分，请更新文本的`color`和`size`属性，以及`color`和`bgcolor`属性的`bgcolor`属性。 为了使行内的按钮对齐，我们将使用`expand`属性，如上图所示。
 
-Since the program is too long now to be fully included in this tutorial, copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc3.py). Run the app and you should see a page like this:
-<img src="/img/docs/calc-tutorial/calc-app.png" className="screenshot-40" />
+由于该程序现在太长了，无法将其完全包含在本教程中，请从[此处](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc3.py)复制此步骤的整个代码。 运行该应用程序，您应该看到这样的页面:
+<img src="/website/img/docs/calc-tutorial/calc-app.png" className="screenshot-40" />
 
-Just what we wanted!
+正是我们想要的！
 
-## Reusable UI components
+## 可重复使用的 UI 组件
 
-While you can continue writing your app in the `main` function, the best practice would be to create a reusable UI component. 
+虽然您可以继续在`main`函数中编写应用程序，但最好的做法是创建可重复使用的 UI 组件。
 
-Imagine you are working on an app header, a side menu, or UI that will be a part of a larger project (for example, at Flet we will be using this Calculator app in a bigger "Gallery" app that will show all the examples for Flet framework). 
+想象一下，您正在使用应用程序标头，侧菜单或 UI，该应用程序将成为较大项目的一部分（例如，在 Flet}我们将在较大的“画廊”应用中使用此计算器应用 Flet 框架的示例）。
 
-Even if you can't think of such uses right now, we still recommend creating all your web apps with composability and reusability in mind. 
+即使您现在无法想到这种用途，我们仍然建议您牢记合成性和可重复使用性创建所有 Web 应用程序。
 
-To make a reusable Calc app component, we are going to encapsulate its state and presentation logic in a separate `CalculatorApp` class. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc4.py).
+为了制作可重复使用的计算应用程序组件，我们将将其状态和演示逻辑封装在单独的`CalculatorApp`类中。 从[此处](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc4.py)复制此步骤的整个代码。
 
-Read more about [creating user controls](/docs/guides/python/getting-started#user-controls).
+阅读有关[创建用户控件](/docs/guides/python/getting-started#user-controls)的更多信息。
 
-:::noteTry something
-Try adding two `CalculatorApp` components to the page:
+:::noteTry 的东西
+尝试将两个`CalculatorApp`组件添加到页面:
 
 ```python
 # create application instance
@@ -195,9 +195,9 @@ page.add(calc1, calc2)
 
 :::
 
-## Handling events
+## 处理事件
 
-Now let's make the calculator do its job. We will be using the same event handler for all the buttons and use `data` property to differentiate between the actions depending on the button clicked. For each `ElevatedButton` control, specify `on_click=self.button_clicked` event and set `data` property equal to button's text, for example:
+现在让我们让计算器完成工作。 我们将对所有按钮使用同一事件处理程序，并使用`data`属性来区分操作，具体取决于单击的按钮。 对于每个`ElevatedButton`控件，指定`on_click=self.button_clicked`事件并设置`data`属性等于按钮的文本，例如:
 
 ```python
 ft.ElevatedButton(
@@ -210,7 +210,7 @@ ft.ElevatedButton(
 )
 ```
 
-Below is `on_click` event handler that will reset the Text value when "AC" button is clicked:
+以下是`on_click`事件处理程序，当单击“ AC”按钮时将重置文本值:
 
 ```python
 def button_clicked(self, e):
@@ -218,34 +218,33 @@ def button_clicked(self, e):
         self.result.value = "0"
 ```
 
-With similar approach, specify `on_click` event and `data` property for each button and add expected action to the `button_clicked` event handler depending on `e.data` value. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc.py).
+使用类似的方法，指定`on_click`事件和每个按钮的`data`属性，并根据`e.data`值添加预期操作。 从[此处](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc.py)复制此步骤的整个代码。
 
-Run the app and see it in the action:
-<img src="/img/docs/calc-tutorial/calc-app.gif" className="screenshot-40" />
+运行该应用程序并在操作中查看它:
+<img src="/website/img/docs/calc-tutorial/calc-app.gif" className="screenshot-40" />
 
-## Packaging as a desktop app
+## 包装作为桌面应用
 
-Congratulations! You have created your Calculator app with Flet, and it looks awesome! Now it's time to share your app with the world!
+恭喜！ 您已经使用 Flet 创建了计算器应用程序，看起来很棒！ 现在是时候与世界共享您的应用程序了！
 
-Flet Python app and all its dependencies can be packaged into an executable and user can run it on their computer without installing a Python interpreter or any modules.
+Flet Python 应用程序及其所有依赖项都可以包装到可执行文件中，并且用户可以在其计算机上运行它，而无需安装 Python 解释器或任何模块。
 
-[Follow these instructions](/docs/guides/python/getting-started#packaging-a-desktop-app) to package your Calculator app into an executable.
+[按照以下说明](/docs/guides/python/getting-started#packaging-a-desktop-app)将计算器应用程序包装到可执行文件中。
 
-## Deploying a web app
+## 部署 Web 应用程序
 
-[Follow these instructions](/docs/guides/python/getting-started#deploying-a-web-app) to deploy your Flet app as a web app to Fly.io or Replit.
+[遵循以下说明](/docs/guides/python/getting-started#deploying-a-web-app)将您的 Flet 应用程序部署为 web 应用程序，以 Fly.io 或 repland。
 
-## Summary
+## summary
 
-In this tutorial you have learned how to:
+在本教程中，您学会了如何:
 
-* Create a simple Flet app;
-* Work with Reusable UI components;
-* Design UI layout using `Column`, `Row` and `Container` controls;
-* Handle events;
-* Package your Flet app into an executable;
-* Deploy your Flet app to the web;
+- 创建一个简单的 Flet app;
+- 使用可重复使用的 UI 组件；
+- 使用`Column`，`Row`和`Container` Controls 设计 UI 布局；
+- 处理事件；
+- 将您的 Flet 应用程序包装到可执行文件中；
+- 将您的 Flet 应用程序部署到 Web；
 
-For further reading you can explore [controls](/docs/controls) and [examples repository](https://github.com/flet-dev/examples/tree/main/python).
-
-We would love to hear your feedback! Please drop us an [email](mailto:hello@flet.dev), join the discussion on [Discord](https://discord.gg/dzWXP8SHG8), follow on [Twitter](https://twitter.com/fletdev).
+为了进一步阅读，您可以探索[控件](/docs/controls)和[示例存储库](https://github.com/flet-dev/examples/tree/main/python)。
+我们很乐意倾听您的反馈！ 请给我们放置一个[电子邮件](mailto:hello@flet.dev)，加入[Discord](https://discord.gg/dzWXP8SHG8)的讨论，请在[Twitter](https://twitter.com/fletdev)上关注。

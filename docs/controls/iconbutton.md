@@ -4,18 +4,18 @@ sidebar_label: IconButton
 slug: iconbutton
 ---
 
-import Tabs from '@theme/Tabs';
+从'@themy/tabs'导入选项卡片;
 import TabItem from '@theme/TabItem';
 
-An icon button is a round button with an icon in the middle that reacts to touches by filling with color (ink).
+图标按钮是一个圆形按钮，中间带有图标，通过填充颜色（墨水）对触摸做出反应。
 
-Icon buttons are commonly used in the toolbars, but they can be used in many other places as well.
+图标按钮通常在工具栏中使用，但也可以在其他许多地方使用。
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/buttons/iconbutton)
+[live 示例](https://flet-controls-gallery.fly.dev/buttons/iconbutton)
 
-### Icon buttons
+### 图标按钮
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -48,10 +48,11 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/icon-button/icon-buttons.gif" className="screenshot-50" />
+<img src="/website/img/docs/controls/icon-button/icon-buttons.gif" className="screenshot-50" />
 
 ### Icon button with `click` event
 
@@ -79,48 +80,49 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/icon-button/icon-button-with-click-event.gif" className="screenshot-50" />
+<img src="/website/img/docs/controls/icon-button/icon-button-with-click-event.gif" className="screenshot-50" />
 
-## Properties
+## properties
 
 ### `autofocus`
 
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+如果将控件选择作为初始焦点，则为 thus。 如果一个带有自动对焦集的页面上有多个控件，则添加到页面的第一个控件将获得焦点。
 
 ### `content`
 
-A Control representing custom button content.
+代表自定义按钮内容的控件。
 
 ### `icon`
 
-Icon shown in the button.
+按钮中显示的图标。
 
 ### `icon_color`
 
-Icon [color](/docs/guides/python/colors).
+图标[颜色](/docs/guides/python/colors)。
 
 ### `icon_size`
 
-Icon size in virtual pixels.
+虚拟像素中的图标大小。
 
 ### `selected`
 
-Turns icon button to a toggle button: `True` - the button is in selected state, `False` - in normal.
+将图标按钮转到切换按钮: `True` - 该按钮在选定状态，`False` - 在正常状态中。
 
 ### `selected_icon`
 
-Icon shown in the button in selected state.
+所选状态的按钮中显示的图标。
 
 ### `selected_icon_color`
 
-Icon [color](/docs/guides/python/colors) for the selected state.
+所选状态的图标[颜色](/docs/guides/python/colors)。
 
-En example of icon toggle button:
+EN 图标切换按钮的示例:
 
-<img src="/img/blog/gradients/toggle-icon-button.gif" className="screenshot-10" />
+<img src="/website/img/blog/gradients/toggle-icon-button.gif" className="screenshot-10" />
 
 ```python
 import flet as ft
@@ -146,39 +148,37 @@ ft.app(target=main)
 
 ### `style`
 
-See [ElevatedButton.style](/docs/controls/elevatedbutton#style) for more information about this property.
+有关此属性的更多信息。
 
-### `tooltip`
-
-The text displayed when hovering the mouse over the button.
+悬停在按钮上时显示的文本。
 
 ### `url`
 
-The URL to open when the button is clicked. If registered, `on_click` event is fired after that.
+单击按钮时要打开的 URL。 如果已注册，则在此之后发射`on_click`事件。
 
 ### `url_target`
 
-Where to open URL in the web mode:
+在 Web 模式下打开 URL 的位置:
 
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+- `_blank`（默认） - 新 Tab/window。
+- `_self` - 当前选项卡片/窗口。
 
-## Methods
+## 方法
 
 ### `focus()`
 
-Moves focus to a button.
+将重点放在按钮上。
 
-## Events
+## 事件
 
 ### `on_blur`
 
-Fires when the control has lost focus.
+当控件失去焦点时发射。
 
 ### `on_click`
 
-Fires when a user clicks the button.
+用户单击按钮时发射。
 
 ### `on_focus`
 
-Fires when the control has received focus.
+当控件获得焦点时发射。

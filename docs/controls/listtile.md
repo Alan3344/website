@@ -4,16 +4,16 @@ sidebar_label: ListTile
 slug: listtile
 ---
 
-A single fixed-height row that typically contains some text as well as a leading or trailing icon.
+一个通常包含一些文本以及 leading 或尾随图标的单个固定高行。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/layout/listtile)
+[LIVE 示例](https://flet-controls-gallery.fly.dev/layout/listtile)
 
-<img src="/img/docs/controls/listtile/listtiles.png" className="screenshot-50"/>
+<img src="/website/img/docs/controls/listtile/listtiles.png" className="screenshot-50"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -85,80 +85,81 @@ def main(page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-## Properties
+## properties
 
 ### `autofocus`
 
-`True` if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+`True`如果将选择控件作为初始焦点。 如果一个带有自动对焦集的页面上有多个控件，则添加到页面的第一个将获得焦点。
 
 ### `content_padding`
 
-The tile's internal padding. Insets a ListTile's contents: its `leading`, `title`, `subtitle`, and `trailing` controls.
+瓷砖的内部填充。 插入 ListTile 的内容: 其`leading`，`title`，`subtitle`和`trailing`控件。
 
-If not set, `padding.symmetric(horizontal=16)` is used.
+如果未设置，则使用`padding.symmetric(horizontal=16)`。
 
-See [`Container.padding`](container#padding) property for more information and possible values.
+有关更多信息和可能的值，请参见[`Container.padding`](container#padding)属性。
 
 ### `dense`
 
-Whether this list tile is part of a vertically dense list. Dense list tiles default to a smaller height.
+该列表瓷砖是否是垂直密集列表的一部分。 密度列表图块默认为较小的高度。
 
 ### `is_three_line`
 
-Whether this list tile is intended to display three lines of text.
+该列表瓷砖是否旨在显示三行文本。
 
-If `True`, then subtitle must be non-null (since it is expected to give the second and third lines of text).
+如果`True`，则副标题必须是非编号（因为预计将提供第二行和第三行的文本）。
 
-If `False`, the list tile is treated as having one line if the subtitle is null and treated as having two lines if the subtitle is non-null.
+如果`False`，则将列表瓷砖视为具有一行，如果字幕为无效，如果字幕不为无效，则将其视为具有两行。
 
-When using a Text control for title and subtitle, you can enforce line limits using [Text.max_lines](text#max_lines).
+使用文本控件用于标题和字幕时，您可以使用[text.max_lines](text#max_lines)执行线路限制。
 
 ### `leading`
 
-A `Control` to display before the title.
+`Control`要在标题之前显示。
 
 ### `selected`
 
-If this tile is also enabled then icons and text are rendered with the same color. By default the selected color is the theme's primary color.
+如果还启用了此图块，则以相同的颜色呈现图标和文本。 默认情况下，选定的颜色是主题的主要颜色。
 
 ### `subtitle`
 
-Additional content displayed below the title. Typically a [Text](text) widget.
+标题下方显示的其他内容。 通常是[Text](text)窗口小部件。
 
-If `is_three_line` is `False`, this should not wrap. If `is_three_line` is `True`, this should be configured to take a maximum of two lines. For example, you can use [Text.max_lines](text#max_lines) to enforce the number of lines.
+如果`is_three_line`为`False`，则不应包装。 如果`is_three_line`为`True`，则应将其配置为最多两行。 例如，您可以使用[text.max_lines](text#max_lines)执行行数。
 
 ### `title`
 
-A `Control` to display as primary content of the list tile. Typically a [Text](text) control. This should not wrap. To enforce the single line limit, use [Text.max_lines](text#max_lines).
+`Control`以显示列表图块的主要内容。 通常是[Text](text)控件。 这不应该包裹。 要执行单行限制，请使用[text.max_lines](text#max_lines)。
 
 ### `toggle_inputs`
 
-Whether clicking on a list tile should toggle the state of `Radio`, `Checkbox` or `Switch` inside the tile. Default is `False`.
+是否单击列表图块应切换`Radio`的状态，`Checkbox`或`Switch`在瓷砖内。 默认值为`False`。
 
 ### `trailing`
 
-A `Control` to display after the title. Typically an [Icon](icon) control.
+`Control`标题后显示。 通常是[Icon](icon)控制。
 
 ### `url`
 
-The URL to open when the list tile is clicked. If registered, `on_click` event is fired after that.
+单击列表瓷砖时打开的 URL。 如果已注册，则在此之后发射`on_click`事件。
 
 ### `url_target`
 
-Where to open URL in the web mode:
+在 Web 模式下打开 URL 的位置:
 
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+- `_blank`（默认值） - 新 Tab/window。
+- `_self` - 当前的选项卡片/窗口。
 
-## Events
+## 事件
 
 ### `on_click`
 
-Fires when a user clicks or taps the list tile.
+当用户单击或点击列表瓷砖时发射。
 
 ### `on_long_press`
 
-Fires when the user long-presses on this list tile.
+当用户在此列表瓷砖上长压时发射。

@@ -4,15 +4,15 @@ sidebar_label: Canvas
 slug: canvas
 ---
 
-Canvas is a control for drawing arbitrary graphics using a set of primitives or "shapes" such as line, arc, path and text.
+帆布是使用一组原语或“形状”（例如线，弧，路径和文本）绘制任意图形的控件。
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/displays/canvas)
+[live 示例](https://flet-controls-gallery.fly.dev/displays/canvas)
 
-### Basic usage
+### 基本用法
 
-<img src="/img/docs/controls/canvas/canvas-face.png" className="screenshot-20"/>
+<img src="/website/img/docs/controls/canvas/canvas-face.png" className="screenshot-20"/>
 
 ```python
 import math
@@ -41,9 +41,9 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-### `Path` shape example
+### `Path`形状示例
 
-<img src="/img/docs/controls/canvas/canvas-triangles.png" className="screenshot-20"/>
+<img src="/website/img/docs/controls/canvas/canvas-triangles.png" className="screenshot-20"/>
 
 ```python
 import math
@@ -86,9 +86,9 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-### Bezier curves
+### bezier 曲线
 
-<img src="/img/docs/controls/canvas/canvas-bezier.png" className="screenshot-30"/>
+<img src="/website/img/docs/controls/canvas/canvas-bezier.png" className="screenshot-30"/>
 
 ```python
 import math
@@ -147,9 +147,9 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-### Drawing text
+### 绘制文本
 
-<img src="/img/docs/controls/canvas/canvas-text.png" className="screenshot-60"/>
+<img src="/website/img/docs/controls/canvas/canvas-text.png" className="screenshot-60"/>
 
 ```python
 import math
@@ -245,9 +245,9 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-### Free-hand drawing tool - canvas with gesture detector
+### Free-hand 绘图工具 - 带有手势检测器的画布
 
-<img src="/img/docs/controls/canvas/canvas-flet-brush.gif" className="screenshot-40"/>
+<img src="/website/img/docs/controls/canvas/canvas-flet-brush.gif" className="screenshot-40"/>
 
 ```python
 import flet as ft
@@ -311,378 +311,378 @@ ft.app(main)
 
 ### `resize_interval`
 
-Sampling interval in milliseconds for `on_resize` event. Default is `0` - call `on_resize` on every change.
+在`on_resize`事件中以毫秒为单位进行抽样间隔。 默认值为`0` - 在每个更改上调用`on_resize`。
 
 ### `shapes`
 
-The list of `Shape` objects (see below) to draw on the canvas.
+`Shape`对象的列表（请参见下文）在画布上绘制。
 
-## `Canvas` events
+## `Canvas`事件
 
 ### `on_resize`
 
-Fires when the size of canvas has changed.
+当画布的大小变化时，会发生射击。
 
-Event object `e` is an instance of `CanvasResizeEvent` class with the following fields:
+事件对象`e`是带有以下字段的`CanvasResizeEvent`类的实例:
 
-* `width` - a new width of the canvas.
-* `height` - a new height of the canvas.
+- `width` - 画布的新宽度。
+- `height` - 画布的新高度。
 
-## `Arc` shape properties
+## `Arc`形状属性
 
-Draws an arc scaled to fit inside the given rectangle.
+绘制一个弧形缩放以适合给定矩形内的弧线。
 
-It starts from `start_angle` radians around the oval up to `start_angle` + `sweep_angle` radians around the oval, with zero radians being the point on the right hand side of the oval that crosses the horizontal line that intersects the center of the rectangle and with positive angles going clockwise around the oval. If `use_center` is `True`, the arc is closed back to the center, forming a circle sector. Otherwise, the arc is not closed, forming a circle segment.
+它从椭圆形周围的`start_angle`弧度开始，最高为`start_angle` + `sweep_angle` roadians 围绕椭圆形，零弧度是椭圆形的右侧的点，与矩形中心相交的水平线横穿水平线的右侧。 并以正角顺时针绕椭圆形。 如果`use_center`为`True`，则弧封闭回中心，形成一个圆形扇区。 否则，弧不会封闭，形成一个圆段。
 
-[PICTURE] - https://api.flutter.dev/flutter/dart-ui/Canvas/drawArc.html
+[图片] -https://api.flutter.dev/flutter/dart-ui/canvas/drawarc.html
 
 ### `x`
 
-The x-axis coordinate of the arc's top left point.
+电弧左上角的 X 轴坐标。
 
 ### `y`
 
-The y-axis coordinate of the arc's top left point.
+ARC 左上角的 Y 轴坐标。
 
 ### `width`
 
-Width of the rectangle containing the arc's oval.
+矩形包含弧椭圆形的宽度。
 
 ### `height`
 
-Height of the rectangle containing the arc's oval.
+矩形的高度包含弧的椭圆形。
 
 ### `start_agnle`
 
-Starting angle in radians to draw arc from.
+弧度的起始角度从。
 
-### `sweep_angle`
+### `sweep_angle`绘制弧线
 
-The length of the arc in radians.
+弧度中的弧的长度。
 
 ### `use_center`
 
-If `use_center` is `True`, the arc is closed back to the center, forming a circle sector. Otherwise, the arc is not closed, forming a circle segment.
+如果`use_center`为`True`，则弧封闭回中心，形成一个圆形扇区。 否则，弧不会关闭，形成一个圆段。
 
 ### `paint`
 
-A style to draw an arc with. The value of this property is the instance of [`ft.Paint`](#paint-properties).
+一种绘制弧线的样式。 该属性的值是[`ft.Paint`](#paint-properties)的实例。
 
-## `Circle` shape properties
+## `Circle` shape 属性
 
-Draws a circle.
+绘制一个圆圈。
 
 ### `x`
 
-The x-axis coordinate of the circle's center point.
+圆圈中心点的 X 轴坐标。
 
 ### `y`
 
-The y-axis coordinate of the circle's center point.
+圆圈中心点的 Y 轴坐标。
 
 ### `radius`
 
-Circle's radius.
+Circle 的半径。
 
 ### `paint`
 
-A style to draw a circle with. The value of this property is the instance of [`ft.Paint`](#paint-properties).
+一种绘制圆圈的样式。 该属性的值是[`ft.Paint`](#paint-properties)的实例。
 
-## `Color` shape properties
+## `Color` shape 属性
 
-Paints the given `color` onto the canvas, applying the given `blend_mode`, with the given color being the source and the background being the destination.
+将给定的`color`涂在画布上，应用给定的`blend_mode`，而给定的颜色为源，背景为目的地。
 
 ### `color`
 
-[Color](/docs/guides/python/colors) to paint onto the canvas.
+[颜色](/docs/guides/python/colors)涂在画布上。
 
 ### `blend_mode`
 
-Blend mode to apply.
+混合模式申请。
 
-See [`ShaderMask.blend_mode`](shadermask#blend_mode) for possible blend mode values.
+有关可能的混合模式值，请参见[`ShaderMask.blend_mode`](shadermask#blend_mode)。
 
-## `Fill` shape properties
+## `Fill` shape 属性
 
-Fills the canvas with the given `Paint`.
+用给定的`Paint`填充画布。
 
-To fill the canvas with a solid color and blend mode, consider `Color` shape instead.
+要用纯色和混合模式填充画布，请考虑`Color`形状。
 
 ### `paint`
 
-A style to fill the canvas with. The value of this property is the instance of [`ft.Paint`](#paint-properties).
+一种填充画布的样式。 该属性的值是[`ft.Paint`](#paint-properties)的实例。
 
-## `Line` shape properties
+## `Line` shape 属性
 
-Draws a line between the given points using the given paint. The line is stroked, the value of the `Paint.style` is ignored.
+使用给定的油漆在给定点之间绘制一条线。 线条被触及，`Paint.style`的值被忽略。
 
 ### `x1`
 
-The x-axis coordinate of the line's starting point.
+线的起点的 X 轴坐标。
 
 ### `y1`
 
-The y-axis coordinate of the line's starting point.
+线的起点的 Y 轴坐标。
 
 ### `x2`
 
-The x-axis coordinate of the line's end point.
+线的终点的 X 轴坐标。
 
 ### `y2`
 
-The y-axis coordinate of the line's end point.
+线的终点的 Y 轴坐标。
 
 ### `paint`
 
-A style to draw a line with. The value of this property is the instance of [`ft.Paint`](#paint-properties).
+与一条线的样式。 该属性的值是[`ft.Paint`](#paint-properties)的实例。
 
-## `Oval` shape properties
+## `Oval` shape 属性
 
-Draws an axis-aligned oval that fills the given axis-aligned rectangle with the given `Paint`. Whether the oval is filled or stroked (or both) is controlled by `Paint.style`.
+绘制一个轴对准的椭圆形，该椭圆形填充给定轴对准的矩形，并带有给定的`Paint`。 椭圆形被填充还是抚摸（或两者）都由`Paint.style`控制。
 
 ### `x`
 
-The x-axis coordinate of the oval's top left point.
+椭圆形左上角的 X 轴坐标。
 
 ### `y`
 
-The y-axis coordinate of the oval's top left point.
+椭圆形左上角的 Y 轴坐标。
 
 ### `width`
 
-Width of the rectangle containing the oval.
+包含椭圆形的矩形宽度。
 
 ### `height`
 
-Height of the rectangle containing the oval.
+矩形的高度包含椭圆形。
 
 ### `paint`
 
-A style to draw an oval with. The value of this property is the instance of [`ft.Paint`](#paint-properties).
+一种绘制椭圆形的样式。 该属性的值是[`ft.Paint`](#paint-properties)的实例。
 
-## `Path` shape properties
+## `Path` shape 属性
 
-Draws the a path with given `elements` with the given `Paint`.
+用给定的`elements`用给定的`Paint`绘制 A 路径。
 
-Whether this shape is filled or stroked (or both) is controlled by `Paint.style`. If the path is filled, then sub-paths within it are implicitly closed (see `Path.Close`).
+该形状是否填充或触摸（或两者）都由`Paint.style`控制。 如果填充路径，则该子路径隐含地关闭（请参阅`Path.Close`）。
 
 ### `elements`
 
-The list of path elements:
+路径元素列表:
 
-#### `Path.MoveTo(x, y)`
+#### `path.moveto（x，y）`
 
-Starts a new sub-path at the given point (`x`,`y`).
+在给定点(`x`,`y`)。
 
-#### `Path.LineTo(x, y)`
+#### `path.lineto（x，y）
 
-Adds a straight line segment from the current point to the given point (`x`,`y`).
+从当前点添加一个直线段到给定点(`x`,`y`)。
 
-#### `Path.QuadraticTo(cp1x, cp2y, x, y, w)`
+#### `path.quadraticto（cp1x，cp2y，cp2y，x，x，y，w）```
 
-Adds a bezier segment that curves from the current point to the given point (`x`,`y`), using the control points (`cp1x`,`cp1y`) and the weight `w`. If the weight is greater than 1, then the curve is a hyperbola; if the weight equals 1, it's a parabola; and if it is less than 1, it is an ellipse.
+使用控制点(`cp1x`,`cp1y`)和权重`w`，添加了一个从当前点到给定点(`x`,`y`)的曲线段，该段从当前点到给定点(`x`,`y`)。 如果重量大于 1，则曲线为双曲线； 如果重量等于 1，那是抛物线； 如果小于 1，则是一个椭圆。
 
-#### `Path.CubicTo(cp1x, cp1y, cp2x, cp2y, x, y)`
+#### `path.cubicto（cp1x，cp1y，cp2x，cp2x，cp2y，x，y）``
 
-Adds a cubic bezier segment that curves from the current point to the given point (`x`,`y`), using the control points (`cp1x`,`cp1y`) and (`cp2x`,`cp2y`).
+使用控制点(`cp1x`,`cp1y`)和(`cp2x`,`cp2y`)。添加一个从当前点到给定点(`x`,`y`)的曲线的立方 bezier 段。
 
-#### `Path.SubPath(elements, x, y)`
+#### 。
 
-Adds the sub-path described by `elements` to the given point (`x`,`y`).
+将`elements`描述的子路径添加到给定点(`x`,`y`)。
 
-#### `Path.Arc(x, y, width, height, start_angle, sweep_angle)`
+#### `path.arc（x，y，width，height，height，start_angle，sweep_angle）`
 
-Adds a new sub-path with one arc segment that consists of the arc that follows the edge of the oval bounded by the given rectangle with top left corner at `x` and `y` and dimensions `width` and `height`, from `start_angle` radians around the oval up to `start_angle` + `sweep_angle` radians around the oval, with zero radians being the point on the right hand side of the oval that crosses the horizontal line that intersects the center of the rectangle and with positive angles going clockwise around the oval.
+添加一个新的子路径，其中一个 ARC 段由弧形组成，该弧遵循椭圆形的边缘，由给定的矩形在`x`和`y`和`y`和 dimensions `width`和`height`和`height`，`height`，`y`和`height`，从 `start_angle`椭圆形周围的弧度最高为`start_angle` + `sweep_angle`弧度周围的弧度，零弧度为椭圆形的右侧点上的点，与矩形相交的水平线交叉，并与矩形的中心相交。 围绕椭圆形顺时针的角度。
 
-#### `Path.ArcTo(x, y, radius, rotation, large_arc, clockwise)`
+#### `path.arcto（x，y，radius，旋转，旋转，大\_arc，顺时针）
 
-Appends up to four conic curves weighted to describe an oval of `radius` and rotated by `rotation` (measured in degrees and clockwise).
+将多达四个圆锥曲线加权以描述`radius`的椭圆形，并由`rotation`旋转（以度和顺时针方向测量）。
 
-The first curve begins from the last point in the path and the last ends at `x` and `y`. The curves follow a path in a direction determined by `clockwise` (bool) and `large_arc` (bool) in such a way that the sweep angle is always less than 360 degrees.
+第一条曲线从路径的最后一点开始，最后一个曲线以`x`和`y`结束。 曲线沿着由`clockwise`（bool）和`large_arc`（bool）确定的方向沿着路径，以扫描角度始终小于 360 度的方式。
 
-A simple line is appended if either either radii are zero or the last point in the path (`x`,`y`). The radii are scaled to fit the last path point if both are greater than zero but too small to describe an arc.
+如果半径为零或路径(`x`,`y`)中的最后一点，则会附加简单的线。 如果两者都大于零但太小而无法描述弧。
 
-#### `Path.Oval(x, y, width, height)`
+添加了一个由曲线组成的新子路径，该曲线形成椭圆形，该椭圆形填充给定的矩形。
 
-Adds a new sub-path that consists of a curve that forms the ellipse that fills the given rectangle.
+#### `path.Rect（x，y，y，width，width，height，borde_radius）``''
 
-#### `Path.Rect(x, y, width, height, border_radius)`
-
-Adds a rectangle as a new sub-path.
+添加一个矩形作为新的子路径。
 
 #### `Path.Close`
 
-Closes the last sub-path, as if a straight line had been drawn from the current point to the first point of the sub-path.
+关闭最后一个子路径，好像从当前点到子路径的第一个点已经绘制了一条直线。
 
 ### `paint`
 
-A style to draw a path with. The value of this property is the instance of [`ft.Paint`](#paint-properties).
+一种绘制路径的样式。 该属性的值是[`ft.Paint`](#paint-properties)的实例。
 
-## `Points` shape properties
+## `Points` shape 属性
 
-Draws a sequence of points according to the given `point_mode`.
+根据给定的`point_mode`绘制一系列点。
 
 ### `points`
 
-The list of `ft.Offset` describing points.
+`ft.Offset`描述点的列表。
 
 ### `point_mode`
 
-Defines how a list of points is interpreted when drawing a set of points. The value is of type `ft.PointMode`:
+定义在绘制一组点时如何解释点列表。 该值是类型`ft.PointMode`的类型:
 
-* `POINTS` - Draw each point separately. If the `Paint.stroke_cap` is `StrokeCap.ROUND`, then each point is drawn as a circle with the diameter of the `Paint.stroke_width`, filled as described by the `Paint` (ignoring `Paint.style`). Otherwise, each point is drawn as an axis-aligned square with sides of length `Paint.stroke_width`, filled as described by the `Paint` (ignoring `Paint.style`).`
-* `LINES` - Draw each sequence of two points as a line segment. If the number of points is odd, then the last point is ignored. The lines are stroked as described by the `Paint` (ignoring `Paint.style`).
-* `POLYGON` - Draw the entire sequence of point as one line. The lines are stroked as described by the `Paint` (ignoring `Paint.style`).
+- `POINTS` - 分别绘制每个点。 如果`Paint.stroke_cap`为`StrokeCap.ROUND`，则将每个点绘制为圆形的`Paint.stroke_width`的直径，如`Paint`所述填充（忽略`Paint.style`）。 否则，将每个点作为一个轴对准的正方形，并用长度为`Paint.stroke_width`的两侧，如`Paint`所述填充（忽略`Paint.style`）。
+- `LINES` - 将每个序列绘制为两个点段的每个序列。 如果点数很奇，则最后一点被忽略。 如`Paint`所述（忽略`Paint.style`），将行触及。
+- `POLYGON` - 将整个点序列绘制为一行。 线条如`Paint`所述（忽略`Paint.style`）。
 
 ### `paint`
 
-A style to draw points with. The value of this property is the instance of [`ft.Paint`](#paint-properties).
+一种绘制点的样式。 该属性的值是[`ft.Paint`](#paint-properties)的实例。
 
-## `Rect` shape properties
+## `Rect` shape 属性
 
-Draws a rectangle.
+绘制矩形。
 
 ### `x`
 
-The x-axis coordinate of the rectangle's top left point.
+矩形左上角的 X 轴坐标。
 
 ### `y`
 
-The y-axis coordinate of the rectangle's top left point.
+矩形左上角的 Y 轴坐标。
 
 ### `width`
 
-Width of the rectangle.
+矩形的宽度。
 
 ### `height`
 
-Height of the rectangle.
+矩形的高度。
 
 ### `border_radius`
 
-Border radius of the rectangle, value of type `ft.BorderRadius`.
+矩形的边界半径，类型`ft.BorderRadius`的值。
 
 ### `paint`
 
-A style to draw a rectangle with. The value of this property is the instance of [`ft.Paint`](#paint-properties).
+一种绘制矩形的样式。 该属性的值是[`ft.Paint`](#paint-properties)的实例。
 
-## `Shadow` shape properties
+## `Shadow` shape 属性
 
-Draws a shadow for a `path` representing the given material `elevation`.
+为`path`绘制代表给定 material `elevation`的阴影。
 
-The `transparent_occluder` argument should be `True` if the occluding object is not opaque.
+`transparent_occluder`的参数应为`True`，如果遮挡对象不是不透明的。
 
 ### `path`
 
-The list of `Path.PathElement` objects describing the path.
+描述路径的`Path.PathElement`对象的列表。
 
 ### `color`
 
-Shadow [color](/docs/guides/python/colors).
+阴影[颜色](/docs/guides/python/colors)。
 
 ### `elevation`
 
-Shadow elevation.
+阴影高程。
 
 ### `transparent_occluder`
 
-`True` if the occluding object is not opaque. Default is `False`.
+`True`如果阻塞对象不是不透明的。 默认值为`False`。
 
-## `Text` shape properties
+## `Text`形状属性
 
-Draws `text` with `style` in the given point (`x`, `y`).
+用`style`在给定点(`x`, `y`)中绘制`text`。
+
+###
 
 ### `x`
 
-The x-axis coordinate of the text's `alignment` point.
+文本的`alignment`点的 X 轴坐标。
 
 ### `y`
 
-The y-axis coordinate of the text's `alignment` point.
+文本的`alignment`点的 y 轴坐标。
 
 ### `text`
 
-The text to draw.
+绘制的文本。
 
 ### `style`
 
-A text style to draw `text` and `spans` with. The value is the instance of [`ft.TextStyle`](text#textstyle-properties) class.
+绘制`text`和`spans`的文本样式。 该值是[`ft.TextStyle`](text#textstyle-properties) class。
 
-### `spans`
+### `spans`的实例
 
-The list of [`ft.TextSpan`](text#textspan-properties) objects to build a rich text paragraph.
+[`ft.TextSpan`](text#textspan-properties)对象的列表构建一个丰富的文本段落。
 
 ### `alignment`
 
-A point within a text rectangle to determine its position and rotation center.
+文本矩形中的一个点，以确定其位置和旋转中心。
 
-The value is of type `ft.Alignment`. Default value is `ft.alignment.top_left`.
+该值是类型`ft.Alignment`类型。 默认值为`ft.alignment.top_left`。
 
 ### `text_align`
 
-Text horizontal align. See [`Text.text_align`](text#text_align) property for supported values.
+文本水平对齐。 有关支持的值，请参见[`Text.text_align`](text#text_align)属性。
 
 ### `max_lines`
 
-The maximum number of lines painted. Lines beyond this number are silently dropped. For example, if maxLines is 1, then only one line is rendered. If `max_lines` is `None`, but ellipsis is not `None`, then lines after the first one that overflows the width constraints are dropped.
+绘制的最大线条数。 超出此数字的线被静静地掉落。 例如，如果最大线是 1，则仅渲染一行。 如果`max_lines`是`None`，但省略号不是`None`，则在第一个溢出宽度约束的第一个线之后。
 
 ### `max_width`
 
-The maximum width of the painted text. Default is `None` - infinity.
+彩绘文本的最大宽度。 默认值为`None` - infinity。
 
 ### `ellipsis`
 
-String used to ellipsize overflowing text.
+用来椭圆形溢出文本的字符串。
 
 ### `rotate`
 
-Text rotation in radians. Text is rotated around the point determined by `alignment`. See code examples above.
+弧度的文字旋转。 文本围绕由`alignment`确定的点旋转。 请参阅上面的代码示例。
 
-## `Paint` properties
+## `Paint`属性
 
-A description of the style to use when drawing a shape on the canvas.
+在画布上绘制形状时要使用的样式的描述。
 
 ### `anti_alias`
 
-Whether to apply anti-aliasing to lines and images drawn on the canvas. Defaults to `True`.
+是否将抗缩放剂应用于画布上绘制的线条和图像。 默认为`True`。
 
 ### `blend_mode`
 
-:::note
-The property is not yet implemented and reserved for future use.
+:::注意
+该属性尚未实施并保留供将来使用。
 :::
 
-A blend mode to apply when a shape is drawn or a layer is composited.
+绘制形状或层合成时应用的混合模式。
 
-Defaults to `BlendMode.SRC_OVER`.
+默认为`BlendMode.SRC_OVER`。
 
-See [`ShaderMask.blend_mode`](shadermask#blend_mode) for possible blend mode values.
+有关可能的混合模式值，请参见[`ShaderMask.blend_mode`](shadermask#blend_mode)。
 
 ### `blur_image`
 
-:::note
-The property is not yet implemented and reserved for future use.
+:::注意
+该属性尚未实施并保留供将来使用。
 :::
 
-Blur image when drawing it on a canvas.
+在画布上绘制时模糊图像。
 
-See [`Container.blur`](container#blur) for more information.
+有关更多信息，请参见[`Container.blur`](container#blur)。
 
 ### `color`
 
-The [color](/docs/guides/python/colors) to use when stroking or filling a shape. Defaults to opaque black.
+抚摸或填充形状时使用的[颜色](/docs/guides/python/colors)。 默认为不透明黑色。
 
 ### `gradient`
 
-Configures gradient paint. The value is an instance of one of the following classes:
+配置梯度油漆。 该值是以下类的实例:
 
-* `PaintLinearGradient`
-* `PaintRadialGradient`
-* `PaintSweepGradient`
+- `PaintLinearGradient`
+- `PaintRadialGradient`
+- `PaintSweepGradient`
 
 #### `PaintLinearGradient`
 
-<img src="/img/docs/controls/canvas/paint-linear-gradient.png" className="screenshot-20" />
+<img src="/website/img/docs/controls/canvas/paint-linear-gradient.png" className="screenshot-20" />
 
 ```python
 cv.Rect(
@@ -700,23 +700,23 @@ cv.Rect(
 )
 ```
 
-`PaintLinearGradient` class has the following properties:
+`PaintLinearGradient`类具有以下属性:
 
-* `begin` - An instance of `Offset` class. The offset at which stop 0.0 of the gradient is placed.
-* `end` - An instance of `Offset` class. The offset at which stop 1.0 of the gradient is placed.
-* `colors` - The colors the gradient should obtain at each of the stops. If stops is non-null, this list must have the same length as stops. This list must have at least two colors in it (otherwise, it's not a gradient!).
-* `stops` - A list of values from 0.0 to 1.0 that denote fractions along the gradient. If non-null, this list must have the same length as `colors`. If the first value is not 0.0, then a stop with position 0.0 and a color equal to the first color in `colors` is implied. If the last value is not 1.0, then a stop with position 1.0 and a color equal to the last color in `colors` is implied.
-* `tile_mode` - How this gradient should tile the plane beyond in the region before `begin` and after `end`. The value is `GradientTileMode` enum with supported values: `CLAMP` (default), `DECAL`, `MIRROR`, `REPEATED`. More info [here](https://api.flutter.dev/flutter/dart-ui/TileMode.html).
-* `rotation` - rotation for the gradient, in [radians](https://en.wikipedia.org/wiki/Radian), around the center-point of its bounding box.
+- `begin` - `Offset`类的实例。 放置 0.0 梯度的偏移。
+- `end` - `Offset`类的实例。 放置梯度的 1.0 停止的偏移。
+- `colors` - 梯度应在每个停止处获得的颜色。 如果停止是非空的，则此列表必须具有与停止相同的长度。 此列表中必须至少具有两种颜色（否则，它不是渐变！）。
+- `stops` - 一个 0.0 到 1.0 的值列表，表示沿梯度的分数。 如果非编号，此列表必须具有与`colors`相同的长度。 如果第一个值不是 0.0，则暗示`colors`中的颜色等于第一个颜色的颜色等于`colors`中的颜色。 如果最后一个值不是 1.0，则隐含`colors`中的最后一个颜色等于`colors`的最后一个颜色。
+- `tile_mode` - 在`begin`之前和`end`之前，该梯度应如何在该区域的范围内铺平平面。 值为`GradientTileMode`枚举，具有支持值: `CLAMP`（默认），`DECAL`，`MIRROR`，`REPEATED`。 更多信息[此处](https://api.flutter.dev/flutter/dart-ui/TileMode.html)。
+- `rotation` - 梯度的旋转，在[弧度](https://en.wikipedia.org/wiki/Radian)中，围绕其边界框的中心点。
 
-More information:
+更多信息:
 
-* [Linear gradient](https://api.flutter.dev/flutter/dart-ui/Gradient/Gradient.linear.html) in Flutter documentation.
-* [Radian measuring unit](https://en.wikipedia.org/wiki/Radian) on Wikipedia.
+- [线性梯度](https://api.flutter.dev/flutter/dart-ui/Gradient/Gradient.linear.html)在 Flutter 文档中。
+- [Radian 测量单元](https://en.wikipedia.org/wiki/Radian)在 Wikipedia 上。
 
 #### `PaintRadialGradient`
 
-<img src="/img/docs/controls/canvas/paint-radial-gradient.png" className="screenshot-20" />
+<img src="/website/img/docs/controls/canvas/paint-radial-gradient.png" className="screenshot-20" />
 
 ```python
 cv.Circle(
@@ -732,21 +732,21 @@ cv.Circle(
 )
 ```
 
-`PaintRadialGradient` class has the following properties:
+`PaintRadialGradient`类具有以下属性:
 
-* `center` - An instance of `Offset` class. The center of the gradient.
-* `radius` - The radius of the gradient.
-* `colors`, `stops`, `tile_mode`, `rotation` - see [Linear gradient](#paintlineargradient) for description of these properties.
-* `focal` - The focal point of the gradient. If specified, the gradient will appear to be focused along the vector from `center` to focal.
-* `focal_radius` - The radius of the focal point of gradient, as a fraction of the shortest side of the paint box. For example, if a radial gradient is painted on a box that is 100.0 pixels wide and 200.0 pixels tall, then a radius of 1.0 will place the 1.0 stop at 100.0 pixels from the focal point.
+- `center` - `Offset`类的实例。 梯度的中心。
+- `radius` - 梯度的半径。
+- `colors`，`stops`，`tile_mode`，`rotation` - 有关这些属性的描述，请参见[线性梯度](#paintlineargradient)。
+- `focal` - 梯度的焦点。 如果指定，则该梯度似乎将沿向量从`center`到焦点进行聚焦。
+- `focal_radius` - 梯度焦点的半径，是油漆箱最短一侧的一小部分。 例如，如果将径向梯度涂在宽 100.0 像素和 200.0 像素的盒子上，则半径为 1.0，将使 1.0 停止位于焦点的 100.0 像素。
 
-More information:
+更多信息:
 
-* [Radial gradient](https://api.flutter.dev/flutter/dart-ui/Gradient/Gradient.radial.html) in Flutter documentation.
+- [radial 渐变](https://api.flutter.dev/flutter/dart-ui/Gradient/Gradient.radial.html)在 flutter 文档中。
 
 #### `PaintSweepGradient`
 
-<img src="/img/docs/controls/canvas/paint-sweep-gradient.png" className="screenshot-20" />
+<img src="/website/img/docs/controls/canvas/paint-sweep-gradient.png" className="screenshot-20" />
 
 ```python
 cv.Path(
@@ -770,72 +770,71 @@ cv.Path(
 )
 ```
 
-`PaintSweepGradient` class has the following properties:
+`PaintSweepGradient`类具有以下属性:
 
-* `center` - The center of the gradient.
-* `colors`, `stops`, `tile_mode`, `rotation` - see [Linear gradient](#paintlineargradient) for description of these properties.
-* `start_angle` - The angle in radians at which stop 0.0 of the gradient is placed. Defaults to 0.0.
-* `end_angle` - The angle in radians at which stop 1.0 of the gradient is placed. Defaults to math.pi * 2.
-* `rotation` - gradient rotation in radians.
+- `center` - 梯度的中心。
+- `colors`，`stops`，`tile_mode`，`rotation` - 有关这些属性的描述，请参见[线性梯度](#paintlineargradient)。
+- `start_angle` - 放置梯度 0.0 的弧度的角度。 默认为 0.0。
+- `end_angle` - 放置梯度 1.0 的弧度的角度。 默认为 Math.pi \* 2。
+- `rotation` - 弧度中的梯度旋转。
 
-More information:
+更多信息:
 
-* [Sweep gradient](https://api.flutter.dev/flutter/dart-ui/Gradient/Gradient.sweep.html) in Flutter documentation.
+- [扫描渐变](https://api.flutter.dev/flutter/dart-ui/Gradient/Gradient.sweep.html)在 flutter 文档中。
 
 ### `stroke_cap`
 
-The kind of finish to place on the end of lines drawn when `style` is set to `PaintingStyle.STROKE`.
+当`style`设置为`PaintingStyle.STROKE`时，将其放置在绘制的线的末端。
 
-The value is an instance of `ft.StrokeCap` enum:
+该值是`ft.StrokeCap`枚举的实例:
 
-* `BUTT` (default) - Begin and end contours with a flat edge and no extension.
-* `ROUND` - Begin and end contours with a semi-circle extension.
-* `SQUARE` - Begin and end contours with a half square extension. This is similar to extending each contour by half the stroke width (as given by `Paint.stroke_width`).
+- `BUTT`（默认值） - 开头和结束轮廓具有平坦的边缘，没有扩展。
+- `ROUND` - 带有半圆扩展的开始和结束轮廓。
+- `SQUARE` - 以半平方扩展为开始和结束轮廓。 这类似于将每个轮廓延长的一半均匀宽度（如`Paint.stroke_width`给出）。
 
 ### `stroke_join`
 
-The kind of finish to place on the joins between segments.
+在各个细分之间的连接上的结合。
 
-This applies to paths drawn when style is set to `PaintingStyle.STROKE`, It does not apply to points drawn as lines with `canvas.Points`.
+这适用于将样式设置为`PaintingStyle.STROKE`时绘制的路径，它不适用于用`canvas.Points`的行绘制的点。
 
-Defaults to `StrokeJoin.MITER`, i.e. sharp corners.
+默认为`StrokeJoin.MITER`，即尖锐的角。
 
-The value is an instance of `ft.StrokeJoin` enum:
+该值是`ft.StrokeJoin`枚举的实例:
 
-* `MITER` (default) - Joins between line segments form sharp corners.
-* `ROUND` - Joins between line segments are semi-circular.
-* `BEVEL` - Joins between line segments connect the corners of the butt ends of the line segments to give a beveled appearance.
+- `MITER`（默认） - 在行段之间加入形成尖角。
+- `ROUND` - 线段之间的连接是半圆形的。
+- `BEVEL` - 在线段之间连接连接线段的屁股末端的角，以提供斜面的外观。
 
-See [StrokeJoin enum](https://api.flutter.dev/flutter/dart-ui/StrokeJoin.html) in Flutter documentation for more details.
+有关更多详细信息，请参见[23326} (https://api.flutter.dev/flutter/dart-ui/StrokeJoin.html)有关更多详细信息。
 
 ### `stroke_miter_limit`
 
-The limit for miters to be drawn on segments when the join is set to `StrokeJoin.MITER` and the style is set to `PaintingStyle.STROKE`. If this limit is exceeded, then a `StrokeJoin.BEVEL` join will be drawn instead. This may cause some 'popping' of the corners of a path if the angle between line segments is animated, as seen in the diagrams below.
+将联接设置为`StrokeJoin.MITER`和样式时，在片段上绘制 Miter 的极限
+此限制表示为斜切长度的限制。
 
-This limit is expressed as a limit on the length of the miter.
-
-Defaults to 4.0. Using zero as a limit will cause a `StrokeJoin.BEVEL` join to be used all the time.
+默认为 4.0。 使用零作为限制将导致`StrokeJoin.BEVEL`始终使用加入。
 
 ### `stroke_width`
 
-How wide to make edges drawn when style is set to `PaintingStyle.STROKE`. The width is given in logical pixels measured in the direction orthogonal to the direction of the path.
+将样式设置为`PaintingStyle.STROKE`时，如何制作边缘。 宽度以逻辑像素为朝向路径方向正交的方向测量。
 
-Defaults to 0.0, which correspond to a hairline width.
+默认为 0.0，对应于发际线宽度。
 
 ### `stroke_dash_pattern`
 
-A circular array of dash offsets and lengths.
+圆形折扣和长度的圆形阵列。
 
-For example, the array `[5, 10]` would result in dashes 5 pixels long
-followed by blank spaces 10 pixels long.  The array `[5, 10, 5]` would
-result in a 5 pixel dash, a 10 pixel gap, a 5 pixel dash, a 5 pixel gap,
-a 10 pixel dash, etc.
+例如，数组`[5, 10]`将导致破折号 5 像素长
+然后是空白 10 像素长的空格。 数组`[5, 10, 5]`将
+导致 5 像素破折号，10 像素间隙，5 像素破折号，5 像素间隙，
+10 像素破折号等。
 
 ### `style`
 
-Whether to paint inside shapes, the edges of shapes, or both.
+是在形状，形状的边缘还是两者兼而有之。
 
-The value is an instance of `ft.PaintingStyle` enum:
+该值是`ft.PaintingStyle`枚举的实例:
 
-* `FILL` (default) - Apply the `Paint` to the inside of the shape. For example, when applied to the `canvas.Circle` shape, this results in a disc of the given size being painted.
-* `STROKE` - Apply the `Paint` to the edge of the shape. For example, when applied to the `canvas.Circle` shape, this results is a hoop of the given size being painted. The line drawn on the edge will be the width given by the `Paint.stroke_width` property.
+- `FILL`（默认） - 将`Paint`应用于形状的内部。 例如，当应用于`canvas.Circle`形状时，这会导致涂漆给定尺寸的形状。
+- `STROKE` - 将`Paint`应用于形状的边缘。 例如，当应用于`canvas.Circle`形状时，此结果是给定尺寸绘制的箍。 边缘绘制的线将是`Paint.stroke_width`属性给出的宽度。

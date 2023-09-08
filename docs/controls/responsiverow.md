@@ -4,14 +4,14 @@ sidebar_label: ResponsiveRow
 slug: responsiverow
 ---
 
-import Tabs from '@theme/Tabs';
+从'@themy/tabs'导入选项卡片;
 import TabItem from '@theme/TabItem';
 
-`ResponsiveRow` borrows the idea of grid layout from [Bootstrap](https://getbootstrap.com/docs/5.2/layout/grid/) web framework.
+`ResponsiveRow`从[Bootstrap](https://getbootstrap.com/docs/5.2/layout/grid/) Web Framework 借用网格布局的想法。
 
-`ResponsiveRow` allows aligning child controls to virtual columns. By default, a virtual grid has 12 columns, but that can be customized with `ResponsiveRow.columns` property.
+`ResponsiveRow`允许对齐 child 控件与虚拟列。 默认情况下，虚拟网格具有 12 列，但可以使用`ResponsiveRow.columns`属性来自定义。
 
-Similar to `expand` property, every control now has `col` property which allows specifying how many columns a control should span. For example, to make a layout consisting of two columns spanning 6 virtual columns each:
+类似于`expand`属性，每个控件现在都有`col`属性，该属性允许指定控件应跨度多少列。 例如，要制作一个由两个跨越 6 个虚拟列组成的布局:
 
 ```python
 import flet as ft
@@ -22,22 +22,22 @@ ft.ResponsiveRow([
 ])
 ```
 
-`ResponsiveRow` is "responsive" because it can adapt the size of its children to a changing screen (page, window) size. `col` property in the example above is a constant number which means the child will span 6 columns for any screen size.
+`ResponsiveRow`是“响应式”，因为它可以将其 children 的大小调整到更改的屏幕（页面，窗口）大小。 `col`属性上面的属性是一个常数数字，这意味着 child 将跨越任何屏幕大小的 6 列。
 
-If `ResponsiveRow`'s child doesn't have `col` property specified it spans the maximum number of columns.
+如果`ResponsiveRow`'s child 没有指定的`col`属性，则覆盖最大列数。
 
-`col` can be configured to have a different value for specific "breakpoints". Breakpoints are named dimension ranges:
+`col`可以配置为特定“断点”具有不同的值。 断点命名尺寸范围:
 
-| Breakpoint | Dimension |
-|---|---|
-| xs | <576px |
-| sm | ≥576px |
-| md | ≥768px |
-| lg | ≥992px |
-| xl | ≥1200px |
-| xxl | ≥1400px |
+| 断点 | 维度    |
+| ---- | ------- |
+| XS   | <576px  |
+| SM   | ≥576px  |
+| MD   | ≥768px  |
+| LG   | ≥992px  |
+| XL   | ≥1200px |
+| xxl  | ≥1400px |
 
-For example, the following example collapses content into a single column on a mobile device and takes two columns on larger screens:
+例如，以下示例将内容折叠成移动设备上的单列中，并在较大屏幕上进行两列:
 
 ```python
 import flet as ft
@@ -48,11 +48,11 @@ ft.ResponsiveRow([
 ])
 ```
 
-## Examples
+## 示例
 
-### ResponsiveRow
+### pownlowsiverow
 
-<img src="/img/docs/controls/responsive-row/responsive-layout.gif" className="screenshot-100"/>
+<img src="/website/img/docs/controls/responsive-row/responsive-layout.gif" className="screenshot-100"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -111,50 +111,51 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-## Properties
+## properties
 
 ### `alignment`
 
-How the child Controls should be placed horizontally.
+child 控件应如何水平放置。
 
-For example, `MainAxisAlignment.START`, the default, places the children on the left of a Row.
+例如，`MainAxisAlignment.START`，默认值，将 children 放在一行的左侧。
 
-Property value is `MainAxisAlignment` enum with the following values:
+属性值是`MainAxisAlignment`枚举，具有以下值:
 
-* `START` (default)
-* `END`
-* `CENTER`
-* `SPACE_BETWEEN`
-* `SPACE_AROUND`
-* `SPACE_EVENLY`
+- `START`（默认）
+- `END`
+- `CENTER`
+- `SPACE_BETWEEN`
+- `SPACE_AROUND`
+- `SPACE_EVENLY`
 
 ### `columns`
 
-The number of virtual columns to layout children. Default is 12.
+布局 children 的虚拟列数。 默认值为 12。
 
 ### `controls`
 
-A list of Controls to display inside the ResponsiveRow.
+响应器中显示的控件列表。
 
 ### `run_spacing`
 
-Spacing between runs when row content is wrapped on multiple lines. Default value is 10.
+当行内容包裹在多行上时，在运行之间的间距。 默认值为 10。
 
 ### `spacing`
 
-Spacing between controls in a row. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
+连续对控件之间的间距。 默认值是 10 个虚拟像素。 仅当`alignment`设置为`start`，`end`或`center`。
 
-### `vertical_alignment`
+### `vertical_alignment`时，仅应用间距。
 
-How the child Controls should be placed vertically.
+child 控件应垂直放置。
 
-Property value is `CrossAxisAlignment` enum with the following values:
+属性值是`CrossAxisAlignment`枚举，具有以下值:
 
-* `START` (default)
-* `CENTER`
-* `END`
-* `STRETCH`
-* `BASELINE`
+- `START`（默认）
+- `CENTER`
+- `END`
+- `STRETCH`
+- `BASELINE`

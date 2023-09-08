@@ -4,22 +4,22 @@ sidebar_label: Stack
 slug: stack
 ---
 
-A control that positions its children on top of each other.
+一个将其 children 定位在彼此顶部的控件。
 
-This control is useful if you want to overlap several children in a simple way, for example having some text and an image, overlaid with a gradient and a button attached to the bottom.
+如果您想以简单的方式重叠几个 children，例如有一些文本和图像，并用梯度和一个按钮附加到底部的按钮，则此控件将很有用。
 
-Stack is also useful if you want to implement [implicit animations](/docs/guides/python/animations) that require knowing absolute position of a target value.
+如果您要实现[5960}需要知道目标值的绝对位置，那么堆栈也很有用。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/layout/stack)
+[live 示例](https://flet-controls-gallery.fly.dev/layout/stack)
 
-### Transparent title over an image
+### 图像上透明标题
 
-<img src="/img/docs/controls/stack/image-title.png" className="screenshot-50" />
+<img src="/website/img/docs/controls/stack/image-title.png" className="screenshot-50" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -61,9 +61,9 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-### Avatar with online status
+### 具有在线状态的头像
 
-<img src="/img/docs/controls/stack/avatar-with-status.png" className="screenshot-10"/>
+<img src="/website/img/docs/controls/stack/avatar-with-status.png" className="screenshot-10"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -94,9 +94,9 @@ ft.app(target=main, view=ft.AppView.WEB_BROWSER)
   </TabItem>
 </Tabs>
 
-### Absolute positioning inside Stack
+### 绝对定位堆栈
 
-<img src="/img/docs/controls/stack/absolute-positioned.png" className="screenshot-50"/>
+<img src="/website/img/docs/controls/stack/absolute-positioned.png" className="screenshot-50"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -165,19 +165,19 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-## Properties
+## properties
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option.
+内容将根据此选项剪辑（或不）。
 
-Property value is `ClipBehavior` enum with supported values:
+属性值是`ClipBehavior`枚举，具有支持的值:
 
-* `NONE`
-* `ANTI_ALIAS`
-* `ANTI_ALIAS_WITH_SAVE_LAYER`
-* `HARD_EDGE` (default)
+- `NONE`
+- `ANTI_ALIAS`
+- `ANTI_ALIAS_WITH_SAVE_LAYER`
+- `HARD_EDGE`（默认）
 
 ### `controls`
 
-A list of Controls to display inside the Stack. The last control in the list is displayed on top.
+堆栈内显示的控件列表。 列表中的最后一个控件显示在顶部。

@@ -4,13 +4,13 @@ sidebar_label: HapticFeedback
 slug: hapticfeedback
 ---
 
-Allows access to the haptic feedback interface on the device.
+允许访问设备上的触觉反馈接口。
 
-It is non-visual and should be added to `page.overlay` list.
+它是非视觉的，应添加到`page.overlay`列表中。
 
-## Examples
+## 示例
 
-### Haptic feedback sample
+### 触觉反馈样本
 
 ```python
 import flet as ft
@@ -27,22 +27,22 @@ def main(page: ft.Page):
     )
 
 ft.app(target=main)
-```
+``` 
 
-## Methods
+## 方法
 
-### `heavy_impact()`
+###  `heavy_impact()`
 
-Provides a haptic feedback corresponding a collision impact with a heavy mass.
+提供触觉反馈对应着碰撞的撞击。
 
-### `light_impact()`
+###  `light_impact()`
 
-Provides a haptic feedback corresponding a collision impact with a light mass.
+提供触觉反馈对应于碰撞的影响，并带有轻质质量。
 
-### `medium_impact()`
+###  `medium_impact()`
 
-Provides a haptic feedback corresponding a collision impact with a medium mass.
+提供了与中等质量相对的碰撞影响的触觉反馈。
 
-### `vibrate()`
+###  `vibrate()`
 
-Provides vibration haptic feedback to the user for a short duration.
+在短时间内向用户提供振动触觉反馈。

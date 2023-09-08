@@ -8,15 +8,13 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [release]
 ---
 
-We just released [Flet 0.1.65](https://pypi.org/project/flet/0.1.65/) which is adding a bunch of mobile-optimized controls, fixing some bugs and introducing a new layout control - `ResponsiveRow`.
+我们刚刚发布[Flet 0.1.65](https://pypi.org/project/flet/0.1.65/)，它添加了一堆移动优化的控件，修复了一些错误并引入了新的布局控件 - `ResponsiveRow`。
 
-## `ResponsiveRow` control
+`ResponsiveRow`从[Bootstrap](https://getbootstrap.com/docs/5.2/layout/grid/) Web Framework 借用网格布局的想法。
 
-`ResponsiveRow` borrows the idea of grid layout from [Bootstrap](https://getbootstrap.com/docs/5.2/layout/grid/) web framework.
+`ResponsiveRow`允许对齐 child 控件与虚拟列。 默认情况下，虚拟网格具有 12 列，但可以使用`ResponsiveRow.columns`属性自定义。
 
-`ResponsiveRow` allows aligning child controls to virtual columns. By default, a virtual grid has 12 columns, but that can be customized with `ResponsiveRow.columns` property.
-
-Similar to `expand` property every control now has `col` property which allows specifying how many columns a control should span. For examle, to make a layout consisting of two columns spanning 6 virtual columns each:
+类似于`expand`属性，每个控件现在都有`col`属性，该属性允许指定控件应跨度多少列。 对于审查员，要制作一个由两个横跨 6 个虚拟列组成的布局:
 
 ```python
 import flet as ft
@@ -27,22 +25,22 @@ ft.ResponsiveRow([
 ])
 ```
 
-`ResponsiveRow` is "responsive" because it can adapt the size of its children to a changing screen (page, window) size. `col` property in the example above is a constant number which means the child will span 6 columns for any screen size.
+`ResponsiveRow`是“响应式”，因为它可以将其 children 的大小调整到更改的屏幕（页面，窗口）大小。 `col`属性上面的属性是一个常数数字，这意味着 child 将跨越任何屏幕大小的 6 列。
 
-If `ResponsiveRow`'s child doesn't have `col` property specified it spans the maximum number of columns.
+如果`ResponsiveRow`'s child 没有指定的`col`属性，则跨度最大列数。
 
-`col` can be configured to have a different value for specific "breakpoints". Breakpoints are named dimension ranges:
+`col`可以配置为特定的“断点”具有不同的值。 断点命名尺寸范围:
 
-| Breakpoint | Dimension |
-|---|---|
-| xs | <576px |
-| sm | ≥576px |
-| md | ≥768px |
-| lg | ≥992px |
-| xl | ≥1200px |
-| xxl | ≥1400px |
+| 断点 | 维度    |
+| ---- | ------- |
+| XS   | <576px  |
+| SM   | ≥576px  |
+| MD   | ≥768px  |
+| LG   | ≥992px  |
+| XL   | ≥1200px |
+| xxl  | ≥1400px |
 
-For example, the following example collapses content into a single column on a mobile device and takes two columns on larger screens:
+例如，以下示例将内容折叠成移动设备上的单列中，并在较大屏幕上进行两列:
 
 ```python
 import flet as ft
@@ -53,9 +51,9 @@ ft.ResponsiveRow([
 ])
 ```
 
-Here is more elaborate example of responsive layout:
+这是响应式布局的更详细的示例:
 
-<img src="/img/docs/controls/responsive-row/responsive-layout.gif" className="screenshot-100"/>
+<img src="/website/img/docs/controls/responsive-row/responsive-layout.gif" className="screenshot-100"/>
 
 ```python
 import flet as ft
@@ -112,64 +110,62 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-`ResponsiveRow` [docs](/docs/controls/responsiverow), [example](https://github.com/flet-dev/examples/blob/main/python/controls/responsive-row/responsive-layout.py).
+`ResponsiveRow` [docs](/docs/controls/responsiverow)，[example](https://github.com/flet-dev/examples/blob/main/python/controls/responsive-row/responsive-layout.py)。
 
-## Other new controls
+## 其他新控件
 
-This release adds new visual and non-visual controls requested by Flet community and also required to build UI of the upcoming [Flet Studio](/docs/guides/python/mobile-support#flet-studio-for-ios-and-android).
+此版本添加了 Flet 社区要求的新的视觉和非视觉控件，也需要构建即将到来的[Flet Studio](/docs/guides/python/mobile-support#flet-studio-for-ios-and-android)的 UI。
 
-### BottomSheet
+显示模态材料设计底部:
 
-Shows a modal Material Design bottom sheet:
+<img src="/website/img/docs/controls/bottom-sheet/bottom-sheet-sample.gif" className="screenshot-30"/>
 
-<img src="/img/docs/controls/bottom-sheet/bottom-sheet-sample.gif" className="screenshot-30"/>
+`BottomSheet` [docs](/docs/controls/bottomsheet)，[example](https://github.com/flet-dev/examples/blob/main/python/controls/bottom-sheet/modal-bottom-sheet.py)。
 
-`BottomSheet` [docs](/docs/controls/bottomsheet), [example](https://github.com/flet-dev/examples/blob/main/python/controls/bottom-sheet/modal-bottom-sheet.py).
+### navigationbar
 
-### NavigationBar
+底部导航栏，提供了一种持久和方便的方式，可以在应用程序中的主要目的地之间切换:
 
-Bottom Navigation bar which offers a persistent and convenient way to switch between primary destinations in an app:
+<img src="/website/img/docs/controls/navigation-bar/navigation-bar-sample.gif" className="screenshot-40"/>
 
-<img src="/img/docs/controls/navigation-bar/navigation-bar-sample.gif" className="screenshot-40"/>
+`NavigationBar` [docs](/docs/controls/navigationbar)，[example](https://github.com/flet-dev/examples/blob/main/python/controls/navigation-bar/navigation-bar-sample.py)。
 
-`NavigationBar` [docs](/docs/controls/navigationbar), [example](https://github.com/flet-dev/examples/blob/main/python/controls/navigation-bar/navigation-bar-sample.py).
+### tooltip
 
-### Tooltip
+工具提示控件:
 
-A tooltip control:
+<img src="/website/img/docs/controls/tooltip/custom-tooltip.gif" className="screenshot-30"/>
 
-<img src="/img/docs/controls/tooltip/custom-tooltip.gif" className="screenshot-30"/>
+`Tooltip` [docs](/docs/controls/tooltip)，[example](https://github.com/flet-dev/examples/blob/main/python/controls/tooltip/custom-tooltip.py)。
 
-`Tooltip` [docs](/docs/controls/tooltip), [example](https://github.com/flet-dev/examples/blob/main/python/controls/tooltip/custom-tooltip.py).
+### hapticFeedback
 
-### HapticFeedback
+允许访问设备上的触觉反馈（点击和振动）接口。
 
-Allows access to the haptic feedback (clicks and vibrates) interface on the device.
+`HapticFeedback` [docs](/docs/controls/hapticfeedback)。
 
-`HapticFeedback` [docs](/docs/controls/hapticfeedback).
+### shakedetector
 
-### ShakeDetector
+检测手机摇动的控件。 基于[shake](https://pub.dev/packages/shake)小部件。
 
-A control to detect phone shakes. Based on [shake](https://pub.dev/packages/shake) widget.
+`ShakeDetector` [docs](/docs/controls/shakedetector)。
 
-`ShakeDetector` [docs](/docs/controls/shakedetector).
+## 其他改进
 
-## Other improvements
+### markdown 代码语法突出显示
 
-### Markdown code syntax highlight
+[示例代码](https://github.com/flet-dev/examples/blob/main/python/controls/markdown/markdown-code-highlight.py)。
 
-[Sample code](https://github.com/flet-dev/examples/blob/main/python/controls/markdown/markdown-code-highlight.py).
+<img src="/website/img/docs/controls/markdown/markdown-highlight.png" className="screenshot-60"/>
 
-<img src="/img/docs/controls/markdown/markdown-highlight.png" className="screenshot-60"/>
+### 变量字体支持
 
-### Variable fonts support
+Flutter 最终支持[可变字体](https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts)，我们也将其带入 Flet！
 
-Flutter has finally supported [variable fonts](https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts) and we bring that into Flet too! 
+[示例代码](https://github.com/flet-dev/examples/blob/main/python/controls/text/variable-weight-font.py)。
 
-[Sample code](https://github.com/flet-dev/examples/blob/main/python/controls/text/variable-weight-font.py).
+<img src="/website/img/docs/controls/text/variable-weight-font.gif" className="screenshot-50" />
 
-<img src="/img/docs/controls/text/variable-weight-font.gif" className="screenshot-50" />
+升级 Flet 模块到最新版本（`pip install install flet -upgrade`）和[让我们知道](https://discord.gg/dzWXP8SHG8)您的想法！
 
-Upgrade Flet module to the latest version (`pip install flet --upgrade`) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
-
-Enjoy!
+享受！

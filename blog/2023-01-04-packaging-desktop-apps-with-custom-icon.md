@@ -8,22 +8,22 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [releases]
 ---
 
-Happy New Year! [Flet project](https://github.com/flet-dev/flet) has reached ⭐️ 3.3K stars ⭐️ on GitHub which is very exciting and encouraging! Thank you all for your support!
+新年快乐！ [Flet project](https://github.com/flet-dev/flet)已经在 github 上达到了 3.3k 星星 ⭐️⭐️⭐️，这是非常令人兴奋和令人鼓舞的！ 谢谢大家的支持！
 
-We are starting this year with the release of [Flet 0.3.2](https://pypi.org/project/flet/) bringing a long-awaited feature: creating standalone desktop bundles with a custom icon!
+我们将从今年开始[Flet 0.3.2](https://pypi.org/project/flet/)带来期待已久的功能: 使用自定义图标创建独立的桌面捆绑包！
 
-`flet` command has been used for running Flet program with [hot reload](/docs/guides/python/hot-reload), but we recently re-worked Flet CLI to support multiple actions.
+`flet`命令已用于使用[Hot Reload](/docs/guides/python/hot-reload)运行 Flet 程序，但是我们最近重新设计了 Flet CLI 以支持多个操作。
 
-There is a new `flet pack` command that wraps [PyInstaller](https://github.com/pyinstaller/pyinstaller) API to package your Flet Python app into a standalone Windows executable or macOS app bundle which can be run by a user with no Python installed.
+有一个新的“ flet pack”命令将[pyinstaller]包装(https://github.com/pyinstaller/pyinstaller) api 将您的 Flet python 应用程序包装到独立的 Windows 可执行文件或 MacOS App Bundle 中，该应用程序可以由无需安装 python 安装的用户运行。
 
-Command's `--icon` argument is now changing not only executable's icon, but Flet's app window icon and the icon shown in macOS dock, Windows taskbar, macOS "About" dialog, Task Manager and Activity Monitor:
+命令的`-icon`参数现在都在更改可执行文件的图标，而且更改 Flet 的 App Window 图标以及 MacOS Dock，Windows Taskesbar，MacOS 中显示的图标，关于“对话框，任务管理器和活动监视器:
 
-<img src="/img/docs/getting-started/package-desktop/macos-dock.png" className="screenshot-20 screenshot-rounded" />
+<img src="/website/img/docs/getting-started/package-desktop/macos-dock.png" className="screenshot-20 screenshot-rounded" />
 
-Bundle name, version and copyright can be changed too:
+捆绑名称，版本和版权也可以更改:
 
-<img src="/img/docs/getting-started/package-desktop/flet-app-bundle-about-clean.png" className="screenshot-50" />
+<img src="/website/img/docs/getting-started/package-desktop/flet-app-bundle-about-clean.png" className="screenshot-50" />
 
-Find all available options for packaging desktop apps in the [updated guide](/docs/guides/python/packaging-desktop-app).
+在[更新指南](/docs/guides/python/packaging-desktop-app)中找到包装桌面应用程序的所有可用选项。
 
-Upgrade Flet module to the latest version (`pip install flet --upgrade`), give `flet pack` command a try and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
+将 Flet 模块升级到最新版本（`pip install flet -upgrade`），尝试`flet pack`命令''命令，[让我们知道](https://discord.gg/dzWXP8SHG8)您的想法！

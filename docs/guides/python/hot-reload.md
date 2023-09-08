@@ -3,8 +3,8 @@ title: Hot reload
 sidebar_label: Hot reload
 ---
 
-The installation of `flet` Python module also installs `flet` command tool (Flet CLI)
-that allows running web and desktop apps with hot reload.
+ `flet` Python模块的安装还安装`flet`命令工具（Flet CLI）
+这允许使用热装加载运行网络和桌面应用程序。
 
 ```
 usage: flet run [-h] [--port PORT] [--directory] [--recursive] [--hidden] [--web]
@@ -25,9 +25,9 @@ options:
   -w, --web             open app in a web browser
 ```
 
-By default, `flet` watches a single `script` file only. Use `--directory` flag to watch all files in script's directory. Use `--recursive` flag to watch script directory and all sub-directories recursively.
+默认情况下，`flet`仅观看一个`script`文件。 使用` -  directory`标志观看脚本目录中的所有文件。 使用` - 回复“标志”递归观看脚本目录和所有子目录。
 
-For example:
+例如: 
 
 ```
 flet run main.py -d

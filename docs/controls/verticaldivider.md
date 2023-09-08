@@ -4,16 +4,16 @@ sidebar_label: VerticalDivider
 slug: verticaldivider
 ---
 
-A thin vertical line, with padding on either side.
+一条细的垂直线，两侧都有填充。
 
-In the material design language, this represents a divider.
+在 material design 语言中，这代表一个分隔线。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/layout/verticaldivider)
+[LIVE 示例](https://flet-controls-gallery.fly.dev/layout/verticaldivider)
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -57,21 +57,22 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/vertical-divider/vertical-divider.png" className="screenshot-40" />
+<img src="/website/img/docs/controls/vertical-divider/vertical-divider.png" className="screenshot-40" />
 
-## Properties
+## properties
 
 ### `color`
 
-The [color](/docs/guides/python/colors) to use when painting the line.
+绘画行时要使用的[颜色](/docs/guides/python/colors)。
 
 ### `thickness`
 
-The thickness of the line drawn within the divider. A divider with a thickness of `0.0` is always drawn as a line with a width of exactly one device pixel. If this is null, then this defaults to `0.0`.
+分层内绘制的线的厚度。 厚度为`0.0`的分隔线始终被绘制为具有一个宽度为一个设备像素的线。 如果这为 null，则默认为`0.0`。
 
 ### `width`
 
-The divider's width. The divider itself is always drawn as a vertical line that is centered within the width specified by this value. If this is null, then this defaults to `16.0`.
+分隔线的宽度。 分隔线本身总是将其绘制为垂直线，该垂直线位于该值指定的宽度内。 如果这是空的，则默认为`16.0`。

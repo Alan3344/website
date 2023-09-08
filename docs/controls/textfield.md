@@ -4,18 +4,18 @@ sidebar_label: TextField
 slug: textfield
 ---
 
-A material design text field.
+a material design 文本字段。
 
-A text field lets the user enter text, either with hardware keyboard or with an onscreen keyboard.
+文本字段可让用户使用硬件键盘或屏幕键盘输入文本。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/input/textfield)
+[live 示例](https://flet-controls-gallery.fly.dev/input/textfield)
 
-### Basic TextFields
+### 基本 textfields
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -39,10 +39,11 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/textfield/basic-textfield.gif" className="screenshot-40"/>
+<img src="/website/img/docs/controls/textfield/basic-textfield.gif" className="screenshot-40"/>
 
 ### TextField with `on_change` event
 
@@ -67,10 +68,11 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/textfield/textfield-with-change-event.gif" className="screenshot-40"/>
+<img src="/website/img/docs/controls/textfield/textfield-with-change-event.gif" className="screenshot-40"/>
 
 ### Password with reveal button
 
@@ -89,10 +91,11 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/textfield/textfield-with-password.gif" className="screenshot-40"/>
+<img src="/website/img/docs/controls/textfield/textfield-with-password.gif" className="screenshot-40"/>
 
 ### Multiline TextFields
 
@@ -121,10 +124,11 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/textfield/textfield-with-multiline.gif" className="screenshot-40"/>
+<img src="/website/img/docs/controls/textfield/textfield-with-multiline.gif" className="screenshot-40"/>
 
 ### Underlined and borderless TextFields
 
@@ -154,10 +158,11 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/textfield/textfield-with-underline-and-borderless.gif" className="screenshot-40"/>
+<img src="/website/img/docs/controls/textfield/textfield-with-underline-and-borderless.gif" className="screenshot-40"/>
 
 ### TextFields with prefixes and suffixes
 
@@ -187,327 +192,326 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/textfield/textfield-with-prefix-and-suffix.gif" className="screenshot-40"/>
+<img src="/website/img/docs/controls/textfield/textfield-with-prefix-and-suffix.gif" className="screenshot-40"/>
 
-## Properties
+## properties
 
 ### `autocorrect`
 
-Whether to enable autocorrection. Default is `True`.
+是否启用自动校正。 默认值为`True`。
 
 ### `autofocus`
 
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+如果将控件选择作为初始焦点，则为 thus。 如果一个带有自动对焦集的页面上有多个控件，则添加到页面的第一个将获得焦点。
 
 ### `bgcolor`
 
-TextField background [color](/docs/guides/python/colors).
+textfield 背景[颜色](/docs/guides/python/colors)。
 
 ### `border`
 
-Border around input - `InputBorder` enum with one of the values: `OUTLINE` (default), `UNDERLINE`, `NONE`.
+输入周围的边界 - `InputBorder`枚举具有一个值之一: `OUTLINE`（默认），`UNDERLINE`，`NONE`。
 
 ### `border_color`
 
-Border [color](/docs/guides/python/colors). Could be `transparent` to hide the border.
+边框[颜色](/docs/guides/python/colors)。 可以是`transparent`隐藏边框。
 
 ### `border_radius`
 
-See [`Container.border_radius`] property docs for more information about border radius.
+有关边界半径的更多信息，请参见[`Container.border_radius`]属性文档。
 
 ### `border_width`
 
-The width of the border in virtual pixels. Default is 1. Set to 0 to completely remove border.
+在虚拟像素中边界的宽度。 默认值为 1。设置为 0 以完全删除边框。
 
 ### `can_reveal_password`
 
-Displays a toggle icon button that allows revealing the entered password.
+显示一个允许显示输入密码的切换图标按钮。
 
 ### `capitalization`
 
-Enables automatic on-the-fly capitalization of entered text.
+启用输入文本的自动自动资本化。
 
-Property value is `TextCapitalization` enum with the following values:
+属性值为`TextCapitalization`枚举，具有以下值:
 
-* `NONE` (default) - do not change entered text.
-* `CHARACTERS` - every entered symbol is capitalized.
-* `WORDS` - capitalize the first letter of every word.
-* `SENTENCES` - capitalize the first letter of every sentence.
+- `NONE`（默认） - 请勿更改输入的文本。
+- `CHARACTERS` - 每个输入的符号都大写。
+- `WORDS` - 大写每个单词的第一个字母。
+- `SENTENCES` - 大写每个句子的第一个字母。
 
 ### `color`
 
-Text [color](/docs/guides/python/colors).
+文本[颜色](/docs/guides/python/colors)。
 
 ### `content_padding`
 
-The padding for the input decoration's container.
+输入装饰容器的填充。
 
-See [`Container.padding`](container#padding) for more information about padding and possible values.
+有关填充和可能的值的更多信息，请参见[`Container.padding`](container#padding)。
 
 ### `counter_style`
 
-The style to use for `counter_text`.
+用于`counter_text`的样式。
 
 ### `counter_text`
 
-Optional text to place below the line as a character count.
+可选的文本以作为角色数作为字符计数下方。
 
-If null or an empty string and counter isn't specified, then nothing will appear in the counter's location.
+如果未指定空字符串和计数器，则在计数器的位置中不会出现任何内容。
 
 ### `cursor_color`
 
-The [color](/docs/guides/python/colors) of TextField cursor.
+Textfield Cursor 的[COLOR](/docs/guides/python/colors)。
 
 ### `cursor_height`
 
-Sets cursor height.
+设置光标高度。
 
 ### `cursor_radius`
 
-Sets cursor radius.
+集光标半径。
 
 ### `cursor_width`
 
-Sets cursor width.
+设置光标宽度。
 
 ### `dense`
 
-Whether the TextField is part of a dense form (ie, uses less vertical space).
+TextField 是否是密集形式的一部分（即使用较少的垂直空间）。
 
 ### `enable_suggestions`
 
-Whether to show input suggestions as the user types.
+是否将输入建议显示为用户类型。
 
-This flag only affects Android. On iOS, suggestions are tied directly to `autocorrect`, so that suggestions are only shown when `autocorrect` is `True`. On Android autocorrection and suggestion are controlled separately. Default is `True`.
+该标志只会影响 Android。 在 iOS 上，建议直接绑定到`autocorrect`，因此仅在`autocorrect`为`True`时才显示建议。 在 Android 自动校正和建议上分别控制。 默认值为`True`。
 
 ### `error_style`
 
-The style to use for `error_text`.
+用于`error_text`的样式。
 
 ### `error_text`
 
-Text that appears below the input border.
+出现在输入边框下方的文本。
 
-If non-null, the border's color animates to red and the `helper_text` is not shown.
+如果非效果，则边框的颜色为红色动画，未显示`helper_text`。
 
 ### `filled`
 
-If `True` the decoration's container is filled with theme fillColor.
+如果`True`装饰的容器充满了主题填充。
 
 ### `focused_bgcolor`
 
-Background [color](/docs/guides/python/colors) of TextField in focused state.
+textfield 的背景[颜色](/docs/guides/python/colors)在聚焦状态下。
 
 ### `focused_border_color`
 
-Border [color](/docs/guides/python/colors) in focused state.
+边框[颜色](/docs/guides/python/colors)以聚焦状态。
 
 ### `focused_border_width`
 
-Border width in focused state.
+重点状态的边界宽度。
 
 ### `focused_color`
 
-Text [color](/docs/guides/python/colors) when TextField is focused.
+text [color](/docs/guides/python/colors)当 textfield 聚焦时。
 
 ### `helper_style`
 
-The style to use for `helper_text`.
+用于`helper_text`的样式。
 
 ### `helper_text`
 
-Text that provides context about the input's value, such as how the value will be used.
+提供有关输入值的上下文的文本，例如如何使用该值。
 
-If non-null, the text is displayed below the input decorator, in the same location as `error_text`. If a non-null `error_text` value is specified then the helper text is not shown.
+如果非编号，则文本显示在输入装饰器下方，位于`error_text`的位置。 如果指定了非 null `error_text`值，则未显示辅助文本。
 
 ### `hint_style`
 
-The style to use for `hint_text`.
+用于`hint_text`的样式。
 
 ### `hint_text`
 
-Text that suggests what sort of input the field accepts.
+暗示该字段接受的输入的文本。
 
-Displayed on top of the input when the it's empty and either (a) `label` is null or (b) the input has the focus.
+当输入为空时显示在输入的顶部，并且（a）`label`为 null 或（b）输入具有焦点。
 
 ### `icon`
 
-The name of the icon to show before the input field and outside of the decoration's container.
+在输入字段之前和装饰容器之外显示的图标的名称。
 
 ### `keyboard_type`
 
-The type of keyboard to use for editing the text. The property value is `KeyboardType` enum with the following values:
+用于编辑文本的键盘类型。 属性值为`KeyboardType`枚举，具有以下值:
 
-* `TEXT` (default)
-* `MULTILINE`
-* `NUMBER`
-* `PHONE`
-* `DATETIME`
-* `EMAIL`
-* `URL`
-* `VISIBLE_PASSWORD`
-* `NAME`
-* `STREET_ADDRESS`
-* `NONE`
+- `TEXT`（默认）
+- `MULTILINE`
+- `NUMBER`
+- `PHONE`
+- `DATETIME`
+- `EMAIL`
+- `URL`
+- `VISIBLE_PASSWORD`
+- `NAME`
+- `STREET_ADDRESS`
+- `NONE`
 
 ### `label`
 
-Optional text that describes the input field.
+描述输入字段的可选文本。
 
-When the input field is empty and unfocused, the label is displayed on top of the input field (i.e., at the same location on the screen where text may be entered in the input field). When the input field receives focus (or if the field is non-empty) the label moves above, either vertically adjacent to, or to the center of the input field.
+当输入字段为空且未关注时，标签将显示在输入字段的顶部（即，在屏幕上可以在输入字段中输入文本的同一位置）。 当输入字段接收到焦点（或如果字段是非空的）时，标签在上方移动，则垂直相邻或转移到输入字段的中心。
 
 ### `label_style`
 
-The style to use for `label`.
+用于`label`的样式。
 
 ### `max_length`
 
-Limits a maximum number of characters that can be entered into TextField.
+限制可以输入 TextField 的最大字符。
 
 ### `max_lines`
 
-The maximum number of lines to show at one time, wrapping if necessary.
+一次显示的最大线路数，如有必要。
 
-This affects the height of the field itself and does not limit the number of lines that can be entered into the field.
+这会影响字段本身的高度，并且不会限制可以输入现场的线数。
 
-If this is `1` (the default), the text will not wrap, but will scroll horizontally instead.
+如果这是`1`（默认），则文本不会包装，而是水平滚动。
 
 ### `min_lines`
 
-The minimum number of lines to occupy when the content spans fewer lines.
+当内容跨越较少的线条时，要占据的最小线数。
 
-This affects the height of the field itself and does not limit the number of lines that can be entered into the field.
+这会影响字段本身的高度，并且不会限制可以输入现场的线数。
 
-Default is `1`.
+默认值为`1`。
 
 ### `multiline`
 
-`True` if TextField can contain multiple lines of text.
+`True`如果 Textfield 可以包含多个文本行。
 
 ### `password`
 
-Whether to hide the text being edited. Default is `False`.
+是否隐藏要编辑的文本。 默认值为`False`。
 
 ### `prefix`
 
-Optional `Control` to place on the line before the input.
+可选`Control`将输入前放在线上。
 
-This can be used, for example, to add some padding to text that would otherwise be specified using `prefix_text`, or to add a custom control in front of the input. The control's baseline is lined up with the input baseline.
+例如，可以将其添加到文本中，否则可以使用`prefix_text`指定的文本，或在输入前面添加自定义控件。 控件的基线与输入基线对齐。
 
-Only one of `prefix` and `prefix_text` can be specified.
+只能指定`prefix`和`prefix_text`之一。
 
-The `prefix` appears after the `prefix_icon`, if both are specified.
+`prefix`在`prefix_icon`之后出现，如果两者都指定。
 
 ### `prefix_icon`
 
-An icon that appears before the `prefix` or `prefix_text` and before the editable part of the text field, within the decoration's container.
+在`prefix`或`prefix_text`之前出现的图标，以及在装饰容器中的文本字段的可编辑部分之前出现的图标。
 
 ### `prefix_style`
 
-The style to use for `prefix_text`.
+用于`prefix_text`的样式。
 
 ### `prefix_text`
 
-Optional text `prefix` to place on the line before the input.
+可选的文本`prefix`以在输入之前放在线上。
 
 ### `read_only`
 
-Whether the text can be changed.
+是否可以更改文本。
 
-When this is set to `True`, the text cannot be modified by any shortcut or keyboard operation. The text is still selectable.
+将其设置为`True`时，无法通过任何快捷方式或键盘操作对文本进行修改。 文本仍然可以选择。
 
-Defaults to `False`.
+默认为`False`。
 
 ### `selection_color`
 
-The [color](/docs/guides/python/colors) of TextField selection.
+textfield 选择的[颜色](/docs/guides/python/colors)。
 
 ### `shift_enter`
 
-Changes the behavior of `Enter` button in `multiline` TextField to be chat-like, i.e. new line can be added with `Shift`+`Enter` and pressing just `Enter` fires `on_submit` event.
+在`multiline`中更改`Enter`按钮的行为，例如聊天，即可以使用`Shift`+`Enter`添加新行，并仅按`Enter`触发`on_submit` event `on_submit` event。 }
 
-### `smart_dashes_type`
+是否允许平台自动格式破折号。
 
-Whether to allow the platform to automatically format dashes.
-
-This flag only affects iOS versions 11 and above. As an example of what this does, two consecutive hyphen characters will be automatically replaced with one en dash, and three consecutive hyphens will become one em dash. Default is `True`.
+此标志仅影响 iOS 版本 11 及更高版本。 作为这样做的一个例子，将自动用一个连续的连续连续性字符替换为一个 en dash，而三个连续的连字符将成为一个 EM 破折号。 默认值为`True`。
 
 ### `smart_quotes_type`
 
-Whether to allow the platform to automatically format quotes.
+是否允许平台自动格式化引号。
 
-This flag only affects iOS. As an example of what this does, a standard vertical double quote character will be automatically replaced by a left or right double quote depending on its position in a word. Default is `True`.
+此标志仅影响 iOS。 作为做什么的示例，标准的垂直双引号字符将自动被左或右双引号替换，具体取决于其在单词中的位置。 默认值为`True`。
 
 ### `suffix`
 
-Optional `Control` to place on the line after the input.
+可选`Control`在输入之后放在线上。
 
-This can be used, for example, to add some padding to the text that would otherwise be specified using `suffix_text`, or to add a custom control after the input. The control's baseline is lined up with the input baseline.
+例如，可以将其用于在文本中添加一些填充，否则将使用`suffix_text`指定，或在输入后添加自定义控件。 控件的基线与输入基线对齐。
 
-Only one of `suffix` and `suffix_text` can be specified.
+只能指定`suffix`和`suffix_text`之一。
 
-The `suffix` appears before the `suffix_icon`, if both are specified.
+`suffix`出现在`suffix_icon`之前，如果两者都指定。
 
 ### `suffix_icon`
 
-An icon that appears after the editable part of the text field and after the `suffix` or `suffix_text`, within the decoration's container.
+在文本字段的可编辑部分以及`suffix`或`suffix_text`之后出现的图标。
 
 ### `suffix_style`
 
-The style to use for `suffix_text`.
+用于`suffix_text`的样式。
 
 ### `suffix_text`
 
-Optional text `suffix` to place on the line after the input.
+可选的文本`suffix`将输入之后放在线上。
 
 ### `text_align`
 
-How the text should be aligned horizontally.
+文本应如何水平对齐。
 
-Property value is `TextAlign` enum with the following values:
+属性值为`TextAlign`枚举，具有以下值:
 
-* `LEFT` (default)
-* `RIGHT`
-* `CENTER`
-* `JUSTIFY`
-* `START`
-* `END`
+- `LEFT`（默认）
+- `RIGHT`
+- `CENTER`
+- `JUSTIFY`
+- `START`
+- `END`
 
 ### `text_size`
 
-Text size in virtual pixels.
+虚拟像素中的文本大小。
 
 ### `text_style`
 
-The style to use for the text being edited.
+用于编辑文本的样式。
 
 ### `value`
 
-Current value of the TextField.
+textfield 的当前值。
 
-## Methods
+## 方法
 
 ### `focus()`
 
-Moves focus to a TextField.
+将重点移至 Textfield。
 
-## Events
+## 事件
 
 ### `on_blur`
 
-Fires when the control has lost focus.
+当控件失去焦点时发射。
 
 ### `on_change`
 
-Fires when the typed input for the TextField has changed.
+当 Textfield 的键入输入发生变化时，请发射。
 
 ### `on_focus`
 
-Fires when the control has received focus.
+当控件收到焦点时发射。
 
 ### `on_submit`
 
-Fires when user presses ENTER while focus is on TextField.
+当用户按 Enter 在 TextField 上的焦点时，请发射。

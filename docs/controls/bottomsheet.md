@@ -4,17 +4,17 @@ sidebar_label: BottomSheet
 slug: bottomsheet
 ---
 
-Shows a modal Material Design bottom sheet.
+显示模态材料设计底部。
 
-A modal bottom sheet is an alternative to a menu or a dialog and prevents the user from interacting with the rest of the app.
+模态底部表是菜单或对话框的替代方案，可防止用户与应用程序的其余部分进行交互。
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/dialogs/bottomsheet)
+[live 示例](https://flet-controls-gallery.fly.dev/dialogs/bottomsheet)
 
-### Simple BottomSheet
+### 简单的底部表格
 
-<img src="/img/docs/controls/bottom-sheet/bottom-sheet-sample.gif" className="screenshot-30"/>
+<img src="/website/img/docs/controls/bottom-sheet/bottom-sheet-sample.gif" className="screenshot-30"/>
 
 ```python
 import flet as ft
@@ -51,34 +51,34 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-## Properties
+## properties
 
 ### `content`
 
-The content of the bottom sheet.
+底部纸的内容。
 
 ### `dismissible`
 
-Specifies whether the bottom sheet will be dismissed when user taps on the scrim.
+指定当用户在 scrim 上的用户点击时是否会删除底部表。
 
 ### `enable_drag`
 
-Specifies whether the bottom sheet can be dragged up and down and dismissed by swiping downwards.
+指定底面是否可以上下拖动并通过向下滑动来解散。
 
 ### `open`
 
-Set to `True` to display a bottom sheet.
+设置为`True`以显示底部表。
 
 ### `show_drag_handle`
 
-Whether to display drag handle at the top of sheet or not.
+是否在表格顶部显示拖动句柄。
 
 ### `use_safe_area`
 
-Specifies whether the sheet will avoid system intrusions on the top, left, and right. Defaults to `False`.
+指定表是否会避免在顶部，左和右侧的系统入侵。 默认为`False`。
 
-## Events
+## 事件
 
 ### `on_dismiss`
 
-Fires when bottom sheet is dismissed.
+当底面被解雇时发火。

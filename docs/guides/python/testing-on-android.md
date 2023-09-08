@@ -3,22 +3,22 @@ title: Testing Flet app on Android
 sidebar_label: Testing on Android
 ---
 
-import Tabs from '@theme/Tabs';
+从'@themy/tabs'导入选项卡片;
 import TabItem from '@theme/TabItem';
 
-Start building awesome mobile apps in Python using just your computer and mobile phone!
+仅使用您的计算机和手机就开始在 Python 中构建出色的移动应用程序！
 
-Install [Flet](https://play.google.com/store/apps/details?id=com.appveyor.flet) app to your Android device. You will be using this app to see how your Flet project is working on Android device.
+在您的 Android 设备上安装[Flet](https://play.google.com/store/apps/details?id=com.appveyor.flet)应用程序。 您将使用此应用程序查看 Flet 项目如何在 Android 设备上工作。
 
 <a href='https://play.google.com/store/apps/details?id=com.appveyor.flet'><img alt='Get it on Google Play' src='/img/docs/getting-started/testing-on-android/google-play-badge.png' width='300'/></a>
 
-To get started on your computer you need Python 3.7 or greater installed.
+要开始使用计算机，您需要安装 Python 3.7 或更高的安装。
 
-:::cautionImportant
-Your Android device and computer must be connected to the same Wi-Fi or local network.
+:::谨慎
+您的 Android 设备和计算机必须连接到同一 Wi-Fi 或本地网络。
 :::
 
-It's recommended to start with the creation of a new virtual environment:
+建议从创建新的虚拟环境开始:
 
 <Tabs groupId="language">
   <TabItem value="macOS" label="macOS" default>
@@ -47,55 +47,57 @@ python.exe -m venv .venv
   </TabItem>
 </Tabs>
 
-Next, install the latest `flet` package:
+接下来，安装最新的`flet`软件包:
 
 ```
 pip install flet --upgrade
 ```
 
-Ensure that Flet has successfully installed and Flet CLI is available in `PATH` by running:
+确保 Flet 已成功安装，并且 Flet CLI 在`PATH`中可通过运行以下命令
 
 ```
 flet --version
 ```
 
-Create a new Flet project:
+创建一个新的 Flet 项目:
 
 ```
 flet create my-app
 cd my-app
 ```
 
-Run the following command to start Flet development server with your app:
+运行以下命令使用您的应用程序启动 Flet 开发服务器:
 
 ```
 flet run --android
 ```
 
-A QR code with encoded project URL will be displayed in the terminal:
+带有编码项目 URL 的 QR 码将显示在终端中:
 
-<img src="/img/docs/getting-started/testing-on-android/app-qr-code.png" className="screenshot-30 screenshot-rounded" />
+<img src="/website/img/docs/getting-started/testing-on-android/app-qr-code.png" className="screenshot-30 screenshot-rounded" />
 
-Open **Camera** app on your Android device, point to a QR code and click URL to open it in Flet app.
+在您的 Android 设备上打开**相机**应用程序，指向 QR 码，然后单击 URL 以在 Flet 应用中打开它。
 
-Try updating `main.py` (for example, replace a greeting of `Text` control) - the app will be instantly refreshed on your Android device.
+尝试更新`main.py`（例如，替换`Text`控件的问候） - 该应用将在您的 Android 设备上立即刷新。
 
-You can try mode complex Flet example from [Introduction](/docs/#flet-app-example).
+您可以尝试使用[简介](/docs/#flet-app-example)的模式复杂 Flet 示例。
 
-To return to "Home" tab either:
-- Long-press anywhere on the screen with 3 fingers or
-- Shake your Android device.
+要么返回“ home”选项卡片:
 
-You can also "manually" add a new project by clicking **"+"** button and typing its URL.
+- 用 3 个手指或
+- 在屏幕上的任何地方长按下。
 
-:::infoQuick test
-There is "Counter" Flet project hosted on the internet that you can add to Flet app to make sure everything works:
+您还可以通过单击**“+” **按钮“手动”添加一个新项目并输入其 URL。
+
+:::Infoquick 测试
+在 Internet 上托管的“ counter” Flet 项目可以添加到 Flet 应用程序，以确保一切正常:
 
 ```
 https://flet-counter-test-ios.fly.dev
 ```
+
 :::
 
-Check "Gallery" tab for some great examples of what kind of projects could be done with Flet.
+检查“画廊”选项卡片，以获取一些很好的示例，介绍 Flet 可以完成哪种项目。
 
-Explore [Flet examples](https://github.com/flet-dev/examples/tree/main/python) for even more examples.
+探索[Flet 示例](https://github.com/flet-dev/examples/tree/main/python)以获取更多示例。

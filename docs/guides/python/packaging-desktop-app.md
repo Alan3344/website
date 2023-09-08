@@ -3,141 +3,139 @@ title: Packaging desktop app
 sidebar_label: Packaging desktop app
 ---
 
-Flet Python app and all its dependencies can be packaged into an executable and user can run it on their computer without installing a Python interpreter or any modules.
+Flet Python 应用程序及其所有依赖项都可以打包到可执行文件中，并且用户可以在其计算机上运行它，而无需安装 Python Instrapter 或任何模块。
 
-Flet wraps [PyInstaller](https://pyinstaller.org/en/stable/index.html) API to package Flet Python app and all its dependencies into a single package for Windows, macOS and Linux. To create Windows package, PyInstaller must be run on Windows; to build Linux app, it must be run on Linux; and to build macOS app - on macOS.
+Flet 包装[Pyinstaller](https://pyinstaller.org/en/stable/index.html) api to togage Flet Python App 及其所有依赖项及其所有依赖项添加到 Windows，MacOS 和 Linux 的单个软件包中。 要创建 Windows 软件包，必须在 Windows 上运行 Pyinstaller； 要构建 Linux 应用程序，必须在 Linux 上运行； 并在 MacOS 上构建 MacOS 应用程序。
 
-Start from installing PyInstaller:
+从安装 Pyinstaller 开始:
 
 ```
 pip install pyinstaller
 ```
 
-Navigate to the directory where your `.py` file is located and build your app with the following command:
+导航到您`.py`文件所在的目录，并使用以下命令构建您的应用程序:
 
 ```
 flet pack your_program.py
 ```
 
-Your bundled Flet app should now be available in `dist` folder. Try running the program to see if it works.
+您的捆绑 Flet 应用程序现在应在`dist`文件夹中可用。 尝试运行程序以查看是否有效。
 
-On macOS:
+在 MacOS 上:
 
 ```
 open dist/your_program.app
 ```
 
-on Windows:
+在 Windows 上:
 
 ```
 dist\your_program.exe
 ```
 
-on Linux:
+在 Linux 上:
 
 ```
 dist/your_program
 ```
 
-Now you can just zip the contents of `dist` folder and distribute to your users! They don't need Python or Flet installed to run your packaged program - what a great alternative to Electron!
+现在，您只需将`dist`文件夹的内容汇总并分配给您的用户！ 他们不需要安装 Python 或 Flet 来运行您的包装程序 - 这是电子的绝佳选择！
 
-By default, an executable/bundle has the same name as a Python script. You can change it with `--name` argument:
+默认情况下，可执行/捆绑包的名称与 Python 脚本相同。 您可以通过``` - name''''来更改它:
 
 ```
 flet pack your_program.py --name bundle_name
 ```
 
-## Customizing package icon
+## 自定义软件包图标
 
-Default bundle app icon is diskette which might be confusing for younger developers missed those ancient times when [floppy disks](https://en.wikipedia.org/wiki/Floppy_disk) were used to store computer data.
+默认的捆绑包应用图标是磁盘，对于年轻开发人员来说可能会造成混淆，当时[floppy Disks](https://en.wikipedia.org/wiki/Floppy_disk)被用来存储计算机数据。
 
-You can replace the icon with your own by adding `--icon` argument:
+您可以通过添加`–icon'参数来替换图标:
 
 ```
 flet pack your_program.py --icon <your-image.png>
 ```
 
-PyInstaller will convert provided PNG to a platform specific format (`.ico` for Windows and `.icns` for macOS), but you need to install [Pillow](https://pillow.readthedocs.io/en/stable/) module for that:
+Pyinstaller 将为 Windows 的 PNG 转换为平台的特定格式（`.ico`和 MacOS 的`.icns`），但是您需要安装[Pillow](https://pillow.readthedocs.io/en/stable/)模块。
 
 ```
 pip install pillow
 ```
 
-## Packaging assets
+## 包装资产
 
-Your Flet app can include [assets](/docs/controls/image#src). Provided app assets are in `assets` folder next to `your_program.py` they can be added to an application package with `--add-data` argument, on macOS/Linux:
+您的 Flet 应用程序可以包括[资产](/docs/controls/image#src)。 如果应用程序资产在`assets` `your_program.py`旁边的`assets`文件夹中，可以将它们添加到 MacOS/linux 上的``-Add-data`参数''中的应用程序包中:
 
 ```
 flet pack your_program.py --add-data "assets:assets"
 ```
 
-On Windows `assets;assets` must be delimited with `;`:
+在 Windows`资产;资产上都必须用`;`:::
 
 ```
 flet pack your_program.py --add-data "assets;assets"
 ```
 
-## Customizing macOS bundle
+## 自定义 MacOS 捆绑包
 
-macOS bundle details can be customized with the following `flet pack` macOS-specific arguments:
+可以使用以下“ flet pack”特定参数来自定义 MacOS 捆绑详细信息:
 
-* `--product-name` - display name of macOS bundle, shown in Dock, Activity Monitor, About dialog.
-* `--product-version` - bundle version shown in "About" dialog.
-* `--copyright` - copyright notice shown in "About" dialog.
-* `--bundle-id` unique bundle ID.
+- ` -  Profoduct-name`-显示 MacOS 捆绑包的名称，dock，Activity Monitor 中显示了有关对话框的活动。
+- `-prouduct-versh`-bundle bundle 版本在“关于”对话框中。
+- ` -  opyright`-关于“关于”对话中所示的版权通知。
+- `-bundle-id`唯一捆绑包 ID。
 
-<img src="/img/docs/getting-started/package-desktop/flet-app-bundle-about.png" className="screenshot-50" />
+<img src="/website/img/docs/getting-started/package-desktop/flet-app-bundle-about.png" className="screenshot-50" />
 
-## Customizing Windows executable metadata
+## 自定义 Windows 可执行元数据
 
-Windows executable "Details" properties dialog can be customized with the following `flet pack` arguments:
+Windows 可执行的“详细信息”属性对话框可以通过以下`flet pack'参数自定义:
 
-* `--product-name` - "Product name" field.
-* `--product-version` - "Product version" field.
-* `--file-version` - "File version" field.
-* `--file-description` - "File description" field, also program display name in Task Manager.
-* `--copyright` - "Copyright" field.
+- ` -  product-name`-“ product name”字段。
+- `-product-version`-“产品版本”字段。
+- `-file-version`-“文件版本”字段。
+- `-file-description`-“文件描述”字段，也在 Task Manager 中进行程序显示名称。
+- `-popyright`-“版权”字段。
 
-## Using CI for multi-platform packaging
+## 使用 CI 用于多平台包装
 
-To create an app package with PyInstaller for specific OS it must be run on that OS.
+要使用 PyInstaller 创建一个应用程序软件包以用于特定操作系统，必须在该操作系统上运行。
 
-If you don't have an access to Mac or PC you can bundle your app for all three platforms with [AppVeyor](https://www.appveyor.com) - Continuous Integration service for Windows, Linux and macOS. In short, Continuous Integration (CI) is an automated process of building, testing and deploying (Continuous Delivery - CD) application on every push to a repository.
+如果您无法访问 Mac 或 PC，则可以使用[AppVeyor](https://www.appveyor.com) - Windows，Linux 和 MacOS 的连续集成服务将所有三个平台的应用程序捆绑在一起。 简而言之，连续集成（CI）是在每次推送到存储库中建立，测试和部署（连续交付-CD）应用程序的自动化过程。
 
-AppVeyor is free for open source projects hosted on GitHub, GitLab and Bitbucket. To use AppVeyor, push your app to a repository within one of those source-control providers.
+Appveyor 可以免费使用 Github，Gitlab 和 Bitbucket 上的开源项目。 要使用 Appveyor，请将您的应用程序推到其中一个源控制提供商中的存储库。
 
-:::note
-AppVeyor is the company behind Flet.
+:::注意
+AppVeyor 是 Flet 的背后的公司。
 :::
 
-To get started with AppVeyor [sign up for a free account](https://ci.appveyor.com/signup).
+要开始使用 AppVeyor [注册免费帐户](https://ci.appveyor.com/signup)。
 
-Click "New project" button, authorize AppVeyor to access your GitHub, GitLab or Bitbucket account, choose a repository with your program and create a new project.
+单击“新项目”按钮，授权 Appveyor 访问您的 GitHub，Gitlab 或 Bitbucket 帐户，请选择带有程序的存储库，然后创建一个新项目。
 
-Now, to configure packaging of your app for Windows, Linux and macOS, add file with [the following contents](https://github.com/flet-dev/python-ci-example/blob/main/appveyor.yml) into the root of your repository `appveyor.yml`. `appveyor.yml` is a build configuration file, or CI workflow, describing build, test, packaging and deploy commands that must be run on every commit.
+现在，要为 Windows，Linux 和 MacOS 配置包装，请在存储库的根中添加[8676}的文件`appveyor.yml`的根。 `appveyor.yml`是一个构建配置文件或 CI 工作流，描述了必须在每个提交上运行的构建，测试，包装和部署命令。
 
-:::note
-You can just fork [flet-dev/python-ci-example](https://github.com/flet-dev/python-ci-example) repository and customize it to your needs.
+:::注意
+您只能为[8677}存储库提供[flet-dev/python-ci-example]并根据您的需求进行自定义。
 :::
 
-When you push any changes to GitHub repository, AppVeyor will automatically start a new build:
+当您将任何更改推向 GitHub 存储库时，Appveyor 将自动启动新的构建:
 
-<img src="/img/docs/getting-started/appveyor-ci-flet-python-project.png" className="screenshot-70" />
+<img src="/website/img/docs/getting-started/appveyor-ci-flet-python-project.png" className="screenshot-70" />
 
-What that [CI workflow](https://ci.appveyor.com/project/flet-dev/python-ci-example) does on every push to the repository:
+[CI Workflow](https://ci.appveyor.com/project/flet-dev/python-ci-example)在每个推送库中都有什么作用:
 
-* Clones the repository to a clean virtual machine.
-* Installs app dependencies using `pip`.
-* Runs `flet pack` to package Python app into a bundle for **Windows**, **macOS** and **Ubuntu**.
-* Zip/Tar app bundles and uploads them to ["Artifacts"](https://ci.appveyor.com/project/flet-dev/python-ci-example/build/job/g2j2lhstv04eyxcm/artifacts).
-* Uploads app bundles to [**GitHub releases**](https://github.com/flet-dev/python-ci-example/releases) when a new tag is pushed. Just push a new tag to make a release!
+- 克隆将存储库克隆到干净的虚拟机上。
+- 使用`pip`安装应用依赖项。
+- 将`flet pack`运行到 python 应用程序中的捆绑包中** Windows **，** macos **和** ubuntu **。
+- zip/tar 应用程序捆绑并将它们上传到[“伪像”](https://ci.appveyor.com/project/flet-dev/python-ci-example/build/job/g2j2lhstv04eyxcm/artifacts)。
+- 当按下新标签时，将应用程序捆绑包上载应用程序捆绑包。 只需推开一个新标签即可发布！
 
-:::noteGITHUB_TOKEN
-`GITHUB_TOKEN` in `appveyor.yml` is a GitHub Personal Access Token (PAT) used by AppVeyor to publish created packages to repository "Releases". You need to generate your own token and replace it in `appveyor.yml`. Login to your GitHub account and navigate to [Personal access token](https://github.com/settings/tokens) page. Click "Generate new token" and select "public_repo" or "repo" scope for public or private repository respectively. Copy generated token to a clipboard and return to AppVeyor Portal. Navigate to [Encrypt configuration data](https://ci.appveyor.com/tools/encrypt) page and paste token to "Value to encrypt" field, click "Encrypt" button. Put encrypted value under `GITHUB_TOKEN` in your `appveyor.yml`.
-:::
+:::notegithub_token
+`GITHUB_TOKEN`在`appveyor.yml`中是 Appveyor 使用的 GitHub 个人访问令牌（PAT），以将创建的软件包发布给存储库“发行”。 您需要生成自己的令牌并将其替换为`appveyor.yml`。 登录到您的 github 帐户，然后导航到[个人访问令牌](https://github.com/settings/tokens)页面。 单击“生成新令牌”，然后为公共或私人存储库选择“ public_repo”或“ repo”范围。 副本生成的令牌给 CLI
+为您的 Python 项目配置 Appveyor，将新标签推向存储库，然后“自动”获取 GitHub 版本中所有三个平台的桌面捆绑包！ 🎉
 
-Configure AppVeyor for your Python project, push a new tag to a repository and "automagically" get desktop bundle for all three platforms in GitHub releases! 🎉
+<img src="/website/img/docs/getting-started/appveyor-ci-flet-github-releases.png" className="screenshot-70" />
 
-<img src="/img/docs/getting-started/appveyor-ci-flet-github-releases.png" className="screenshot-70" />
-
-In addition to [GitHub Releases](https://www.appveyor.com/docs/deployment/github/), you can also configure releasing of artifacts to [Amazon S3 bucket](https://www.appveyor.com/docs/deployment/amazon-s3/) or [Azure Blob storage](https://www.appveyor.com/docs/deployment/azure-blob/).
+除了[github 释放](https://www.appveyor.com/docs/deployment/github/)外，您还可以将伪像释放到[Amazon S3 桶](https://www.appveyor.com/docs/deployment/amazon-s3/)或[Azure Blob Storage](https://www.appveyor.com/docs/deployment/azure-blob/)。

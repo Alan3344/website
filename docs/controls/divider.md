@@ -4,16 +4,16 @@ sidebar_label: Divider
 slug: divider
 ---
 
-A thin horizontal line, with padding on either side.
+一条薄的水平线，两侧都有填充。
 
-In the material design language, this represents a divider.
+在 material design 语言中，这代表一个分隔线。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/layout/divider)
+[LIVE 示例](https://flet-controls-gallery.fly.dev/layout/divider)
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -53,21 +53,22 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/divider/divider.png" className="screenshot-40" />
+<img src="/website/img/docs/controls/divider/divider.png" className="screenshot-40" />
 
-## Properties
+## properties
 
 ### `color`
 
-The [color](/docs/guides/python/colors) to use when painting the line.
+绘画行时要使用的[颜色](/docs/guides/python/colors)。
 
 ### `height`
 
-The divider's height extent. The divider itself is always drawn as a horizontal line that is centered within the height specified by this value. If this is null, then this defaults to `16.0`.
+分隔线的身高范围。 分隔线本身总是将其作为水平线绘制，该水平线以该值指定的高度为中心。 如果这为 null，则默认为`16.0`。
 
 ### `thickness`
 
-The thickness of the line drawn within the divider. A divider with a thickness of `0.0` is always drawn as a line with a height of exactly one device pixel. If this is null, then this defaults to `0.0`.
+分层内绘制的线的厚度。 厚度为`0.0`的分隔线始终被绘制为一条线，其高度正好为一个设备像素。 如果这是空的，则默认为`0.0`。

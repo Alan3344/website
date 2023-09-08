@@ -4,17 +4,17 @@ sidebar_label: FloatingActionButton
 slug: floatingactionbutton
 ---
 
-import Tabs from '@theme/Tabs';
+从'@themy/tabs'导入选项卡片;
 import TabItem from '@theme/TabItem';
 
-A material design floating action button. A floating action button is a circular icon button that hovers over content to promote a primary action in the application.
-Floating action button is usually set to `page.floating_action_button`, but can also be added as a regular control at any place on a page.
+material design 浮动动作按钮。 浮动操作按钮是一个圆形图标按钮，它悬停在内容上以促进应用程序中的主要动作。
+浮动动作按钮通常设置为`page.floating_action_button`，但也可以在页面上的任何位置添加作为常规控件。
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/buttons/floatingactionbutton)
+[live 示例](https://flet-controls-gallery.fly.dev/buttons/floatingactionbutton)
 
-### Basic FAB
+### 基本 fab
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -57,50 +57,52 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/floatingactionbutton/custom-fab.gif"/>
+<img src="/website/img/docs/controls/floatingactionbutton/custom-fab.gif"/>
 
-## Properties
+## properties
 
 ### `autofocus`
 
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+如果将控件选择作为初始焦点，则为 thus。 如果一个带有自动对焦集的页面上有多个控件，则添加到页面上的第一个将获得焦点。
 
 ### `bgcolor`
 
-Button background [color](/docs/guides/python/colors).
+按钮背景[颜色](/docs/guides/python/colors)。
 
 ### `content`
 
-A Control representing custom button content.
+代表自定义按钮内容的控件。
 
 ### `icon`
 
-Icon shown in the button.
+按钮中显示的图标。
 
 ### `mini`
 
-Controls the size of this button.
+控制此按钮的大小。
 
-By default, floating action buttons are non-mini and have a height and width of 56.0 logical pixels. Mini floating action buttons have a height and width of 40.0 logical pixels with a layout width and height of 48.0 logical pixels.
+默认情况下，浮动动作按钮是非微尼，高度和宽度为 56.0 逻辑像素。 迷你浮动动作按钮的高度和宽度为 40.0 逻辑像素，布局宽度和高度为 48.0 逻辑像素。
 
 ### `shape`
 
-The shape of the FAB's border.
+工厂边界的形状。
 
-The value is an instance of one of the following implementations:
-  * `StadiumBorder`
-  * `RoundedRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `CircleBorder`
-  * `BeveledRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `ContinuousRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+该值是以下实现之一的实例:
 
-An example of using `shape` property:
+- `StadiumBorder`
+- `RoundedRectangleBorder`
+  - `radius` - 边框半径，`BorderRadius`类或数字的实例。
+- `CircleBorder`
+- `BeveledRectangleBorder`
+  - `radius` - 边框半径，`BorderRadius`类或数字的实例。
+- `ContinuousRectangleBorder`
+  - `radius` - 边框半径，`BorderRadius`类或数字的实例。
+
+使用`shape`属性的示例:
 
 ```python
 import flet as ft
@@ -122,29 +124,29 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<img src="/img/docs/controls/floatingactionbutton/fab-with-custom-shape.png" className="screenshot-20" />
+<img src="/website/img/docs/controls/floatingactionbutton/fab-with-custom-shape.png" className="screenshot-20" />
 
 ### `text`
 
-The text displayed on a button.
+在按钮上显示的文本。
 
 ### `tooltip`
 
-The text displayed when hovering the mouse over the button.
+悬停在按钮上时显示的文本。
 
 ### `url`
 
-The URL to open when the button is clicked. If registered, `on_click` event is fired after that.
+单击按钮时要打开的 URL。 如果已注册，则`on_click`事件在此之后发射。
 
 ### `url_target`
 
-Where to open URL in the web mode:
+在 Web 模式下打开 URL 的位置:
 
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+- `_blank`（默认值） - 新 Tab/window。
+- `_self` - 当前选项卡片/窗口。
 
-## Events
+## 事件
 
 ### `on_click`
 
-Fires when a user clicks the button.
+当用户单击按钮时发射。

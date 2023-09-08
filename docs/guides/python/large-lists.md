@@ -3,9 +3,9 @@ title: Large lists
 sidebar_label: Large lists
 ---
 
-You can use [`Column`](/docs/controls/column) and [`Row`](/docs/controls/row) controls to display lists in the most cases, but if the list contains hundreds or thousands of items `Column` and `Row` will be ineffective with lagging UI as they render all items at once even they are not visible at the current scrolling position.
+您可以使用[`Column`](/docs/controls/column)和[`Row`](/docs/controls/row)控件在大多数情况下以显示列表，但是如果列表包含数百或数千个项目`Column`和`Row`，将会和`Row`将会 无效的 UI 效率低下，因为它们即使在当前的滚动位置也不可见所有项目，它们也会立即渲染所有项目。
 
-In the following example we are adding 5,000 text controls to a page. Page uses `Column` as a default layout container:
+在下面的示例中，我们将 5,000 个文本控件添加到页面。 页面使用`Column`作为默认布局容器:
 
 ```python
 import flet as ft
@@ -19,19 +19,19 @@ def main(page: ft.Page):
 ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
 
-Run the program and notice that it's not just it takes a couple of seconds to initially load and render all text lines on a page, but scrolling is slow and laggy too:
+运行该程序并注意，最初加载并渲染页面上的所有文本行不仅需要几秒钟，而且滚动也很慢，也很懒惰:
 
-<img src="/img/docs/getting-started/scroll-column.gif" className="screenshot-50" />
+<img src="/website/img/docs/getting-started/scroll-column.gif" className="screenshot-50" />
 
-For displaying lists with a lot of items use [`ListView`](/docs/controls/listview) and [`GridView`](/docs/controls/gridview) controls which render items on demand, visible at the current scrolling position only.
+用于显示很多项目的显示列表，请使用[`ListView`](/docs/controls/listview)和[`GridView`](/docs/controls/gridview)控件按需渲染项目，仅在当前滚动位置可见。
 
-## ListView
+## listView listView
 
-[`ListView`](/docs/controls/listview) could be either vertical (default) or horizontal. ListView items are displayed one after another in the scroll direction.
+[`ListView`](/docs/controls/listview)可以是垂直（默认）或水平的。 ListView 项目在滚动方向上一个接一个地显示。
 
-ListView already implements effective on demand rendering of its children, but scrolling performance could be further improved if you can set the same fixed height or width (for `horizontal` ListView) for all items ("extent"). This could be done by either setting absolute extent with `item_extent` property or making the extent of all children equal to the extent of the first child by setting `first_item_prototype` to `True`.
+ListView 已经实现了有效的按需渲染其 children，但是如果您可以为所有项目设置相同的固定高度或宽度（对于`horizontal` listView），则可以进一步提高滚动性能（“范围”）。 这可以通过用`item_extent`属性设置绝对范围或使所有 children 的范围等于第一个 child 的范围，从而完成这一点。
 
-Let's output a list of 5,000 items using ListView control:
+让我们使用 ListView 控件输出 5,000 个项目的列表:
 
 ```python
 import flet as ft
@@ -45,19 +45,19 @@ def main(page: ft.Page):
 ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
 
-Now the scrolling is smooth and fast enough to follow mouse movements:
+现在，滚动的光滑且速度足够快，可以遵循鼠标的运动:
 
-<img src="/img/docs/getting-started/scroll-listview.gif" className="screenshot-50" />
+<img src="/website/img/docs/getting-started/scroll-listview.gif" className="screenshot-50" />
 
-:::note
-We used `expand=True` in ListView constructor. In order to function properly, ListView must have a height (or width if `horizontal`) specified. You could set an absolute size, e.g. `ListView(height=300, spacing=10)`, but in the example above we make ListView to take all available space on the page, i.e. expand. Read more about [`Control.expand`](/docs/controls#expand) property.
+:::注意
+我们在 ListView 构造函数中使用了`expand=True`。 为了正常运行，如果指定了`horizontal`），ListView 必须具有高度（或宽度）。 您可以设置绝对大小，例如 `listView（高度= 300，间距= 10）`但是在上面的示例中，我们使 listView 在页面上占用所有可用空间，即展开。 阅读有关[`Control.expand`](/docs/controls#expand)属性的更多信息。
 :::
 
-## GridView
+## gridView
 
-[`GridView`](/docs/controls/gridview) allows arranging controls into a scrollable grid.
+[`GridView`](/docs/controls/gridview)允许将控件安排到可滚动的网格中。
 
-You can make a "grid" with `ft.Column(wrap=True)` or `ft.Row(wrap=True)`, for example:
+您可以用`ft.Column(wrap=True)`或`ft.Row(wrap=True)`制作“网格”，例如:
 
 ```python
 import os
@@ -86,17 +86,17 @@ def main(page: ft.Page):
 ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
 
-<img src="/img/docs/getting-started/row-wrap-as-grid.png" className="screenshot-50" />
+<img src="/website/img/docs/getting-started/row-wrap-as-grid.png" className="screenshot-50" />
 
-Try scrolling and resizing the browser window - everything works, but very laggy.
+尝试滚动和调整浏览器窗口的大小 - 一切正常，但是很懒惰。
 
-:::note
-At the start of the program we are setting the value of `FLET_WS_MAX_MESSAGE_SIZE` environment variable to `8000000` - this is the maximum size of WebSocket message in bytes that can be received by Flet Server rendering the page. Default size is 1 MB, but the size of JSON message describing 5,000 container controls would exceed 1 MB, so we are increasing allowed size to 8 MB.
+:::注意
+在程序的开头，我们将`FLET_WS_MAX_MESSAGE_SIZE`环境变量的值设置为`8000000` - 这是字节中的 WebSocket 消息的最大大小，可以通过 Flet 服务器呈现页面接收。 默认尺寸为 1 MB，但是描述 5,000 个容器控件的 JSON 消息的大小将超过 1 MB，因此我们将允许的尺寸增加到 8 MB。
 
-Squeezing large messages through WebSocket channel is, generally, not a good idea, so use [batched updates](#batch-updates) aproach to control channel load.
+通常，通过 WebSocket 频道挤压大消息不是一个好主意，因此请使用[批处理更新](#batch-updates) ableach 控制频道加载。
 :::
 
-GridView, similar to ListView, is very effective to render a lot of children. Let's implement the example above using GridView:
+类似于 ListView 的 GridView 非常有效地渲染许多 children。 让我们使用 GridView 实现上面的示例:
 
 ```python
 import os
@@ -123,17 +123,17 @@ def main(page: ft.Page):
 ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
 
-<img src="/img/docs/getting-started/grid-view.png" className="screenshot-50" />
+<img src="/website/img/docs/getting-started/grid-view.png" className="screenshot-50" />
 
-With GridView scrolling and window resizing are smooth and responsive!
+随着 GridView 滚动和窗口调整的调整，响应良好！
 
-You can specify either fixed number of rows or columns (runs) with `runs_count` property or the maximum size of a "tile" with `max_extent` property, so the number of runs can vary automatically. In our example we set the maximum tile size to 150 pixels and set its shape to "square" with `child_aspect_ratio=1`. `child_aspect_ratio` is the ratio of the cross-axis to the main-axis extent of each child. Try changing it to `0.5` or `2`.
+您可以使用`runs_count`属性指定固定数量的行或列（运行），或带有`max_extent`属性的“瓷砖”的最大大小，因此运行次数可以自动变化。 在我们的示例中，我们将最大图块大小设置为 150 像素，并将其形状设置为`child_aspect_ratio=1`的“正方形”。 `child_aspect_ratio`是横轴与每个 child 的主要轴范围的比率。 尝试将其更改为`0.5`或`2`。
 
-## Batch updates
+## 批处理更新
 
-When `page.update()` is called a message is being sent to Flet server over WebSockets containing page updates since the last `page.update()`. Sending a large message with thousands of added controls could make a user waiting for a few seconds until the messages is fully received and controls rendered.
+自上一个`page.update()`以来，当`page.update()`称为 Flet 服务器上的 Flet 服务器时。 发送带有数千个控件的大型消息可能会使用户等待几秒钟，直到完全接收到消息并控制渲染为止。
 
-To increase usability of your program and present the results to a user as soon as possible you can send page updates in batches. For example, the following program adds 5,100 child controls to a ListView in batches of 500 items:
+为了提高程序的可用性并尽快将结果呈现给用户，您可以批量发送页面更新。 例如，以下程序将 5,100 个 child 控件添加到 500 个项目的批处理列表视图中:
 
 ```python
 import flet as ft
@@ -154,4 +154,5 @@ def main(page: ft.Page):
 
 ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
-<img src="/img/docs/getting-started/sending-page-updates-in-batches.png" className="screenshot-50" />
+
+<img src="/website/img/docs/getting-started/sending-page-updates-in-batches.png" className="screenshot-50" />

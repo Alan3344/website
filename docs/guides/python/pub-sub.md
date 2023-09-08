@@ -3,20 +3,20 @@ title: PubSub
 sidebar_label: PubSub
 ---
 
-If you build a chat app using Flet you need somehow to pass user messages between sessions. When a user sends a message it should be broadcasted to all other app sessions and displayed on their pages.
+如果使用 Flet 构建聊天应用程序，则需要以某种方式在会话之间传递用户消息。 当用户发送消息时，应将其广播到所有其他应用程序会话并在其页面上显示。
 
-Flet provides a simple built-in PubSub mechanism for asynchronous communication between page sessions.
+Flet 提供了一种简单的内置 PubSub 机制，用于页面会话之间的异步通信。
 
-Flet PubSub allows broadcasting messages to all app sessions or sending only to specific "topic" (or "channel") subscribers.
+Flet PubSub 允许向所有应用程序会话广播消息或仅发送到特定的“主题”（或“频道”）订户。
 
-A typical PubSub usage would be:
+典型的 PubSub 用法将是:
 
-* [subscribe](/docs/controls/page#subscribehandler) to broadcast messages or [subscribe to a topic](/docs/controls/page#subscribe_topictopic-handler) on app session start.
-* [send](/docs/controls/page#send_allmessage) broadcast message or [send to a topic](/docs/controls/page#send_all_on_topictopic-message) on some event, like "Send" button click.
-* [unsubscribe](/docs/controls/page#unsubscribe) from broadcast messages or [unsubscribe from a topic](/docs/controls/page#unsubscribe_topictopic) on some event, like "Leave" button click.
-* [unsubscribe](/docs/controls/page#unsubscribe_all) from everything on [`page.on_close`](#on_close).
+- [subscribe](/docs/controls/page#subscribehandler)以在应用程序会话开始上广播消息或[订阅一个主题](/docs/controls/page#subscribe_topictopic-handler)。
+- [发送](/docs/controls/page#send_allmessage)广播消息或[发送到一个主题](/docs/controls/page#send_all_on_topictopic-message)在某些事件上，例如单击“发送”按钮。
+- [unsubscribe](/docs/controls/page#unsubscribe)在某些事件上从广播消息中或[删除主题退缩](/docs/controls/page#unsubscribe_topictopic)，例如单击“离开”按钮。
+- [`page.on_close`](#on_close)上的所有内容。
 
-This is an example of a simple chat application:
+这是一个简单聊天应用程序的示例:
 
 ```python
 import flet as ft
@@ -46,4 +46,4 @@ def main(page: ft.Page):
 ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
 
-<img src="/img/docs/getting-started/chat-app-example.gif" className="screenshot-70" />
+<img src="/website/img/docs/getting-started/chat-app-example.gif" className="screenshot-70" />

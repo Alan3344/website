@@ -8,45 +8,44 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [releases]
 ---
 
-Last year we introduced support for [Matplotlib and Plotly charts](/blog/matplotlib-and-plotly-charts). Both libraries are able to export charts as SVG images which are then displayed in a Flet app. However, such charts, while serving the purpose of visualization, are lacking interactivity and animation.
+去年我们引入了对[Matplotlib 和 Plotly 图表](/blog/matplotlib-and-plotly-charts)的支持。 两个库都能够将图表导出为 SVG 图像，然后将其显示在 Flet 应用中。 但是，这种图表在实现可视化目的的同时缺乏互动性和动画。
 
-Today we are releasing [Flet 0.5.2](https://pypi.org/project/flet/) with built-in charts 📊 based on the awesome [fl_chart](https://pub.dev/packages/fl_chart) library!
+今天，我们将根据 Awesome [fl_chart](https://pub.dev/packages/fl_chart)库来释放[Flet 0.5.2](https://pypi.org/project/flet/) (https://pypi.org/project/flet/)！
 
-Three new chart controls have been introduced:
+引入了三个新图表控件:
 
-## LineChart
+## linechart
 
-<img src="/img/docs/controls/charts/linechart-sample-1.gif" className="screenshot-50"/>
+<img src="/website/img/docs/controls/charts/linechart-sample-1.gif" className="screenshot-50"/>
 
-[Docs](/docs/controls/linechart) · [Examples](https://github.com/flet-dev/examples/tree/main/python/controls/charts)
+[docs](/docs/controls/linechart)·[示例](https://github.com/flet-dev/examples/tree/main/python/controls/charts)
 
-## BarChart
+## barchart
 
-<img src="/img/docs/controls/charts/barchart-sample-2.gif" className="screenshot-50"/>
+<img src="/website/img/docs/controls/charts/barchart-sample-2.gif" className="screenshot-50"/>
 
-[Docs](/docs/controls/barchart) · [Examples](https://github.com/flet-dev/examples/tree/main/python/controls/charts)
+[docs](/docs/controls/barchart)·[示例](https://github.com/flet-dev/examples/tree/main/python/controls/charts)
 
-## PieChart
+## piechart
 
-<img src="/img/docs/controls/charts/piechart-sample-2.gif" className="screenshot-30"/>
+<img src="/website/img/docs/controls/charts/piechart-sample-2.gif" className="screenshot-30"/>
 
-[Docs](/docs/controls/piechart) · [Examples](https://github.com/flet-dev/examples/tree/main/python/controls/charts)
+[docs](/docs/controls/piechart)·[示例](https://github.com/flet-dev/examples/tree/main/python/controls/charts)
 
-:::note
-We spent a lot of time studying `fl_chart` library while trying to implement most of its features in a Flet way. However, if you see anything missing in Flet, but available in a library please [submit a new feature request](https://github.com/flet-dev/flet/issues).
+:::注意
+我们花了很多时间在尝试以 Flet 方式实现其大多数功能的同时研究`fl_chart`库。 但是，如果您在 Flet 中看到任何缺少的东西，但是在库中可用，请[提交新功能请求](https://github.com/flet-dev/flet/issues)。
 :::
 
-## Other changes
+##
 
-### Pyodide 0.23
+## 其他更改
 
-Pyodide, which provides Python runtime in a browser and is used to run Flet app as a static website, was upgraded to version 0.23 which is based on Python 3.11.2 and giving some [size and performance improvements](https://blog.pyodide.org/posts/0.23-release/).
+### pyodide 0.23
 
-### Memory leak fixes
+Pyodide 在浏览器中提供 Python 运行时，用于运行 Flet 应用程序作为静态网站，已升级到基于 Python 3.11.2 的 0.23 版，并提供了一些[尺寸和性能改进](https://blog.pyodide.org/posts/0.23-release/)。{(https://blog.pyodide.org/posts/0.23-release/)。{{{{{ 1264}内存泄漏修复
 
-In this release we paid a lot of attention to memory leak issues in Flet apps. Now, when a user session is closed its memory is reliably released and garbage-collected. That makes Flet ready for production applications with a lot of users.
+在此版本中，我们非常关注 Flet 应用中的内存泄漏问题。 现在，关闭用户会话后，其内存将可靠地释放并收集垃圾。 这使得 Flet 准备与许多用户一起生产应用程序。
 
-Upgrade Flet module to the latest version (`pip install flet --upgrade`), give charts a try and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
+升级 Flet 模块到最新版本（`pip install flet -upgrade`），试试图表，并[让我们知道](https://discord.gg/dzWXP8SHG8)您的想法！
 
-Hey, [Flet project](https://github.com/flet-dev/flet) has reached ⭐️ 5K stars ⭐️ - thank you all for your continuing support!
-
+嘿，[{Flet 项目](https://github.com/flet-dev/flet)已经到达了 5K 星星 ⭐️-谢谢大家的持续支持！

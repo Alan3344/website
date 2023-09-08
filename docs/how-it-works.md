@@ -4,14 +4,14 @@ sidebar_label: How it works
 slug: how-it-works
 ---
 
-Flet UI does not become embedded into your program, but is being served by an out-of-process Flet server. Application state and control flow logic lives in your persistent-process program while UI changes and events are communicated to Flet server via WebSocket-based protocol. It allows writing web app as a standalone monolith without any knowledge of request/response model, routing, templating or state management.
+Flet UI 不会嵌入您的程序中，而是由处理外 Flet 服务器提供的服务。 应用程序状态和控制流逻辑属于您的持久性程序程序，而 UI 更改和事件通过基于 WebSocket 的协议传达给 Flet 服务器。 它允许将 Web 应用程序写为独立的整体，而无需任何请求/响应模型，路由，模板或状态管理。
 
-In a classic client-server architecture front-end communicates to a one or more back-end services. Flet implements an opposite approach where multiple back-end services scattered across internal network behind a firewall and communicate to a centralized Flet web server, i.e. front-end service, installed in DMZ or hosted as a service. 
+在经典的客户端架构中，前端通信到一个或多个后端服务。 Flet 实现了一种相反的方法，其中多个后端服务散布在防火墙后面的内部网络上，并与集中式 Flet Web 服务器（即前端服务）进行通信，即 DMZ 中安装或托管作为服务。
 
-<div style={{textAlign: 'center'}}><img src="/img/blog/pglet-introduction/pglet-highlevel-design.png" /></div>
+<div style={{textAlign: 'center'}}><img src="/website/img/blog/pglet-introduction/pglet-highlevel-design.png" /></div>
 
-This design gives a number of advantages:
+该设计给出了许多优点:
 
-* Secure by design - your internal services and critical data stay behind the firewall and not accessible from the outside world.
-* Apps running next to services and data they process - faster/cheaper access and maximum security.
-* Zero deployment - run apps on any server in your network or your development machine, no need to deploy apps to a web server.
+- 通过设计安全 - 您的内部服务和关键数据留在防火墙后面，而无法从外界访问。
+- 应用程序旁边运行的应用程序及其处理数据 - 更快/更便宜的访问和最大安全性。
+- 零部署 - 在网络或开发计算机中的任何服务器上运行应用程序，无需将应用程序部署到 Web 服务器。

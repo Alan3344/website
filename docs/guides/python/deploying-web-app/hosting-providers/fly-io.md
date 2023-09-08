@@ -4,21 +4,21 @@ sidebar_label: Fly.io
 slug: fly-io
 ---
 
-[Fly.io](https://fly.io) has robust WebSocket support and can deploy your app to a [data center](https://fly.io/docs/reference/regions/) that is close to your users. They have very attractive pricing with a [generous free tier](https://fly.io/docs/about/pricing/#free-allowances) which allows you to host up to 3 applications for free.
+ [Fly.io](https://fly.io)具有强大的Websocket支持，并且可以将应用程序部署到靠近用户的[数据中心](https://fly.io/docs/reference/regions/)。 他们具有非常有吸引力的价格，并具有[慷慨的免费层](https://fly.io/docs/about/pricing/#free-allowances)，可让您免费托管最多3个应用程序。
 
-To get started with Fly install [flyctl](https://fly.io/docs/getting-started/installing-flyctl/) and then authenticate:
+要开始使用Fly Install [FlyCtl](https://fly.io/docs/getting-started/installing-flyctl/)，然后进行身份验证: 
 
     flyctl auth login
 
-To deploy the app with `flyctl` you have to add the following 3 files into the folder with your Python app.
+要使用`flyctl`部署该应用程序，您必须使用Python应用程序将以下3个文件添加到文件夹中。
 
-Create `requirements.txt` with a list of application dependencies. At minimum it should contain `flet` module:
+使用应用程序依赖项列表创建`requirements.txt`。 至少应包含`flet`模块: 
 
 ```txt title="requirements.txt"
 flet
 ```
 
-Create `fly.toml` describing Fly application:
+创建`fly.toml`描述飞行应用程序: 
 
 ```toml title="fly.toml" {1,8}
 app = "<your-app-name>"
@@ -63,11 +63,11 @@ processes = []
     timeout = "2s"
 ```
 
-Replace `<your-app-name>` with desired application name which will be also used in application URL, such as `https://<your-app-name>.fly.dev`.
+将`<your-app-name>`替换为所需的应用程序名称，该名称也将在应用程序URL中使用，例如`https://<your-app-name>.fly.dev`。
 
-Note we are setting the value of `FLET_SERVER_PORT` environment variable to `8080` which is an internal TCP port Flet web app is going to run on.
+请注意，我们将`FLET_SERVER_PORT`环境变量的值设置为`8080`，这是一个内部TCP端口Flet Web应用程序将继续运行。
 
-Create `Dockerfile` containing the commands to build your application container:
+创建`Dockerfile`包含命令以构建应用程序容器的命令: 
 
 ```Dockerfile title="Dockerfile"
 FROM python:3-alpine
@@ -84,20 +84,20 @@ EXPOSE 8080
 CMD ["python", "./main.py"]
 ```
 
-`main.py` is a file with your Python program.
+`main.py`是带有Python程序的文件。
 
-:::note
-Fly.io deploys every app as a Docker container, but a great thing about Fly is that it provides a free remote Docker builder, so you don't need Docker installed on your machine.
+:::注意
+Fly.io将每个应用程序作为Docker容器部署，但是Fly的好处是它提供了免费的远程Docker构建器，因此您不需要安装在机器上的Docker。
 :::
 
-Next, switch command line to a folder with your app and run the following command to create and initialize a new Fly app:
+接下来，使用您的应用将命令行切换到文件夹，然后运行以下命令来创建和初始化新的飞行应用程序: 
 
     flyctl apps create --name <your-app-name>
 
-Deploy the app by running:
+通过运行部署应用程序: 
 
     flyctl deploy
 
-That's it! Open your app in the browser by running:
+就是这样！ 通过运行以下命令在浏览器中打开应用程序: 
 
     flyctl apps open

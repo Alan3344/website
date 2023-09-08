@@ -4,14 +4,14 @@ sidebar_label: Image
 slug: image
 ---
 
-An image is a graphic representation of something (e.g photo or illustration).
+图像是某物的图形表示（例如照片或插图）。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/displays/image)
+[LIVE 示例](https://flet-controls-gallery.fly.dev/displays/image)
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -50,58 +50,57 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/image/custom-images.gif" className="screenshot-50"/>
+<img src="/website/img/docs/controls/image/custom-images.gif" className="screenshot-50"/>
 
-## Properties
+## properties
 
 ### `border_radius`
 
-Clip image to have rounded corners. See [`Container.border_radius`](container#border_radius) for more information and examples.
+剪辑图像具有圆角。 有关更多信息和示例，请参见[`Container.border_radius`](container#border_radius)。
 
 ### `color`
 
-If set, this [color](/docs/guides/python/colors) is blended with each image pixel using `color_blend_mode`.
+如果设置，则使用`color_blend_mode`。
 
-### `color_blend_mode`
+用于将`color`与图像相结合。
 
-Used to combine `color` with the image.
+默认值为`BlendMode.COLOR`。 在混合模式方面，颜色是源，此图像是目的地。
 
-The default is `BlendMode.COLOR`. In terms of the blend mode, color is the source and this image is the destination.
-
-See [`ShaderMask.blend_mode`](shadermask#blend_mode) for possible blend mode values.
+有关可能的混合模式值，请参见[`ShaderMask.blend_mode`](shadermask#blend_mode)。
 
 ### `error_content`
 
-Fallback `Control` to display if the image cannot be loaded from the source.
+后备`Control`显示如果无法从源头加载图像。
 
 ### `fit`
 
-How to inscribe the image into the space allocated during layout.
+如何将图像刻在布局期间分配的空间中。
 
-Property value is `ImageFit` enum with supported values: `NONE` (default), `CONTAIN`, `COVER`, `FILL`, `FIT_HEIGHT`, `FIT_WIDTH`, `SCALE_DOWN`.
+属性值为`ImageFit`枚举，具有支持值: `NONE`（默认值），`CONTAIN`，`COVER`，`FILL`，`FIT_HEIGHT`，`FIT_HEIGHT`，`FIT_WIDTH`，`SCALE_DOWN`，`SCALE_DOWN`。
 
-### `gapless_playback`
-
-Whether to continue showing the old image (`True`), or briefly show nothing (`False`), when the image provider changes. The default value is `False`.
+是在图像提供商更改时，是继续显示旧图像（`True`），还是短暂显示什么（`False`）。 默认值为`False`。
 
 ### `height`
 
-If set, require the image to have this height.
+如果设置，则需要图像具有此高度。
 
-If not set, the image will pick a size that best preserves its intrinsic aspect ratio.
+如果未设置，则图像将选择最能保留其内在长宽比的尺寸。
 
-:::note
-It is strongly recommended that either both the width and the height be specified, or that the Image be placed in a context that sets tight layout constraints, so that the image does not change size as it loads. Consider using `fit` to adapt the image's rendering to fit the given width and height if the exact image dimensions are not known in advance.
+:::注意
+强烈建议指定宽度和高度，或将图像放置在设置紧密布局约束的上下文中，以使图像不会随着加载而更改大小。 考虑使用`fit`调整图像的渲染以适合给定的宽度和高度，如果确切的图像尺寸未提前知道。
 :::
+
+###
 
 ### `src`
 
-Image URL. This could be an external URL, e.g. `https://picsum.photos/200/200` or internal URL to reference app assets, e.g. `/my-image.png`.
+图像 URL。 这可能是外部 URL，例如 `https://picsum.photos/200/200` or internal URL to reference app assets, e.g. `/my-image.png`。
 
-You can specify `assets_dir` in `flet.app()` call to set the location of assets that should be available to the application. `assets_dir` could be a relative to your `main.py` directory or an absolute path. For example, consider the following program structure:
+您可以在`flet.app()`中指定`assets_dir`调用以设置应用程序应提供的资产的位置。 `assets_dir`可能是您`main.py`目录或绝对路径的相对。 例如，考虑以下程序结构:
 
 ```
 /assets
@@ -109,7 +108,7 @@ You can specify `assets_dir` in `flet.app()` call to set the location of assets 
 main.py
 ```
 
-You can access your images in the application as following:
+您可以在应用程序中访问您的图像如下:
 
 ```python {5,9}
 import flet as ft
@@ -125,7 +124,7 @@ flet.app(
 
 ### `src_base64`
 
-Displays an image from Base-64 encoded string, for example:
+例如，从 base-64 编码字符串中显示图像:
 
 ```python
 import flet as ft
@@ -136,13 +135,13 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-Use `base64` command (Linux, macOS, WSL) to convert file to Base64 format, for example:
+使用`base64`命令（Linux，MacOS，WSL）将文件转换为 base64 格式，例如:
 
 ```
 base64 -i <image.png> -o <image-base64.txt>
 ```
 
-On Windows you can use PowerShell to encode string into Base64 format:
+在 Windows 上，您可以使用 PowerShell 将字符串编码为 base64 格式:
 
 ```posh
 [convert]::ToBase64String((Get-Content -path "your_file_path" -Encoding byte))
@@ -150,24 +149,24 @@ On Windows you can use PowerShell to encode string into Base64 format:
 
 ### `repeat`
 
-How to paint any portions of the layout bounds not covered by the image.
+如何绘制图像未覆盖的布局边界的任何部分。
 
-Property value is `ImageRepeat` enum with supported values: `NO_REPEAT` (default), `REPEAT`, `REPEAT_X`, `REPEAT_Y`.
+属性值为`ImageRepeat`枚举，具有支持值: `NO_REPEAT`（默认值），`REPEAT`，`REPEAT_X`，`REPEAT_Y`。
 
 ### `semantics_label`
 
-A semantics label for this image.
+此图像的语义标签。
 
 ### `tooltip`
 
-The text displayed when hovering a mouse over the Image.
+悬停在图像上时显示的文本。
 
 ### `width`
 
-If set, require the image to have this width.
+如果设置，则需要图像具有此宽度。
 
-If not set, the image will pick a size that best preserves its intrinsic aspect ratio.
+如果未设置，则图像将选择最能保留其内在长宽比的尺寸。
 
-:::note
-It is strongly recommended that either both the width and the height be specified, or that the Image be placed in a context that sets tight layout constraints, so that the image does not change size as it loads. Consider using `fit` to adapt the image's rendering to fit the given width and height if the exact image dimensions are not known in advance.
+:::注意
+强烈建议指定宽度和高度，或将图像放置在设置紧密布局约束的上下文中，以使图像不会随着加载而更改大小。 考虑使用`fit`调整图像的渲染以适合给定的宽度和高度，如果确切的图像尺寸未提前知道。
 :::

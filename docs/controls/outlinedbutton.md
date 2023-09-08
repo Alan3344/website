@@ -4,17 +4,17 @@ sidebar_label: OutlinedButton
 slug: outlinedbutton
 ---
 
-import Tabs from '@theme/Tabs';
+从'@themy/tabs'导入选项卡片;
 import TabItem from '@theme/TabItem';
 
-Outlined buttons are medium-emphasis buttons. They contain actions that are important, but aren’t the primary action in an app.
-Outlined buttons pair well with filled buttons to indicate an alternative, secondary action. See [Material 3 buttons](https://m3.material.io/components/buttons/overview) for more info.
+概述的按钮是中等强调按钮。 它们包含重要的操作，但不是应用程序中的主要动作。
+概述按钮与填充按钮很好地搭配，以指示另一种次要动作。 有关更多信息，请参见[材料 3 按钮](https://m3.material.io/components/buttons/overview)。
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/buttons/outlinedbutton)
+[live 示例](https://flet-controls-gallery.fly.dev/buttons/outlinedbutton)
 
-### Basic outlined buttons
+### 基本概述按钮
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -32,11 +32,12 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 
 </Tabs>
 
-<img src="/img/docs/controls/outlined-button/basic-outlined-buttons.png" className="screenshot-40" />
+<img src="/website/img/docs/controls/outlined-button/basic-outlined-buttons.png" className="screenshot-40" />
 
 ### Outlined buttons with icons
 
@@ -60,11 +61,12 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 
 </Tabs>
 
-<img src="/img/docs/controls/outlined-button/outlined-buttons-with-icons.png" className="screenshot-50" />
+<img src="/website/img/docs/controls/outlined-button/outlined-buttons-with-icons.png" className="screenshot-50" />
 
 ### Outlined button with `click` event
 
@@ -95,12 +97,12 @@ ft.app(target=main)
 
 </Tabs>
 
-<img src="/img/docs/controls/outlined-button/outlined-button-with-click-event.gif" className="screenshot-50" />
+<img src="/website/img/docs/controls/outlined-button/outlined-button-with-click-event.gif" className="screenshot-50" />
 
-### Outlined button with custom content 
+### 用自定义内容概述按钮
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
+<tabs groupId="language">
+   <tabitem value="python" label="python" default>
 
 ```python
 import flet as ft
@@ -138,78 +140,75 @@ ft.app(target=main)
 
 ```
 
-  </TabItem>
+   </tabitem>
   
-</Tabs>
+</tabs>
 
-<img src="/img/docs/controls/outlined-button/outlined-buttons-with-custom-content.png" className="screenshot-50" />
+<img src="/website/img/docs/controls/outlined-button/outlined-buttons-with-custom-content.png" className="screenshot-50" />
 
-
-## Properties
+## properties
 
 ### `autofocus`
 
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+如果将控件选择作为初始焦点，则为 thus。 如果一个带有自动对焦集的页面上有多个控件，则将第一个添加到页面中的第一个控件将获得焦点。
 
 ### `content`
 
-A Control representing custom button content.
+代表自定义按钮内容的控件。
 
 ### `icon`
 
-Icon shown in the button.
+按钮中显示的图标。
 
 ### `icon_color`
 
-Icon [color](/docs/guides/python/colors).
+图标[颜色](/docs/guides/python/colors)。
 
 ### `style`
 
-See [ElevatedButton.style](/docs/controls/elevatedbutton#style) for more information about this property.
+有关此属性的更多信息。
 
-### `text`
-
-The text displayed on a button.
+按钮上显示的文本。
 
 ### `tooltip`
 
-The text displayed when hovering the mouse over the button.
+悬停在按钮上时显示的文本。
 
 ### `url`
 
-The URL to open when the button is clicked. If registered, `on_click` event is fired after that.
+单击按钮时要打开的 URL。 如果已注册，则`on_click`事件在此之后发射。
 
 ### `url_target`
 
-Where to open URL in the web mode:
+在 Web 模式下打开 URL 的位置:
 
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+- `_blank`（默认值） - 新 Tab/window。
+- `_self` - 当前选项卡片/窗口。
 
-## Methods
+## 方法
 
 ### `focus()`
 
-Moves focus to a button.
+将重点移至按钮。
 
-## Events
+## 事件
 
 ### `on_blur`
 
-Fires when the control has lost focus.
+当控件失去焦点时会发射。
 
 ### `on_click`
 
-Fires when a user clicks the button.
+用户单击按钮时发射。
 
 ### `on_focus`
 
-Fires when the control has received focus.
+当控件收到焦点时发射。
 
 ### `on_hover`
 
-Fires when a mouse pointer enters or exists the button response area. `data` property of event object contains `true` (string) when cursor enters and `false` when it exits.
+当鼠标指针进入或存在按钮响应区域时发射。 `data`事件对象的属性包含`true`（string）Enter Enter Enter 和`false`当它退出时。
 
-### `on_long_press`
+### `on_long_press` `on_long_press`
 
-Fires when the button is long-pressed.
+长时间按钮时会发射。

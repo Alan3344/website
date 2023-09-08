@@ -4,18 +4,18 @@ sidebar_label: Tabs
 slug: tabs
 ---
 
-The Tabs control is used for navigating frequently accessed, distinct content categories. Tabs allow for navigation between two or more content views and relies on text headers to articulate the different sections of content.
+TABS 控件用于导航经常访问的不同内容类别。 标签允许在两个或多个内容视图之间进行导航，并依赖文本标头来阐明内容的不同部分。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/layout/tabs)
+[live 示例](https://flet-controls-gallery.fly.dev/layout/tabs)
 
-### Tabs
+### tabs
 
-<img src="/img/docs/controls/tabs/tabs-simple.gif" className="screenshot-60"/>
+<img src="/website/img/docs/controls/tabs/tabs-simple.gif" className="screenshot-60"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -52,6 +52,7 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
@@ -59,78 +60,80 @@ ft.app(target=main)
 
 ### `animation_duration`
 
-Duration of animation in milliseconds of swtiching between tabs. Default is `50`.
+在选项卡片之间的千分之一的动画持续时间。 默认值为`50`。
 
 ### `divider_color`
 
-The [color](/docs/guides/python/colors) of the divider.
+分隔器的[颜色](/docs/guides/python/colors)。
 
 ### `indicator_border_radius`
 
-The radius of the indicator's corners.
+指示器角的半径。
 
 ### `indicator_border_side`
 
-The [color](/docs/guides/python/colors) and weight of the horizontal line drawn below the selected tab.
+在选定选项卡片下方绘制的水平线的[颜色](/docs/guides/python/colors)和重量。
 
 ### `indicator_color`
 
-The [color](/docs/guides/python/colors) of the line that appears below the selected tab.
+所选选项卡片下方的行的[颜色](/docs/guides/python/colors)。
 
 ### `indicator_padding`
 
-Locates the selected tab's underline relative to the tab's boundary. The `indicator_tab_size` property can be used to define the tab indicator's bounds in terms of its (centered) tab widget with `False`, or the entire tab with `True`.
+找到相对于选项卡片的边界的选定选项卡片的下划线。 `indicator_tab_size`属性可用于根据`False`的（中心）选项卡片窗口小部件来定义标签指示器的界限，或带有`True`的整个选项卡片。
+
+###
 
 ### `indicator_tab_size`
 
-`True` for indicator to take entire tab.
+`True`用于取指示器的整个选项卡片。
 
 ### `label_color`
 
-The [color](/docs/guides/python/colors) of selected tab labels.
+选定标签标签的[颜色](/docs/guides/python/colors)。
 
 ### `overlay_color`
 
-Defines the ink response focus, hover, and splash [colors](/docs/guides/python/colors). If specified, it is resolved against one of `MaterialState.FOCUSED`, `MaterialState.HOVERED`, and `MaterialState.PRESSED`.
+定义墨水响应焦点，悬停和飞溅[颜色](/docs/guides/python/colors)。 如果指定，则可以根据`MaterialState.FOCUSED`，`MaterialState.HOVERED`和`MaterialState.PRESSED`的一个解决方案。
 
 ### `selected_index`
 
-The index of currently selected tab.
+当前选择选项卡片的索引。
 
 ### `scrollable`
 
-Whether this tab bar can be scrolled horizontally.
+是否可以水平滚动此选项卡片栏。
 
-If `scrollable` is `True`, then each tab is as wide as needed for its label and the entire Tabs controls is scrollable. Otherwise each tab gets an equal share of the available space.
+如果`scrollable`为`True`，则每个选项卡片的标签所需的宽度，并且整个选项卡片控件都可以滚动。 否则每个选项卡片都将获得可用空间的平等份额。
 
 ### `tabs`
 
-A list of `Tab` controls.
+`Tab`控件的列表。
 
 ### `unselected_label_color`
 
-The [color](/docs/guides/python/colors) of unselected tab labels.
+未选中的标签标签的[颜色](/docs/guides/python/colors)。
 
-## `Tabs` events
+## `Tabs` evest
 
 ### `on_change`
 
-Fires when `selected_index` changes.
+`selected_index`更改时发射。
 
 ## `Tab` properties
 
 ### `content`
 
-A `Control` to display below the Tab when it is selected.
+`Control`选择时显示在标签下方。
 
 ### `icon`
 
-An icon to display on the left of Tab text.
+一个图标，要在标签文本的左侧显示。
 
 ### `tab_content`
 
-A `Control` representing custom tab content replacing `text` and `icon`.
+A `Control`表示自定义选项卡片内容替换`text`和`icon`。
 
 ### `text`
 
-Tab's display name.
+标签的显示名称。

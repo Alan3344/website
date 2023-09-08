@@ -4,15 +4,15 @@ sidebar_label: PlotlyChart
 slug: plotlychart
 ---
 
-Displays [Plotly](https://plotly.com/python/) chart.
+显示[plotly](https://plotly.com/python/)图表。
 
-## Examples
+## 示例
 
-### Line chart
+### 线图
 
-The following example is based on [original example from Plotly docs](https://plotly.com/python/line-charts/).
+以下示例基于[plotly docs 的原始示例](https://plotly.com/python/line-charts/)。
 
-<img src="/img/docs/controls/charts/plotly-linechart.png" className="screenshot-60"/>
+<img src="/website/img/docs/controls/charts/plotly-linechart.png" className="screenshot-60"/>
 
 ```python
 import plotly.express as px
@@ -30,11 +30,11 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-### Bar chart
+### 条形图
 
-The following example is based on [original example from Plotly docs](https://plotly.com/python/bar-charts/).
+以下示例基于[Plotly Docs 的原始示例](https://plotly.com/python/bar-charts/)。
 
-<img src="/img/docs/controls/charts/plotly-barchart.png" className="screenshot-60"/>
+<img src="/website/img/docs/controls/charts/plotly-barchart.png" className="screenshot-60"/>
 
 ```python
 import plotly.express as px
@@ -60,11 +60,11 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-### Pie chart
+### 饼图
 
-The following example is based on [original example from Plotly docs](https://plotly.com/python/pie-charts/).
+以下示例基于[plotly docs 的原始示例](https://plotly.com/python/pie-charts/)。
 
-<img src="/img/docs/controls/charts/plotly-piechart.png" className="screenshot-60"/>
+<img src="/website/img/docs/controls/charts/plotly-piechart.png" className="screenshot-60"/>
 
 ```python
 import plotly.graph_objects as go
@@ -84,11 +84,11 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-### Box chart
+### 框图
 
-The following example is based on [original example from Plotly docs](https://plotly.com/python/box-plots/).
+以下示例基于[plotly docs 的原始示例](https://plotly.com/python/box-plots/)。
 
-<img src="/img/docs/controls/charts/plotly-boxchart.png" className="screenshot-70"/>
+<img src="/website/img/docs/controls/charts/plotly-boxchart.png" className="screenshot-70"/>
 
 ```python
 import plotly.graph_objects as go
@@ -133,18 +133,18 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-## Properties
+## properties
 
 ### `figure`
 
-Plotly figure to draw - an instance of `plotly.graph_objects.Figure` class.
+绘制绘制的图 - `plotly.graph_objects.Figure`类的实例。
 
 ### `original_size`
 
-`True` to display chart in original size. `False` (default) to display a chart that fits configured bounds.
+`True`以原始大小显示图表。 `False`（默认）显示适合配置边界的图表。
 
 ### `isolated`
 
-Every time when a page or parent chart control are updated with `page.update()` or `Control.update()` methods respectively the chart is re-drawn by calling Plotly API. Frequent re-drawings of large charts could affect the performance of the entire Flet app.
+每次使用`page.update()`或`Control.update()`方法更新页面或父图控件时，通过调用 plotly api 重新绘制图表。 频繁重新绘制大图可能会影响整个 Flet 应用程序的性能。
 
-Set `isolated` to `True` to enable explicit chart updates. To re-draw the chart call its `update()` method.
+将`isolated`设置为`True`以启用显式图表更新。 重新绘制图表调用其`update()`方法。

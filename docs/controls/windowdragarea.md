@@ -3,18 +3,18 @@ title: WindowDragArea
 sidebar_label: WindowDragArea
 ---
 
-A control for drag to move, maximize and restore application window.
+拖动移动的控件，最大化和还原应用程序窗口。
 
-When you have hidden the title bar with [`page.window_title_bar_hidden`](page#window_title_bar_hidden), you can add this control to move the window position.
+当您使用[`page.window_title_bar_hidden`](page#window_title_bar_hidden)隐藏标题栏时，您可以添加此控件以移动窗口位置。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-### App window without a title that can be moved
+### App 窗口，而无需移动的标题
 
-<img src="/img/docs/controls/window-drag-area/no-title-draggable-window.png" className="screenshot-50" />
+<img src="/website/img/docs/controls/window-drag-area/no-title-draggable-window.png" className="screenshot-50" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -37,15 +37,16 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-## Properties
+## properties
 
 ### `content`
 
-A control to use for dragging/maximizing/restoring app window.
+用于拖动/最大化/还原应用窗口的控件。
 
 ### `maximizable`
 
-Whether double-clicking on a window drag area causes window to maximize/restore. Default is `True`.
+是否在窗口拖放区域上双击会导致窗口最大化/还原。 默认值为`True`。

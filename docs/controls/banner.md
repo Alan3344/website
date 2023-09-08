@@ -4,18 +4,18 @@ sidebar_label: Banner
 slug: banner
 ---
 
-A banner displays an important, succinct message, and provides actions for users to address (or dismiss the banner). A user action is required for it to be dismissed.
+横幅显示一个重要的，简洁的消息，并为用户提供了诉讼（或删除横幅）。 需要驳回用户行动。
 
-Banners are displayed at the top of the screen, below a top app bar. They are persistent and non-modal, allowing the user to either ignore them or interact with them at any time.
+横幅显示在屏幕顶部的顶部应用程序栏下方。 它们是持久的和非模式的，使用户可以随时忽略它们或与它们进行交互。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/dialogs/banner)
+[live 示例](https://flet-controls-gallery.fly.dev/dialogs/banner)
 
-### Banner with leading icon and actions
+### 带有 leading 图标和动作的横幅
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -49,55 +49,56 @@ def main(page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/banner/banner-with-custom-content.gif" className="screenshot-40"/>
+<img src="/website/img/docs/controls/banner/banner-with-custom-content.gif" className="screenshot-40"/>
 
-## Properties
+## properties
 
 ### `actions`
 
-The set of actions that are displayed at the bottom or trailing side of the Banner.
+在横幅的底部或后侧显示的一组动作。
 
-Typically this is a list of [`TextButton`](textbutton) controls.
+通常，这是[`TextButton`](textbutton)控件的列表。
 
 ### `bgcolor`
 
-The [color](/docs/guides/python/colors) of the surface of this Banner.
+该横幅的表面的[颜色](/docs/guides/python/colors)。
 
 ### `content`
 
-The content of the Banner. Typically a [`Text`](text) control.
+横幅的内容。 通常是[`Text`](text)控制。
 
 ### `content_padding`
 
-The amount of space by which to inset the content.
+插入内容的空间数量。
 
-If the actions are below the content, this defaults to `padding.only(left=16.0, top=24.0, right=16.0, bottom=4.0)`.
+如果操作低于内容，则默认为`padding.ly（左= 16.0，top = 24.0，右= 16.0，底部= 4.0）`。
 
-If the actions are trailing the content, this defaults to `padding.only(left=16.0, top=2.0)`.
+如果操作落后于内容，则默认为`padding.ly（左= 16.0，top = 2.0）``。
 
-See [`Container.padding`](container#padding) for more information about padding and possible values.
+有关填充和可能的值的更多信息，请参见[`Container.padding`](container#padding)。
 
 ### `force_actions_below`
 
-An override to force the actions to be below the content regardless of how many there are.
+不管有多少，替代行动都迫使行动低于内容。
 
-If this is `True`, the actions will be placed below the content. If this is `False`, the actions will be placed on the trailing side of the content if actions's length is 1 and below the content if greater than 1.
+如果这是`True`，则操作将放在内容下方。 如果这是`False`，则如果操作的长度大于 1，则操作将放在内容的后面。
 
-Defaults to `False`.
+默认为`False`。
 
 ### `leading`
 
-The (optional) leading `Control` of the Banner.
+横幅的（可选）leading `Control`。
 
-Typically an [`Icon`](icon) control.
+通常是[`Icon`](icon)控制。
 
 ### `leading_padding`
 
-The amount of space by which to inset the leading control. This defaults to 16 virtual pixels. See [`Container.padding`](container#padding) for more information about padding and possible values.
+插入 leading 控件的空间量。 这默认为 16 个虚拟像素。 有关填充和可能的值的更多信息，请参见[`Container.padding`](container#padding)。
 
 ### `open`
 
-Set to `True` to display a banner.
+设置为`True`以显示横幅。

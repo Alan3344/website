@@ -4,20 +4,20 @@ sidebar_label: Row
 slug: row
 ---
 
-A control that displays its children in a horizontal array.
+一个在水平数组中显示其 children 的控件。
 
-To cause a child control to expand and fill the available horizontal space set its `expand` property.
+引起 child 控件以展开并填充可用的水平空间设置`expand`属性。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## 示例
 
-[Live example](https://flet-controls-gallery.fly.dev/layout/row)
+[live 示例](https://flet-controls-gallery.fly.dev/layout/row)
 
-### Row spacing
+### 行间距
 
-<img src="/img/docs/controls/row/row-spacing.gif" className="screenshot" />
+<img src="/website/img/docs/controls/row/row-spacing.gif" className="screenshot" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -60,12 +60,13 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-### Row wrapping
+### 行包裹
 
-<img src="/img/docs/controls/row/row-wrap.gif" className="screenshot" />
+<img src="/website/img/docs/controls/row/row-wrap.gif" className="screenshot" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -124,12 +125,13 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-### Row horizontal alignments
+### 行水平对齐
 
-<img src="/img/docs/controls/row/row-alignment.png" className="screenshot" />
+<img src="/website/img/docs/controls/row/row-alignment.png" className="screenshot" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -175,12 +177,13 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-### Row vertical 
+### 行垂直
 
-<img src="/img/docs/controls/row/row-vertical-alignment.png" className="screenshot-70" />
+<img src="/website/img/docs/controls/row/row-vertical-alignment.png" className="screenshot-70" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -223,105 +226,104 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
   </TabItem>
 </Tabs>
 
-## Properties
+## properties
 
 ### `alignment`
 
-How the child Controls should be placed horizontally.
+child 控件应如何水平放置。
 
-For example, `MainAxisAlignment.START`, the default, places the children on the left of a Row.
+例如，`MainAxisAlignment.START`，默认值，将 children 放在一行的左侧。
 
-Property value is `MainAxisAlignment` enum with the following values:
+属性值为`MainAxisAlignment`枚举，具有以下值:
 
-* `START` (default)
-* `END`
-* `CENTER`
-* `SPACE_BETWEEN`
-* `SPACE_AROUND`
-* `SPACE_EVENLY`
+- `START`（默认）
+- `END`
+- `CENTER`
+- `SPACE_BETWEEN`
+- `SPACE_AROUND`
+- `SPACE_EVENLY`
 
 ### `auto_scroll`
 
-`True` if scrollbar should automatically move its position to the end when children updated. Must be `False` for `scroll_to()` method to work.
+`True`如果 children 更新时，滚动栏应自动将其位置移至结尾。 对于{555513}工作的方法必须为`False`。
 
-### `controls`
+### {555514}
 
-A list of Controls to display inside the Row.
+在行内显示的控件列表。
 
 ### `run_spacing`
 
-Spacing between runs when `wrap=True`. Default value is 10.
+`wrap=True`时运行之间的间距。 默认值为 10。
 
 ### `scroll`
 
-Enables horizontal scrolling for the Row to prevent its content overflow.
+启用该行的水平滚动以防止其内容溢出。
 
-Property value is an optional `ScrollMode` enum with `None` as default.
+属性值是默认值`None`的可选`ScrollMode`枚举。
 
-Supported values:
+支持的值:
 
-* `None` (default) - the Row is non-scrollable and its content could overflow.
-* `AUTO` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
-* `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
-* `ALWAYS` - scrolling is enabled and scroll bar is always shown.
-* `HIDDEN` - scrolling is enabled, but scroll bar is always hidden.
+- `None`（默认值） - 该行不可滚动，其内容可能会溢出。
+- `AUTO` - 启用滚动，并且仅在滚动时显示滚动条。
+- `ADAPTIVE` - 启用滚动，并在运行应用程序或桌面时始终显示滚动条。
+- `ALWAYS` - 启用滚动，并始终显示滚动条。
+- `HIDDEN` - 启用滚动，但滚动条总是隐藏的。
 
-### `spacing`
+### {555525}
 
-Spacing between controls in a row. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
+连续对控件之间的间距。 默认值是 10 个虚拟像素。 仅当`alignment`设置为`start`，`end`或{555529}。
 
-### `on_scroll_interval`
-
-Throttling in milliseconds for `on_scroll` event. Default is `10`.
+`on_scroll`事件以毫秒为单位。 默认值为`10`。
 
 ### `tight`
 
-Specifies how much space should be occupied horizontally. Default is `False` - allocate all space to children.
+指定应水平占用多少空间。 默认值为`False` - 将所有空间分配给 children。
 
 ### `vertical_alignment`
 
-How the child Controls should be placed vertically.
+child 控件应垂直放置。
 
-Property value is `CrossAxisAlignment` enum with the following values:
+属性值为`CrossAxisAlignment`枚举，具有以下值:
 
-* `START` (default)
-* `CENTER`
-* `END`
-* `STRETCH`
-* `BASELINE`
+- `START`（默认）
+- `CENTER`
+- `END`
+- `STRETCH`
+- `BASELINE`
 
 ### `wrap`
 
-When set to `True` the Row will put child controls into additional rows (runs) if they don't fit a single row.
+设置为`True`时，如果不适合单行，则行将将 child 控制在其他行（运行）中。
+
+### {555531}
+
+用户更改行滚动位置时会发射。
+
+有关事件详细信息和示例，请参见[`Column.on_scroll`](column#on_scroll)。
+
+## 方法
+
+### `scroll_to（offset，offset，delta，key，键，持续时间，持续时间，曲线）``
+
+将滚动位置移至绝对`offset`，相对`delta`或使用指定的`key`跳到控件。
+
+有关方法详细信息和示例，请参见[`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve)。
+
+## 事件
 
 ### `on_scroll`
 
-Fires when row's scroll position is changed by a user.
+用户更改滚动位置时会发射。
 
-See [`Column.on_scroll`](column#on_scroll) for event details and examples.
+有关事件详细信息和示例，请参见[`Column.on_scroll`](column#on_scroll)。
 
-## Methods
+## 扩展 children
 
-### `scroll_to(offset, delta, key, duration, curve)`
-
-Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
-
-See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
-
-## Events
-
-### `on_scroll`
-
-Fires when scroll position is changed by a user.
-
-See [`Column.on_scroll`](column#on_scroll) for event details and examples.
-
-## Expanding children
-
-When a child Control is placed into a Row you can "expand" it to fill the available space. Every Control has `expand` property that can have either a boolean value (`True` - expand control to fill all available space) or an integer - an "expand factor" specifying how to divide a free space with other expanded child controls. For example, this code creates a row with a TextField taking all available space and an ElevatedButton next to it:
+将 child 控件放入行中时，您可以“展开”它以填充可用空间。 每个控件都有`expand`属性，可以具有布尔值（`True` - 扩展控件以填充所有可用空间）或一个整数 - 一个“扩展因子”，指定如何用其他扩展的 child 控件将自由空间分配 。 例如，此代码与 Textfield 一起创建一行，并在其旁边占据所有可用空间和一个高架丁字。
 
 ```python
 r = ft.Row([
@@ -330,7 +332,7 @@ r = ft.Row([
 ])
 ```
 
-The following example with numeric expand factors creates a Row with 3 containers in it and having widths of `20% (1/5)`, `60% (3/5)` and `20% (1/5)` respectively:
+数字扩展因子的以下示例将在其中包含 3 个容器，其宽度为 20％（1/5）` ，``60％（3/5）'和 `分别为 20％（1/5）`:
 
 ```python
 r = ft.Row([
@@ -340,4 +342,4 @@ r = ft.Row([
 ])
 ```
 
-In general, the resulting width of a child in percents is calculated as `expand / sum(all expands) * 100%`.
+通常，percents 中 child 的结果宽度被计算为`expand / sum（所有扩展） * 100％`。
